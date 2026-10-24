@@ -176,9 +176,16 @@ class ReverseCandyEngine:
 
         # In Ingredient levels, ensure an active ingredient is on the board
         if state.config.level_type == LevelType.INGREDIENTS and np.sum(state.ingredients != Ingredient.NONE) == 0:
-            for c in range(state.width):
-                if state.is_valid_cell(0, c) and state.blockers[0, c] == Blocker.NONE:
-                    state.ingredients[0, c] = Ingredient.CHERRY
+            spawned = False
+            # Check center columns first for best initial spawn
+            col_order = sorted(range(state.width), key=lambda c: abs(c - state.width // 2))
+            for c in col_order:
+                for top_r in range(state.height):
+                    if state.is_valid_cell(top_r, c) and state.blockers[top_r, c] == Blocker.NONE:
+                        state.ingredients[top_r, c] = Ingredient.CHERRY
+                        spawned = True
+                        break
+                if spawned:
                     break
 
     def get_legal_moves(self, state: ReverseEngineState) -> List[Tuple[int, int, Direction]]:
@@ -524,14 +531,23 @@ class ReverseCandyEngine:
             for r in range(state.height - 1, -1, -1):
                 if not state.is_valid_cell(r, c):
                     continue
-                if state.colors[r, c] != CandyColor.EMPTY:
+                # If cell has a blocker (like chocolate), write_idx cannot fall into or past it
+                if state.blockers[r, c] != Blocker.NONE:
+                    write_idx = r - 1
+                    continue
+
+                if state.colors[r, c] != CandyColor.EMPTY or state.ingredients[r, c] != Ingredient.NONE:
                     if r != write_idx:
-                        state.colors[write_idx, c] = state.colors[r, c]
-                        state.specials[write_idx, c] = state.specials[r, c]
-                        state.ingredients[write_idx, c] = state.ingredients[r, c]
-                        state.colors[r, c] = CandyColor.EMPTY
-                        state.specials[r, c] = SpecialCandy.NONE
-                        state.ingredients[r, c] = Ingredient.NONE
+                        # Find valid write_idx that is not blocked
+                        while write_idx > r and (not state.is_valid_cell(write_idx, c) or state.blockers[write_idx, c] != Blocker.NONE):
+                            write_idx -= 1
+                        if r != write_idx and state.is_valid_cell(write_idx, c) and state.blockers[write_idx, c] == Blocker.NONE:
+                            state.colors[write_idx, c] = state.colors[r, c]
+                            state.specials[write_idx, c] = state.specials[r, c]
+                            state.ingredients[write_idx, c] = state.ingredients[r, c]
+                            state.colors[r, c] = CandyColor.EMPTY
+                            state.specials[r, c] = SpecialCandy.NONE
+                            state.ingredients[r, c] = Ingredient.NONE
                     write_idx -= 1
 
             # Refill empty slots from write_idx up to 0 with random candies
@@ -540,22 +556,28 @@ class ReverseCandyEngine:
                     state.colors[r, c] = random.randint(1, state.num_colors)
                     state.specials[r, c] = SpecialCandy.NONE
 
-        # Dynamic ingredient dispenser
+        # Dynamic ingredient dispenser (works across all irregular board shapes)
         if state.config.level_type == LevelType.INGREDIENTS:
             current_on_screen = int(np.sum(state.ingredients != Ingredient.NONE))
             needed = state.config.target_ingredients - (state.ingredients_collected + current_on_screen)
             if needed > 0 and current_on_screen == 0:
-                for col in range(state.width):
-                    if state.is_valid_cell(0, col) and state.blockers[0, col] == Blocker.NONE:
-                        state.ingredients[0, col] = Ingredient.CHERRY
+                spawned = False
+                col_order = sorted(range(state.width), key=lambda c: abs(c - state.width // 2))
+                for col in col_order:
+                    for top_r in range(state.height):
+                        if state.is_valid_cell(top_r, col) and state.blockers[top_r, col] == Blocker.NONE:
+                            state.ingredients[top_r, col] = Ingredient.CHERRY
+                            spawned = True
+                            break
+                    if spawned:
                         break
 
     def _collect_ingredients_at_bottom(self, state: ReverseEngineState) -> None:
-        """Checks if ingredients reached the bottom row and collects them."""
+        """Checks if ingredients reached the bottom-most active cell and collects them."""
         for c in range(state.width):
             for r in range(state.height - 1, -1, -1):
                 if state.is_valid_cell(r, c):
-                    if state.ingredients[r, c] != Ingredient.NONE:
+                    if state.ingredients[r, c] != Ingredient.NONE and state.blockers[r, c] == Blocker.NONE:
                         state.ingredients_collected += 1
                         state.ingredients[r, c] = Ingredient.NONE
                         state.colors[r, c] = CandyColor.EMPTY

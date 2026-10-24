@@ -134,22 +134,57 @@ class GrandmasterCandyRLEnsemble:
             cleared_jellies = np.sum(state.jellies) - np.sum(sim_state.jellies)
             utility += (cleared_jellies * 10000.0)
 
+            # ENDGAME SNIPER: When <= 6 jellies remain, laser-focus exclusively on clearing them
+            remaining_jelly_count = int(np.sum(state.jellies > 0))
+            if remaining_jelly_count <= 6:
+                # Direct hit bonus on remaining jelly
+                if state.jellies[r, c] > 0 or state.jellies[nr, nc] > 0:
+                    utility += 150000.0
+
+                # Check if this move fires a line through any remaining jelly
+                jelly_coords = list(zip(*np.where(state.jellies > 0)))
+                for jr, jc in jelly_coords:
+                    if sim_state.jellies[jr, jc] < state.jellies[jr, jc]:
+                        utility += 200000.0  # Massive sniper kill bonus!
+
+                # If move cleared zero jellies in endgame, penalize wandering
+                if cleared_jellies == 0 and not sim_state.has_won():
+                    utility -= 25000.0
+
+            # ISOLATED POCKET & LASER ALIGNMENT:
+            # For every remaining jelly, check if it can be directly reached by lasers
+            jelly_coords = list(zip(*np.where(state.jellies > 0)))
+            for jr, jc in jelly_coords:
+                # Check if this jelly is isolated (no immediate candy neighbors to swap with)
+                has_h_neighbors = (state.is_valid_cell(jr, jc - 1) and state.is_valid_cell(jr, jc + 1))
+                has_v_neighbors = (state.is_valid_cell(jr - 1, jc) and state.is_valid_cell(jr + 1, jc))
+                is_isolated = not (has_h_neighbors or has_v_neighbors)
+
+                if is_isolated:
+                    # Isolated jellies MUST be cleared via horizontal beam on row jr or vertical beam on col jc
+                    if (sim_state.specials[jr] == SpecialCandy.STRIPED_HORIZONTAL).any():
+                        utility += 80000.0  # Horizontal laser aimed right at isolated pocket!
+                    if (sim_state.specials[:, jc] == SpecialCandy.STRIPED_VERTICAL).any():
+                        utility += 80000.0  # Vertical laser aimed right at isolated pocket!
+                    if np.sum(sim_state.specials == SpecialCandy.COLOR_BOMB) > np.sum(state.specials == SpecialCandy.COLOR_BOMB):
+                        utility += 60000.0  # Color bomb can wipe the pocket!
+
             # High priority for clearing isolated edge & perimeter jellies (Columns 0, W-1, Rows 0, H-1)
-            for r in range(state.height):
-                for c in [0, state.width - 1]:
-                    if state.jellies[r, c] > sim_state.jellies[r, c]:
-                        utility += 15000.0  # Big reward for edge jelly clear
+            for er in range(state.height):
+                for ec in [0, state.width - 1]:
+                    if state.jellies[er, ec] > sim_state.jellies[er, ec]:
+                        utility += 25000.0  # Big reward for edge jelly clear
 
             # Reward aligning Vertical Striped candies down edge columns with remaining jellies
             if state.jellies[:, 0].sum() > 0 and (sim_state.specials[:, 0] == SpecialCandy.STRIPED_VERTICAL).any():
-                utility += 25000.0
+                utility += 30000.0
             if state.jellies[:, state.width - 1].sum() > 0 and (sim_state.specials[:, state.width - 1] == SpecialCandy.STRIPED_VERTICAL).any():
-                utility += 25000.0
+                utility += 30000.0
 
             # Reward aligning Horizontal Striped candies across rows with heavy jellies
-            for r in range(state.height):
-                if state.jellies[r].sum() >= 2 and (sim_state.specials[r] == SpecialCandy.STRIPED_HORIZONTAL).any():
-                    utility += 20000.0
+            for hr in range(state.height):
+                if state.jellies[hr].sum() >= 2 and (sim_state.specials[hr] == SpecialCandy.STRIPED_HORIZONTAL).any():
+                    utility += 25000.0
 
         # B. INGREDIENTS CLEARANCE
         elif lvl_type == LevelType.INGREDIENTS:
