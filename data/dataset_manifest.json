@@ -1,0 +1,35 @@
+{
+  "datasets": [
+    {
+      "name": "Candy Crush Object Detection (Roboflow Universe)",
+      "url": "https://universe.roboflow.com/demo-uahd9/candy_crush-oaoem",
+      "format": "YOLOv8 / Pascal VOC",
+      "classes": [
+        "red_candy", "blue_candy", "green_candy", "yellow_candy", "orange_candy", "purple_candy",
+        "striped_horizontal", "striped_vertical", "wrapped_candy", "color_bomb",
+        "jelly_single", "jelly_double", "chocolate", "moves_panel", "score_panel"
+      ],
+      "purpose": "Screen perception, tile classification, bounding box localization"
+    },
+    {
+      "name": "Level Difficulty & Player Retention in Candy Crush (Kaggle)",
+      "url": "https://www.kaggle.com/datasets/thedevastator/level-difficulty-in-candy-crush-saga",
+      "format": "CSV / Tabular Telemetry",
+      "records": 15000,
+      "purpose": "Predicting win/loss rates, move difficulty estimation, curriculum learning priority"
+    },
+    {
+      "name": "Gaming Gameplay Sessions Trace - Candy Crush (Hugging Face)",
+      "url": "https://huggingface.co/datasets/markov-ai/gaming-500-hours",
+      "format": "JSON Event Logs & Frame Traces",
+      "purpose": "Human player move demonstrations, imitation learning, behavioural cloning"
+    },
+    {
+      "name": "Candy Crush Level Configs & Blueprints Archive (GitHub)",
+      "url": "https://github.com/mulliganaceous/candycrush",
+      "format": "JSON / Lua Game Blueprints",
+      "levels_covered": "Level 1 to 5000+",
+      "purpose": "Accurate board geometry, blocker distribution, drop rate configurations"
+    }
+  ]
+}

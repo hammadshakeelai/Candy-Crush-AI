@@ -1,0 +1,8 @@
+numpy>=2.0.0
+opencv-python-headless>=4.8.0
+pillow>=10.0.0
+torch>=2.2.0
+gymnasium>=0.29.0
+roboflow>=1.1.0
+kaggle>=1.6.0
+pytest>=8.0.0
