@@ -107,6 +107,7 @@ class SuperhumanSolver:
         """
         moves_limit = max_moves or state.moves_left
         step_count = 0
+        shuffle_count = 0
         t0 = time.time()
 
         if verbose:
@@ -116,10 +117,15 @@ class SuperhumanSolver:
         while not state.has_won() and not state.has_lost() and step_count < moves_limit:
             best = self.select_best_move(state)
             if best is None:
-                # No legal moves remaining (board shuffle condition)
+                shuffle_count += 1
+                if shuffle_count > 3:
+                    # Board deadlocked with no valid swaps possible
+                    break
+                # Reshuffle board
                 self.engine.initialize_board(state)
                 continue
 
+            shuffle_count = 0
             r, c, direction, expected_score = best
             score_gained, stats = self.engine.execute_move(state, r, c, direction)
             step_count += 1

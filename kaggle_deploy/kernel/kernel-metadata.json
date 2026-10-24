@@ -1,0 +1,16 @@
+{
+  "id": "hammadshakeelai/candy-crush-gpu-grandmaster",
+  "title": "Candy Crush GPU Grandmaster",
+  "code_file": "run_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

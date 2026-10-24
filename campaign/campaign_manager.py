@@ -18,11 +18,26 @@ from typing import Dict, Any, List, Optional
 from multiprocessing import Pool, cpu_count
 
 from core.king_level_loader import KingLevelLoader
+from core.procedural_levels import ProceduralKingGenerator
 from core.reverse_engine import ReverseCandyEngine, ReverseEngineState
 from models.superhuman_solver import SuperhumanSolver
 
 
 PROGRESS_FILE = "campaign/progress.json"
+_GLOBAL_LOADER = None
+_GLOBAL_PROCEDURAL_GEN = None
+
+
+def get_level_config(level_id: int):
+    global _GLOBAL_LOADER, _GLOBAL_PROCEDURAL_GEN
+    if level_id <= 10295:
+        if _GLOBAL_LOADER is None:
+            _GLOBAL_LOADER = KingLevelLoader()
+        return _GLOBAL_LOADER.load_level(level_id)
+    else:
+        if _GLOBAL_PROCEDURAL_GEN is None:
+            _GLOBAL_PROCEDURAL_GEN = ProceduralKingGenerator()
+        return _GLOBAL_PROCEDURAL_GEN.generate_level(level_id)
 
 
 def solve_single_level_adaptive(level_id: int) -> Dict[str, Any]:
@@ -31,9 +46,8 @@ def solve_single_level_adaptive(level_id: int) -> Dict[str, Any]:
     If Attempt 1 does not win, applies seed rerolls and deeper beam lookahead.
     Guarantees maximum win rate without live penalty.
     """
-    loader = KingLevelLoader()
     try:
-        cfg = loader.load_level(level_id)
+        cfg = get_level_config(level_id)
     except Exception as e:
         return {
             "level_id": level_id,
@@ -80,13 +94,13 @@ def solve_single_level_adaptive(level_id: int) -> Dict[str, Any]:
                 "time_sec": res_seeded["duration_sec"]
             }
 
-    # Attempt 3: Enhanced Beam Lookahead (depth=2, top_k=6) with Advanced Seeds
-    solver_k6 = SuperhumanSolver(engine=engine, search_depth=2, top_k_candidates=6)
-    for seed in [313, 777, 999]:
+    # Attempt 3: Enhanced Beam Lookahead (depth=2, top_k=5) with Advanced Seeds
+    for seed in [313, 777]:
         engine_deep = ReverseCandyEngine(seed=seed)
+        solver_k5 = SuperhumanSolver(engine=engine_deep, search_depth=2, top_k_candidates=5)
         state_deep = ReverseEngineState(cfg)
         engine_deep.initialize_board(state_deep)
-        res_deep = solver_k6.solve_level(state_deep)
+        res_deep = solver_k5.solve_level(state_deep)
         if res_deep["won"]:
             return {
                 "level_id": level_id,
@@ -148,7 +162,7 @@ class CampaignManager:
         batch_wins = 0
 
         with Pool(processes=workers) as pool:
-            for result in pool.imap_unordered(solve_single_level_adaptive, levels_to_run, chunksize=4):
+            for result in pool.imap_unordered(solve_single_level_adaptive, levels_to_run, chunksize=1):
                 lvl_id = result["level_id"]
                 won = result["won"]
                 self.progress["completed_levels"][str(lvl_id)] = result

@@ -9,7 +9,7 @@ from typing import Dict, Any, Optional, List
 import numpy as np
 
 from .reverse_engine import (
-    LevelConfig, LevelType, Blocker, Ingredient
+    LevelConfig, LevelType, Blocker, Ingredient, SpecialCandy
 )
 
 
@@ -85,6 +85,10 @@ class KingLevelLoader:
         jellies = np.zeros((h, w), dtype=np.int32)
         blockers = np.zeros((h, w), dtype=np.int32)
         ingredients = np.zeros((h, w), dtype=np.int32)
+        colors = np.zeros((h, w), dtype=np.int32)
+        specials = np.zeros((h, w), dtype=np.int32)
+
+        color_token_map = {"055": 1, "056": 2, "057": 3, "058": 4, "059": 5, "060": 6}
 
         ingredient_count = 0
 
@@ -106,19 +110,35 @@ class KingLevelLoader:
                 elif "004" in tokens:
                     jellies[r, c] = 2
 
-                # Blockers: Chocolate ('010'), Licorice ('008'), Frosting ('011', '012', '013')
-                if "010" in tokens:
+                # Blockers: Chocolate ('009', '010'), Licorice ('008', '017'), Frosting ('007', '021', '022')
+                if "009" in tokens or "010" in tokens:
                     blockers[r, c] = Blocker.CHOCOLATE
-                elif "008" in tokens:
+                elif "008" in tokens or "017" in tokens:
                     blockers[r, c] = Blocker.LICORICE
-                elif any(tok in tokens for tok in ["011", "012", "013"]):
+                elif any(tok in tokens for tok in ["007", "021", "022"]):
                     blockers[r, c] = Blocker.FROSTING
 
-                # Ingredients: Cherry ('018'), Hazelnut ('020')
+                # Fixed candy color
+                for tok, col in color_token_map.items():
+                    if tok in tokens:
+                        colors[r, c] = col
+                        break
+
+                # Pre-placed Special Candies
+                if "045" in tokens:
+                    specials[r, c] = SpecialCandy.STRIPED_HORIZONTAL
+                elif "046" in tokens:
+                    specials[r, c] = SpecialCandy.STRIPED_VERTICAL
+                elif "050" in tokens:
+                    specials[r, c] = SpecialCandy.WRAPPED
+                elif "054" in tokens:
+                    specials[r, c] = SpecialCandy.COLOR_BOMB
+
+                # Ingredients: Cherry ('018'), Hazelnut ('020' when drop mode)
                 if "018" in tokens:
                     ingredients[r, c] = Ingredient.CHERRY
                     ingredient_count += 1
-                elif "020" in tokens:
+                elif "020" in tokens and level_type == LevelType.INGREDIENTS:
                     ingredients[r, c] = Ingredient.HAZELNUT
                     ingredient_count += 1
 
@@ -136,5 +156,7 @@ class KingLevelLoader:
             initial_jellies=jellies,
             initial_blockers=blockers,
             initial_ingredients=ingredients,
+            initial_colors=colors,
+            initial_specials=specials,
             target_ingredients=target_ing
         )

@@ -4,3 +4,4 @@ __pycache__/
 .system_generated/
 *.log
 data/candycrush_repo/
+kaggle_deploy/src/*.zip

@@ -108,3 +108,7 @@ class CandyCrushGymEnv:
             action_idx = (r * self.width + c) * 2 + dir_idx
             mask[action_idx] = True
         return mask
+
+    def action_masks(self) -> np.ndarray:
+        """Alias for sb3_contrib / MaskablePPO compatibility."""
+        return self.get_action_mask()

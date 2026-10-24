@@ -210,17 +210,20 @@ class GrandmasterCandyRLEnsemble:
                     if (c == col and r > ing_r) or (nc == col and nr > ing_r):
                         utility += 12000.0
 
-        # C. BLOCKERS (CHOCOLATE & FROSTING)
+        # C. BLOCKERS (CHOCOLATE, LICORICE, FROSTING)
         choc_before = np.sum(state.blockers == Blocker.CHOCOLATE)
         choc_after = np.sum(sim_state.blockers == Blocker.CHOCOLATE)
         if choc_before > 0:
             if choc_after < choc_before:
-                utility += 12000.0  # Destroying chocolate stops expansion
+                utility += 15000.0  # Destroying chocolate stops expansion
             elif choc_after > choc_before:
-                utility -= 8000.0   # Letting chocolate grow is heavily penalized
+                utility -= 10000.0  # Letting chocolate grow is heavily penalized
+
+        licorice_cleared = np.sum(state.blockers == Blocker.LICORICE) - np.sum(sim_state.blockers == Blocker.LICORICE)
+        utility += (licorice_cleared * 15000.0)  # Breaking licorice locks frees trapped candies/jellies
 
         frosting_cleared = np.sum(state.blockers == Blocker.FROSTING) - np.sum(sim_state.blockers == Blocker.FROSTING)
-        utility += (frosting_cleared * 3000.0)
+        utility += (frosting_cleared * 8000.0)
 
         # ==============================================================
         # 7. AVALANCHE & BOTTOM-BIAS CASCADE

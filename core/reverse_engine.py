@@ -84,6 +84,8 @@ class LevelConfig:
     initial_blockers: np.ndarray = field(default_factory=lambda: np.zeros((9, 9), dtype=np.int32))
     # Initial ingredients
     initial_ingredients: np.ndarray = field(default_factory=lambda: np.zeros((9, 9), dtype=np.int32))
+    initial_colors: Optional[np.ndarray] = None
+    initial_specials: Optional[np.ndarray] = None
     target_ingredients: int = 0
 
 
@@ -96,8 +98,15 @@ class ReverseEngineState:
         self.width = config.width
         self.num_colors = config.num_colors
 
-        self.colors = np.zeros((self.height, self.width), dtype=np.int32)
-        self.specials = np.zeros((self.height, self.width), dtype=np.int32)
+        if config.initial_colors is not None:
+            self.colors = np.copy(config.initial_colors)
+        else:
+            self.colors = np.zeros((self.height, self.width), dtype=np.int32)
+
+        if config.initial_specials is not None:
+            self.specials = np.copy(config.initial_specials)
+        else:
+            self.specials = np.zeros((self.height, self.width), dtype=np.int32)
         self.jellies = np.copy(config.initial_jellies)
         self.blockers = np.copy(config.initial_blockers)
         self.ingredients = np.copy(config.initial_ingredients)
@@ -164,7 +173,14 @@ class ReverseCandyEngine:
         """Fills active cells with random candies ensuring no initial 3-matches."""
         for r in range(state.height):
             for c in range(state.width):
-                if not state.active_grid[r, c] or state.blockers[r, c] != Blocker.NONE:
+                if not state.active_grid[r, c]:
+                    continue
+                # Solid impassable blockers prevent candies from occupying tile
+                if state.blockers[r, c] in (Blocker.CHOCOLATE, Blocker.FROSTING):
+                    state.colors[r, c] = CandyColor.EMPTY
+                    continue
+                # If cell already has a preset candy or special candy, keep it
+                if state.colors[r, c] != CandyColor.EMPTY or state.specials[r, c] != SpecialCandy.NONE:
                     continue
                 forbidden = set()
                 if c >= 2 and state.colors[r, c - 1] == state.colors[r, c - 2]:
@@ -172,7 +188,7 @@ class ReverseCandyEngine:
                 if r >= 2 and state.colors[r - 1, c] == state.colors[r - 2, c]:
                     forbidden.add(state.colors[r - 1, c])
                 valid = [col for col in range(1, state.num_colors + 1) if col not in forbidden]
-                state.colors[r, c] = random.choice(valid)
+                state.colors[r, c] = random.choice(valid) if valid else random.randint(1, state.num_colors)
 
         # In Ingredient levels, ensure an active ingredient is on the board
         if state.config.level_type == LevelType.INGREDIENTS and np.sum(state.ingredients != Ingredient.NONE) == 0:
@@ -193,12 +209,16 @@ class ReverseCandyEngine:
         legal = []
         for r in range(state.height):
             for c in range(state.width):
-                if not state.is_valid_cell(r, c) or state.blockers[r, c] != Blocker.NONE:
+                if not state.is_valid_cell(r, c):
+                    continue
+                if state.blockers[r, c] in (Blocker.CHOCOLATE, Blocker.FROSTING):
                     continue
                 for direction in [Direction.RIGHT, Direction.DOWN]:
                     dr, dc = OFFSETS[direction]
                     nr, nc = r + dr, c + dc
-                    if state.is_valid_cell(nr, nc) and state.blockers[nr, nc] == Blocker.NONE:
+                    if state.is_valid_cell(nr, nc):
+                        if state.blockers[nr, nc] in (Blocker.CHOCOLATE, Blocker.FROSTING):
+                            continue
                         if self.is_legal_swap(state, r, c, nr, nc):
                             legal.append((r, c, direction))
         return legal
