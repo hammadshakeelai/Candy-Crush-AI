@@ -18,7 +18,10 @@ class KingLevelLoader:
     Parses King's official level blueprints into LevelConfig objects.
     """
 
-    CONFIG_FILE = "data/candycrush_repo/CCS_Scripts/json_extract/sample/configs_v1.208.json"
+    CONFIG_FILE = os.environ.get(
+        "KING_CONFIG_PATH",
+        "data/candycrush_repo/CCS_Scripts/json_extract/sample/configs_v1.208.json"
+    )
 
     def __init__(self, config_path: Optional[str] = None):
         self.config_path = config_path or self.CONFIG_FILE
@@ -144,6 +147,19 @@ class KingLevelLoader:
 
         target_ing = max(ingredient_count, 1) if level_type == LevelType.INGREDIENTS else 0
 
+        # Advanced King mechanics extraction
+        portals = gd.get("portals", [])
+        cannons = gd.get("cannons", [])
+        ammo_cannons = gd.get("ammoCannons", [])
+        frog_stomach = gd.get("frogStomachSize", 0) or 0
+        evil_spawner = None
+        if gd.get("evilSpawnerElements"):
+            evil_spawner = {
+                "elements": gd.get("evilSpawnerElements", [2]),
+                "interval": gd.get("evilSpawnerInterval", 3),
+                "amount": gd.get("evilSpawnerAmount", 1),
+            }
+
         return LevelConfig(
             level_id=level_number,
             level_type=level_type,
@@ -158,5 +174,10 @@ class KingLevelLoader:
             initial_ingredients=ingredients,
             initial_colors=colors,
             initial_specials=specials,
-            target_ingredients=target_ing
+            target_ingredients=target_ing,
+            portals=portals,
+            cannons=cannons,
+            ammo_cannons=ammo_cannons,
+            evil_spawner_config=evil_spawner,
+            frog_stomach_size=frog_stomach
         )

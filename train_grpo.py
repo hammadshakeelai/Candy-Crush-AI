@@ -16,7 +16,7 @@ import sys
 import copy
 import time
 import argparse
-from typing import List, Tuple, Dict, Any
+from typing import List, Tuple, Dict, Any, Optional
 import numpy as np
 import torch
 import torch.nn as nn
@@ -121,7 +121,8 @@ def train_grpo(
     lr: float = 3e-4,
     eps_clip: float = 0.2,
     beta_kl: float = 0.02,
-    checkpoint_out: str = "checkpoints/candy_crush_grpo_v1.pt"
+    checkpoint_out: str = "checkpoints/candy_crush_grpo_v1.pt",
+    initial_checkpoint: Optional[str] = None
 ):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"=== LAUNCHING GRPO TRAINING PIPELINE ===")
@@ -132,8 +133,8 @@ def train_grpo(
 
     # Load baseline model if available, else new
     model = CandyCrushPolicyValueNet().to(device)
-    base_ckpt = "checkpoints/candy_crush_grandmaster_v2.pt"
-    if os.path.exists(base_ckpt):
+    base_ckpt = initial_checkpoint or "checkpoints/candy_crush_grandmaster_v2.pt"
+    if base_ckpt and os.path.exists(base_ckpt):
         print(f"Loading existing baseline weights from: {base_ckpt}")
         model.load_state_dict(torch.load(base_ckpt, map_location=device, weights_only=True))
 

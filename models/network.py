@@ -6,7 +6,8 @@ Similar to AlphaZero / MuZero architectures adapted for stochastic match-3 grids
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from typing import Tuple
+from typing import Tuple, Optional
+import numpy as np
 
 
 class ResidualBlock(nn.Module):
@@ -101,3 +102,115 @@ class CandyCrushPolicyValueNet(nn.Module):
         value = self.value_fc(v)
 
         return policy_logits, value
+
+    def forward_with_mask(
+        self, x: torch.Tensor, action_mask: Optional[torch.Tensor] = None
+    ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        """
+        Forward pass with action masking over illegal match-3 swaps.
+        Returns:
+          - masked_logits: (B, num_actions) with -1e9 for illegal moves
+          - action_probs: (B, num_actions) normalized probability distribution
+          - value: (B, 1) expected win probability in [-1, 1]
+        """
+        policy_logits, value = self.forward(x)
+        if action_mask is not None:
+            # Mask out illegal actions with large negative value
+            masked_logits = torch.where(action_mask.bool(), policy_logits, torch.full_like(policy_logits, -1e9))
+        else:
+            masked_logits = policy_logits
+
+        action_probs = F.softmax(masked_logits, dim=-1)
+        return masked_logits, action_probs, value
+
+
+def encode_advanced_spatial_tensor(
+    state,
+    mechanics_mgr=None
+) -> np.ndarray:
+    """
+    Constructs a 28-channel Spatial Feature Tensor integrating all reverse-engineered
+    Candy Crush mechanics (Portals, Cannons, Mixers, Cakes, Toffee, Popcorn, Frogs).
+    """
+    channels = 28
+    h, w = state.height, state.width
+    tensor = np.zeros((channels, h, w), dtype=np.float32)
+
+    # Channels 0-6: Candy Colors
+    for c_val in range(7):
+        tensor[c_val] = (state.colors == c_val).astype(np.float32)
+
+    # Channels 7-11: Special Candies
+    for s_val in range(5):
+        tensor[7 + s_val] = (state.specials == s_val).astype(np.float32)
+
+    # Channels 12-14: Jellies
+    for j_val in range(3):
+        tensor[12 + j_val] = (state.jellies == j_val).astype(np.float32)
+
+    # Channels 15-17: Primary Blockers
+    tensor[15] = (state.blockers == 1).astype(np.float32)  # Chocolate
+    tensor[16] = (state.blockers == 2).astype(np.float32)  # Licorice
+    tensor[17] = (state.blockers == 3).astype(np.float32)  # Frosting
+
+    # Channel 18: Moves Left Normalized
+    tensor[18].fill(min(1.0, max(0.0, state.moves_left / 50.0)))
+
+    # Channel 19: Portals Map
+    if state.config.portals:
+        for pair in state.config.portals:
+            if isinstance(pair, list) and len(pair) >= 2:
+                src, dst = pair[0], pair[1]
+                if len(src) >= 2 and len(dst) >= 2:
+                    sc, sr = int(src[0]), int(src[1])
+                    dc, dr = int(dst[0]), int(dst[1])
+                    if 0 <= sr < h and 0 <= sc < w:
+                        tensor[19, sr, sc] = -1.0  # Portal Entrance
+                    if 0 <= dr < h and 0 <= dc < w:
+                        tensor[19, dr, dc] = 1.0   # Portal Exit
+
+    # Channel 20: Cannons / Dispensers
+    if state.config.cannons:
+        for col_idx, items in enumerate(state.config.cannons):
+            if isinstance(items, list) and len(items) > 0 and 0 <= col_idx < w:
+                tensor[20, 0, col_idx] = 1.0
+
+    # Channel 21-25: Mechanics Manager
+    if mechanics_mgr:
+        # 21: Magic Mixers
+        for mixer in mechanics_mgr.magic_mixers:
+            if 0 <= mixer.row < h and 0 <= mixer.col < w:
+                tensor[21, mixer.row, mixer.col] = mixer.countdown / float(max(1, mixer.interval))
+
+        # 22: Cake Bombs
+        for cake in mechanics_mgr.cake_bombs:
+            for dr in [0, 1]:
+                for dc in [0, 1]:
+                    cr, cc = cake.top_left_r + dr, cake.top_left_c + dc
+                    if 0 <= cr < h and 0 <= cc < w:
+                        tensor[22, cr, cc] = cake.slices_remaining / 8.0
+
+        # 23: Toffee Swirls
+        for (tr, tc), toffee in mechanics_mgr.toffee_swirls.items():
+            if 0 <= tr < h and 0 <= tc < w:
+                tensor[23, tr, tc] = toffee.layers / 4.0
+
+        # 24: Popcorn
+        for (pr, pc), popcorn in mechanics_mgr.popcorns.items():
+            if 0 <= pr < h and 0 <= pc < w:
+                tensor[24, pr, pc] = popcorn.hp / 3.0
+
+        # 25: Frog
+        if mechanics_mgr.frog:
+            fr, fc = mechanics_mgr.frog.row, mechanics_mgr.frog.col
+            if 0 <= fr < h and 0 <= fc < w:
+                tensor[25, fr, fc] = mechanics_mgr.frog.current_fullness / float(max(1, mechanics_mgr.frog.stomach_capacity))
+
+    # Channel 26: Playable Grid Mask
+    tensor[26] = state.active_grid.astype(np.float32)
+
+    # Channel 27: Ingredients
+    tensor[27] = (state.ingredients > 0).astype(np.float32)
+
+    return tensor
+

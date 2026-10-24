@@ -132,11 +132,18 @@ class GrandmasterCandyRLEnsemble:
         # A. JELLY CLEARANCE
         if lvl_type == LevelType.JELLY:
             cleared_jellies = np.sum(state.jellies) - np.sum(sim_state.jellies)
-            utility += (cleared_jellies * 10000.0)
+            utility += (cleared_jellies * 45000.0)
 
-            # ENDGAME SNIPER: When <= 6 jellies remain, laser-focus exclusively on clearing them
+            # Direct hit bonus on any tile containing jelly
+            if state.jellies[r, c] > 0 or state.jellies[nr, nc] > 0:
+                utility += 30000.0
+
+            # Bottom-row gravity cascade bonus (clearing bottom drives cascades through top)
+            utility += (max(r, nr) * 2500.0)
+
+            # ENDGAME SNIPER: When <= 8 jellies remain, laser-focus exclusively on clearing them
             remaining_jelly_count = int(np.sum(state.jellies > 0))
-            if remaining_jelly_count <= 6:
+            if remaining_jelly_count <= 8:
                 # Direct hit bonus on remaining jelly
                 if state.jellies[r, c] > 0 or state.jellies[nr, nc] > 0:
                     utility += 150000.0
@@ -145,11 +152,11 @@ class GrandmasterCandyRLEnsemble:
                 jelly_coords = list(zip(*np.where(state.jellies > 0)))
                 for jr, jc in jelly_coords:
                     if sim_state.jellies[jr, jc] < state.jellies[jr, jc]:
-                        utility += 200000.0  # Massive sniper kill bonus!
+                        utility += 250000.0  # Massive sniper kill bonus!
 
                 # If move cleared zero jellies in endgame, penalize wandering
                 if cleared_jellies == 0 and not sim_state.has_won():
-                    utility -= 25000.0
+                    utility -= 40000.0
 
             # ISOLATED POCKET & LASER ALIGNMENT:
             # For every remaining jelly, check if it can be directly reached by lasers

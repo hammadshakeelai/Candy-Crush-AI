@@ -1,0 +1,16 @@
+{
+  "id": "hammadshakeelai/candy-crush-saga-grandmaster-eda",
+  "title": "Candy Crush Saga Grandmaster EDA",
+  "code_file": "Candy_Crush_Master_EDA.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

@@ -47,9 +47,6 @@ class SuperhumanSolver:
         scored_candidates = []
         for r, c, direction in legal_moves:
             score = self.ensemble.evaluate_move(state, r, c, direction)
-            # If instant high-tier combo (e.g. Bomb+Bomb or Bomb+Striped), execute immediately
-            if score >= 60000.0:
-                return (r, c, direction, score)
             scored_candidates.append((score, r, c, direction))
 
         scored_candidates.sort(key=lambda item: item[0], reverse=True)

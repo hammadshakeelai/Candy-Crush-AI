@@ -87,6 +87,11 @@ class LevelConfig:
     initial_colors: Optional[np.ndarray] = None
     initial_specials: Optional[np.ndarray] = None
     target_ingredients: int = 0
+    portals: Optional[List[Any]] = None
+    cannons: Optional[List[Any]] = None
+    ammo_cannons: Optional[List[Any]] = None
+    evil_spawner_config: Optional[Dict[str, Any]] = None
+    frog_stomach_size: int = 0
 
 
 class ReverseEngineState:

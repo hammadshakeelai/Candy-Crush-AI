@@ -13,6 +13,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from typing import List, Tuple, Dict, Optional, Any
 
 from core.king_level_loader import KingLevelLoader
 from core.reverse_engine import ReverseCandyEngine, ReverseEngineState, Direction
@@ -99,10 +100,12 @@ def train_grandmaster_model(
     epochs: int = 15,
     batch_size: int = 64,
     lr: float = 0.001,
-    output_model: str = "checkpoints/candy_crush_grandmaster_v2.pt"
+    checkpoint_out: Optional[str] = None,
+    output_model: Optional[str] = None,
 ):
+    save_path = checkpoint_out or output_model or "checkpoints/candy_crush_grandmaster_v2.pt"
     print("=== LAUNCHING GRANDMASTER NEURAL TRAINING PIPELINE ===")
-    os.makedirs("checkpoints", exist_ok=True)
+    os.makedirs(os.path.dirname(save_path) or ".", exist_ok=True)
 
     loader = KingLevelLoader()
     engine = ReverseCandyEngine()
@@ -167,8 +170,8 @@ def train_grandmaster_model(
         print(f"Epoch {epoch:2d}/{epochs:2d} | Policy Loss: {avg_lp:.4f} | Value Loss: {avg_lv:.4f} | LR: {scheduler.get_last_lr()[0]:.6f}")
 
     # 4. Save Trained Checkpoint
-    torch.save(model.state_dict(), output_model)
-    print(f"\n--> Successfully saved Grandmaster model to: {output_model}")
+    torch.save(model.state_dict(), save_path)
+    print(f"\n--> Successfully saved Grandmaster model to: {save_path}")
 
 
 if __name__ == "__main__":

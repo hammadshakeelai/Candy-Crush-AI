@@ -1,6 +1,6 @@
 {
-  "title": "CandyCrush AI Superhuman Engine v1",
-  "id": "hammadshakeelai/candycrush-superhuman-engine-v1",
+  "title": "Candy Crush Grandmaster RL Engine",
+  "id": "hammadshakeelai/candy-crush-grandmaster-rl",
   "licenses": [
     {
       "name": "mit"
