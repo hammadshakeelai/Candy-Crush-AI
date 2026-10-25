@@ -8,4 +8,5 @@ data/candycrush_repo/
 checkpoints/kaggle_gpu/
 kaggle_deploy/src/*.zip
 kaggle_deploy/src/*.csv
-kaggle_deploy/src/candycrush_master_levels.json
+kaggle_deploy/src/*.json
+kaggle_deploy/src/*.sqlite
