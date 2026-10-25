@@ -50,6 +50,8 @@ graph LR
 - **Hybrid Reinforcement Learning & Generalization:**
   - **[[Karimi_2021_CANDYRL_BaziGooshi_Hybrid_RL]]**: *CANDYRL / BaziGooshi: A Hybrid Reinforcement Learning Model for Generalization in Gameplay* (IEEE ToG 2021). Intrinsic vs. extrinsic reward shaping and multi-agent ensemble mixtures.
 - **World Models & Modern Architectures:**
+  - **[[DeepMind_Stochastic_MuZero_Afterstates_Match3]]**: *Planning in Stochastic Environments with a Learned Model* (Antonoglou et al., DeepMind 2022). Factoring deterministic afterstates $s^{\text{after}}$ from stochastic dispenser refills for match-3 tree search.
+  - **[[Sanford_2023_Higher_Order_Attention_Match3_Complexity]]**: *Representational Strengths and Limitations of Transformers on Relational Tasks* (Sanford et al., 2023). Proving why standard single-layer attention fails on Match-3 triplets and why multi-stage attention is mathematically required.
   - **[[Silver_Schrittwieser_MuZero_World_Models_Match3]]**: Adapting DeepMind's MuZero latent dynamics function $g_\theta(s_t, a_t) \to s_{t+1}$ and value estimation to stochastic puzzle manifolds.
   - **[[Transformers_and_Spatial_Attention_in_Grid_Worlds]]**: Multi-Head Spatial Self-Attention on discrete 2D manifolds with voids, non-Euclidean topologies, and teleporters.
 
