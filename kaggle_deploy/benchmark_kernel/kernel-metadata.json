@@ -1,0 +1,16 @@
+{
+  "id": "hammadshakeelai/alphacandy-2500-level-benchmark-analysis",
+  "title": "AlphaCandy 2,500 Level Benchmark Analysis",
+  "code_file": "AlphaCandy_Kaggle_GPU_2500_Benchmark_Analysis.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

@@ -1,0 +1,16 @@
+{
+  "id": "hammadshakeelai/alphacandy-grandmaster-interactive-showcase",
+  "title": "AlphaCandy Grandmaster Interactive Showcase",
+  "code_file": "AlphaCandy_Grandmaster_Interactive_Showcase.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
