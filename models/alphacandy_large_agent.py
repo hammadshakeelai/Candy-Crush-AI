@@ -38,10 +38,13 @@ class AlphaCandyLargeAgent:
         self,
         checkpoint_path: Optional[str] = None,
         engine: Optional[ReverseCandyEngine] = None,
-        device: Optional[torch.device] = None,
+        device: Optional[Union[torch.device, str]] = None,
         temperature: float = 0.0
     ):
-        self.device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        if device is not None:
+            self.device = torch.device(device)
+        else:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.engine = engine or ReverseCandyEngine()
         self.temperature = max(0.0, float(temperature))
         self.net = AlphaCandyLargeNet(in_channels=20, hidden_dim=256, num_actions=144).to(self.device)

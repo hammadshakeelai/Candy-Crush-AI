@@ -41,9 +41,12 @@ class GrandmasterConsensusAgent:
         search_depth: int = 2,
         top_k_candidates: int = 6,
         engine: Optional[ReverseCandyEngine] = None,
-        device: Optional[torch.device] = None
+        device: Optional[Union[torch.device, str]] = None
     ):
-        self.device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        if device is not None:
+            self.device = torch.device(device)
+        else:
+            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.engine = engine or ReverseCandyEngine()
         self.ensemble = GrandmasterCandyRLEnsemble(self.engine)
         self.search_depth = search_depth
