@@ -87,6 +87,9 @@ Candy-Crush-AI/
 │   ├── async_1000_kernel/        # Async 1,000 games in ~10 minutes runner
 │   │   ├── kernel-metadata.json
 │   │   └── run_async_1000_games.py
+│   ├── async_large_kernel/       # Async 2,500+ games large campaign runner with Master models
+│   │   ├── kernel-metadata.json
+│   │   └── run_async_large_gpu.py
 │   ├── dqn_gpu_kernel/           # Multi-level Double Dueling DQN GPU learner
 │   │   ├── kernel-metadata.json
 │   │   └── run_dqn_all_levels_gpu.py
@@ -183,6 +186,7 @@ python campaign/campaign_manager.py --start 101 --end 300 --workers 6 --max-atte
 - **Kaggle 1,000 Games High-Throughput Benchmark:** [hammadshakeelai/candy-crush-async-1000-games](https://www.kaggle.com/code/hammadshakeelai/candy-crush-async-1000-games)
 - **Kaggle Double Dueling DQN Multi-Level GPU Learner:** [hammadshakeelai/candy-crush-dqn-learning-gpu](https://www.kaggle.com/code/hammadshakeelai/candy-crush-dqn-learning-gpu)
 - **Kaggle AlphaCandy Spatial Transformer & GRPO All-Levels Trainer:** [hammadshakeelai/alphacandy-transformer-all-levels](https://www.kaggle.com/code/hammadshakeelai/alphacandy-transformer-all-levels)
+- **Kaggle Async Large 2,500+ Games GPU Runner:** [hammadshakeelai/alphacandy-async-grandmaster-large-gpu](https://www.kaggle.com/code/hammadshakeelai/alphacandy-async-grandmaster-large-gpu)
 
 ---
 

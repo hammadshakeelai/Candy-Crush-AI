@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-async-grandmaster-large-gpu",
+  "title": "AlphaCandy Async Grandmaster Large GPU",
+  "code_file": "run_async_large_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

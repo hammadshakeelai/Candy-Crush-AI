@@ -275,3 +275,121 @@ class AlphaCandySpatialNet(nn.Module):
             probs = F.softmax(masked_logits, dim=-1)
 
         return masked_logits, probs, float(val_scalar.item()), float(win_prob.item())
+
+
+class AlphaCandyLargeNet(nn.Module):
+    """
+    AlphaCandy Large Dual-Head Spatial Attention Architecture (~9M parameters).
+    Designed for grandmaster play across high-complexity levels with deep multi-hop
+    island topologies, multi-layer chocolate/mixer spawners, and intricate cascade chains.
+    Features:
+      - 256 hidden channels (2x capacity of standard model)
+      - Dual Spatial Self-Attention stages with 8 attention heads
+      - 6 Deep Residual Convolutional Blocks with Mish activations
+      - Expanded Policy and Distributional Value Heads
+    """
+
+    def __init__(self, in_channels: int = 20, hidden_dim: int = 256, num_actions: int = 144):
+        super().__init__()
+        self.in_channels = in_channels
+        self.hidden_dim = hidden_dim
+        self.num_actions = num_actions
+
+        # Feature Stem
+        self.stem = nn.Sequential(
+            nn.Conv2d(in_channels, hidden_dim, kernel_size=3, padding=1, bias=False),
+            nn.BatchNorm2d(hidden_dim),
+            nn.Mish()
+        )
+
+        # Stage 1: Initial Local Field Processing
+        self.res1 = ResidualConvBlock(hidden_dim)
+        self.res2 = ResidualConvBlock(hidden_dim)
+
+        # Stage 2: First Spatial Self-Attention (8 Attention Heads)
+        self.attention1 = SpatialAttentionBlock(channels=hidden_dim, num_heads=8)
+
+        # Stage 3: Mid-Depth Non-Local Representation
+        self.res3 = ResidualConvBlock(hidden_dim)
+        self.res4 = ResidualConvBlock(hidden_dim)
+
+        # Stage 4: Second Spatial Self-Attention (Multi-Hop Global Island Context)
+        self.attention2 = SpatialAttentionBlock(channels=hidden_dim, num_heads=8)
+
+        # Stage 5: Deep Non-Local Fusion
+        self.res5 = ResidualConvBlock(hidden_dim)
+        self.res6 = ResidualConvBlock(hidden_dim)
+
+        # --- Deep Policy Head: P(a|s) over 144 canonical swaps ---
+        self.policy_conv = nn.Sequential(
+            nn.Conv2d(hidden_dim, 128, kernel_size=1),
+            nn.BatchNorm2d(128),
+            nn.Mish()
+        )
+        self.policy_fc = nn.Sequential(
+            nn.Linear(128 * 9 * 9, 512),
+            nn.Mish(),
+            nn.Dropout(0.15),
+            nn.Linear(512, num_actions)
+        )
+
+        # --- Distributional Value Head: V(s) in [-1, 1] + P(Win|s) in [0, 1] ---
+        self.value_conv = nn.Sequential(
+            nn.Conv2d(hidden_dim, 64, kernel_size=1),
+            nn.BatchNorm2d(64),
+            nn.Mish()
+        )
+        self.value_fc = nn.Sequential(
+            nn.Linear(64 * 9 * 9, 256),
+            nn.Mish(),
+            nn.Linear(256, 2)
+        )
+
+    def forward(self, x: torch.Tensor, board_mask: Optional[torch.Tensor] = None) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        feat = self.stem(x)
+        feat = self.res1(feat)
+        feat = self.res2(feat)
+
+        # Attention Stage 1
+        feat = self.attention1(feat, mask=board_mask)
+
+        feat = self.res3(feat)
+        feat = self.res4(feat)
+
+        # Attention Stage 2 (Multi-Hop)
+        feat = self.attention2(feat, mask=board_mask)
+
+        feat = self.res5(feat)
+        feat = self.res6(feat)
+
+        # Policy Head
+        p_feat = self.policy_conv(feat).flatten(1)
+        policy_logits = self.policy_fc(p_feat)
+
+        # Value Head
+        v_feat = self.value_conv(feat).flatten(1)
+        v_out = self.value_fc(v_feat)
+        value_scalar = torch.tanh(v_out[:, 0:1])
+        win_prob = torch.sigmoid(v_out[:, 1:2])
+
+        return policy_logits, value_scalar, win_prob
+
+    def forward_with_mask(
+        self, x: torch.Tensor, legal_moves: List[Tuple[int, int, Direction]]
+    ) -> Tuple[torch.Tensor, torch.Tensor, float, float]:
+        self.eval()
+        with torch.no_grad():
+            logits, val_scalar, win_prob = self.forward(x)
+            logits_1d = logits.squeeze(0)
+
+            mask = torch.full_like(logits_1d, -float("inf"))
+            for r, c, d in legal_moves:
+                a_idx = encode_action_index(r, c, d)
+                if 0 <= a_idx < self.num_actions:
+                    mask[a_idx] = 0.0
+
+            masked_logits = logits_1d + mask
+            probs = F.softmax(masked_logits, dim=-1)
+
+        return masked_logits, probs, float(val_scalar.item()), float(win_prob.item())
+

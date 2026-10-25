@@ -25,7 +25,7 @@ from core.reverse_engine import (
 from core.king_level_loader import KingLevelLoader
 from models.candy_dqn import DuelingQNetwork
 from models.spatial_transformer_net import (
-    AlphaCandySpatialNet, encode_spatial_board_tensor,
+    AlphaCandySpatialNet, AlphaCandyLargeNet, encode_spatial_board_tensor,
     encode_action_index, decode_action_index, NUM_CANONICAL_ACTIONS
 )
 from models.network import CandyCrushPolicyValueNet, encode_19ch_tensor
@@ -216,12 +216,13 @@ class GrandmasterUnifiedAgent:
 
     def __init__(
         self,
-        dqn_checkpoint: str = "checkpoints/candy_crush_dueling_dqn.pt",
-        transformer_checkpoint: str = "checkpoints/alphacandy_spatial_transformer.pt",
-        grpo_checkpoint: str = "checkpoints/candy_crush_grandmaster_superhuman.pt",
+        dqn_checkpoint: Optional[str] = None,
+        transformer_checkpoint: Optional[str] = None,
+        grpo_checkpoint: Optional[str] = None,
         engine: Optional[ReverseCandyEngine] = None,
         search_depth: int = 2,
         top_k_candidates: int = 6,
+        model_size: str = "master",
         device: Optional[torch.device] = None
     ):
         self.device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -229,24 +230,51 @@ class GrandmasterUnifiedAgent:
         self.ensemble = GrandmasterCandyRLEnsemble(self.engine)
         self.search_depth = search_depth
         self.top_k_candidates = top_k_candidates
+        self.model_size = model_size
+
+        # Resolve checkpoint paths with priority to master checkpoints
+        if dqn_checkpoint is None:
+            if os.path.exists("checkpoints/candy_crush_dueling_dqn_master.pt"):
+                dqn_checkpoint = "checkpoints/candy_crush_dueling_dqn_master.pt"
+            else:
+                dqn_checkpoint = "checkpoints/candy_crush_dueling_dqn.pt"
+
+        if transformer_checkpoint is None:
+            if os.path.exists("checkpoints/alphacandy_spatial_transformer_master.pt"):
+                transformer_checkpoint = "checkpoints/alphacandy_spatial_transformer_master.pt"
+            elif os.path.exists("checkpoints/alphacandy_spatial_transformer_local.pt"):
+                transformer_checkpoint = "checkpoints/alphacandy_spatial_transformer_local.pt"
+            else:
+                transformer_checkpoint = "checkpoints/alphacandy_spatial_transformer.pt"
+
+        if grpo_checkpoint is None:
+            grpo_checkpoint = "checkpoints/candy_crush_grandmaster_superhuman.pt"
 
         # 1. Double Dueling DQN
         self.dqn = DuelingQNetwork(in_channels=20, hidden_dim=128, num_actions=144).to(self.device)
-        if os.path.exists(dqn_checkpoint):
+        if dqn_checkpoint and os.path.exists(dqn_checkpoint):
             self.dqn.load_state_dict(torch.load(dqn_checkpoint, map_location=self.device))
             print(f"[GrandmasterUnifiedAgent] Loaded Double Dueling DQN: {dqn_checkpoint}")
         self.dqn.eval()
 
-        # 2. AlphaCandy Spatial Transformer
-        self.transformer = AlphaCandySpatialNet(in_channels=20, hidden_dim=128, num_actions=144).to(self.device)
-        if os.path.exists(transformer_checkpoint):
-            self.transformer.load_state_dict(torch.load(transformer_checkpoint, map_location=self.device))
-            print(f"[GrandmasterUnifiedAgent] Loaded AlphaCandy Transformer: {transformer_checkpoint}")
+        # 2. AlphaCandy Spatial Transformer (Standard vs Large)
+        if model_size == "large":
+            self.transformer = AlphaCandyLargeNet(in_channels=20, hidden_dim=256, num_actions=144).to(self.device)
+            print("[GrandmasterUnifiedAgent] Initialized AlphaCandy Large Transformer (~14.4M params)")
+        else:
+            self.transformer = AlphaCandySpatialNet(in_channels=20, hidden_dim=128, num_actions=144).to(self.device)
+
+        if transformer_checkpoint and os.path.exists(transformer_checkpoint):
+            try:
+                self.transformer.load_state_dict(torch.load(transformer_checkpoint, map_location=self.device))
+                print(f"[GrandmasterUnifiedAgent] Loaded AlphaCandy Transformer: {transformer_checkpoint}")
+            except Exception as e:
+                print(f"[GrandmasterUnifiedAgent] Transformer weight load note: {e}")
         self.transformer.eval()
 
         # 3. GRPO Policy-Value Net
         self.grpo = CandyCrushPolicyValueNet(in_channels=19).to(self.device)
-        if os.path.exists(grpo_checkpoint):
+        if grpo_checkpoint and os.path.exists(grpo_checkpoint):
             self.grpo.load_state_dict(torch.load(grpo_checkpoint, map_location=self.device))
             print(f"[GrandmasterUnifiedAgent] Loaded GRPO Superhuman Net: {grpo_checkpoint}")
         elif os.path.exists("checkpoints/candy_crush_grandmaster_v2.pt"):
