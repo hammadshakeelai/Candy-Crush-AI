@@ -36,28 +36,24 @@ class GrandmasterCandyRLEnsemble:
         s2 = state.specials[nr, nc]
 
         # ==============================================================
-        # 1. IMMEDIATE SPECIAL COMBOS (TIER S+)
+        # 1. SPECIAL COMBO MULTIPLIERS (TIER S+)
         # ==============================================================
+        combo_bonus = 0.0
         if s1 == SpecialCandy.COLOR_BOMB and s2 == SpecialCandy.COLOR_BOMB:
-            return 250000.0  # Board wipe clears all jellies & blockers instantly!
-
-        if (s1 == SpecialCandy.COLOR_BOMB and s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL)) or \
-           (s2 == SpecialCandy.COLOR_BOMB and s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL)):
-            return 180000.0  # Mass color detonation
-
-        if (s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL) and s2 == SpecialCandy.WRAPPED) or \
-           (s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL) and s1 == SpecialCandy.WRAPPED):
-            return 120000.0  # 3 rows + 3 cols super cross
-
-        if s1 == SpecialCandy.WRAPPED and s2 == SpecialCandy.WRAPPED:
-            return 90000.0  # Dual 5x5 blast
-
-        if s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL) and \
-           s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL):
-            return 50000.0  # Cross clear
-
-        if s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
-            return 40000.0  # Single color wipe
+            combo_bonus += 2000000.0  # Board wipe clears all jellies & blockers instantly!
+        elif (s1 == SpecialCandy.COLOR_BOMB and s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL)) or \
+             (s2 == SpecialCandy.COLOR_BOMB and s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL)):
+            combo_bonus += 1000000.0  # Mass color detonation
+        elif (s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL) and s2 == SpecialCandy.WRAPPED) or \
+             (s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL) and s1 == SpecialCandy.WRAPPED):
+            combo_bonus += 500000.0  # 3 rows + 3 cols super cross
+        elif s1 == SpecialCandy.WRAPPED and s2 == SpecialCandy.WRAPPED:
+            combo_bonus += 350000.0  # Dual 5x5 blast
+        elif s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL) and \
+             s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL):
+            combo_bonus += 250000.0  # Cross clear
+        elif s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
+            combo_bonus += 150000.0  # Single color wipe
 
         # ==============================================================
         # 2. SIMULATE 1-PLY CONSEQUENCE
@@ -68,10 +64,10 @@ class GrandmasterCandyRLEnsemble:
             return -1e9
 
         if sim_state.has_won():
-            return 500000.0  # Instant win
+            return 10000000.0 + combo_bonus
 
         cascades = stats.get("cascades", 0)
-        utility = 0.0
+        utility = combo_bonus
 
         # ==============================================================
         # 3. URGENCY FACTOR: Objectives Remaining vs Moves Remaining
@@ -89,9 +85,9 @@ class GrandmasterCandyRLEnsemble:
         new_striped = np.sum((sim_state.specials == SpecialCandy.STRIPED_HORIZONTAL) | (sim_state.specials == SpecialCandy.STRIPED_VERTICAL)) - \
                       np.sum((state.specials == SpecialCandy.STRIPED_HORIZONTAL) | (state.specials == SpecialCandy.STRIPED_VERTICAL))
 
-        utility += (new_bombs * 50000.0)
-        utility += (new_wrapped * 25000.0)
-        utility += (new_striped * 12000.0)
+        utility += (new_bombs * 350000.0)      # Massive priority to create Color Bombs
+        utility += (new_wrapped * 180000.0)    # High priority to create 5-match Wrappers
+        utility += (new_striped * 90000.0)     # Solid reward for 4-match Striped candies
 
         # CATALYST DETECTOR: Check if the resulting state sets up special candy opportunities
         # If sim_state contains 4-in-a-row or 5-in-a-row opportunities, reward this catalyst move
@@ -102,7 +98,7 @@ class GrandmasterCandyRLEnsemble:
             sm_nr, sm_nc = sm_r + sm_dr, sm_c + sm_dc
             sm_s2 = sim_state.specials[sm_nr, sm_nc]
             if sm_s1 != SpecialCandy.NONE and sm_s2 != SpecialCandy.NONE:
-                utility += 40000.0  # Set up adjacent combo for next turn!
+                utility += 150000.0  # Set up adjacent combo for next turn!
                 break
 
         # ==============================================================
@@ -120,9 +116,9 @@ class GrandmasterCandyRLEnsemble:
             for sr, sc in other_specials:
                 manhattan = abs(br - sr) + abs(bc - sc)
                 if manhattan == 1:
-                    utility += 60000.0  # Brought special directly adjacent to Color Bomb!
+                    utility += 250000.0  # Brought special directly adjacent to Color Bomb!
                 elif manhattan <= 2:
-                    utility += 15000.0  # 1 move away from adjacent!
+                    utility += 75000.0   # 1 move away from adjacent!
 
         # ==============================================================
         # 6. OBJECTIVES PROGRESS
@@ -133,13 +129,76 @@ class GrandmasterCandyRLEnsemble:
         if lvl_type == LevelType.JELLY:
             cleared_jellies = np.sum(state.jellies) - np.sum(sim_state.jellies)
             utility += (cleared_jellies * 45000.0)
+            cols_with_jellies = set(np.where(state.jellies > 0)[1])
+            rows_with_jellies = set(np.where(state.jellies > 0)[0])
 
             # Direct hit bonus on any tile containing jelly
             if state.jellies[r, c] > 0 or state.jellies[nr, nc] > 0:
-                utility += 30000.0
+                utility += 40000.0
+
+            # OBJECTIVE REGION FOCUS (DISCONNECTED ISLANDS):
+            # If move cleared 0 jellies, check if it was made in columns that contain jellies
+            if cleared_jellies == 0:
+                if len(cols_with_jellies) > 0 and c not in cols_with_jellies and nc not in cols_with_jellies:
+                    # Playing on an auxiliary disconnected island with zero jellies
+                    horizontal_laser_aimed = any(
+                        (sim_state.specials[jr] == SpecialCandy.STRIPED_HORIZONTAL).any()
+                        for jr in rows_with_jellies
+                    )
+                    combo_made = (new_bombs > 0) or horizontal_laser_aimed or (new_wrapped > 0)
+
+                    # Reward detonating an existing special that fires into the locked island
+                    if state.specials[r, c] != SpecialCandy.NONE or state.specials[nr, nc] != SpecialCandy.NONE:
+                        utility += 350000.0
+
+                    if horizontal_laser_aimed:
+                        utility += 300000.0
+                    if new_bombs > 0:
+                        utility += 450000.0
+
+                    # Check if there are ANY legal moves available directly on jelly cells
+                    has_moves_on_jelly_island = False
+                    for jc in cols_with_jellies:
+                        for jr in range(state.height):
+                            if not state.is_valid_cell(jr, jc):
+                                continue
+                            for d in [Direction.RIGHT, Direction.DOWN]:
+                                dr, dc = OFFSETS[d]
+                                if self.engine.is_legal_swap(state, jr, jc, jr + dr, jc + dc):
+                                    has_moves_on_jelly_island = True
+                                    break
+                            if has_moves_on_jelly_island:
+                                break
+                        if has_moves_on_jelly_island:
+                            break
+
+                    if has_moves_on_jelly_island:
+                        # Legal moves EXIST on the jelly island; don't wander off!
+                        if not combo_made:
+                            utility -= 150000.0
+                    else:
+                        # ARTILLERY MODE: Jelly island is locked! Auxiliary island must forge specials & cascades!
+                        utility += 60000.0
+                        if new_wrapped > 0 or new_striped > 0:
+                            utility += 180000.0
+                        # Reward cascades on auxiliary island to churn tiles and auto-spawn specials
+                        utility += (cascades * 18000.0)
 
             # Bottom-row gravity cascade bonus (clearing bottom drives cascades through top)
-            utility += (max(r, nr) * 2500.0)
+            # Only apply if playing on columns with jellies
+            if len(cols_with_jellies) == 0 or c in cols_with_jellies or nc in cols_with_jellies:
+                utility += (max(r, nr) * 2500.0)
+
+            # STUBBORN BOTTOM ROW EMPHASIS:
+            # The bottom row (height - 1) is mathematically the hardest to clear because no candies fall beneath it.
+            bottom_row = state.height - 1
+            if state.jellies[bottom_row].sum() > 0:
+                cols_with_bottom_jelly = set(np.where(state.jellies[bottom_row] > 0)[0])
+                if c in cols_with_bottom_jelly or nc in cols_with_bottom_jelly:
+                    if r == bottom_row or nr == bottom_row:
+                        utility += 60000.0  # Massive priority to manipulate stubborn bottom row!
+                if sim_state.jellies[bottom_row].sum() < state.jellies[bottom_row].sum():
+                    utility += 150000.0  # Huge reward for successfully breaking bottom row jellies!
 
             # ENDGAME SNIPER: When <= 8 jellies remain, laser-focus exclusively on clearing them
             remaining_jelly_count = int(np.sum(state.jellies > 0))
@@ -168,13 +227,16 @@ class GrandmasterCandyRLEnsemble:
                 is_isolated = not (has_h_neighbors or has_v_neighbors)
 
                 if is_isolated:
+                    # If this move cleared the isolated jelly directly or via laser/bomb, massive reward!
+                    if sim_state.jellies[jr, jc] < state.jellies[jr, jc]:
+                        utility += 350000.0
                     # Isolated jellies MUST be cleared via horizontal beam on row jr or vertical beam on col jc
                     if (sim_state.specials[jr] == SpecialCandy.STRIPED_HORIZONTAL).any():
-                        utility += 80000.0  # Horizontal laser aimed right at isolated pocket!
+                        utility += 120000.0  # Horizontal laser aimed right at isolated pocket!
                     if (sim_state.specials[:, jc] == SpecialCandy.STRIPED_VERTICAL).any():
-                        utility += 80000.0  # Vertical laser aimed right at isolated pocket!
+                        utility += 120000.0  # Vertical laser aimed right at isolated pocket!
                     if np.sum(sim_state.specials == SpecialCandy.COLOR_BOMB) > np.sum(state.specials == SpecialCandy.COLOR_BOMB):
-                        utility += 60000.0  # Color bomb can wipe the pocket!
+                        utility += 90000.0  # Color bomb can wipe the pocket!
 
             # High priority for clearing isolated edge & perimeter jellies (Columns 0, W-1, Rows 0, H-1)
             for er in range(state.height):

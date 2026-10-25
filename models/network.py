@@ -124,6 +124,26 @@ class CandyCrushPolicyValueNet(nn.Module):
         return masked_logits, action_probs, value
 
 
+def encode_19ch_tensor(state) -> np.ndarray:
+    """Encodes state to (19, H, W) tensor."""
+    channels = 19
+    h, w = state.height, state.width
+    tensor = np.zeros((channels, h, w), dtype=np.float32)
+
+    for color_val in range(7):
+        tensor[color_val] = (state.colors == color_val).astype(np.float32)
+    for s_idx in range(5):
+        tensor[7 + s_idx] = (state.specials == s_idx).astype(np.float32)
+    for j_val in range(3):
+        tensor[12 + j_val] = (state.jellies == j_val).astype(np.float32)
+
+    tensor[15] = (state.blockers == 1).astype(np.float32)  # Chocolate
+    tensor[16] = (state.blockers == 2).astype(np.float32)  # Licorice
+    tensor[17] = (state.blockers == 3).astype(np.float32)  # Frosting
+    tensor[18].fill(min(1.0, max(0.0, state.moves_left / 50.0)))
+    return tensor
+
+
 def encode_advanced_spatial_tensor(
     state,
     mechanics_mgr=None

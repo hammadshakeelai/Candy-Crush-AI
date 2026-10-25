@@ -174,8 +174,11 @@ class ReverseCandyEngine:
             random.seed(seed)
             np.random.seed(seed)
 
-    def initialize_board(self, state: ReverseEngineState) -> None:
+    def initialize_board(self, state: ReverseEngineState, seed: Optional[int] = None) -> None:
         """Fills active cells with random candies ensuring no initial 3-matches."""
+        if seed is not None:
+            np.random.seed(seed)
+            random.seed(seed)
         for r in range(state.height):
             for c in range(state.width):
                 if not state.active_grid[r, c]:
@@ -229,6 +232,8 @@ class ReverseCandyEngine:
         return legal
 
     def is_legal_swap(self, state: ReverseEngineState, r1: int, c1: int, r2: int, c2: int) -> bool:
+        if not (state.is_valid_cell(r1, c1) and state.is_valid_cell(r2, c2)):
+            return False
         s1 = state.specials[r1, c1]
         s2 = state.specials[r2, c2]
         # Any combination of specials or color bombs is legal

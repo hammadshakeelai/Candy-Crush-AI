@@ -57,72 +57,18 @@ def solve_single_level_adaptive(level_id: int) -> Dict[str, Any]:
         }
 
     engine = ReverseCandyEngine()
+    solver = SuperhumanSolver(engine=engine, search_depth=2, top_k_candidates=5)
+    res = solver.solve_level(cfg, max_attempts=3)
 
-    # Attempt 1: Standard Superhuman Solver (depth=2)
-    solver = SuperhumanSolver(engine=engine, search_depth=2, top_k_candidates=4)
-    state = ReverseEngineState(cfg)
-    engine.initialize_board(state)
-    res = solver.solve_level(state)
-
-    if res["won"]:
-        return {
-            "level_id": level_id,
-            "won": True,
-            "attempts": 1,
-            "moves_used": res["moves_used"],
-            "moves_limit": cfg.moves_limit,
-            "score": res["final_score"],
-            "level_type": cfg.level_type.name,
-            "time_sec": res["duration_sec"]
-        }
-
-    # Attempt 2: Opening Seed Reroll (Free Board Reset)
-    for seed in [7, 42, 101]:
-        engine_seeded = ReverseCandyEngine(seed=seed)
-        state_seeded = ReverseEngineState(cfg)
-        engine_seeded.initialize_board(state_seeded)
-        res_seeded = solver.solve_level(state_seeded)
-        if res_seeded["won"]:
-            return {
-                "level_id": level_id,
-                "won": True,
-                "attempts": 2,
-                "moves_used": res_seeded["moves_used"],
-                "moves_limit": cfg.moves_limit,
-                "score": res_seeded["final_score"],
-                "level_type": cfg.level_type.name,
-                "time_sec": res_seeded["duration_sec"]
-            }
-
-    # Attempt 3: Enhanced Beam Lookahead (depth=2, top_k=5) with Advanced Seeds
-    for seed in [313, 777]:
-        engine_deep = ReverseCandyEngine(seed=seed)
-        solver_k5 = SuperhumanSolver(engine=engine_deep, search_depth=2, top_k_candidates=5)
-        state_deep = ReverseEngineState(cfg)
-        engine_deep.initialize_board(state_deep)
-        res_deep = solver_k5.solve_level(state_deep)
-        if res_deep["won"]:
-            return {
-                "level_id": level_id,
-                "won": True,
-                "attempts": 3,
-                "moves_used": res_deep["moves_used"],
-                "moves_limit": cfg.moves_limit,
-                "score": res_deep["final_score"],
-                "level_type": cfg.level_type.name,
-                "time_sec": res_deep["duration_sec"]
-            }
-
-    # If still not won, return best score achieved
     return {
-        "level_id": level_id,
-        "won": False,
-        "attempts": 3,
-        "moves_used": res["moves_used"],
-        "moves_limit": cfg.moves_limit,
-        "score": res["final_score"],
+        "level_id": int(level_id),
+        "won": bool(res["won"]),
+        "attempts": int(res.get("attempts", 1)),
+        "moves_used": int(res.get("moves_used", 0)),
+        "moves_limit": int(cfg.moves_limit),
+        "score": int(res.get("final_score", 0)),
         "level_type": cfg.level_type.name,
-        "time_sec": res["duration_sec"]
+        "time_sec": float(res.get("duration_sec", 0.0))
     }
 
 
