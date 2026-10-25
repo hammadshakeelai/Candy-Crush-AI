@@ -385,7 +385,7 @@ class GrandmasterUnifiedAgent:
         return raw_candidates
 
     def select_best_move(
-        self, state: ReverseEngineState
+        self, state: ReverseEngineState, escalate: bool = False
     ) -> Optional[Tuple[int, int, Direction, float]]:
         """
         Executes Unified Grandmaster Move Selection:
@@ -400,9 +400,9 @@ class GrandmasterUnifiedAgent:
 
         top_candidates = candidates[:self.top_k_candidates]
 
-        # Dynamic depth: in endgame or tight constraints, deepen lookahead
+        # Dynamic depth: in endgame or tight constraints, deepen lookahead if escalate is True
         effective_depth = self.search_depth
-        if state.moves_left <= 8 or state.remaining_objectives_count() <= 6:
+        if escalate and (state.moves_left <= 8 or state.remaining_objectives_count() <= 6):
             effective_depth = max(self.search_depth, 3)
 
         if effective_depth <= 1:
@@ -483,7 +483,7 @@ class GrandmasterUnifiedAgent:
             shuffles = 0
 
             while not state.has_won() and not state.has_lost() and step < moves_limit:
-                best = self.select_best_move(state)
+                best = self.select_best_move(state, escalate=(attempt > 1))
                 if best is None:
                     shuffles += 1
                     if shuffles > 3:

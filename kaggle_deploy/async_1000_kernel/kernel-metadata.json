@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/candy-crush-async-1000-games",
+  "title": "Candy Crush Async 1000 Games",
+  "code_file": "run_async_1000_games.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

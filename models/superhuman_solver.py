@@ -109,12 +109,21 @@ class SuperhumanSolver:
                 for base_score, r, c, direction in top_candidates:
                     sim_s = state.copy()
                     self.engine.execute_move(sim_s, r, c, direction)
-                    sim_tensors.append(encode_19ch_tensor(sim_s))
+                    if self.is_transformer:
+                        sim_tensors.append(encode_spatial_board_tensor(sim_s))
+                    else:
+                        sim_tensors.append(encode_19ch_tensor(sim_s))
 
                 batch_x = torch.from_numpy(np.array(sim_tensors, dtype=np.float32)).to(self.device)
                 with torch.no_grad():
-                    _, values = self.model(batch_x)
-                    val_scores = values.squeeze(-1).cpu().numpy()
+                    out = self.model(batch_x)
+                    if isinstance(out, tuple):
+                        # AlphaCandySpatialNet returns (policy, value, win_prob)
+                        # ResNet returns (policy, value)
+                        val_tensor = out[1]
+                    else:
+                        val_tensor = out
+                    val_scores = val_tensor.squeeze(-1).cpu().numpy()
 
                 # Blend heuristic score with neural value prediction V(s')
                 reranked = []

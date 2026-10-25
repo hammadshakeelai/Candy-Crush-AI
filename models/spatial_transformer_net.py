@@ -65,34 +65,35 @@ def encode_spatial_board_tensor(state: ReverseEngineState) -> np.ndarray:
     Channel 19      : Normalized Moves Remaining & Objectives Remaining
     """
     h, w = state.height, state.width
-    tensor = np.zeros((20, h, w), dtype=np.float32)
+    tensor = np.zeros((20, 9, 9), dtype=np.float32)
+    min_h, min_w = min(h, 9), min(w, 9)
 
     # 1. Colors (0..5)
     for color_val in range(1, 7):
-        tensor[color_val - 1] = (state.colors == color_val).astype(np.float32)
+        tensor[color_val - 1, :min_h, :min_w] = (state.colors[:min_h, :min_w] == color_val).astype(np.float32)
 
     # 2. Specials (6..9)
-    tensor[6] = (state.specials == SpecialCandy.STRIPED_HORIZONTAL).astype(np.float32)
-    tensor[7] = (state.specials == SpecialCandy.STRIPED_VERTICAL).astype(np.float32)
-    tensor[8] = (state.specials == SpecialCandy.WRAPPED).astype(np.float32)
-    tensor[9] = (state.specials == SpecialCandy.COLOR_BOMB).astype(np.float32)
+    tensor[6, :min_h, :min_w] = (state.specials[:min_h, :min_w] == SpecialCandy.STRIPED_HORIZONTAL).astype(np.float32)
+    tensor[7, :min_h, :min_w] = (state.specials[:min_h, :min_w] == SpecialCandy.STRIPED_VERTICAL).astype(np.float32)
+    tensor[8, :min_h, :min_w] = (state.specials[:min_h, :min_w] == SpecialCandy.WRAPPED).astype(np.float32)
+    tensor[9, :min_h, :min_w] = (state.specials[:min_h, :min_w] == SpecialCandy.COLOR_BOMB).astype(np.float32)
 
     # 3. Blockers (10..14)
-    tensor[10] = (state.blockers == Blocker.CHOCOLATE).astype(np.float32)
-    tensor[11] = (state.blockers == Blocker.LICORICE).astype(np.float32)
-    tensor[12] = (state.blockers == Blocker.FROSTING).astype(np.float32)
-    tensor[13] = (state.blockers >= 4).astype(np.float32)
-    tensor[14] = (state.blockers != Blocker.NONE).astype(np.float32)
+    tensor[10, :min_h, :min_w] = (state.blockers[:min_h, :min_w] == Blocker.CHOCOLATE).astype(np.float32)
+    tensor[11, :min_h, :min_w] = (state.blockers[:min_h, :min_w] == Blocker.LICORICE).astype(np.float32)
+    tensor[12, :min_h, :min_w] = (state.blockers[:min_h, :min_w] == Blocker.FROSTING).astype(np.float32)
+    tensor[13, :min_h, :min_w] = (state.blockers[:min_h, :min_w] >= 4).astype(np.float32)
+    tensor[14, :min_h, :min_w] = (state.blockers[:min_h, :min_w] != Blocker.NONE).astype(np.float32)
 
     # 4. Jellies (15..16)
-    tensor[15] = (state.jellies == 1).astype(np.float32)
-    tensor[16] = (state.jellies >= 2).astype(np.float32)
+    tensor[15, :min_h, :min_w] = (state.jellies[:min_h, :min_w] == 1).astype(np.float32)
+    tensor[16, :min_h, :min_w] = (state.jellies[:min_h, :min_w] >= 2).astype(np.float32)
 
     # 5. Ingredients (17)
-    tensor[17] = (state.ingredients != Ingredient.NONE).astype(np.float32)
+    tensor[17, :min_h, :min_w] = (state.ingredients[:min_h, :min_w] != Ingredient.NONE).astype(np.float32)
 
     # 6. Active Grid Mask (18)
-    tensor[18] = state.active_grid.astype(np.float32)
+    tensor[18, :min_h, :min_w] = state.active_grid[:min_h, :min_w].astype(np.float32)
 
     # 7. Normalized Dynamics Context (19)
     max_m = max(1, getattr(state.config, "moves_limit", 30))
