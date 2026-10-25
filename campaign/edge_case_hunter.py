@@ -300,10 +300,12 @@ if __name__ == "__main__":
     parser.add_argument("--end", type=int, default=1000, help="End level (default: 1000)")
     parser.add_argument("--workers", type=int, default=4, help="Parallel worker processes (default: 4)")
     parser.add_argument("--max-attempts", type=int, default=2, help="Max retry attempts per level (default: 2)")
+    parser.add_argument("--output", type=str, default=None, help="Output JSON path for edge cases")
     parser.add_argument("--force", action="store_true", help="Re-evaluate already won levels")
     args = parser.parse_args()
 
-    hunter = EdgeCaseHunter()
+    out_file = args.output or f"campaign/edge_cases_{args.start}_{args.end}.json"
+    hunter = EdgeCaseHunter(edge_cases_path=out_file)
     hunter.run(
         start_lvl=args.start,
         end_lvl=args.end,
