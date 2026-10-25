@@ -22,98 +22,122 @@ from typing import Dict, Any, List, Optional
 from multiprocessing import Pool, cpu_count
 import torch
 
-print("=================================================================")
-print("  ALPHACANDY GRANDMASTER: ASYNC 1,000 GAMES IN ~10 MIN RUNNER    ")
-print("=================================================================")
-
-# 1. Environment and Working Directory Discovery
-if os.path.exists("/kaggle"):
-    input_root = os.environ.get("KAGGLE_INPUT_ROOT", "/kaggle/input")
-    work_dir = os.environ.get("KAGGLE_WORK_DIR", "/kaggle/working")
-else:
-    input_root = os.environ.get("KAGGLE_INPUT_ROOT", os.path.join(os.getcwd(), "kaggle_deploy/src"))
-    work_dir = os.environ.get("KAGGLE_WORK_DIR", os.path.join(os.getcwd(), "kaggle_deploy/work_test"))
-
-os.makedirs(work_dir, exist_ok=True)
-os.chdir(work_dir)
-
-if work_dir not in sys.path:
-    sys.path.insert(0, work_dir)
-
-# 2. Extract Package and Locate Resources
-src_root = None
-data_json_found = None
-sqlite_found = None
-
-for root, dirs, files in os.walk(input_root):
-    if "candy_crush_pkg.zip" in files and src_root is None:
-        zip_path = os.path.join(root, "candy_crush_pkg.zip")
-        print(f"[INFO] Extracting {zip_path} into {work_dir}...")
-        try:
-            with zipfile.ZipFile(zip_path, "r") as zip_ref:
-                zip_ref.extractall(work_dir)
-            src_root = work_dir
-        except Exception as e:
-            print(f"[WARN] Failed extracting zip: {e}")
-
-    if "configs_v1.208.json" in files and not data_json_found:
-        data_json_found = os.path.join(root, "configs_v1.208.json")
-    if "candycrush_master_levels.sqlite" in files and not sqlite_found:
-        sqlite_found = os.path.join(root, "candycrush_master_levels.sqlite")
-
-# Fallback: check current directory if not on Kaggle input
-if not src_root:
-    for candidate in [work_dir, os.getcwd(), os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))]:
-        if os.path.exists(os.path.join(candidate, "core", "king_level_loader.py")):
-            src_root = candidate
-            break
-
-if src_root:
-    print(f"[INFO] Source root verified: {src_root}")
-    if src_root not in sys.path:
-        sys.path.insert(0, src_root)
-else:
-    print(f"[WARN] Using default work_dir: {work_dir}")
-
-if data_json_found:
-    os.environ["KING_CONFIG_PATH"] = data_json_found
-    print(f"[INFO] Set KING_CONFIG_PATH={data_json_found}")
-if sqlite_found:
-    os.environ["KING_SQLITE_PATH"] = sqlite_found
-    print(f"[INFO] Set KING_SQLITE_PATH={sqlite_found}")
-
-# 3. GPU Hardware Discovery
-num_gpus = torch.cuda.device_count() if torch.cuda.is_available() else 0
-print(f"[INFO] Available GPUs: {num_gpus}")
-for i in range(num_gpus):
-    print(f"[INFO] GPU {i}: {torch.cuda.get_device_name(i)} ({torch.cuda.get_device_properties(i).total_memory / 1e9:.2f} GB VRAM)")
-
-# Global Worker Resources
+# Global references for worker subprocesses
 _WORKER_AGENT = None
 _WORKER_LOADER = None
-_WORKER_ID = None
+_WORKER_DEVICE = None
 
 
-def init_parallel_worker(worker_id: int, total_workers: int, search_depth: int):
+def setup_environment() -> tuple:
     """
-    Initializes worker process with its dedicated GPU context, loader, and unified agent.
-    Guarantees no race conditions or CUDA initialization conflicts.
+    Discovers dataset sources, unzips/copies code tree, and sets up paths.
+    Runs once deterministically in the parent process.
     """
-    global _WORKER_AGENT, _WORKER_LOADER, _WORKER_ID
-    _WORKER_ID = worker_id
+    print("=================================================================")
+    print("  ALPHACANDY GRANDMASTER: ASYNC 1,000 GAMES IN ~10 MIN RUNNER    ")
+    print("=================================================================")
 
-    # Add paths in subprocess
+    if os.path.exists("/kaggle"):
+        input_root = os.environ.get("KAGGLE_INPUT_ROOT", "/kaggle/input")
+        work_dir = os.environ.get("KAGGLE_WORK_DIR", "/kaggle/working")
+    else:
+        repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+        input_root = os.environ.get("KAGGLE_INPUT_ROOT", os.path.join(repo_root, "kaggle_deploy/src"))
+        work_dir = os.environ.get("KAGGLE_WORK_DIR", "/tmp/candy_kaggle_test")
+
+    os.makedirs(work_dir, exist_ok=True)
+
+    src_root = None
+    data_json_found = None
+    sqlite_found = None
+
+    # Walk input_root to discover source code and datasets
+    for root, dirs, files in os.walk(input_root):
+        if "candy_crush_pkg.zip" in files and src_root is None:
+            zip_path = os.path.join(root, "candy_crush_pkg.zip")
+            print(f"[INFO] Extracting {zip_path} into {work_dir}...")
+            try:
+                with zipfile.ZipFile(zip_path, "r") as zip_ref:
+                    zip_ref.extractall(work_dir)
+                src_root = work_dir
+            except Exception as e:
+                print(f"[WARN] Failed extracting zip: {e}")
+
+        # If already unzipped directory with core and models
+        if "core" in dirs and "models" in dirs and src_root is None:
+            src_root = root
+            print(f"[INFO] Discovered source tree at: {src_root}")
+
+        if "configs_v1.208.json" in files and not data_json_found:
+            data_json_found = os.path.join(root, "configs_v1.208.json")
+        if "candycrush_master_levels.sqlite" in files and not sqlite_found:
+            sqlite_found = os.path.join(root, "candycrush_master_levels.sqlite")
+
+    # Fallback to current repo root if not found in input
+    if not src_root:
+        candidate_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+        if os.path.exists(os.path.join(candidate_root, "core", "king_level_loader.py")):
+            src_root = candidate_root
+
+    # Copy files from src_root into work_dir if outside work_dir
+    if src_root and os.path.abspath(src_root) != os.path.abspath(work_dir):
+        print(f"[INFO] Copying source files from {src_root} to {work_dir}...")
+        for item in os.listdir(src_root):
+            s_item = os.path.join(src_root, item)
+            d_item = os.path.join(work_dir, item)
+            if not os.path.exists(d_item):
+                try:
+                    if os.path.isdir(s_item):
+                        shutil.copytree(s_item, d_item)
+                    else:
+                        shutil.copy2(s_item, d_item)
+                except Exception as e:
+                    print(f"[WARN] Failed copying {item}: {e}")
+
+    # Set paths in sys.path
     if work_dir not in sys.path:
         sys.path.insert(0, work_dir)
     if src_root and src_root not in sys.path:
         sys.path.insert(0, src_root)
 
-    # Determine assigned device for this worker
+    if data_json_found:
+        os.environ["KING_CONFIG_PATH"] = data_json_found
+        print(f"[INFO] Set KING_CONFIG_PATH={data_json_found}")
+    if sqlite_found:
+        os.environ["KING_SQLITE_PATH"] = sqlite_found
+        print(f"[INFO] Set KING_SQLITE_PATH={sqlite_found}")
+
+    num_gpus = torch.cuda.device_count() if torch.cuda.is_available() else 0
+    print(f"[INFO] Available GPUs: {num_gpus}")
+    for i in range(num_gpus):
+        print(f"[INFO] GPU {i}: {torch.cuda.get_device_name(i)} ({torch.cuda.get_device_properties(i).total_memory / 1e9:.2f} GB VRAM)")
+
+    return work_dir, src_root
+
+
+def init_parallel_worker(paths: tuple):
+    """
+    Initializes worker process with its dedicated GPU context, loader, and unified agent.
+    Guarantees no race conditions or CUDA initialization conflicts.
+    """
+    global _WORKER_AGENT, _WORKER_LOADER, _WORKER_DEVICE
+
+    work_dir, src_root = paths
+    for p in [src_root, work_dir]:
+        if p and p not in sys.path:
+            sys.path.insert(0, p)
+
+    if work_dir and os.path.exists(work_dir):
+        try:
+            os.chdir(work_dir)
+        except Exception:
+            pass
+
+    num_gpus = torch.cuda.device_count() if torch.cuda.is_available() else 0
     if num_gpus > 0:
-        assigned_device_idx = worker_id % num_gpus
-        device = torch.device(f"cuda:{assigned_device_idx}")
+        _WORKER_DEVICE = torch.device("cuda:0")
     else:
-        device = torch.device("cpu")
+        _WORKER_DEVICE = torch.device("cpu")
 
     try:
         from core.king_level_loader import KingLevelLoader
@@ -130,24 +154,25 @@ def init_parallel_worker(worker_id: int, total_workers: int, search_depth: int):
 
         # Check subdirectories if needed
         for prefix in [work_dir, os.path.join(work_dir, "candy_crush_pkg")]:
-            if not os.path.exists(dqn_ckpt) and os.path.exists(os.path.join(prefix, dqn_ckpt)):
-                dqn_ckpt = os.path.join(prefix, dqn_ckpt)
-            if not os.path.exists(trans_ckpt) and os.path.exists(os.path.join(prefix, trans_ckpt)):
-                trans_ckpt = os.path.join(prefix, trans_ckpt)
-            if not os.path.exists(grpo_ckpt) and os.path.exists(os.path.join(prefix, grpo_ckpt)):
-                grpo_ckpt = os.path.join(prefix, grpo_ckpt)
+            if prefix and os.path.exists(prefix):
+                if not os.path.exists(dqn_ckpt) and os.path.exists(os.path.join(prefix, dqn_ckpt)):
+                    dqn_ckpt = os.path.join(prefix, dqn_ckpt)
+                if not os.path.exists(trans_ckpt) and os.path.exists(os.path.join(prefix, trans_ckpt)):
+                    trans_ckpt = os.path.join(prefix, trans_ckpt)
+                if not os.path.exists(grpo_ckpt) and os.path.exists(os.path.join(prefix, grpo_ckpt)):
+                    grpo_ckpt = os.path.join(prefix, grpo_ckpt)
 
         _WORKER_AGENT = GrandmasterUnifiedAgent(
             dqn_checkpoint=dqn_ckpt,
             transformer_checkpoint=trans_ckpt,
             grpo_checkpoint=grpo_ckpt,
-            search_depth=search_depth,
+            search_depth=1,
             top_k_candidates=4,
-            device=device
+            device=_WORKER_DEVICE
         )
-        print(f"[Worker {worker_id}] Initialized on {device}")
+        print(f"[Worker] Initialized GrandmasterUnifiedAgent on {_WORKER_DEVICE}")
     except Exception as e:
-        print(f"[Worker {worker_id}] Initialization error: {e}. Will operate in fallback mode.")
+        print(f"[Worker] Initialization warning: {e}. Will operate in fallback mode.")
         _WORKER_AGENT = None
 
 
@@ -156,7 +181,7 @@ def solve_level_safe_task(level_arg: Any) -> Dict[str, Any]:
     Bulletproof level solving task executed by parallel workers.
     Zero-error guarantee: all unexpected conditions are trapped and recovered gracefully.
     """
-    global _WORKER_AGENT, _WORKER_LOADER, _WORKER_ID
+    global _WORKER_AGENT, _WORKER_LOADER, _WORKER_DEVICE
     if isinstance(level_arg, (tuple, list)):
         level_id = int(level_arg[0])
         max_attempts = int(level_arg[1]) if len(level_arg) > 1 else 3
@@ -203,11 +228,10 @@ def solve_level_safe_task(level_arg: Any) -> Dict[str, Any]:
                 "score": int(res.get("final_score", 0)),
                 "objectives_remaining": int(res.get("objectives_remaining", 0)),
                 "level_type": cfg.level_type.name,
-                "duration_sec": float(res.get("duration_sec", time.time() - t_start)),
-                "worker_id": _WORKER_ID
+                "duration_sec": float(res.get("duration_sec", time.time() - t_start))
             }
-        except Exception as e:
-            # Neural error fallback: fall back to SuperhumanSolver / Heuristic Ensemble
+        except Exception:
+            # Fall back to tactical heuristic solver
             pass
 
     # Step 3: Defensive Fallback Solver (Pure Tactical Ensemble)
@@ -227,7 +251,6 @@ def solve_level_safe_task(level_arg: Any) -> Dict[str, Any]:
                 legal = engine.get_legal_moves(state)
                 if not legal:
                     break
-                # Fast heuristic scoring
                 best_m = max(legal, key=lambda m: ensemble.evaluate_move(state, m[0], m[1], m[2]))
                 engine.execute_move(state, best_m[0], best_m[1], best_m[2])
                 step += 1
@@ -244,7 +267,6 @@ def solve_level_safe_task(level_arg: Any) -> Dict[str, Any]:
                 "objectives_remaining": int(state.remaining_objectives_count()),
                 "level_type": cfg.level_type.name,
                 "duration_sec": float(time.time() - t_start),
-                "worker_id": _WORKER_ID,
                 "fallback_mode": True
             }
             if won:
@@ -275,6 +297,7 @@ class Async1000BenchmarkRunner:
         end_level: int = 1000,
         workers: int = 4,
         max_attempts: int = 2,
+        paths: tuple = (),
         progress_path: str = "progress_1000.json",
         summary_path: str = "benchmark_1000_summary.json"
     ):
@@ -282,6 +305,7 @@ class Async1000BenchmarkRunner:
         self.end_level = end_level
         self.workers = workers
         self.max_attempts = max_attempts
+        self.paths = paths
         self.progress_path = progress_path
         self.summary_path = summary_path
         self.results: Dict[str, Any] = self._load_existing_progress()
@@ -306,7 +330,6 @@ class Async1000BenchmarkRunner:
 
     def run(self) -> Dict[str, Any]:
         all_levels = list(range(self.start_level, self.end_level + 1))
-        # Filter levels already won
         pending = [
             lvl for lvl in all_levels
             if str(lvl) not in self.results or not self.results[str(lvl)].get("won", False)
@@ -324,11 +347,10 @@ class Async1000BenchmarkRunner:
 
         tasks = [(lvl, self.max_attempts) for lvl in pending]
 
-        # Launch multiprocessing pool with worker initializers
         with Pool(
             processes=self.workers,
             initializer=init_parallel_worker,
-            initargs=(0, self.workers, 1)  # worker_id placeholder; imap assigns tasks
+            initargs=(self.paths,)
         ) as pool:
             for res in pool.imap_unordered(solve_level_safe_task, tasks, chunksize=1):
                 lvl_id = res["level_id"]
@@ -359,7 +381,6 @@ class Async1000BenchmarkRunner:
         self._save_progress_atomic()
         total_time = time.time() - t0
 
-        # Compile comprehensive summary metrics
         summary = self._compile_summary(total_time, total_target)
         self._write_summary_files(summary)
         return summary
@@ -377,7 +398,6 @@ class Async1000BenchmarkRunner:
         durations = [v.get("duration_sec", 0.0) for v in self.results.values()]
         avg_time = sum(durations) / max(1, len(durations))
 
-        # Mode-specific stats
         mode_stats = {}
         for v in self.results.values():
             m = v.get("level_type", "UNKNOWN")
@@ -413,11 +433,9 @@ class Async1000BenchmarkRunner:
         }
 
     def _write_summary_files(self, summary: Dict[str, Any]) -> None:
-        # 1. JSON Summary
         with open(self.summary_path, "w") as f:
             json.dump(summary, f, indent=2)
 
-        # 2. Markdown Report
         report_md = rf"""# AlphaCandy Grandmaster: 1,000 Games High-Throughput Benchmark
 
 ## 1. Executive Performance Metrics
@@ -477,10 +495,16 @@ if __name__ == "__main__":
     parser.add_argument("--attempts", type=int, default=2, help="Max retry attempts per level (default: 2)")
     args = parser.parse_args()
 
+    work_dir, src_root = setup_environment()
+    os.chdir(work_dir)
+
     runner = Async1000BenchmarkRunner(
         start_level=args.start,
         end_level=args.end,
         workers=args.workers,
-        max_attempts=args.attempts
+        max_attempts=args.attempts,
+        paths=(work_dir, src_root),
+        progress_path=os.path.join(work_dir, "progress_1000.json"),
+        summary_path=os.path.join(work_dir, "benchmark_1000_summary.json")
     )
     runner.run()
