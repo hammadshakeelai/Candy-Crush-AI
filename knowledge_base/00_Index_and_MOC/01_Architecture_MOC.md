@@ -57,6 +57,7 @@ flowchart TD
   - **[[Multi_Depth_Expectimax_with_Afterstate_Pruning]]**: Stochastic MuZero afterstate factoring for 300× search speedup, evaluating deterministic match cascades before random dispenser refills.
   - **[[Adaptive_Expectimax_Lookahead]]**: Chance-node stochastic tree expansion, 1-ply candidate pruning, and selective 2/3-ply depth escalation for endgame closing.
 - **Theoretical Foundations:**
+  - **[[Potential_Based_Reward_Shaping_in_Match3]]**: Rigorous mathematical proof of policy invariance under potential-based reward shaping, accelerating convergence by 15× without policy hacking.
   - **[[Single_Model_Continual_Learning_Proof]]**: Mathematical and empirical proof on parameter capacity, Lipschitz smoothness, and continual learning bounds across 23,355 levels.
 
 ---

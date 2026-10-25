@@ -49,10 +49,12 @@ graph LR
 - **King AI Playtesting & Supervised Learning:**
   - **[[King_2018_Human_Like_Playtesting_CNN]]**: *Human-Like Playtesting with Deep Learning* (IEEE CIG 2018). Supervised CNNs trained on telemetry data for difficulty prediction and player churn prevention.
   - **[[Fragkedaki_2026_GAT_vs_BERT_Human_Like_Playtesting]]**: *Comparative Analysis of GAT and BERT for Human-Like Playtesting* (arXiv:2607.11501). Proving Transformers & Graph Attention Networks outperform standard CNNs on non-Euclidean board layouts.
+  - **[[Volz_2020_PCGML_Local_Global_Patterns_Match3]]**: *Capturing Local and Global Patterns in Procedural Content Generation via Machine Learning* (IEEE CoG 2020). King AI & Togelius on symmetry-aware augmented Markov Random Fields for Candy Crush level generation.
 - **Deep Reinforcement Learning in Match-3:**
   - **[[Kamaldinov_2019_Deep_Reinforcement_Learning_Match3]]**: *Deep Reinforcement Learning in Match-3 Game* (IEEE CoG 2019). The foundational `gym-match3` benchmark, 144-action swap masking, and Double DQN with PER.
   - **[[Napolitano_2020_Testing_Match3_Dueling_DQN]]**: *Testing match-3 video games with Deep Reinforcement Learning* (arXiv:2007.01137). Dueling DQN architecture decoupling scalar board quality $V(s)$ from action advantage $A(s, a)$.
   - **[[Karimi_2021_CANDYRL_BaziGooshi_Hybrid_RL]]**: *CANDYRL / BaziGooshi: A Hybrid Reinforcement Learning Model for Generalization in Gameplay* (IEEE ToG 2021/2024). Intrinsic vs. extrinsic reward shaping and dynamic multi-agent ensemble mixtures.
+  - **[[Potential_Based_Reward_Shaping_in_Match3]]**: Ng et al. (1999) policy-invariant potential reward shaping applied to Match-3 blockers, jellies, and special candy formation.
 - **World Models & Modern Architectures:**
   - **[[DeepMind_Stochastic_MuZero_Afterstates_Match3]]**: *Planning in Stochastic Environments with a Learned Model* (Antonoglou et al., DeepMind 2022). Factoring deterministic afterstates $s^{\text{after}}$ from stochastic dispenser refills for match-3 tree search.
   - **[[Sanford_2023_Higher_Order_Attention_Match3_Complexity]]**: *Representational Strengths and Limitations of Transformers on Relational Tasks* (Sanford et al., 2023). Proving why standard single-layer attention fails on Match-3 triplets and why multi-stage attention is mathematically required.

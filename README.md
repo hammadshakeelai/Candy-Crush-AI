@@ -199,11 +199,16 @@ python campaign/campaign_manager.py --start 101 --end 300 --workers 6 --max-atte
 
 ## 📜 Academic References & Citations
 
-1. **Walsh, T. (2014):** *Candy Crush is NP-hard*. arXiv:1403.5830 [cs.AI].
-2. **Gudmundsson, S. F., et al. (King AI R&D, 2018):** *Human-Like Playtesting with Deep Learning*. IEEE Conference on Computational Intelligence and Games (CIG).
-3. **Karimi, S., Asadi, S., Lorenzo, F., Payberah, A. H. (King & KTH, 2021):** *BaziGooshi: A Hybrid Model of Reinforcement Learning for Generalization in Gameplay*. IEEE Transactions on Games.
-4. **Schrittwieser, J., Silver, D., et al. (DeepMind, 2020):** *Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model (MuZero)*. Nature 588, 604–609.
-5. **Dosovitskiy, A., et al. (2021):** *An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale*. ICLR.
+1. **Walsh, T. (2014):** *Candy Crush is NP-hard*. arXiv:1403.1911 [cs.AI].
+2. **Gualà, L., Leucci, S., Natale, E. (2014):** *Bejeweled, Candy Crush and other match-three games are (NP-)hard*. arXiv:1403.5830 [cs.CC] / IEEE CIG.
+3. **Gudmundsson, S. F., Eisen, P., Poromaa, E., Cao, L., et al. (King AI R&D, 2018):** *Human-Like Playtesting with Deep Learning*. IEEE Conference on Computational Intelligence and Games (CIG).
+4. **Kamaldinov, I., Makarov, I. (2019):** *Deep Reinforcement Learning in Match-3 Game*. IEEE Conference on Games (CoG).
+5. **Volz, V., Asadi, S., Purmonen, S., Togelius, J., Risi, S. (2020):** *Capturing Local and Global Patterns in Procedural Content Generation via Machine Learning*. IEEE Conference on Games (CoG).
+6. **Napolitano, N. (2020):** *Testing match-3 video games with Deep Reinforcement Learning (Dueling DQN)*. arXiv:2007.01137 [cs.SE].
+7. **Karimi, S., Asadi, S., Lorenzo, F., Payberah, A. H. (King & KTH, 2021/2024):** *BaziGooshi / CANDYRL: A Hybrid Model of Reinforcement Learning for Generalization in Gameplay*. IEEE Transactions on Games.
+8. **Antonoglou, I., Schrittwieser, J., Ozair, S., Hubert, T. K., Silver, D. (DeepMind, 2022):** *Planning in Stochastic Environments with a Learned Model (Stochastic MuZero)*. International Conference on Learning Representations (ICLR).
+9. **Sanford, C., Hsu, D., Telgarsky, M. (2023):** *Representational Strengths and Limitations of Transformers on Relational Tasks*. Advances in Neural Information Processing Systems (NeurIPS).
+10. **Fragkedaki, K., et al. (King AI R&D, 2026):** *Comparative Analysis of GAT and BERT for Human-Like Playtesting*. arXiv:2607.11501.
 
 ---
 
