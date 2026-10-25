@@ -70,7 +70,9 @@ Candy-Crush-AI/
 │   ├── campaign_manager.py       # Multi-process campaign execution engine
 │   └── progress.json             # Persistent campaign progress (Levels 1–300: 82.33%)
 ├── checkpoints/                  # Pre-trained deep reinforcement learning checkpoints
-│   ├── alphacandy_spatial_transformer_local.pt   # Continuous local GRPO transformer
+│   ├── alphacandy_large_net_master.pt            # Master AlphaCandy Large ~14.4M checkpoint (Kaggle GPU)
+│   ├── alphacandy_large_net.pt                   # AlphaCandy Large Dual-Head Spatial Attention (27.5 MB)
+│   ├── alphacandy_spatial_transformer_local.pt   # Continuous local GRPO transformer (Round 105+)
 │   ├── alphacandy_spatial_transformer.pt         # Kaggle GPU trained transformer
 │   ├── candy_crush_dueling_dqn.pt                # Double Dueling DQN checkpoint (8.1 MB)
 │   └── candy_crush_grandmaster_superhuman.pt     # GRPO Policy-Value Net checkpoint (3.3 MB)
@@ -182,6 +184,26 @@ python kaggle_deploy/async_1000_kernel/run_async_1000_games.py --start 1 --end 1
 ```bash
 # Multi-core adaptive solving across campaign batch
 python campaign/campaign_manager.py --start 101 --end 300 --workers 6 --max-attempts 3
+```
+
+### 5. Run Async 2,500-Level Grandmaster Large GPU Benchmark
+```bash
+# Multi-worker async execution across 2,500 consecutive King levels
+python kaggle_deploy/async_large_kernel/run_async_large_gpu.py --start 1 --end 2500 --workers 4 --attempts 2
+```
+
+### 6. Solve with Pure AlphaCandy Large Neural Agent (No Search)
+```python
+from core.king_level_loader import KingLevelLoader
+from models.alphacandy_large_agent import AlphaCandyLargeAgent
+
+loader = KingLevelLoader()
+config = loader.load_level(25)
+
+# Pure 14.4M-parameter Spatial Transformer policy (< 2 ms latency)
+agent = AlphaCandyLargeAgent(model_path="checkpoints/alphacandy_large_net_master.pt", device="cpu")
+result = agent.solve_level(config)
+print(f"Level 25: Won={result['won']} in {result['moves_used']} moves (Score: {result['final_score']:,})")
 ```
 
 ---

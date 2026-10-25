@@ -32,8 +32,9 @@ xychart-beta
     - **Batch 1 (Levels 1–100): 100/100 WON (100.0% Win Rate)**. Complete mastery of opening 100 levels via seed rotation and engine enhancements.
     - **Batch 2 (Levels 101–300): 147/200 WON (73.5% initial pass)**, cumulative 247/300 (82.33%) across levels 1–300.
 - **Kaggle GPU Benchmarking & Learning Fleet:**
-  - **[[Multi_Model_Kaggle_GPU_Learning_Fleet]]**: Active dual GPU fleet training Double Dueling DQN and AlphaCandy Spatial Transformer across King levels.
-  - **[[Async_1000_Games_Kaggle_Benchmark]]**: High-throughput benchmark targeting 1,000 games in ~10 minutes on Kaggle Dual Tesla T4 GPUs.
+  - **[[Kaggle_2500_Level_Benchmark_Report]]**: Massive 2,500-level cloud benchmark on Dual Tesla T4 GPUs (**1,399/2,500 Solved, 85.7% Ingredients win rate, 1.91s/level throughput**).
+  - **[[Multi_Model_Kaggle_GPU_Learning_Fleet]]**: Active dual GPU fleet training Double Dueling DQN and AlphaCandy Large (~14.4M) across King levels.
+  - **[[Async_1000_Games_Kaggle_Benchmark]]**: High-throughput benchmark evaluating 1,000 games in ~10 minutes on Kaggle Dual Tesla T4 GPUs.
   - **[[Async_GPU_Parallelism_Architecture]]**: Multiprocessing actor-learner architecture with centralized GPU batch inference.
   - **[[Zero_Error_Fault_Tolerance_Guards]]**: Defensive fault-tolerant architecture preventing crashes and timeouts during long-running cloud runs.
 
