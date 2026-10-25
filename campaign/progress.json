@@ -2999,11 +2999,7011 @@
       "score": 312051,
       "level_type": "JELLY",
       "time_sec": 31.118921041488647
+    },
+    "301": {
+      "level_id": 301,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 25172,
+      "level_type": "JELLY",
+      "time_sec": 0.495
+    },
+    "303": {
+      "level_id": 303,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 35,
+      "score": 214553,
+      "level_type": "JELLY",
+      "time_sec": 2.077
+    },
+    "302": {
+      "level_id": 302,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 14,
+      "moves_limit": 30,
+      "score": 107440,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.704
+    },
+    "305": {
+      "level_id": 305,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 29,
+      "score": 406966,
+      "level_type": "JELLY",
+      "time_sec": 1.486
+    },
+    "304": {
+      "level_id": 304,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 43942,
+      "level_type": "JELLY",
+      "time_sec": 5.942
+    },
+    "306": {
+      "level_id": 306,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 35,
+      "score": 12044,
+      "level_type": "JELLY",
+      "time_sec": 0.152
+    },
+    "307": {
+      "level_id": 307,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 35,
+      "score": 448248,
+      "level_type": "JELLY",
+      "time_sec": 0.472
+    },
+    "309": {
+      "level_id": 309,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 17,
+      "moves_limit": 28,
+      "score": 262131,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.718
+    },
+    "313": {
+      "level_id": 313,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "score": 17103,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.386
+    },
+    "311": {
+      "level_id": 311,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 22,
+      "score": 391153,
+      "level_type": "JELLY",
+      "time_sec": 2.662
+    },
+    "312": {
+      "level_id": 312,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 26,
+      "score": 40416,
+      "level_type": "JELLY",
+      "time_sec": 2.566
+    },
+    "315": {
+      "level_id": 315,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "score": 38788,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.615
+    },
+    "316": {
+      "level_id": 316,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 86372,
+      "level_type": "JELLY",
+      "time_sec": 0.488
+    },
+    "317": {
+      "level_id": 317,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "score": 18071,
+      "level_type": "JELLY",
+      "time_sec": 0.171
+    },
+    "319": {
+      "level_id": 319,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 10264,
+      "level_type": "JELLY",
+      "time_sec": 0.336
+    },
+    "318": {
+      "level_id": 318,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 28,
+      "score": 190378,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.373
+    },
+    "321": {
+      "level_id": 321,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 25,
+      "score": 12560,
+      "level_type": "JELLY",
+      "time_sec": 0.433
+    },
+    "314": {
+      "level_id": 314,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 23,
+      "moves_limit": 35,
+      "score": 447273,
+      "level_type": "JELLY",
+      "time_sec": 4.373
+    },
+    "308": {
+      "level_id": 308,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 23,
+      "moves_limit": 23,
+      "score": 209126,
+      "level_type": "JELLY",
+      "time_sec": 3.384
+    },
+    "323": {
+      "level_id": 323,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 22,
+      "score": 88996,
+      "level_type": "JELLY",
+      "time_sec": 0.505
+    },
+    "324": {
+      "level_id": 324,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "score": 11111,
+      "level_type": "JELLY",
+      "time_sec": 0.305
+    },
+    "325": {
+      "level_id": 325,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 55528,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.702
+    },
+    "328": {
+      "level_id": 328,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 35,
+      "score": 7056,
+      "level_type": "JELLY",
+      "time_sec": 0.342
+    },
+    "310": {
+      "level_id": 310,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 118693,
+      "level_type": "JELLY",
+      "time_sec": 12.164
+    },
+    "330": {
+      "level_id": 330,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 35,
+      "score": 10451,
+      "level_type": "JELLY",
+      "time_sec": 0.263
+    },
+    "326": {
+      "level_id": 326,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 25,
+      "score": 406717,
+      "level_type": "JELLY",
+      "time_sec": 5.774
+    },
+    "332": {
+      "level_id": 332,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 21,
+      "score": 23876,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.178
+    },
+    "333": {
+      "level_id": 333,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 24,
+      "score": 31859,
+      "level_type": "JELLY",
+      "time_sec": 0.281
+    },
+    "331": {
+      "level_id": 331,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 30,
+      "score": 125365,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.511
+    },
+    "335": {
+      "level_id": 335,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 31,
+      "score": 12799,
+      "level_type": "JELLY",
+      "time_sec": 0.347
+    },
+    "320": {
+      "level_id": 320,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 339657,
+      "level_type": "JELLY",
+      "time_sec": 6.799
+    },
+    "337": {
+      "level_id": 337,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 21,
+      "score": 71591,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.092
+    },
+    "334": {
+      "level_id": 334,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 303825,
+      "level_type": "JELLY",
+      "time_sec": 4.872
+    },
+    "322": {
+      "level_id": 322,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 420038,
+      "level_type": "JELLY",
+      "time_sec": 7.643
+    },
+    "327": {
+      "level_id": 327,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 443286,
+      "level_type": "JELLY",
+      "time_sec": 16.201
+    },
+    "341": {
+      "level_id": 341,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 12230,
+      "level_type": "JELLY",
+      "time_sec": 0.416
+    },
+    "338": {
+      "level_id": 338,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 29,
+      "score": 418420,
+      "level_type": "JELLY",
+      "time_sec": 6.86
+    },
+    "329": {
+      "level_id": 329,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 329912,
+      "level_type": "JELLY",
+      "time_sec": 13.712
+    },
+    "339": {
+      "level_id": 339,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 36,
+      "score": 25020,
+      "level_type": "JELLY",
+      "time_sec": 5.229
+    },
+    "344": {
+      "level_id": 344,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 35,
+      "score": 115724,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.551
+    },
+    "345": {
+      "level_id": 345,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 35,
+      "score": 41478,
+      "level_type": "JELLY",
+      "time_sec": 0.761
+    },
+    "347": {
+      "level_id": 347,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 35,
+      "score": 10318,
+      "level_type": "JELLY",
+      "time_sec": 0.218
+    },
+    "348": {
+      "level_id": 348,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 30,
+      "score": 64718,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.398
+    },
+    "336": {
+      "level_id": 336,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 345404,
+      "level_type": "JELLY",
+      "time_sec": 7.762
+    },
+    "350": {
+      "level_id": 350,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 88056,
+      "level_type": "JELLY",
+      "time_sec": 0.764
+    },
+    "351": {
+      "level_id": 351,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 35,
+      "score": 297809,
+      "level_type": "JELLY",
+      "time_sec": 2.59
+    },
+    "340": {
+      "level_id": 340,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 273870,
+      "level_type": "JELLY",
+      "time_sec": 12.291
+    },
+    "352": {
+      "level_id": 352,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 33,
+      "score": 129896,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.631
+    },
+    "354": {
+      "level_id": 354,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 33,
+      "score": 30898,
+      "level_type": "JELLY",
+      "time_sec": 0.695
+    },
+    "343": {
+      "level_id": 343,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 370473,
+      "level_type": "JELLY",
+      "time_sec": 8.114
+    },
+    "355": {
+      "level_id": 355,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 28,
+      "score": 318939,
+      "level_type": "JELLY",
+      "time_sec": 3.577
+    },
+    "349": {
+      "level_id": 349,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 35,
+      "score": 288635,
+      "level_type": "JELLY",
+      "time_sec": 10.4
+    },
+    "342": {
+      "level_id": 342,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 411723,
+      "level_type": "JELLY",
+      "time_sec": 7.953
+    },
+    "357": {
+      "level_id": 357,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 24,
+      "score": 61610,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.033
+    },
+    "356": {
+      "level_id": 356,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 28,
+      "score": 31103,
+      "level_type": "JELLY",
+      "time_sec": 1.302
+    },
+    "360": {
+      "level_id": 360,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 32,
+      "score": 15256,
+      "level_type": "JELLY",
+      "time_sec": 0.247
+    },
+    "359": {
+      "level_id": 359,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 35,
+      "score": 619979,
+      "level_type": "JELLY",
+      "time_sec": 0.62
+    },
+    "362": {
+      "level_id": 362,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 25,
+      "score": 30072,
+      "level_type": "JELLY",
+      "time_sec": 1.437
+    },
+    "364": {
+      "level_id": 364,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "score": 23287,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.267
+    },
+    "361": {
+      "level_id": 361,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 27,
+      "score": 224079,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.106
+    },
+    "365": {
+      "level_id": 365,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "score": 20897,
+      "level_type": "JELLY",
+      "time_sec": 0.356
+    },
+    "346": {
+      "level_id": 346,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 31,
+      "moves_limit": 31,
+      "score": 391849,
+      "level_type": "JELLY",
+      "time_sec": 8.021
+    },
+    "367": {
+      "level_id": 367,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 29,
+      "score": 93170,
+      "level_type": "JELLY",
+      "time_sec": 2.327
+    },
+    "368": {
+      "level_id": 368,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 31,
+      "score": 56449,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.08
+    },
+    "370": {
+      "level_id": 370,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "score": 450491,
+      "level_type": "JELLY",
+      "time_sec": 0.566
+    },
+    "371": {
+      "level_id": 371,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "score": 14051,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.239
+    },
+    "358": {
+      "level_id": 358,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 16,
+      "moves_limit": 25,
+      "score": 90440,
+      "level_type": "INGREDIENTS",
+      "time_sec": 6.586
+    },
+    "372": {
+      "level_id": 372,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 23,
+      "score": 97893,
+      "level_type": "JELLY",
+      "time_sec": 0.678
+    },
+    "369": {
+      "level_id": 369,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 32,
+      "score": 128318,
+      "level_type": "JELLY",
+      "time_sec": 3.279
+    },
+    "353": {
+      "level_id": 353,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 357925,
+      "level_type": "JELLY",
+      "time_sec": 7.67
+    },
+    "374": {
+      "level_id": 374,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 25,
+      "score": 16641,
+      "level_type": "JELLY",
+      "time_sec": 1.768
+    },
+    "373": {
+      "level_id": 373,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 34,
+      "score": 48036,
+      "level_type": "JELLY",
+      "time_sec": 3.747
+    },
+    "377": {
+      "level_id": 377,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 34,
+      "score": 32472,
+      "level_type": "JELLY",
+      "time_sec": 2.001
+    },
+    "379": {
+      "level_id": 379,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 24,
+      "score": 30238,
+      "level_type": "JELLY",
+      "time_sec": 0.711
+    },
+    "363": {
+      "level_id": 363,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 266503,
+      "level_type": "JELLY",
+      "time_sec": 11.19
+    },
+    "366": {
+      "level_id": 366,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 45044,
+      "level_type": "JELLY",
+      "time_sec": 9.667
+    },
+    "376": {
+      "level_id": 376,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 66772,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.13
+    },
+    "383": {
+      "level_id": 383,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 34,
+      "score": 38863,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.083
+    },
+    "378": {
+      "level_id": 378,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 26,
+      "score": 125261,
+      "level_type": "INGREDIENTS",
+      "time_sec": 7.093
+    },
+    "385": {
+      "level_id": 385,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 29,
+      "score": 237090,
+      "level_type": "JELLY",
+      "time_sec": 1.747
+    },
+    "386": {
+      "level_id": 386,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 24,
+      "score": 438040,
+      "level_type": "JELLY",
+      "time_sec": 1.135
+    },
+    "380": {
+      "level_id": 380,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 134097,
+      "level_type": "JELLY",
+      "time_sec": 5.105
+    },
+    "375": {
+      "level_id": 375,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 363149,
+      "level_type": "JELLY",
+      "time_sec": 13.786
+    },
+    "388": {
+      "level_id": 388,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 31,
+      "score": 308959,
+      "level_type": "JELLY",
+      "time_sec": 1.732
+    },
+    "389": {
+      "level_id": 389,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 26,
+      "score": 393187,
+      "level_type": "JELLY",
+      "time_sec": 3.758
+    },
+    "391": {
+      "level_id": 391,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 34,
+      "score": 143214,
+      "level_type": "JELLY",
+      "time_sec": 0.282
+    },
+    "381": {
+      "level_id": 381,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 241270,
+      "level_type": "JELLY",
+      "time_sec": 7.195
+    },
+    "392": {
+      "level_id": 392,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "score": 27523,
+      "level_type": "JELLY",
+      "time_sec": 0.938
+    },
+    "390": {
+      "level_id": 390,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 26,
+      "score": 299518,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.43
+    },
+    "393": {
+      "level_id": 393,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 26,
+      "score": 87460,
+      "level_type": "JELLY",
+      "time_sec": 0.559
+    },
+    "394": {
+      "level_id": 394,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 30,
+      "score": 105716,
+      "level_type": "JELLY",
+      "time_sec": 1.952
+    },
+    "387": {
+      "level_id": 387,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 13,
+      "moves_limit": 23,
+      "score": 46369,
+      "level_type": "INGREDIENTS",
+      "time_sec": 8.811
+    },
+    "397": {
+      "level_id": 397,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 30,
+      "score": 15056,
+      "level_type": "JELLY",
+      "time_sec": 0.434
+    },
+    "382": {
+      "level_id": 382,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 175177,
+      "level_type": "JELLY",
+      "time_sec": 9.625
+    },
+    "399": {
+      "level_id": 399,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 23,
+      "score": 250744,
+      "level_type": "JELLY",
+      "time_sec": 1.703
+    },
+    "396": {
+      "level_id": 396,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 17,
+      "moves_limit": 35,
+      "score": 185759,
+      "level_type": "JELLY",
+      "time_sec": 3.991
+    },
+    "402": {
+      "level_id": 402,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 11194,
+      "level_type": "JELLY",
+      "time_sec": 0.559
+    },
+    "384": {
+      "level_id": 384,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 44177,
+      "level_type": "JELLY",
+      "time_sec": 18.372
+    },
+    "404": {
+      "level_id": 404,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 30,
+      "score": 124305,
+      "level_type": "JELLY",
+      "time_sec": 1.693
+    },
+    "405": {
+      "level_id": 405,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 35,
+      "score": 20123,
+      "level_type": "JELLY",
+      "time_sec": 1.011
+    },
+    "395": {
+      "level_id": 395,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 52345,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.993
+    },
+    "403": {
+      "level_id": 403,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 30,
+      "score": 338556,
+      "level_type": "JELLY",
+      "time_sec": 5.745
+    },
+    "407": {
+      "level_id": 407,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 23,
+      "score": 93092,
+      "level_type": "JELLY",
+      "time_sec": 0.166
+    },
+    "408": {
+      "level_id": 408,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "score": 13344,
+      "level_type": "JELLY",
+      "time_sec": 0.487
+    },
+    "398": {
+      "level_id": 398,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 135649,
+      "level_type": "JELLY",
+      "time_sec": 10.089
+    },
+    "409": {
+      "level_id": 409,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 30,
+      "score": 19219,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.639
+    },
+    "412": {
+      "level_id": 412,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 21,
+      "score": 6165,
+      "level_type": "JELLY",
+      "time_sec": 0.802
+    },
+    "400": {
+      "level_id": 400,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 8,
+      "moves_limit": 31,
+      "score": 21072,
+      "level_type": "JELLY",
+      "time_sec": 10.708
+    },
+    "406": {
+      "level_id": 406,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 20973,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.189
+    },
+    "415": {
+      "level_id": 415,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 35,
+      "score": 10534,
+      "level_type": "JELLY",
+      "time_sec": 0.628
+    },
+    "411": {
+      "level_id": 411,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 110409,
+      "level_type": "JELLY",
+      "time_sec": 4.853
+    },
+    "410": {
+      "level_id": 410,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 229908,
+      "level_type": "JELLY",
+      "time_sec": 5.528
+    },
+    "413": {
+      "level_id": 413,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 7,
+      "moves_limit": 29,
+      "score": 75956,
+      "level_type": "INGREDIENTS",
+      "time_sec": 8.653
+    },
+    "416": {
+      "level_id": 416,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 35,
+      "score": 467941,
+      "level_type": "JELLY",
+      "time_sec": 6.418
+    },
+    "414": {
+      "level_id": 414,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 95816,
+      "level_type": "JELLY",
+      "time_sec": 4.653
+    },
+    "421": {
+      "level_id": 421,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "score": 7992,
+      "level_type": "JELLY",
+      "time_sec": 0.238
+    },
+    "418": {
+      "level_id": 418,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 26,
+      "score": 185599,
+      "level_type": "JELLY",
+      "time_sec": 1.946
+    },
+    "422": {
+      "level_id": 422,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 27,
+      "score": 36810,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.364
+    },
+    "419": {
+      "level_id": 419,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 24,
+      "score": 18206,
+      "level_type": "JELLY",
+      "time_sec": 2.788
+    },
+    "423": {
+      "level_id": 423,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 21,
+      "score": 27829,
+      "level_type": "JELLY",
+      "time_sec": 1.999
+    },
+    "401": {
+      "level_id": 401,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 458203,
+      "level_type": "JELLY",
+      "time_sec": 22.02
+    },
+    "417": {
+      "level_id": 417,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 20079,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.999
+    },
+    "427": {
+      "level_id": 427,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 23,
+      "moves_limit": 35,
+      "score": 28339,
+      "level_type": "JELLY",
+      "time_sec": 1.577
+    },
+    "425": {
+      "level_id": 425,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 32,
+      "score": 45591,
+      "level_type": "JELLY",
+      "time_sec": 4.763
+    },
+    "430": {
+      "level_id": 430,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "score": 10329,
+      "level_type": "JELLY",
+      "time_sec": 0.95
+    },
+    "426": {
+      "level_id": 426,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 31,
+      "score": 113888,
+      "level_type": "JELLY",
+      "time_sec": 5.22
+    },
+    "428": {
+      "level_id": 428,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 11,
+      "moves_limit": 27,
+      "score": 24162,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.262
+    },
+    "432": {
+      "level_id": 432,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 25,
+      "score": 352927,
+      "level_type": "JELLY",
+      "time_sec": 1.796
+    },
+    "431": {
+      "level_id": 431,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 30,
+      "score": 52926,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.469
+    },
+    "434": {
+      "level_id": 434,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 27,
+      "score": 187979,
+      "level_type": "JELLY",
+      "time_sec": 0.632
+    },
+    "420": {
+      "level_id": 420,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 212562,
+      "level_type": "JELLY",
+      "time_sec": 6.755
+    },
+    "436": {
+      "level_id": 436,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 22,
+      "score": 42985,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.145
+    },
+    "438": {
+      "level_id": 438,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 26,
+      "score": 47577,
+      "level_type": "JELLY",
+      "time_sec": 1.975
+    },
+    "424": {
+      "level_id": 424,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 300307,
+      "level_type": "JELLY",
+      "time_sec": 6.897
+    },
+    "439": {
+      "level_id": 439,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 28,
+      "score": 43953,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.488
+    },
+    "440": {
+      "level_id": 440,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 28,
+      "score": 491158,
+      "level_type": "JELLY",
+      "time_sec": 1.408
+    },
+    "441": {
+      "level_id": 441,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 21,
+      "score": 17387,
+      "level_type": "JELLY",
+      "time_sec": 0.516
+    },
+    "435": {
+      "level_id": 435,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 18,
+      "score": 100689,
+      "level_type": "JELLY",
+      "time_sec": 7.113
+    },
+    "437": {
+      "level_id": 437,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 24,
+      "score": 370449,
+      "level_type": "JELLY",
+      "time_sec": 6.746
+    },
+    "444": {
+      "level_id": 444,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 22,
+      "score": 53849,
+      "level_type": "JELLY",
+      "time_sec": 0.524
+    },
+    "442": {
+      "level_id": 442,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 30,
+      "score": 30909,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.481
+    },
+    "447": {
+      "level_id": 447,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 26,
+      "score": 347463,
+      "level_type": "JELLY",
+      "time_sec": 1.136
+    },
+    "448": {
+      "level_id": 448,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 10086,
+      "level_type": "JELLY",
+      "time_sec": 0.646
+    },
+    "429": {
+      "level_id": 429,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 342554,
+      "level_type": "JELLY",
+      "time_sec": 17.038
+    },
+    "449": {
+      "level_id": 449,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 26,
+      "score": 228597,
+      "level_type": "JELLY",
+      "time_sec": 2.316
+    },
+    "446": {
+      "level_id": 446,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 29,
+      "score": 242773,
+      "level_type": "JELLY",
+      "time_sec": 5.388
+    },
+    "452": {
+      "level_id": 452,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "score": 20412,
+      "level_type": "JELLY",
+      "time_sec": 0.203
+    },
+    "451": {
+      "level_id": 451,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 25,
+      "score": 313408,
+      "level_type": "JELLY",
+      "time_sec": 1.763
+    },
+    "453": {
+      "level_id": 453,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 21,
+      "score": 35969,
+      "level_type": "JELLY",
+      "time_sec": 1.803
+    },
+    "433": {
+      "level_id": 433,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 287886,
+      "level_type": "JELLY",
+      "time_sec": 8.202
+    },
+    "456": {
+      "level_id": 456,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 10111,
+      "level_type": "JELLY",
+      "time_sec": 0.233
+    },
+    "445": {
+      "level_id": 445,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 30,
+      "score": 441691,
+      "level_type": "INGREDIENTS",
+      "time_sec": 8.218
+    },
+    "457": {
+      "level_id": 457,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "score": 21543,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.48
+    },
+    "455": {
+      "level_id": 455,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 24,
+      "score": 58634,
+      "level_type": "JELLY",
+      "time_sec": 1.126
+    },
+    "458": {
+      "level_id": 458,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 25,
+      "score": 265252,
+      "level_type": "JELLY",
+      "time_sec": 0.965
+    },
+    "460": {
+      "level_id": 460,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 27,
+      "score": 81071,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.09
+    },
+    "459": {
+      "level_id": 459,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 30,
+      "score": 51320,
+      "level_type": "JELLY",
+      "time_sec": 3.006
+    },
+    "443": {
+      "level_id": 443,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 244040,
+      "level_type": "JELLY",
+      "time_sec": 7.124
+    },
+    "464": {
+      "level_id": 464,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "score": 15681,
+      "level_type": "JELLY",
+      "time_sec": 0.933
+    },
+    "462": {
+      "level_id": 462,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 34932,
+      "level_type": "JELLY",
+      "time_sec": 2.908
+    },
+    "454": {
+      "level_id": 454,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 158749,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.111
+    },
+    "450": {
+      "level_id": 450,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 23,
+      "moves_limit": 23,
+      "score": 325098,
+      "level_type": "JELLY",
+      "time_sec": 12.66
+    },
+    "467": {
+      "level_id": 467,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 20,
+      "score": 170310,
+      "level_type": "JELLY",
+      "time_sec": 1.4
+    },
+    "469": {
+      "level_id": 469,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 30,
+      "score": 227892,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.525
+    },
+    "466": {
+      "level_id": 466,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 33,
+      "score": 163146,
+      "level_type": "JELLY",
+      "time_sec": 4.763
+    },
+    "470": {
+      "level_id": 470,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 26,
+      "score": 360703,
+      "level_type": "JELLY",
+      "time_sec": 2.147
+    },
+    "461": {
+      "level_id": 461,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 287843,
+      "level_type": "JELLY",
+      "time_sec": 6.826
+    },
+    "471": {
+      "level_id": 471,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 25,
+      "score": 235068,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.842
+    },
+    "473": {
+      "level_id": 473,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 26044,
+      "level_type": "JELLY",
+      "time_sec": 3.375
+    },
+    "468": {
+      "level_id": 468,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 467348,
+      "level_type": "JELLY",
+      "time_sec": 8.719
+    },
+    "465": {
+      "level_id": 465,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 197859,
+      "level_type": "INGREDIENTS",
+      "time_sec": 10.968
+    },
+    "476": {
+      "level_id": 476,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 21,
+      "score": 26883,
+      "level_type": "JELLY",
+      "time_sec": 1.068
+    },
+    "474": {
+      "level_id": 474,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 38082,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.077
+    },
+    "463": {
+      "level_id": 463,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 364381,
+      "level_type": "JELLY",
+      "time_sec": 18.274
+    },
+    "479": {
+      "level_id": 479,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 25,
+      "score": 10272,
+      "level_type": "JELLY",
+      "time_sec": 0.498
+    },
+    "481": {
+      "level_id": 481,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 17,
+      "moves_limit": 25,
+      "score": 44956,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.477
+    },
+    "482": {
+      "level_id": 482,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 30,
+      "score": 15115,
+      "level_type": "JELLY",
+      "time_sec": 1.248
+    },
+    "483": {
+      "level_id": 483,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 25,
+      "score": 72096,
+      "level_type": "JELLY",
+      "time_sec": 0.801
+    },
+    "475": {
+      "level_id": 475,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 45,
+      "moves_limit": 45,
+      "score": 253896,
+      "level_type": "JELLY",
+      "time_sec": 5.914
+    },
+    "478": {
+      "level_id": 478,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 194888,
+      "level_type": "JELLY",
+      "time_sec": 4.969
+    },
+    "472": {
+      "level_id": 472,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 381172,
+      "level_type": "JELLY",
+      "time_sec": 8.258
+    },
+    "484": {
+      "level_id": 484,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 24,
+      "score": 352651,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.432
+    },
+    "477": {
+      "level_id": 477,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 104460,
+      "level_type": "JELLY",
+      "time_sec": 13.856
+    },
+    "486": {
+      "level_id": 486,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 28,
+      "score": 282530,
+      "level_type": "JELLY",
+      "time_sec": 3.762
+    },
+    "487": {
+      "level_id": 487,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 24846,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.07
+    },
+    "489": {
+      "level_id": 489,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 20,
+      "score": 31503,
+      "level_type": "JELLY",
+      "time_sec": 3.716
+    },
+    "480": {
+      "level_id": 480,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 78996,
+      "level_type": "JELLY",
+      "time_sec": 14.066
+    },
+    "491": {
+      "level_id": 491,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 23,
+      "score": 128393,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.567
+    },
+    "493": {
+      "level_id": 493,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 27,
+      "score": 25204,
+      "level_type": "JELLY",
+      "time_sec": 2.196
+    },
+    "488": {
+      "level_id": 488,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 294473,
+      "level_type": "JELLY",
+      "time_sec": 7.438
+    },
+    "485": {
+      "level_id": 485,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 305759,
+      "level_type": "JELLY",
+      "time_sec": 14.744
+    },
+    "497": {
+      "level_id": 497,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 26,
+      "score": 10474,
+      "level_type": "JELLY",
+      "time_sec": 0.594
+    },
+    "498": {
+      "level_id": 498,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 34,
+      "score": 47114,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.384
+    },
+    "490": {
+      "level_id": 490,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 226927,
+      "level_type": "JELLY",
+      "time_sec": 15.417
+    },
+    "496": {
+      "level_id": 496,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 25,
+      "score": 230732,
+      "level_type": "JELLY",
+      "time_sec": 5.247
+    },
+    "495": {
+      "level_id": 495,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 222667,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.545
+    },
+    "494": {
+      "level_id": 494,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 211069,
+      "level_type": "JELLY",
+      "time_sec": 13.298
+    },
+    "502": {
+      "level_id": 502,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 20,
+      "score": 443666,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.121
+    },
+    "499": {
+      "level_id": 499,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 20,
+      "score": 285589,
+      "level_type": "JELLY",
+      "time_sec": 5.173
+    },
+    "500": {
+      "level_id": 500,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 31,
+      "score": 424460,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.388
+    },
+    "506": {
+      "level_id": 506,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 34,
+      "score": 27815,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.495
+    },
+    "501": {
+      "level_id": 501,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 26,
+      "score": 262488,
+      "level_type": "JELLY",
+      "time_sec": 4.7
+    },
+    "492": {
+      "level_id": 492,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 373786,
+      "level_type": "JELLY",
+      "time_sec": 11.017
+    },
+    "503": {
+      "level_id": 503,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 30,
+      "score": 58229,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.398
+    },
+    "510": {
+      "level_id": 510,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 24254,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.398
+    },
+    "508": {
+      "level_id": 508,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 27,
+      "score": 188279,
+      "level_type": "JELLY",
+      "time_sec": 5.095
+    },
+    "504": {
+      "level_id": 504,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 16,
+      "moves_limit": 30,
+      "score": 63438,
+      "level_type": "JELLY",
+      "time_sec": 7.937
+    },
+    "505": {
+      "level_id": 505,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 33,
+      "moves_limit": 38,
+      "score": 165142,
+      "level_type": "JELLY",
+      "time_sec": 7.37
+    },
+    "507": {
+      "level_id": 507,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 185313,
+      "level_type": "JELLY",
+      "time_sec": 4.96
+    },
+    "514": {
+      "level_id": 514,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 24,
+      "score": 243166,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.532
+    },
+    "515": {
+      "level_id": 515,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 24,
+      "score": 180614,
+      "level_type": "JELLY",
+      "time_sec": 1.343
+    },
+    "516": {
+      "level_id": 516,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 37,
+      "score": 291296,
+      "level_type": "JELLY",
+      "time_sec": 1.357
+    },
+    "518": {
+      "level_id": 518,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 20,
+      "score": 101656,
+      "level_type": "JELLY",
+      "time_sec": 0.559
+    },
+    "517": {
+      "level_id": 517,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "score": 70930,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.463
+    },
+    "509": {
+      "level_id": 509,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 15599,
+      "level_type": "INGREDIENTS",
+      "time_sec": 12.058
+    },
+    "521": {
+      "level_id": 521,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "score": 27090,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.198
+    },
+    "512": {
+      "level_id": 512,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 27635,
+      "level_type": "JELLY",
+      "time_sec": 11.183
+    },
+    "523": {
+      "level_id": 523,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 30,
+      "score": 31308,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.352
+    },
+    "513": {
+      "level_id": 513,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 238267,
+      "level_type": "JELLY",
+      "time_sec": 12.854
+    },
+    "519": {
+      "level_id": 519,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 27,
+      "score": 120337,
+      "level_type": "JELLY",
+      "time_sec": 8.958
+    },
+    "525": {
+      "level_id": 525,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 30,
+      "score": 75104,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.349
+    },
+    "511": {
+      "level_id": 511,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 42256,
+      "level_type": "JELLY",
+      "time_sec": 18.379
+    },
+    "527": {
+      "level_id": 527,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 15,
+      "score": 113378,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.913
+    },
+    "528": {
+      "level_id": 528,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 31,
+      "score": 27846,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.482
+    },
+    "520": {
+      "level_id": 520,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 189665,
+      "level_type": "JELLY",
+      "time_sec": 14.011
+    },
+    "526": {
+      "level_id": 526,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 35,
+      "score": 178631,
+      "level_type": "JELLY",
+      "time_sec": 6.744
+    },
+    "532": {
+      "level_id": 532,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 29,
+      "score": 207091,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.953
+    },
+    "524": {
+      "level_id": 524,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 37,
+      "moves_limit": 37,
+      "score": 93488,
+      "level_type": "JELLY",
+      "time_sec": 10.934
+    },
+    "531": {
+      "level_id": 531,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 153956,
+      "level_type": "JELLY",
+      "time_sec": 9.112
+    },
+    "533": {
+      "level_id": 533,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 9,
+      "moves_limit": 25,
+      "score": 100840,
+      "level_type": "JELLY",
+      "time_sec": 7.395
+    },
+    "529": {
+      "level_id": 529,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 35,
+      "score": 50667,
+      "level_type": "JELLY",
+      "time_sec": 13.61
+    },
+    "537": {
+      "level_id": 537,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "score": 19866,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.235
+    },
+    "522": {
+      "level_id": 522,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 90800,
+      "level_type": "JELLY",
+      "time_sec": 9.985
+    },
+    "530": {
+      "level_id": 530,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 21,
+      "score": 335388,
+      "level_type": "JELLY",
+      "time_sec": 6.769
+    },
+    "536": {
+      "level_id": 536,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 26,
+      "score": 105463,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.757
+    },
+    "534": {
+      "level_id": 534,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 21,
+      "score": 238016,
+      "level_type": "JELLY",
+      "time_sec": 5.752
+    },
+    "540": {
+      "level_id": 540,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 27,
+      "score": 442676,
+      "level_type": "JELLY",
+      "time_sec": 0.833
+    },
+    "542": {
+      "level_id": 542,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 22,
+      "score": 20446,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.522
+    },
+    "543": {
+      "level_id": 543,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 20,
+      "score": 11781,
+      "level_type": "JELLY",
+      "time_sec": 0.422
+    },
+    "544": {
+      "level_id": 544,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 35,
+      "score": 100386,
+      "level_type": "JELLY",
+      "time_sec": 0.804
+    },
+    "535": {
+      "level_id": 535,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 60253,
+      "level_type": "JELLY",
+      "time_sec": 3.736
+    },
+    "539": {
+      "level_id": 539,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 192131,
+      "level_type": "JELLY",
+      "time_sec": 4.037
+    },
+    "548": {
+      "level_id": 548,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "score": 17141,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.602
+    },
+    "538": {
+      "level_id": 538,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 33,
+      "moves_limit": 33,
+      "score": 238106,
+      "level_type": "JELLY",
+      "time_sec": 9.656
+    },
+    "549": {
+      "level_id": 549,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 33,
+      "score": 194436,
+      "level_type": "JELLY",
+      "time_sec": 0.929
+    },
+    "551": {
+      "level_id": 551,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 20,
+      "score": 31347,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.299
+    },
+    "552": {
+      "level_id": 552,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 34,
+      "score": 89268,
+      "level_type": "JELLY",
+      "time_sec": 0.426
+    },
+    "541": {
+      "level_id": 541,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 183810,
+      "level_type": "JELLY",
+      "time_sec": 12.689
+    },
+    "554": {
+      "level_id": 554,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "score": 10336,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.071
+    },
+    "553": {
+      "level_id": 553,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "score": 320992,
+      "level_type": "JELLY",
+      "time_sec": 1.764
+    },
+    "546": {
+      "level_id": 546,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 154670,
+      "level_type": "JELLY",
+      "time_sec": 6.213
+    },
+    "556": {
+      "level_id": 556,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "score": 126587,
+      "level_type": "JELLY",
+      "time_sec": 0.427
+    },
+    "558": {
+      "level_id": 558,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "score": 124707,
+      "level_type": "JELLY",
+      "time_sec": 0.427
+    },
+    "559": {
+      "level_id": 559,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 23,
+      "score": 60257,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.99
+    },
+    "545": {
+      "level_id": 545,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 133089,
+      "level_type": "JELLY",
+      "time_sec": 6.968
+    },
+    "555": {
+      "level_id": 555,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 21,
+      "score": 202011,
+      "level_type": "JELLY",
+      "time_sec": 3.754
+    },
+    "562": {
+      "level_id": 562,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 33,
+      "score": 157434,
+      "level_type": "JELLY",
+      "time_sec": 0.748
+    },
+    "560": {
+      "level_id": 560,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 35,
+      "score": 27978,
+      "level_type": "JELLY",
+      "time_sec": 1.527
+    },
+    "547": {
+      "level_id": 547,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 226185,
+      "level_type": "JELLY",
+      "time_sec": 6.925
+    },
+    "550": {
+      "level_id": 550,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 229834,
+      "level_type": "JELLY",
+      "time_sec": 6.079
+    },
+    "563": {
+      "level_id": 563,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "score": 31351,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.514
+    },
+    "557": {
+      "level_id": 557,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 194798,
+      "level_type": "JELLY",
+      "time_sec": 8.133
+    },
+    "566": {
+      "level_id": 566,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "score": 29717,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.218
+    },
+    "569": {
+      "level_id": 569,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 21,
+      "score": 207494,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.639
+    },
+    "567": {
+      "level_id": 567,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 33,
+      "score": 335034,
+      "level_type": "JELLY",
+      "time_sec": 2.482
+    },
+    "568": {
+      "level_id": 568,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 26,
+      "score": 221103,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.466
+    },
+    "571": {
+      "level_id": 571,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 28,
+      "score": 25706,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.573
+    },
+    "572": {
+      "level_id": 572,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 30,
+      "score": 25592,
+      "level_type": "JELLY",
+      "time_sec": 0.215
+    },
+    "574": {
+      "level_id": 574,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 25,
+      "score": 54448,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.26
+    },
+    "570": {
+      "level_id": 570,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 25,
+      "score": 58622,
+      "level_type": "JELLY",
+      "time_sec": 2.301
+    },
+    "564": {
+      "level_id": 564,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 28,
+      "score": 169363,
+      "level_type": "JELLY",
+      "time_sec": 8.494
+    },
+    "575": {
+      "level_id": 575,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 31,
+      "score": 199263,
+      "level_type": "JELLY",
+      "time_sec": 0.74
+    },
+    "561": {
+      "level_id": 561,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 269167,
+      "level_type": "JELLY",
+      "time_sec": 7.133
+    },
+    "573": {
+      "level_id": 573,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 296795,
+      "level_type": "JELLY",
+      "time_sec": 3.595
+    },
+    "579": {
+      "level_id": 579,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 27,
+      "score": 36012,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.219
+    },
+    "577": {
+      "level_id": 577,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 143172,
+      "level_type": "JELLY",
+      "time_sec": 7.65
+    },
+    "565": {
+      "level_id": 565,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 341934,
+      "level_type": "JELLY",
+      "time_sec": 7.727
+    },
+    "583": {
+      "level_id": 583,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "score": 1401,
+      "level_type": "JELLY",
+      "time_sec": 0.243
+    },
+    "578": {
+      "level_id": 578,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 194517,
+      "level_type": "JELLY",
+      "time_sec": 4.202
+    },
+    "581": {
+      "level_id": 581,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 24,
+      "score": 212567,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.052
+    },
+    "585": {
+      "level_id": 585,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 21,
+      "score": 67823,
+      "level_type": "JELLY",
+      "time_sec": 0.694
+    },
+    "576": {
+      "level_id": 576,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 156263,
+      "level_type": "INGREDIENTS",
+      "time_sec": 6.589
+    },
+    "587": {
+      "level_id": 587,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 25,
+      "score": 23434,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.489
+    },
+    "589": {
+      "level_id": 589,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "score": 30251,
+      "level_type": "JELLY",
+      "time_sec": 0.111
+    },
+    "586": {
+      "level_id": 586,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 29,
+      "score": 35040,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.681
+    },
+    "582": {
+      "level_id": 582,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 34,
+      "score": 147712,
+      "level_type": "JELLY",
+      "time_sec": 3.721
+    },
+    "592": {
+      "level_id": 592,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "score": 259362,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.161
+    },
+    "584": {
+      "level_id": 584,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 21,
+      "moves_limit": 21,
+      "score": 32453,
+      "level_type": "JELLY",
+      "time_sec": 5.466
+    },
+    "588": {
+      "level_id": 588,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 21,
+      "score": 312598,
+      "level_type": "JELLY",
+      "time_sec": 5.364
+    },
+    "594": {
+      "level_id": 594,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 28,
+      "score": 108825,
+      "level_type": "JELLY",
+      "time_sec": 1.606
+    },
+    "580": {
+      "level_id": 580,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 187777,
+      "level_type": "JELLY",
+      "time_sec": 5.606
+    },
+    "596": {
+      "level_id": 596,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 27,
+      "score": 51335,
+      "level_type": "JELLY",
+      "time_sec": 1.289
+    },
+    "590": {
+      "level_id": 590,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 18,
+      "score": 476657,
+      "level_type": "JELLY",
+      "time_sec": 7.779
+    },
+    "597": {
+      "level_id": 597,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 21,
+      "score": 181318,
+      "level_type": "JELLY",
+      "time_sec": 2.426
+    },
+    "600": {
+      "level_id": 600,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 35,
+      "score": 13591,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.167
+    },
+    "601": {
+      "level_id": 601,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "score": 15574,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.546
+    },
+    "598": {
+      "level_id": 598,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 25,
+      "score": 66253,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.03
+    },
+    "603": {
+      "level_id": 603,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "score": 97816,
+      "level_type": "JELLY",
+      "time_sec": 0.429
+    },
+    "591": {
+      "level_id": 591,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 125460,
+      "level_type": "JELLY",
+      "time_sec": 5.907
+    },
+    "602": {
+      "level_id": 602,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 27,
+      "score": 35255,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.704
+    },
+    "593": {
+      "level_id": 593,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 34,
+      "moves_limit": 35,
+      "score": 155436,
+      "level_type": "INGREDIENTS",
+      "time_sec": 10.634
+    },
+    "595": {
+      "level_id": 595,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 17,
+      "moves_limit": 31,
+      "score": 255996,
+      "level_type": "JELLY",
+      "time_sec": 11.315
+    },
+    "599": {
+      "level_id": 599,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 31,
+      "moves_limit": 31,
+      "score": 28700,
+      "level_type": "JELLY",
+      "time_sec": 9.629
+    },
+    "606": {
+      "level_id": 606,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 38169,
+      "level_type": "JELLY",
+      "time_sec": 3.024
+    },
+    "607": {
+      "level_id": 607,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 28,
+      "score": 281325,
+      "level_type": "JELLY",
+      "time_sec": 5.799
+    },
+    "611": {
+      "level_id": 611,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 31,
+      "score": 140063,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.906
+    },
+    "612": {
+      "level_id": 612,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 35,
+      "score": 412164,
+      "level_type": "JELLY",
+      "time_sec": 0.906
+    },
+    "605": {
+      "level_id": 605,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 29,
+      "score": 200245,
+      "level_type": "JELLY",
+      "time_sec": 9.626
+    },
+    "604": {
+      "level_id": 604,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 147706,
+      "level_type": "JELLY",
+      "time_sec": 5.596
+    },
+    "613": {
+      "level_id": 613,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "score": 33373,
+      "level_type": "JELLY",
+      "time_sec": 0.39
+    },
+    "615": {
+      "level_id": 615,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 28,
+      "score": 169455,
+      "level_type": "JELLY",
+      "time_sec": 0.276
+    },
+    "609": {
+      "level_id": 609,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 23,
+      "score": 54613,
+      "level_type": "JELLY",
+      "time_sec": 5.949
+    },
+    "614": {
+      "level_id": 614,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 9,
+      "moves_limit": 21,
+      "score": 16412,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.16
+    },
+    "619": {
+      "level_id": 619,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 25,
+      "score": 357044,
+      "level_type": "JELLY",
+      "time_sec": 1.08
+    },
+    "610": {
+      "level_id": 610,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 72877,
+      "level_type": "INGREDIENTS",
+      "time_sec": 9.324
+    },
+    "620": {
+      "level_id": 620,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 23,
+      "score": 31919,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.076
+    },
+    "621": {
+      "level_id": 621,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 32,
+      "score": 136336,
+      "level_type": "JELLY",
+      "time_sec": 1.412
+    },
+    "608": {
+      "level_id": 608,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 237582,
+      "level_type": "JELLY",
+      "time_sec": 14.493
+    },
+    "622": {
+      "level_id": 622,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 31,
+      "score": 275178,
+      "level_type": "JELLY",
+      "time_sec": 1.63
+    },
+    "624": {
+      "level_id": 624,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 33,
+      "score": 131178,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.751
+    },
+    "623": {
+      "level_id": 623,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 22,
+      "score": 43752,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.18
+    },
+    "617": {
+      "level_id": 617,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 142494,
+      "level_type": "JELLY",
+      "time_sec": 4.567
+    },
+    "618": {
+      "level_id": 618,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 181735,
+      "level_type": "JELLY",
+      "time_sec": 4.94
+    },
+    "629": {
+      "level_id": 629,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 35,
+      "score": 49894,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.356
+    },
+    "630": {
+      "level_id": 630,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 37,
+      "score": 255157,
+      "level_type": "JELLY",
+      "time_sec": 1.698
+    },
+    "631": {
+      "level_id": 631,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 23,
+      "score": 85853,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.335
+    },
+    "616": {
+      "level_id": 616,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 289208,
+      "level_type": "JELLY",
+      "time_sec": 15.217
+    },
+    "632": {
+      "level_id": 632,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 22,
+      "score": 60568,
+      "level_type": "JELLY",
+      "time_sec": 3.182
+    },
+    "634": {
+      "level_id": 634,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 24,
+      "score": 70474,
+      "level_type": "JELLY",
+      "time_sec": 0.655
+    },
+    "635": {
+      "level_id": 635,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "score": 17185,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.433
+    },
+    "628": {
+      "level_id": 628,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 22,
+      "moves_limit": 26,
+      "score": 15359,
+      "level_type": "JELLY",
+      "time_sec": 9.065
+    },
+    "637": {
+      "level_id": 637,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 24,
+      "score": 30080,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.964
+    },
+    "626": {
+      "level_id": 626,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 76864,
+      "level_type": "JELLY",
+      "time_sec": 5.984
+    },
+    "639": {
+      "level_id": 639,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 30,
+      "score": 11002,
+      "level_type": "JELLY",
+      "time_sec": 0.64
+    },
+    "627": {
+      "level_id": 627,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 111934,
+      "level_type": "JELLY",
+      "time_sec": 6.054
+    },
+    "638": {
+      "level_id": 638,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 28,
+      "score": 20137,
+      "level_type": "JELLY",
+      "time_sec": 1.741
+    },
+    "633": {
+      "level_id": 633,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "score": 50846,
+      "level_type": "JELLY",
+      "time_sec": 6.077
+    },
+    "636": {
+      "level_id": 636,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 27,
+      "score": 146441,
+      "level_type": "JELLY",
+      "time_sec": 4.307
+    },
+    "644": {
+      "level_id": 644,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 37,
+      "score": 22836,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.111
+    },
+    "643": {
+      "level_id": 643,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 32,
+      "score": 191809,
+      "level_type": "JELLY",
+      "time_sec": 2.424
+    },
+    "645": {
+      "level_id": 645,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 31,
+      "score": 290614,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.593
+    },
+    "647": {
+      "level_id": 647,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 35,
+      "score": 16085,
+      "level_type": "JELLY",
+      "time_sec": 0.872
+    },
+    "646": {
+      "level_id": 646,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 17,
+      "moves_limit": 35,
+      "score": 424411,
+      "level_type": "JELLY",
+      "time_sec": 1.916
+    },
+    "641": {
+      "level_id": 641,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 32,
+      "score": 179208,
+      "level_type": "JELLY",
+      "time_sec": 5.247
+    },
+    "625": {
+      "level_id": 625,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 195901,
+      "level_type": "JELLY",
+      "time_sec": 17.447
+    },
+    "650": {
+      "level_id": 650,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "score": 10303,
+      "level_type": "JELLY",
+      "time_sec": 0.377
+    },
+    "649": {
+      "level_id": 649,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 31,
+      "score": 40162,
+      "level_type": "JELLY",
+      "time_sec": 0.842
+    },
+    "648": {
+      "level_id": 648,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 31,
+      "score": 363216,
+      "level_type": "JELLY",
+      "time_sec": 1.609
+    },
+    "640": {
+      "level_id": 640,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 26,
+      "score": 25877,
+      "level_type": "JELLY",
+      "time_sec": 9.068
+    },
+    "654": {
+      "level_id": 654,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 35,
+      "score": 40083,
+      "level_type": "JELLY",
+      "time_sec": 4.175
+    },
+    "655": {
+      "level_id": 655,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 28,
+      "score": 32690,
+      "level_type": "JELLY",
+      "time_sec": 1.394
+    },
+    "657": {
+      "level_id": 657,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 31,
+      "score": 15003,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.434
+    },
+    "642": {
+      "level_id": 642,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 30,
+      "score": 135206,
+      "level_type": "JELLY",
+      "time_sec": 11.002
+    },
+    "652": {
+      "level_id": 652,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 30,
+      "score": 225460,
+      "level_type": "JELLY",
+      "time_sec": 6.771
+    },
+    "660": {
+      "level_id": 660,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 30,
+      "score": 78062,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.077
+    },
+    "661": {
+      "level_id": 661,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 20,
+      "score": 131668,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.959
+    },
+    "662": {
+      "level_id": 662,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 25,
+      "score": 11565,
+      "level_type": "JELLY",
+      "time_sec": 0.64
+    },
+    "653": {
+      "level_id": 653,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 102235,
+      "level_type": "JELLY",
+      "time_sec": 5.782
+    },
+    "664": {
+      "level_id": 664,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 26,
+      "score": 71684,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.917
+    },
+    "665": {
+      "level_id": 665,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 31,
+      "score": 288488,
+      "level_type": "JELLY",
+      "time_sec": 1.846
+    },
+    "651": {
+      "level_id": 651,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 31,
+      "moves_limit": 31,
+      "score": 284353,
+      "level_type": "JELLY",
+      "time_sec": 14.685
+    },
+    "656": {
+      "level_id": 656,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 224806,
+      "level_type": "JELLY",
+      "time_sec": 4.867
+    },
+    "666": {
+      "level_id": 666,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 66,
+      "score": 102257,
+      "level_type": "JELLY",
+      "time_sec": 1.073
+    },
+    "667": {
+      "level_id": 667,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 235503,
+      "level_type": "JELLY",
+      "time_sec": 1.953
+    },
+    "658": {
+      "level_id": 658,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 137121,
+      "level_type": "JELLY",
+      "time_sec": 5.849
+    },
+    "671": {
+      "level_id": 671,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 26,
+      "score": 47161,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.791
+    },
+    "668": {
+      "level_id": 668,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 23,
+      "score": 336674,
+      "level_type": "JELLY",
+      "time_sec": 4.52
+    },
+    "672": {
+      "level_id": 672,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 32,
+      "score": 78286,
+      "level_type": "JELLY",
+      "time_sec": 2.4
+    },
+    "674": {
+      "level_id": 674,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 32,
+      "score": 13576,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.076
+    },
+    "670": {
+      "level_id": 670,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 15647,
+      "level_type": "JELLY",
+      "time_sec": 5.89
+    },
+    "659": {
+      "level_id": 659,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 253362,
+      "level_type": "JELLY",
+      "time_sec": 8.866
+    },
+    "675": {
+      "level_id": 675,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 34,
+      "score": 103149,
+      "level_type": "JELLY",
+      "time_sec": 4.273
+    },
+    "677": {
+      "level_id": 677,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 23,
+      "score": 20719,
+      "level_type": "JELLY",
+      "time_sec": 1.041
+    },
+    "669": {
+      "level_id": 669,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 33627,
+      "level_type": "JELLY",
+      "time_sec": 9.08
+    },
+    "680": {
+      "level_id": 680,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 30,
+      "score": 13771,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.672
+    },
+    "679": {
+      "level_id": 679,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 25,
+      "score": 68301,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.78
+    },
+    "681": {
+      "level_id": 681,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 29,
+      "score": 119803,
+      "level_type": "JELLY",
+      "time_sec": 1.109
+    },
+    "673": {
+      "level_id": 673,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 73638,
+      "level_type": "JELLY",
+      "time_sec": 8.061
+    },
+    "663": {
+      "level_id": 663,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 444003,
+      "level_type": "JELLY",
+      "time_sec": 16.23
+    },
+    "684": {
+      "level_id": 684,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "score": 21332,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.41
+    },
+    "683": {
+      "level_id": 683,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 34,
+      "score": 323708,
+      "level_type": "JELLY",
+      "time_sec": 2.267
+    },
+    "685": {
+      "level_id": 685,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 35,
+      "score": 140721,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.648
+    },
+    "686": {
+      "level_id": 686,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 25,
+      "score": 29968,
+      "level_type": "JELLY",
+      "time_sec": 1.46
+    },
+    "687": {
+      "level_id": 687,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 27,
+      "score": 207452,
+      "level_type": "JELLY",
+      "time_sec": 1.208
+    },
+    "690": {
+      "level_id": 690,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 29,
+      "score": 91352,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.098
+    },
+    "691": {
+      "level_id": 691,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 23,
+      "score": 116536,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.651
+    },
+    "688": {
+      "level_id": 688,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 490730,
+      "level_type": "JELLY",
+      "time_sec": 1.368
+    },
+    "689": {
+      "level_id": 689,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 29,
+      "score": 20379,
+      "level_type": "JELLY",
+      "time_sec": 1.767
+    },
+    "693": {
+      "level_id": 693,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 20,
+      "score": 58897,
+      "level_type": "JELLY",
+      "time_sec": 0.945
+    },
+    "678": {
+      "level_id": 678,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 127898,
+      "level_type": "JELLY",
+      "time_sec": 3.524
+    },
+    "676": {
+      "level_id": 676,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 234021,
+      "level_type": "JELLY",
+      "time_sec": 11.381
+    },
+    "682": {
+      "level_id": 682,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 205502,
+      "level_type": "JELLY",
+      "time_sec": 8.934
+    },
+    "695": {
+      "level_id": 695,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 24,
+      "score": 363349,
+      "level_type": "JELLY",
+      "time_sec": 6.531
+    },
+    "694": {
+      "level_id": 694,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 19,
+      "moves_limit": 19,
+      "score": 13821,
+      "level_type": "JELLY",
+      "time_sec": 8.748
+    },
+    "696": {
+      "level_id": 696,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 288144,
+      "level_type": "JELLY",
+      "time_sec": 5.192
+    },
+    "701": {
+      "level_id": 701,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 26,
+      "score": 14285,
+      "level_type": "JELLY",
+      "time_sec": 1.2
+    },
+    "700": {
+      "level_id": 700,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 115545,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.446
+    },
+    "702": {
+      "level_id": 702,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 36,
+      "score": 12268,
+      "level_type": "JELLY",
+      "time_sec": 1.171
+    },
+    "697": {
+      "level_id": 697,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 35,
+      "score": 179708,
+      "level_type": "JELLY",
+      "time_sec": 11.046
+    },
+    "703": {
+      "level_id": 703,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 29,
+      "score": 84755,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.028
+    },
+    "704": {
+      "level_id": 704,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 30,
+      "score": 12162,
+      "level_type": "JELLY",
+      "time_sec": 0.915
+    },
+    "707": {
+      "level_id": 707,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 25,
+      "score": 25029,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.39
+    },
+    "692": {
+      "level_id": 692,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 107343,
+      "level_type": "JELLY",
+      "time_sec": 9.09
+    },
+    "709": {
+      "level_id": 709,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 25,
+      "score": 19865,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.965
+    },
+    "705": {
+      "level_id": 705,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 35419,
+      "level_type": "JELLY",
+      "time_sec": 4.73
+    },
+    "711": {
+      "level_id": 711,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 25,
+      "score": 22566,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.427
+    },
+    "706": {
+      "level_id": 706,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 187824,
+      "level_type": "JELLY",
+      "time_sec": 7.943
+    },
+    "708": {
+      "level_id": 708,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 195564,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.038
+    },
+    "699": {
+      "level_id": 699,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 122975,
+      "level_type": "JELLY",
+      "time_sec": 8.238
+    },
+    "715": {
+      "level_id": 715,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 25,
+      "score": 75954,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.056
+    },
+    "716": {
+      "level_id": 716,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 25,
+      "score": 132704,
+      "level_type": "JELLY",
+      "time_sec": 0.745
+    },
+    "712": {
+      "level_id": 712,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 17,
+      "moves_limit": 35,
+      "score": 31689,
+      "level_type": "JELLY",
+      "time_sec": 3.719
+    },
+    "714": {
+      "level_id": 714,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 29,
+      "score": 230056,
+      "level_type": "JELLY",
+      "time_sec": 5.177
+    },
+    "698": {
+      "level_id": 698,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 77660,
+      "level_type": "JELLY",
+      "time_sec": 24.826
+    },
+    "719": {
+      "level_id": 719,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 37,
+      "score": 94790,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.758
+    },
+    "710": {
+      "level_id": 710,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 50,
+      "moves_limit": 50,
+      "score": 103295,
+      "level_type": "JELLY",
+      "time_sec": 5.272
+    },
+    "717": {
+      "level_id": 717,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 38007,
+      "level_type": "JELLY",
+      "time_sec": 2.84
+    },
+    "723": {
+      "level_id": 723,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "score": 19719,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.331
+    },
+    "721": {
+      "level_id": 721,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 31157,
+      "level_type": "JELLY",
+      "time_sec": 2.56
+    },
+    "725": {
+      "level_id": 725,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 27,
+      "score": 265058,
+      "level_type": "JELLY",
+      "time_sec": 0.92
+    },
+    "726": {
+      "level_id": 726,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 18779,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.469
+    },
+    "724": {
+      "level_id": 724,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 30,
+      "score": 145521,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.429
+    },
+    "728": {
+      "level_id": 728,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 25,
+      "score": 76500,
+      "level_type": "JELLY",
+      "time_sec": 0.556
+    },
+    "729": {
+      "level_id": 729,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 30,
+      "score": 23140,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.183
+    },
+    "730": {
+      "level_id": 730,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "score": 10390,
+      "level_type": "JELLY",
+      "time_sec": 0.436
+    },
+    "731": {
+      "level_id": 731,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 33,
+      "score": 1354,
+      "level_type": "JELLY",
+      "time_sec": 0.181
+    },
+    "722": {
+      "level_id": 722,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 195632,
+      "level_type": "JELLY",
+      "time_sec": 7.681
+    },
+    "720": {
+      "level_id": 720,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 203321,
+      "level_type": "JELLY",
+      "time_sec": 8.457
+    },
+    "733": {
+      "level_id": 733,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 20,
+      "score": 259631,
+      "level_type": "JELLY",
+      "time_sec": 0.816
+    },
+    "734": {
+      "level_id": 734,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 36,
+      "score": 95128,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.917
+    },
+    "713": {
+      "level_id": 713,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 263115,
+      "level_type": "JELLY",
+      "time_sec": 15.527
+    },
+    "718": {
+      "level_id": 718,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 218120,
+      "level_type": "JELLY",
+      "time_sec": 13.544
+    },
+    "738": {
+      "level_id": 738,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 29,
+      "score": 47328,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.331
+    },
+    "739": {
+      "level_id": 739,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "score": 18324,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.081
+    },
+    "735": {
+      "level_id": 735,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 5,
+      "moves_limit": 20,
+      "score": 143277,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.617
+    },
+    "727": {
+      "level_id": 727,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 208533,
+      "level_type": "JELLY",
+      "time_sec": 5.826
+    },
+    "737": {
+      "level_id": 737,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 248217,
+      "level_type": "JELLY",
+      "time_sec": 5.801
+    },
+    "736": {
+      "level_id": 736,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 299686,
+      "level_type": "JELLY",
+      "time_sec": 6.604
+    },
+    "743": {
+      "level_id": 743,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 23,
+      "score": 40756,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.633
+    },
+    "745": {
+      "level_id": 745,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 26,
+      "score": 35470,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.472
+    },
+    "746": {
+      "level_id": 746,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 25,
+      "score": 15267,
+      "level_type": "JELLY",
+      "time_sec": 0.999
+    },
+    "740": {
+      "level_id": 740,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 305374,
+      "level_type": "JELLY",
+      "time_sec": 6.323
+    },
+    "732": {
+      "level_id": 732,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 136617,
+      "level_type": "JELLY",
+      "time_sec": 17.34
+    },
+    "748": {
+      "level_id": 748,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 31,
+      "score": 17231,
+      "level_type": "JELLY",
+      "time_sec": 0.08
+    },
+    "741": {
+      "level_id": 741,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 60196,
+      "level_type": "JELLY",
+      "time_sec": 5.922
+    },
+    "749": {
+      "level_id": 749,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 33,
+      "score": 20013,
+      "level_type": "JELLY",
+      "time_sec": 1.884
+    },
+    "751": {
+      "level_id": 751,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 25,
+      "score": 18438,
+      "level_type": "JELLY",
+      "time_sec": 1.03
+    },
+    "752": {
+      "level_id": 752,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 28,
+      "score": 65120,
+      "level_type": "JELLY",
+      "time_sec": 0.954
+    },
+    "754": {
+      "level_id": 754,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 23,
+      "score": 22394,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.447
+    },
+    "753": {
+      "level_id": 753,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 26,
+      "score": 13117,
+      "level_type": "JELLY",
+      "time_sec": 1.078
+    },
+    "756": {
+      "level_id": 756,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 29,
+      "score": 23136,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.215
+    },
+    "742": {
+      "level_id": 742,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 89341,
+      "level_type": "INGREDIENTS",
+      "time_sec": 10.73
+    },
+    "757": {
+      "level_id": 757,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "score": 13359,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.402
+    },
+    "759": {
+      "level_id": 759,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 21,
+      "score": 70961,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.675
+    },
+    "758": {
+      "level_id": 758,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 20,
+      "score": 185568,
+      "level_type": "JELLY",
+      "time_sec": 1.083
+    },
+    "761": {
+      "level_id": 761,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 32,
+      "score": 10247,
+      "level_type": "JELLY",
+      "time_sec": 0.357
+    },
+    "762": {
+      "level_id": 762,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 28,
+      "score": 42641,
+      "level_type": "JELLY",
+      "time_sec": 2.262
+    },
+    "744": {
+      "level_id": 744,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 105437,
+      "level_type": "INGREDIENTS",
+      "time_sec": 7.541
+    },
+    "747": {
+      "level_id": 747,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 337417,
+      "level_type": "JELLY",
+      "time_sec": 5.356
+    },
+    "764": {
+      "level_id": 764,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 31,
+      "score": 12602,
+      "level_type": "JELLY",
+      "time_sec": 0.754
+    },
+    "750": {
+      "level_id": 750,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 253682,
+      "level_type": "JELLY",
+      "time_sec": 5.989
+    },
+    "766": {
+      "level_id": 766,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 30,
+      "score": 265793,
+      "level_type": "JELLY",
+      "time_sec": 1.35
+    },
+    "755": {
+      "level_id": 755,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 21,
+      "moves_limit": 25,
+      "score": 222668,
+      "level_type": "JELLY",
+      "time_sec": 9.802
+    },
+    "763": {
+      "level_id": 763,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 30,
+      "score": 168732,
+      "level_type": "JELLY",
+      "time_sec": 5.464
+    },
+    "768": {
+      "level_id": 768,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 27,
+      "score": 36581,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.848
+    },
+    "769": {
+      "level_id": 769,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 32,
+      "score": 46694,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.968
+    },
+    "772": {
+      "level_id": 772,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "score": 78004,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.213
+    },
+    "770": {
+      "level_id": 770,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 26,
+      "score": 118426,
+      "level_type": "JELLY",
+      "time_sec": 2.919
+    },
+    "773": {
+      "level_id": 773,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 26,
+      "score": 29467,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.942
+    },
+    "765": {
+      "level_id": 765,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 433133,
+      "level_type": "JELLY",
+      "time_sec": 7.795
+    },
+    "760": {
+      "level_id": 760,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 31,
+      "moves_limit": 31,
+      "score": 231374,
+      "level_type": "JELLY",
+      "time_sec": 7.641
+    },
+    "774": {
+      "level_id": 774,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 24,
+      "score": 264863,
+      "level_type": "JELLY",
+      "time_sec": 4.455
+    },
+    "775": {
+      "level_id": 775,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 9054,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.824
+    },
+    "778": {
+      "level_id": 778,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 37,
+      "score": 149732,
+      "level_type": "JELLY",
+      "time_sec": 1.485
+    },
+    "777": {
+      "level_id": 777,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 32,
+      "score": 30077,
+      "level_type": "JELLY",
+      "time_sec": 2.338
+    },
+    "771": {
+      "level_id": 771,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 60078,
+      "level_type": "JELLY",
+      "time_sec": 4.237
+    },
+    "782": {
+      "level_id": 782,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "score": 60648,
+      "level_type": "JELLY",
+      "time_sec": 0.127
+    },
+    "780": {
+      "level_id": 780,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 29,
+      "score": 58311,
+      "level_type": "JELLY",
+      "time_sec": 0.582
+    },
+    "767": {
+      "level_id": 767,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 19,
+      "moves_limit": 28,
+      "score": 180586,
+      "level_type": "INGREDIENTS",
+      "time_sec": 17.019
+    },
+    "776": {
+      "level_id": 776,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 66782,
+      "level_type": "JELLY",
+      "time_sec": 10.123
+    },
+    "783": {
+      "level_id": 783,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 37209,
+      "level_type": "JELLY",
+      "time_sec": 8.21
+    },
+    "781": {
+      "level_id": 781,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 178041,
+      "level_type": "JELLY",
+      "time_sec": 10.284
+    },
+    "788": {
+      "level_id": 788,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "score": 156768,
+      "level_type": "JELLY",
+      "time_sec": 0.256
+    },
+    "789": {
+      "level_id": 789,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 26,
+      "score": 172258,
+      "level_type": "JELLY",
+      "time_sec": 1.315
+    },
+    "790": {
+      "level_id": 790,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 27,
+      "score": 13165,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.606
+    },
+    "791": {
+      "level_id": 791,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 31,
+      "score": 141060,
+      "level_type": "JELLY",
+      "time_sec": 3.087
+    },
+    "792": {
+      "level_id": 792,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 28,
+      "score": 15499,
+      "level_type": "JELLY",
+      "time_sec": 0.405
+    },
+    "793": {
+      "level_id": 793,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 35,
+      "score": 11232,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.073
+    },
+    "779": {
+      "level_id": 779,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 121944,
+      "level_type": "JELLY",
+      "time_sec": 17.402
+    },
+    "784": {
+      "level_id": 784,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 30,
+      "score": 252079,
+      "level_type": "JELLY",
+      "time_sec": 17.7
+    },
+    "795": {
+      "level_id": 795,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 25,
+      "score": 425172,
+      "level_type": "JELLY",
+      "time_sec": 1.698
+    },
+    "787": {
+      "level_id": 787,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 141943,
+      "level_type": "JELLY",
+      "time_sec": 10.351
+    },
+    "794": {
+      "level_id": 794,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 37,
+      "score": 385223,
+      "level_type": "JELLY",
+      "time_sec": 2.887
+    },
+    "799": {
+      "level_id": 799,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "score": 225152,
+      "level_type": "JELLY",
+      "time_sec": 1.214
+    },
+    "786": {
+      "level_id": 786,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 167138,
+      "level_type": "JELLY",
+      "time_sec": 7.344
+    },
+    "785": {
+      "level_id": 785,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 17,
+      "moves_limit": 35,
+      "score": 70152,
+      "level_type": "JELLY",
+      "time_sec": 15.455
+    },
+    "800": {
+      "level_id": 800,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 25,
+      "score": 231868,
+      "level_type": "JELLY",
+      "time_sec": 1.847
+    },
+    "801": {
+      "level_id": 801,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 26,
+      "score": 211452,
+      "level_type": "JELLY",
+      "time_sec": 1.651
+    },
+    "804": {
+      "level_id": 804,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "score": 65240,
+      "level_type": "JELLY",
+      "time_sec": 0.193
+    },
+    "803": {
+      "level_id": 803,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 35,
+      "score": 84584,
+      "level_type": "JELLY",
+      "time_sec": 1.173
+    },
+    "806": {
+      "level_id": 806,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "score": 72788,
+      "level_type": "JELLY",
+      "time_sec": 0.334
+    },
+    "798": {
+      "level_id": 798,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 29,
+      "score": 121374,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.867
+    },
+    "808": {
+      "level_id": 808,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 30,
+      "score": 281582,
+      "level_type": "JELLY",
+      "time_sec": 0.64
+    },
+    "796": {
+      "level_id": 796,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 73655,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.737
+    },
+    "805": {
+      "level_id": 805,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 23,
+      "score": 141568,
+      "level_type": "JELLY",
+      "time_sec": 2.351
+    },
+    "802": {
+      "level_id": 802,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 26,
+      "score": 82332,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.742
+    },
+    "812": {
+      "level_id": 812,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 23,
+      "score": 81668,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.225
+    },
+    "813": {
+      "level_id": 813,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 35,
+      "score": 41822,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.618
+    },
+    "807": {
+      "level_id": 807,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 26,
+      "score": 30406,
+      "level_type": "JELLY",
+      "time_sec": 3.062
+    },
+    "797": {
+      "level_id": 797,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 229378,
+      "level_type": "JELLY",
+      "time_sec": 4.754
+    },
+    "814": {
+      "level_id": 814,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 25,
+      "score": 415879,
+      "level_type": "JELLY",
+      "time_sec": 3.134
+    },
+    "817": {
+      "level_id": 817,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 24,
+      "moves_limit": 29,
+      "score": 79418,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.835
+    },
+    "811": {
+      "level_id": 811,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 6,
+      "moves_limit": 20,
+      "score": 36654,
+      "level_type": "INGREDIENTS",
+      "time_sec": 7.875
+    },
+    "809": {
+      "level_id": 809,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 23,
+      "moves_limit": 37,
+      "score": 103177,
+      "level_type": "JELLY",
+      "time_sec": 11.937
+    },
+    "810": {
+      "level_id": 810,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 33,
+      "moves_limit": 33,
+      "score": 136169,
+      "level_type": "JELLY",
+      "time_sec": 6.372
+    },
+    "815": {
+      "level_id": 815,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 233954,
+      "level_type": "JELLY",
+      "time_sec": 10.526
+    },
+    "819": {
+      "level_id": 819,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 24,
+      "score": 20361,
+      "level_type": "JELLY",
+      "time_sec": 4.336
+    },
+    "823": {
+      "level_id": 823,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "score": 405087,
+      "level_type": "JELLY",
+      "time_sec": 1.141
+    },
+    "818": {
+      "level_id": 818,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 52040,
+      "level_type": "INGREDIENTS",
+      "time_sec": 9.323
+    },
+    "825": {
+      "level_id": 825,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 29,
+      "score": 35489,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.773
+    },
+    "826": {
+      "level_id": 826,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 20,
+      "score": 143800,
+      "level_type": "JELLY",
+      "time_sec": 0.443
+    },
+    "816": {
+      "level_id": 816,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 246187,
+      "level_type": "JELLY",
+      "time_sec": 9.431
+    },
+    "822": {
+      "level_id": 822,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 101694,
+      "level_type": "JELLY",
+      "time_sec": 11.803
+    },
+    "828": {
+      "level_id": 828,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 23,
+      "score": 148315,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.752
+    },
+    "821": {
+      "level_id": 821,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 42796,
+      "level_type": "JELLY",
+      "time_sec": 16.1
+    },
+    "827": {
+      "level_id": 827,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 182464,
+      "level_type": "JELLY",
+      "time_sec": 7.274
+    },
+    "832": {
+      "level_id": 832,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 29,
+      "score": 30734,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.866
+    },
+    "829": {
+      "level_id": 829,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 30,
+      "score": 106884,
+      "level_type": "JELLY",
+      "time_sec": 6.455
+    },
+    "820": {
+      "level_id": 820,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 27422,
+      "level_type": "JELLY",
+      "time_sec": 19.629
+    },
+    "835": {
+      "level_id": 835,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 27,
+      "score": 170702,
+      "level_type": "JELLY",
+      "time_sec": 1.339
+    },
+    "824": {
+      "level_id": 824,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 38410,
+      "level_type": "JELLY",
+      "time_sec": 18.748
+    },
+    "836": {
+      "level_id": 836,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "score": 11247,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.202
+    },
+    "834": {
+      "level_id": 834,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 23,
+      "moves_limit": 29,
+      "score": 46631,
+      "level_type": "JELLY",
+      "time_sec": 2.927
+    },
+    "838": {
+      "level_id": 838,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 24,
+      "score": 134628,
+      "level_type": "JELLY",
+      "time_sec": 0.964
+    },
+    "839": {
+      "level_id": 839,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 33,
+      "score": 141864,
+      "level_type": "JELLY",
+      "time_sec": 0.426
+    },
+    "837": {
+      "level_id": 837,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 29,
+      "score": 46497,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.794
+    },
+    "830": {
+      "level_id": 830,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 181915,
+      "level_type": "JELLY",
+      "time_sec": 9.017
+    },
+    "841": {
+      "level_id": 841,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 32,
+      "score": 37898,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.53
+    },
+    "844": {
+      "level_id": 844,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "score": 78011,
+      "level_type": "JELLY",
+      "time_sec": 0.459
+    },
+    "843": {
+      "level_id": 843,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 31,
+      "score": 118899,
+      "level_type": "JELLY",
+      "time_sec": 1.581
+    },
+    "840": {
+      "level_id": 840,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 30,
+      "score": 122665,
+      "level_type": "JELLY",
+      "time_sec": 3.09
+    },
+    "846": {
+      "level_id": 846,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 23,
+      "score": 199779,
+      "level_type": "JELLY",
+      "time_sec": 0.994
+    },
+    "831": {
+      "level_id": 831,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 109345,
+      "level_type": "JELLY",
+      "time_sec": 9.623
+    },
+    "849": {
+      "level_id": 849,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 22,
+      "score": 56386,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.228
+    },
+    "845": {
+      "level_id": 845,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "score": 224586,
+      "level_type": "JELLY",
+      "time_sec": 3.291
+    },
+    "848": {
+      "level_id": 848,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 31,
+      "score": 33226,
+      "level_type": "JELLY",
+      "time_sec": 2.12
+    },
+    "842": {
+      "level_id": 842,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 21,
+      "score": 45014,
+      "level_type": "JELLY",
+      "time_sec": 6.079
+    },
+    "853": {
+      "level_id": 853,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "score": 18639,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.163
+    },
+    "854": {
+      "level_id": 854,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 20,
+      "score": 181852,
+      "level_type": "JELLY",
+      "time_sec": 1.036
+    },
+    "850": {
+      "level_id": 850,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 159070,
+      "level_type": "JELLY",
+      "time_sec": 3.172
+    },
+    "833": {
+      "level_id": 833,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 45,
+      "moves_limit": 45,
+      "score": 157147,
+      "level_type": "JELLY",
+      "time_sec": 6.71
+    },
+    "851": {
+      "level_id": 851,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 23,
+      "moves_limit": 25,
+      "score": 68542,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.057
+    },
+    "858": {
+      "level_id": 858,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 26,
+      "score": 31722,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.795
+    },
+    "859": {
+      "level_id": 859,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 19,
+      "score": 31181,
+      "level_type": "JELLY",
+      "time_sec": 1.287
+    },
+    "855": {
+      "level_id": 855,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 33,
+      "score": 354956,
+      "level_type": "JELLY",
+      "time_sec": 5.084
+    },
+    "861": {
+      "level_id": 861,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 24,
+      "score": 113373,
+      "level_type": "JELLY",
+      "time_sec": 0.636
+    },
+    "860": {
+      "level_id": 860,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 25,
+      "score": 53100,
+      "level_type": "JELLY",
+      "time_sec": 2.288
+    },
+    "852": {
+      "level_id": 852,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 29,
+      "score": 208710,
+      "level_type": "JELLY",
+      "time_sec": 10.262
+    },
+    "863": {
+      "level_id": 863,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 29,
+      "score": 45869,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.49
+    },
+    "857": {
+      "level_id": 857,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 18,
+      "score": 91760,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.511
+    },
+    "847": {
+      "level_id": 847,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 340129,
+      "level_type": "JELLY",
+      "time_sec": 7.553
+    },
+    "856": {
+      "level_id": 856,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 78900,
+      "level_type": "JELLY",
+      "time_sec": 5.835
+    },
+    "868": {
+      "level_id": 868,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 32,
+      "score": 16872,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.657
+    },
+    "866": {
+      "level_id": 866,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 32,
+      "score": 142739,
+      "level_type": "JELLY",
+      "time_sec": 1.93
+    },
+    "865": {
+      "level_id": 865,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 25,
+      "score": 94956,
+      "level_type": "JELLY",
+      "time_sec": 2.548
+    },
+    "867": {
+      "level_id": 867,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 33,
+      "score": 96820,
+      "level_type": "JELLY",
+      "time_sec": 2.888
+    },
+    "872": {
+      "level_id": 872,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 31,
+      "score": 34142,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.58
+    },
+    "871": {
+      "level_id": 871,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 24,
+      "score": 136061,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.811
+    },
+    "864": {
+      "level_id": 864,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 17,
+      "moves_limit": 30,
+      "score": 128221,
+      "level_type": "JELLY",
+      "time_sec": 6.873
+    },
+    "869": {
+      "level_id": 869,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 33,
+      "moves_limit": 33,
+      "score": 115221,
+      "level_type": "JELLY",
+      "time_sec": 7.623
+    },
+    "874": {
+      "level_id": 874,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 15,
+      "score": 129431,
+      "level_type": "JELLY",
+      "time_sec": 2.738
+    },
+    "877": {
+      "level_id": 877,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "score": 63336,
+      "level_type": "JELLY",
+      "time_sec": 0.36
+    },
+    "873": {
+      "level_id": 873,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 171571,
+      "level_type": "JELLY",
+      "time_sec": 4.018
+    },
+    "879": {
+      "level_id": 879,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 34,
+      "score": 18890,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.487
+    },
+    "862": {
+      "level_id": 862,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 296105,
+      "level_type": "JELLY",
+      "time_sec": 16.253
+    },
+    "875": {
+      "level_id": 875,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 191636,
+      "level_type": "JELLY",
+      "time_sec": 8.134
+    },
+    "880": {
+      "level_id": 880,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 35,
+      "score": 434781,
+      "level_type": "JELLY",
+      "time_sec": 2.957
+    },
+    "883": {
+      "level_id": 883,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 17,
+      "score": 12717,
+      "level_type": "JELLY",
+      "time_sec": 0.596
+    },
+    "884": {
+      "level_id": 884,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "score": 28888,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.345
+    },
+    "885": {
+      "level_id": 885,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "score": 173431,
+      "level_type": "JELLY",
+      "time_sec": 0.157
+    },
+    "886": {
+      "level_id": 886,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 36,
+      "score": 16553,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.583
+    },
+    "887": {
+      "level_id": 887,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 19,
+      "moves_limit": 19,
+      "score": 90907,
+      "level_type": "JELLY",
+      "time_sec": 2.948
+    },
+    "876": {
+      "level_id": 876,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 170338,
+      "level_type": "JELLY",
+      "time_sec": 5.949
+    },
+    "882": {
+      "level_id": 882,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 30,
+      "score": 189830,
+      "level_type": "JELLY",
+      "time_sec": 6.869
+    },
+    "888": {
+      "level_id": 888,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 30,
+      "score": 260182,
+      "level_type": "JELLY",
+      "time_sec": 2.215
+    },
+    "870": {
+      "level_id": 870,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 92020,
+      "level_type": "JELLY",
+      "time_sec": 12.625
+    },
+    "881": {
+      "level_id": 881,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 261165,
+      "level_type": "JELLY",
+      "time_sec": 7.192
+    },
+    "878": {
+      "level_id": 878,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 425557,
+      "level_type": "JELLY",
+      "time_sec": 8.932
+    },
+    "892": {
+      "level_id": 892,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 35,
+      "score": 60492,
+      "level_type": "INGREDIENTS",
+      "time_sec": 4.055
+    },
+    "889": {
+      "level_id": 889,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 23,
+      "moves_limit": 23,
+      "score": 24574,
+      "level_type": "JELLY",
+      "time_sec": 5.083
+    },
+    "893": {
+      "level_id": 893,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 28,
+      "score": 20674,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.09
+    },
+    "897": {
+      "level_id": 897,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "score": 11475,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.106
+    },
+    "895": {
+      "level_id": 895,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 30,
+      "score": 34792,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.744
+    },
+    "890": {
+      "level_id": 890,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 95984,
+      "level_type": "INGREDIENTS",
+      "time_sec": 6.044
+    },
+    "891": {
+      "level_id": 891,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 309259,
+      "level_type": "JELLY",
+      "time_sec": 12.577
+    },
+    "894": {
+      "level_id": 894,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 31,
+      "moves_limit": 31,
+      "score": 34936,
+      "level_type": "JELLY",
+      "time_sec": 4.739
+    },
+    "896": {
+      "level_id": 896,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 17,
+      "moves_limit": 17,
+      "score": 333039,
+      "level_type": "JELLY",
+      "time_sec": 5.908
+    },
+    "903": {
+      "level_id": 903,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 8,
+      "moves_limit": 30,
+      "score": 24613,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.878
+    },
+    "898": {
+      "level_id": 898,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 322434,
+      "level_type": "JELLY",
+      "time_sec": 14.277
+    },
+    "900": {
+      "level_id": 900,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "score": 14435,
+      "level_type": "JELLY",
+      "time_sec": 13.604
+    },
+    "902": {
+      "level_id": 902,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 147836,
+      "level_type": "JELLY",
+      "time_sec": 3.469
+    },
+    "904": {
+      "level_id": 904,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 31,
+      "moves_limit": 33,
+      "score": 57626,
+      "level_type": "JELLY",
+      "time_sec": 4.749
+    },
+    "901": {
+      "level_id": 901,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 23,
+      "moves_limit": 23,
+      "score": 27471,
+      "level_type": "JELLY",
+      "time_sec": 13.157
+    },
+    "909": {
+      "level_id": 909,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 23,
+      "score": 33143,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.771
+    },
+    "910": {
+      "level_id": 910,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 33,
+      "score": 26788,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.314
+    },
+    "908": {
+      "level_id": 908,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 133322,
+      "level_type": "JELLY",
+      "time_sec": 4.178
+    },
+    "911": {
+      "level_id": 911,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 30,
+      "score": 25318,
+      "level_type": "JELLY",
+      "time_sec": 2.145
+    },
+    "905": {
+      "level_id": 905,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 294695,
+      "level_type": "JELLY",
+      "time_sec": 9.831
+    },
+    "913": {
+      "level_id": 913,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 178195,
+      "level_type": "JELLY",
+      "time_sec": 6.681
+    },
+    "899": {
+      "level_id": 899,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 169416,
+      "level_type": "SCORE",
+      "time_sec": 14.843
+    },
+    "907": {
+      "level_id": 907,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 16,
+      "moves_limit": 25,
+      "score": 186537,
+      "level_type": "JELLY",
+      "time_sec": 13.62
+    },
+    "915": {
+      "level_id": 915,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 37,
+      "score": 47893,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.474
+    },
+    "912": {
+      "level_id": 912,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 286329,
+      "level_type": "JELLY",
+      "time_sec": 12.061
+    },
+    "917": {
+      "level_id": 917,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 26,
+      "score": 135412,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.325
+    },
+    "919": {
+      "level_id": 919,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "score": 26011,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.261
+    },
+    "916": {
+      "level_id": 916,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 21,
+      "moves_limit": 27,
+      "score": 60529,
+      "level_type": "JELLY",
+      "time_sec": 4.529
+    },
+    "906": {
+      "level_id": 906,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 249799,
+      "level_type": "JELLY",
+      "time_sec": 19.892
+    },
+    "914": {
+      "level_id": 914,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 97129,
+      "level_type": "JELLY",
+      "time_sec": 5.886
+    },
+    "920": {
+      "level_id": 920,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 32,
+      "moves_limit": 37,
+      "score": 40811,
+      "level_type": "JELLY",
+      "time_sec": 3.346
+    },
+    "925": {
+      "level_id": 925,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 35,
+      "score": 75748,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.328
+    },
+    "923": {
+      "level_id": 923,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 16,
+      "moves_limit": 26,
+      "score": 91984,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.574
+    },
+    "921": {
+      "level_id": 921,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 32047,
+      "level_type": "JELLY",
+      "time_sec": 3.73
+    },
+    "928": {
+      "level_id": 928,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 28,
+      "score": 56559,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.815
+    },
+    "918": {
+      "level_id": 918,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 23,
+      "moves_limit": 23,
+      "score": 95872,
+      "level_type": "JELLY",
+      "time_sec": 12.34
+    },
+    "930": {
+      "level_id": 930,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "score": 78141,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.483
+    },
+    "924": {
+      "level_id": 924,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 35,
+      "score": 165585,
+      "level_type": "JELLY",
+      "time_sec": 7.51
+    },
+    "929": {
+      "level_id": 929,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 34,
+      "score": 250663,
+      "level_type": "JELLY",
+      "time_sec": 1.965
+    },
+    "927": {
+      "level_id": 927,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 50276,
+      "level_type": "JELLY",
+      "time_sec": 7.782
+    },
+    "934": {
+      "level_id": 934,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "score": 42555,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.241
+    },
+    "932": {
+      "level_id": 932,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 35,
+      "score": 130645,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.875
+    },
+    "922": {
+      "level_id": 922,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 112688,
+      "level_type": "JELLY",
+      "time_sec": 8.255
+    },
+    "926": {
+      "level_id": 926,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 283508,
+      "level_type": "JELLY",
+      "time_sec": 14.554
+    },
+    "931": {
+      "level_id": 931,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 102227,
+      "level_type": "JELLY",
+      "time_sec": 4.148
+    },
+    "938": {
+      "level_id": 938,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 22,
+      "score": 138304,
+      "level_type": "JELLY",
+      "time_sec": 1.271
+    },
+    "939": {
+      "level_id": 939,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 29,
+      "score": 44407,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.824
+    },
+    "940": {
+      "level_id": 940,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "score": 85044,
+      "level_type": "JELLY",
+      "time_sec": 0.349
+    },
+    "933": {
+      "level_id": 933,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 26,
+      "moves_limit": 26,
+      "score": 156162,
+      "level_type": "JELLY",
+      "time_sec": 10.478
+    },
+    "942": {
+      "level_id": 942,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 32,
+      "score": 35776,
+      "level_type": "INGREDIENTS",
+      "time_sec": 2.575
+    },
+    "943": {
+      "level_id": 943,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "score": 45713,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.164
+    },
+    "937": {
+      "level_id": 937,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 84175,
+      "level_type": "JELLY",
+      "time_sec": 2.278
+    },
+    "944": {
+      "level_id": 944,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 20,
+      "score": 206029,
+      "level_type": "JELLY",
+      "time_sec": 0.674
+    },
+    "936": {
+      "level_id": 936,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 218382,
+      "level_type": "JELLY",
+      "time_sec": 7.056
+    },
+    "941": {
+      "level_id": 941,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 26,
+      "moves_limit": 28,
+      "score": 145879,
+      "level_type": "JELLY",
+      "time_sec": 6.793
+    },
+    "947": {
+      "level_id": 947,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 18,
+      "moves_limit": 18,
+      "score": 114799,
+      "level_type": "JELLY",
+      "time_sec": 4.282
+    },
+    "935": {
+      "level_id": 935,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 78133,
+      "level_type": "JELLY",
+      "time_sec": 7.06
+    },
+    "951": {
+      "level_id": 951,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 3,
+      "moves_limit": 19,
+      "score": 13431,
+      "level_type": "JELLY",
+      "time_sec": 0.429
+    },
+    "946": {
+      "level_id": 946,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 21,
+      "moves_limit": 21,
+      "score": 109154,
+      "level_type": "JELLY",
+      "time_sec": 6.788
+    },
+    "950": {
+      "level_id": 950,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 20,
+      "moves_limit": 24,
+      "score": 250960,
+      "level_type": "JELLY",
+      "time_sec": 6.11
+    },
+    "945": {
+      "level_id": 945,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 103769,
+      "level_type": "JELLY",
+      "time_sec": 12.259
+    },
+    "948": {
+      "level_id": 948,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 19,
+      "moves_limit": 31,
+      "score": 124157,
+      "level_type": "JELLY",
+      "time_sec": 10.497
+    },
+    "955": {
+      "level_id": 955,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 9,
+      "moves_limit": 26,
+      "score": 38099,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.012
+    },
+    "953": {
+      "level_id": 953,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 183813,
+      "level_type": "JELLY",
+      "time_sec": 4.168
+    },
+    "952": {
+      "level_id": 952,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 81923,
+      "level_type": "JELLY",
+      "time_sec": 8.334
+    },
+    "954": {
+      "level_id": 954,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 24,
+      "score": 112466,
+      "level_type": "JELLY",
+      "time_sec": 4.716
+    },
+    "949": {
+      "level_id": 949,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 34,
+      "moves_limit": 34,
+      "score": 152610,
+      "level_type": "JELLY",
+      "time_sec": 6.043
+    },
+    "958": {
+      "level_id": 958,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 23,
+      "score": 358010,
+      "level_type": "JELLY",
+      "time_sec": 3.46
+    },
+    "957": {
+      "level_id": 957,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 10,
+      "moves_limit": 26,
+      "score": 70209,
+      "level_type": "JELLY",
+      "time_sec": 7.257
+    },
+    "959": {
+      "level_id": 959,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 24,
+      "moves_limit": 29,
+      "score": 32395,
+      "level_type": "INGREDIENTS",
+      "time_sec": 5.725
+    },
+    "964": {
+      "level_id": 964,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "score": 22710,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.315
+    },
+    "962": {
+      "level_id": 962,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 29,
+      "score": 44700,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.143
+    },
+    "956": {
+      "level_id": 956,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 101136,
+      "level_type": "JELLY",
+      "time_sec": 10.947
+    },
+    "960": {
+      "level_id": 960,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 18,
+      "moves_limit": 22,
+      "score": 204183,
+      "level_type": "JELLY",
+      "time_sec": 8.872
+    },
+    "961": {
+      "level_id": 961,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 319967,
+      "level_type": "JELLY",
+      "time_sec": 4.297
+    },
+    "965": {
+      "level_id": 965,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 22,
+      "moves_limit": 34,
+      "score": 153522,
+      "level_type": "JELLY",
+      "time_sec": 4.217
+    },
+    "970": {
+      "level_id": 970,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "score": 107915,
+      "level_type": "JELLY",
+      "time_sec": 0.238
+    },
+    "968": {
+      "level_id": 968,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 37,
+      "score": 16838,
+      "level_type": "JELLY",
+      "time_sec": 1.305
+    },
+    "971": {
+      "level_id": 971,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "score": 45936,
+      "level_type": "JELLY",
+      "time_sec": 0.697
+    },
+    "972": {
+      "level_id": 972,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 12,
+      "moves_limit": 27,
+      "score": 45603,
+      "level_type": "JELLY",
+      "time_sec": 1.838
+    },
+    "973": {
+      "level_id": 973,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 18,
+      "moves_limit": 29,
+      "score": 275197,
+      "level_type": "JELLY",
+      "time_sec": 2.032
+    },
+    "974": {
+      "level_id": 974,
+      "won": true,
+      "attempts": 2,
+      "moves_used": 13,
+      "moves_limit": 25,
+      "score": 19136,
+      "level_type": "INGREDIENTS",
+      "time_sec": 3.048
+    },
+    "963": {
+      "level_id": 963,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 107594,
+      "level_type": "INGREDIENTS",
+      "time_sec": 11.02
+    },
+    "976": {
+      "level_id": 976,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 11,
+      "moves_limit": 29,
+      "score": 21595,
+      "level_type": "JELLY",
+      "time_sec": 1.146
+    },
+    "967": {
+      "level_id": 967,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 64151,
+      "level_type": "JELLY",
+      "time_sec": 10.874
+    },
+    "969": {
+      "level_id": 969,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 34884,
+      "level_type": "JELLY",
+      "time_sec": 10.327
+    },
+    "978": {
+      "level_id": 978,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 240245,
+      "level_type": "JELLY",
+      "time_sec": 5.535
+    },
+    "977": {
+      "level_id": 977,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "score": 237404,
+      "level_type": "JELLY",
+      "time_sec": 5.829
+    },
+    "979": {
+      "level_id": 979,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 15,
+      "moves_limit": 35,
+      "score": 33842,
+      "level_type": "JELLY",
+      "time_sec": 2.494
+    },
+    "966": {
+      "level_id": 966,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 211821,
+      "level_type": "JELLY",
+      "time_sec": 8.436
+    },
+    "982": {
+      "level_id": 982,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 6,
+      "moves_limit": 23,
+      "score": 49537,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.285
+    },
+    "981": {
+      "level_id": 981,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 28,
+      "moves_limit": 30,
+      "score": 212519,
+      "level_type": "JELLY",
+      "time_sec": 3.192
+    },
+    "983": {
+      "level_id": 983,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 27,
+      "score": 60210,
+      "level_type": "JELLY",
+      "time_sec": 3.15
+    },
+    "987": {
+      "level_id": 987,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 34,
+      "score": 14296,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.067
+    },
+    "975": {
+      "level_id": 975,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 43,
+      "moves_limit": 43,
+      "score": 254137,
+      "level_type": "JELLY",
+      "time_sec": 13.298
+    },
+    "988": {
+      "level_id": 988,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 7,
+      "moves_limit": 22,
+      "score": 10246,
+      "level_type": "JELLY",
+      "time_sec": 0.939
+    },
+    "986": {
+      "level_id": 986,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 10,
+      "moves_limit": 35,
+      "score": 80964,
+      "level_type": "JELLY",
+      "time_sec": 1.371
+    },
+    "991": {
+      "level_id": 991,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "score": 26416,
+      "level_type": "INGREDIENTS",
+      "time_sec": 0.243
+    },
+    "992": {
+      "level_id": 992,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 13,
+      "moves_limit": 27,
+      "score": 27992,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.313
+    },
+    "993": {
+      "level_id": 993,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 1,
+      "moves_limit": 30,
+      "score": 132400,
+      "level_type": "JELLY",
+      "time_sec": 0.071
+    },
+    "980": {
+      "level_id": 980,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "score": 119553,
+      "level_type": "INGREDIENTS",
+      "time_sec": 8.179
+    },
+    "984": {
+      "level_id": 984,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "score": 147867,
+      "level_type": "JELLY",
+      "time_sec": 3.909
+    },
+    "985": {
+      "level_id": 985,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 31,
+      "moves_limit": 32,
+      "score": 41942,
+      "level_type": "JELLY",
+      "time_sec": 7.1
+    },
+    "995": {
+      "level_id": 995,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 50,
+      "moves_limit": 50,
+      "score": 122951,
+      "level_type": "JELLY",
+      "time_sec": 3.679
+    },
+    "994": {
+      "level_id": 994,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "score": 110740,
+      "level_type": "JELLY",
+      "time_sec": 4.549
+    },
+    "989": {
+      "level_id": 989,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 19,
+      "moves_limit": 19,
+      "score": 196909,
+      "level_type": "JELLY",
+      "time_sec": 6.207
+    },
+    "999": {
+      "level_id": 999,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 14,
+      "moves_limit": 45,
+      "score": 42966,
+      "level_type": "INGREDIENTS",
+      "time_sec": 1.776
+    },
+    "997": {
+      "level_id": 997,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 25,
+      "moves_limit": 25,
+      "score": 309100,
+      "level_type": "JELLY",
+      "time_sec": 3.54
+    },
+    "1000": {
+      "level_id": 1000,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 5,
+      "moves_limit": 37,
+      "score": 110636,
+      "level_type": "JELLY",
+      "time_sec": 2.009
+    },
+    "990": {
+      "level_id": 990,
+      "won": false,
+      "attempts": 1,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "score": 427030,
+      "level_type": "JELLY",
+      "time_sec": 8.02
+    },
+    "998": {
+      "level_id": 998,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 29,
+      "moves_limit": 29,
+      "score": 148135,
+      "level_type": "JELLY",
+      "time_sec": 7.606
+    },
+    "996": {
+      "level_id": 996,
+      "won": false,
+      "attempts": 2,
+      "moves_used": 28,
+      "moves_limit": 28,
+      "score": 150194,
+      "level_type": "JELLY",
+      "time_sec": 15.036
     }
   },
   "stats": {
-    "total_won": 247,
-    "total_tested": 300,
-    "win_rate": 82.33
+    "total_won": 738,
+    "total_tested": 1000,
+    "win_rate": 73.8
   }
 }

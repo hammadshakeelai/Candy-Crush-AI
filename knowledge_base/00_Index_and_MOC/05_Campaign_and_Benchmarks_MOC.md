@@ -28,7 +28,7 @@ xychart-beta
 ## 📑 Core Campaign & Benchmark Notes
 
 - **Campaign Progress:**
-  - **[[Grandmaster_Edge_Case_Campaign_Levels_301_to_1000]]**: Active local campaign hunter evaluating Levels 301–1,000 using the 14.4M AlphaCandy Large Master and DQN Master consensus with multi-depth lookahead.
+  - **[[Grandmaster_Edge_Case_Campaign_Levels_301_to_1000]]**: Completed campaign hunter evaluating Levels 301–1,000 (**491/700 Won, 70.14% Win Rate, 89.0% Ingredients Win Rate, Level 1000 conquered in 5 moves**), bringing cumulative progression to **738/1,000 Won (73.80%)**.
   - **[[Campaign_Milestones_1_to_300]]**:
     - **Batch 1 (Levels 1–100): 100/100 WON (100.0% Win Rate)**. Complete mastery of opening 100 levels via seed rotation and engine enhancements.
     - **Batch 2 (Levels 101–300): 147/200 WON (73.5% initial pass)**, cumulative 247/300 (82.33%) across levels 1–300.
