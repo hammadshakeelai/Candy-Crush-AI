@@ -13,15 +13,25 @@ print("=================================================================")
 print("  ALPHACANDY SPATIAL TRANSFORMER: KAGGLE GPU PIPELINE            ")
 print("=================================================================")
 
-work_dir = "/kaggle/working"
+# KAGGLE_INPUT_ROOT / KAGGLE_WORK_DIR overrides allow a faithful local dry-run of this exact script
+input_root = os.environ.get("KAGGLE_INPUT_ROOT", "/kaggle/input")
+work_dir = os.environ.get("KAGGLE_WORK_DIR", "/kaggle/working")
+os.makedirs(work_dir, exist_ok=True)
 os.chdir(work_dir)
 sys.path.insert(0, work_dir)
 
-# 1. Locate source files and datasets in /kaggle/input
+# Training scale (overridable for quick local dry-runs)
+EPISODES = int(os.environ.get("AC_EPISODES", "200"))
+PRETRAIN_LEVELS = int(os.environ.get("AC_PRETRAIN_LEVELS", "200"))
+EPOCHS = int(os.environ.get("AC_EPOCHS", "10"))
+GROUP_SIZE = int(os.environ.get("AC_GROUP_SIZE", "6"))
+
+# 1. Locate source files and datasets in the input root
 src_root = None
 data_json_found = None
+sqlite_found = None
 
-for root, dirs, files in os.walk("/kaggle/input"):
+for root, dirs, files in os.walk(input_root):
     if "candy_crush_pkg.zip" in files and src_root is None:
         zip_path = os.path.join(root, "candy_crush_pkg.zip")
         print(f"[INFO] Extracting {zip_path} into {work_dir}...")
@@ -31,8 +41,10 @@ for root, dirs, files in os.walk("/kaggle/input"):
     elif "train_spatial_transformer_gpu.py" in files and src_root is None:
         src_root = root
 
-    if ("candycrush_master_levels.json" in files or "configs_v1.208.json" in files) and not data_json_found:
-        data_json_found = os.path.join(root, "candycrush_master_levels.json" if "candycrush_master_levels.json" in files else "configs_v1.208.json")
+    if "configs_v1.208.json" in files and not data_json_found:
+        data_json_found = os.path.join(root, "configs_v1.208.json")
+    if "candycrush_master_levels.sqlite" in files and not sqlite_found:
+        sqlite_found = os.path.join(root, "candycrush_master_levels.sqlite")
 
 if src_root:
     print(f"[INFO] Source root resolved: {src_root}")
@@ -55,6 +67,12 @@ else:
 if data_json_found:
     print(f"[INFO] Setting KING_CONFIG_PATH={data_json_found}")
     os.environ["KING_CONFIG_PATH"] = data_json_found
+if sqlite_found:
+    print(f"[INFO] Setting KING_SQLITE_PATH={sqlite_found}")
+    os.environ["KING_SQLITE_PATH"] = sqlite_found
+if not data_json_found and not sqlite_found:
+    print("[FATAL] No level data (configs_v1.208.json / candycrush_master_levels.sqlite) found in /kaggle/input")
+    sys.exit(1)
 
 # 2. Verify GPU status
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -74,10 +92,10 @@ try:
     ckpt_path = os.path.join(work_dir, "alphacandy_spatial_transformer.pt")
 
     model = train_alphacandy_transformer_pipeline(
-        episodes=40,
-        pretrain_levels=30,
-        epochs=4,
-        group_size=6,
+        episodes=EPISODES,
+        pretrain_levels=PRETRAIN_LEVELS,
+        epochs=EPOCHS,
+        group_size=GROUP_SIZE,
         lr=1e-4,
         checkpoint_out=ckpt_path
     )

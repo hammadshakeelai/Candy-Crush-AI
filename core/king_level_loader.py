@@ -31,25 +31,56 @@ class KingLevelLoader:
     )
 
     def __init__(self, config_path: Optional[str] = None, sqlite_path: Optional[str] = None):
-        self.config_path = config_path or self.CONFIG_FILE
-        self.sqlite_path = sqlite_path or self.SQLITE_DB
+        # Resolve paths at construction time so env vars set after import (e.g. on Kaggle) are honoured
+        self.config_path = config_path or os.environ.get("KING_CONFIG_PATH") or self.CONFIG_FILE
+        self.sqlite_path = sqlite_path or os.environ.get("KING_SQLITE_PATH") or self.SQLITE_DB
+        if not os.path.exists(self.sqlite_path):
+            found = self._discover_file("candycrush_master_levels.sqlite")
+            if found:
+                self.sqlite_path = found
+        if not os.path.exists(self.config_path):
+            found = self._discover_file("configs_v1.208.json")
+            if found:
+                self.config_path = found
         self._levels_cache: Dict[int, Dict[str, Any]] = {}
         self._loaded = False
+
+    @staticmethod
+    def _discover_file(filename: str) -> Optional[str]:
+        """Searches common data roots (local data/ dir and Kaggle /kaggle/input) for a file."""
+        for root_dir in ("data", "/kaggle/input", "/kaggle/working"):
+            if not os.path.isdir(root_dir):
+                continue
+            for root, _dirs, files in os.walk(root_dir):
+                if filename in files:
+                    return os.path.join(root, filename)
+        return None
 
     def _ensure_loaded(self) -> None:
         if self._loaded:
             return
         if os.path.exists(self.config_path):
-            with open(self.config_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            for item in data:
-                lvl_num = item.get("totalLevel", item.get("level"))
-                if lvl_num is not None:
-                    try:
-                        self._levels_cache[int(lvl_num)] = item
-                    except (ValueError, TypeError):
+            try:
+                with open(self.config_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception as e:
+                print(f"[KingLevelLoader] WARNING: could not read {self.config_path}: {e}")
+                data = []
+            # Only raw King config lists (entries containing gameData/tileMap) are usable here.
+            # Summary-only files (e.g. candycrush_master_levels.json, a dict) are skipped.
+            if isinstance(data, list):
+                for item in data:
+                    if not isinstance(item, dict) or "gameData" not in item:
                         continue
-            print(f"[KingLevelLoader] Successfully indexed {len(self._levels_cache)} official King levels from JSON.")
+                    lvl_num = item.get("totalLevel", item.get("level"))
+                    if lvl_num is not None:
+                        try:
+                            self._levels_cache[int(lvl_num)] = item
+                        except (ValueError, TypeError):
+                            continue
+                print(f"[KingLevelLoader] Successfully indexed {len(self._levels_cache)} official King levels from JSON.")
+            else:
+                print(f"[KingLevelLoader] {self.config_path} is not a raw King config list; using SQLite only.")
         self._loaded = True
 
     def get_total_levels(self) -> int:

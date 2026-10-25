@@ -16,12 +16,16 @@ from core.reverse_engine import (
 )
 from .candyrl_ensemble import CandyRLEnsemble
 from .network import CandyCrushPolicyValueNet, encode_19ch_tensor
+from .spatial_transformer_net import (
+    AlphaCandySpatialNet, encode_spatial_board_tensor, encode_action_index
+)
 
 
 class SuperhumanSolver:
     """
     Master Grandmaster AI Solver for Candy Crush Saga.
-    Fuses deep neural pattern recognition with multi-skill tactical heuristics.
+    Fuses deep neural pattern recognition (AlphaCandy Spatial Transformer & ResNet)
+    with multi-skill tactical heuristics and adaptive expectimax lookahead.
     """
 
     def __init__(
@@ -29,31 +33,51 @@ class SuperhumanSolver:
         engine: Optional[ReverseCandyEngine] = None,
         search_depth: int = 2,
         top_k_candidates: int = 6,
-        neural_checkpoint: Optional[str] = "checkpoints/candy_crush_grandmaster_superhuman.pt",
-        use_neural: bool = True
+        neural_checkpoint: Optional[str] = None,
+        use_neural: bool = True,
+        use_transformer: bool = False
     ):
         self.engine = engine or ReverseCandyEngine()
         self.ensemble = CandyRLEnsemble(self.engine)
         self.search_depth = search_depth
         self.top_k_candidates = top_k_candidates
         self.use_neural = use_neural
-        self.model: Optional[CandyCrushPolicyValueNet] = None
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model: Optional[Any] = None
+        self.is_transformer: bool = False
 
         if self.use_neural:
-            ckpt_path = neural_checkpoint or "checkpoints/candy_crush_grandmaster_superhuman.pt"
-            if not os.path.exists(ckpt_path) and os.path.exists("checkpoints/candy_crush_grandmaster_v2.pt"):
-                ckpt_path = "checkpoints/candy_crush_grandmaster_v2.pt"
-
-            if os.path.exists(ckpt_path):
+            # 1. AlphaCandy Spatial Transformer is opt-in: only use it once a properly
+            #    trained checkpoint exists (select_best_move still expects the 19-ch ResNet API).
+            transformer_ckpt = "checkpoints/alphacandy_spatial_transformer.pt"
+            if use_transformer and os.path.exists(transformer_ckpt):
                 try:
-                    self.model = CandyCrushPolicyValueNet(in_channels=19).to(self.device)
-                    self.model.load_state_dict(
-                        torch.load(ckpt_path, map_location=self.device, weights_only=True)
+                    t_net = AlphaCandySpatialNet(in_channels=20, hidden_dim=128, num_actions=144).to(self.device)
+                    t_net.load_state_dict(
+                        torch.load(transformer_ckpt, map_location=self.device, weights_only=True)
                     )
-                    self.model.eval()
-                except Exception as e:
+                    t_net.eval()
+                    self.model = t_net
+                    self.is_transformer = True
+                except Exception:
                     self.model = None
+
+            # 2. Fallback to ResNet
+            if self.model is None:
+                ckpt_path = neural_checkpoint or "checkpoints/candy_crush_grandmaster_superhuman.pt"
+                if not os.path.exists(ckpt_path) and os.path.exists("checkpoints/candy_crush_grandmaster_v2.pt"):
+                    ckpt_path = "checkpoints/candy_crush_grandmaster_v2.pt"
+
+                if os.path.exists(ckpt_path):
+                    try:
+                        self.model = CandyCrushPolicyValueNet(in_channels=19).to(self.device)
+                        self.model.load_state_dict(
+                            torch.load(ckpt_path, map_location=self.device, weights_only=True)
+                        )
+                        self.model.eval()
+                        self.is_transformer = False
+                    except Exception:
+                        self.model = None
 
     def select_best_move(
         self, state: ReverseEngineState

@@ -222,13 +222,13 @@
     },
     "35": {
       "level_id": 35,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
+      "won": true,
+      "attempts": 4,
+      "moves_used": 14,
       "moves_limit": 20,
-      "score": 271883,
+      "score": 293065,
       "level_type": "JELLY",
-      "time_sec": 24.166723012924194
+      "time_sec": 21.383718013763428
     },
     "36": {
       "level_id": 36,
@@ -358,7 +358,7 @@
       "moves_limit": 25,
       "score": 19166,
       "level_type": "JELLY",
-      "time_sec": 3.2998149394989014
+      "time_sec": 8.4935781955719
     },
     "40": {
       "level_id": 40,
@@ -432,13 +432,13 @@
     },
     "26": {
       "level_id": 26,
-      "won": false,
-      "attempts": 3,
-      "moves_used": 22,
+      "won": true,
+      "attempts": 4,
+      "moves_used": 17,
       "moves_limit": 22,
-      "score": 229437,
+      "score": 255786,
       "level_type": "JELLY",
-      "time_sec": 32.586750507354736
+      "time_sec": 26.388453245162964
     },
     "43": {
       "level_id": 43,
@@ -473,12 +473,12 @@
     "28": {
       "level_id": 28,
       "won": false,
-      "attempts": 3,
+      "attempts": 4,
       "moves_used": 28,
       "moves_limit": 28,
-      "score": 57357,
+      "score": 144348,
       "level_type": "INGREDIENTS",
-      "time_sec": 31.690353393554688
+      "time_sec": 27.18273663520813
     },
     "52": {
       "level_id": 52,
@@ -502,13 +502,13 @@
     },
     "31": {
       "level_id": 31,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
+      "won": true,
+      "attempts": 4,
+      "moves_used": 22,
       "moves_limit": 29,
-      "score": 191926,
+      "score": 194943,
       "level_type": "JELLY",
-      "time_sec": 37.34540128707886
+      "time_sec": 32.083035945892334
     },
     "57": {
       "level_id": 57,
@@ -672,13 +672,13 @@
     },
     "53": {
       "level_id": 53,
-      "won": false,
-      "attempts": 3,
-      "moves_used": 25,
+      "won": true,
+      "attempts": 5,
+      "moves_used": 22,
       "moves_limit": 25,
-      "score": 292003,
+      "score": 290691,
       "level_type": "JELLY",
-      "time_sec": 28.284350395202637
+      "time_sec": 37.48783540725708
     },
     "74": {
       "level_id": 74,
@@ -808,7 +808,7 @@
       "moves_limit": 26,
       "score": 231102,
       "level_type": "JELLY",
-      "time_sec": 31.02915644645691
+      "time_sec": 27.5545437335968
     },
     "87": {
       "level_id": 87,
@@ -823,12 +823,12 @@
     "59": {
       "level_id": 59,
       "won": false,
-      "attempts": 2,
+      "attempts": 4,
       "moves_used": 27,
       "moves_limit": 27,
-      "score": 281104,
+      "score": 301090,
       "level_type": "JELLY",
-      "time_sec": 40.69184756278992
+      "time_sec": 41.73610591888428
     },
     "89": {
       "level_id": 89,
@@ -983,12 +983,12 @@
     "86": {
       "level_id": 86,
       "won": false,
-      "attempts": 3,
+      "attempts": 4,
       "moves_used": 23,
       "moves_limit": 23,
-      "score": 135703,
+      "score": 163839,
       "level_type": "JELLY",
-      "time_sec": 26.153384923934937
+      "time_sec": 26.085448741912842
     },
     "94": {
       "level_id": 94,
@@ -1002,7 +1002,8 @@
     }
   },
   "stats": {
-    "total_won": 0,
-    "total_tested": 0
+    "total_won": 95,
+    "total_tested": 100,
+    "win_rate": 95.0
   }
 }

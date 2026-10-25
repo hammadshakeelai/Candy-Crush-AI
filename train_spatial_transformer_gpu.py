@@ -39,12 +39,16 @@ def collect_expert_plannings(
     from the Superhuman tactical solver across official King levels.
     """
     dataset: List[Dict[str, Any]] = []
+    load_failures = 0
 
     for i in range(num_levels):
-        lvl_id = (i % 100) + 1
+        lvl_id = (i % 500) + 1
         try:
             cfg = loader.load_level(lvl_id)
-        except Exception:
+        except Exception as e:
+            load_failures += 1
+            if load_failures <= 3:
+                print(f"[WARN] Failed to load level {lvl_id}: {type(e).__name__}: {e}")
             continue
 
         state = ReverseEngineState(cfg)
@@ -83,9 +87,15 @@ def collect_expert_plannings(
 
         is_won = state.has_won()
         # Back-fill outcome
-        for entry in dataset[-step:]:
+        for entry in dataset[-step:] if step > 0 else []:
             entry["won"] = is_won
 
+    if load_failures == num_levels:
+        raise RuntimeError(
+            f"All {num_levels} levels failed to load — level data is missing. "
+            f"sqlite_path={loader.sqlite_path} config_path={loader.config_path}"
+        )
+    print(f"[Expert Collection] {len(dataset)} transitions from {num_levels - load_failures}/{num_levels} levels")
     return dataset
 
 
@@ -100,8 +110,7 @@ def pretrain_spatial_transformer(
 ) -> None:
     """Pre-trains AlphaCandy Spatial Transformer on expert demonstrations."""
     if not dataset:
-        print("[WARN] Dataset is empty, skipping pre-training.")
-        return
+        raise RuntimeError("Expert dataset is empty — refusing to continue with an untrained model.")
 
     print(f"\n[AlphaCandy Pre-Training] Dataset size: {len(dataset)} transitions | Epochs: {epochs}")
     model.train()
@@ -255,13 +264,16 @@ def train_alphacandy_transformer_pipeline(
     ref_model.eval()
 
     test_levels = [1, 5, 10, 15, 20, 23, 25, 30, 50, 100]
+    completed_episodes = 0
 
     for ep in range(1, episodes + 1):
         lvl_id = test_levels[(ep - 1) % len(test_levels)]
         try:
             cfg = loader.load_level(lvl_id)
-        except Exception:
+        except Exception as e:
+            print(f"[WARN] GRPO: failed to load level {lvl_id}: {type(e).__name__}: {e}")
             continue
+        completed_episodes += 1
 
         seed = 42 + (ep * 137)
         group_trajectories = []
@@ -282,6 +294,7 @@ def train_alphacandy_transformer_pipeline(
         advantages = [(r - r_mean) / r_std for r in group_rewards]
 
         # PPO / GRPO Update Step
+        model.train()
         optimizer.zero_grad()
         total_loss = 0.0
         total_steps = 0
@@ -321,6 +334,10 @@ def train_alphacandy_transformer_pipeline(
 
         if ep % max(1, episodes // 5) == 0 or ep == episodes:
             print(f"GRPO Episode {ep:3d}/{episodes:3d} | Level: {lvl_id:3d} | Mean Reward: {r_mean:6.1f} | Loss: {total_loss:.4f}")
+
+    if completed_episodes == 0:
+        raise RuntimeError("No GRPO episodes ran — level data is missing.")
+    print(f"[GRPO] Completed {completed_episodes}/{episodes} episodes")
 
     # Save final checkpoint
     os.makedirs(os.path.dirname(os.path.abspath(checkpoint_out)), exist_ok=True)
