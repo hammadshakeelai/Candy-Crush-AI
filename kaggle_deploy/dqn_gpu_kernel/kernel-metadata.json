@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/candy-crush-dqn-learning-gpu",
+  "title": "Candy Crush DQN Learning GPU",
+  "code_file": "run_dqn_all_levels_gpu.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

@@ -87,6 +87,12 @@ Candy-Crush-AI/
 │   ├── async_1000_kernel/        # Async 1,000 games in ~10 minutes runner
 │   │   ├── kernel-metadata.json
 │   │   └── run_async_1000_games.py
+│   ├── dqn_gpu_kernel/           # Multi-level Double Dueling DQN GPU learner
+│   │   ├── kernel-metadata.json
+│   │   └── run_dqn_all_levels_gpu.py
+│   ├── transformer_all_levels_kernel/ # AlphaCandy Spatial Transformer + GRPO all-levels GPU learner
+│   │   ├── kernel-metadata.json
+│   │   └── run_transformer_all_levels_gpu.py
 │   ├── transformer_kernel/       # Spatial Transformer training pipeline
 │   └── src/                      # Packaged release archives (candy_crush_pkg.zip)
 ├── knowledge_base/               # 📚 Complete Obsidian Knowledge Base Vault
@@ -174,8 +180,9 @@ python campaign/campaign_manager.py --start 101 --end 300 --workers 6 --max-atte
 ## 🌐 Kaggle Resources
 
 - **Kaggle Dataset:** [hammadshakeelai/candy-crush-grandmaster-rl](https://www.kaggle.com/datasets/hammadshakeelai/candy-crush-grandmaster-rl)
-- **Kaggle 1,000 Games Benchmark Kernel:** [hammadshakeelai/candy-crush-async-1000-games](https://www.kaggle.com/code/hammadshakeelai/candy-crush-async-1000-games)
-- **Kaggle GPU Transformer Trainer:** [hammadshakeelai/alphacandy-spatial-transformer](https://www.kaggle.com/code/hammadshakeelai/alphacandy-spatial-transformer)
+- **Kaggle 1,000 Games High-Throughput Benchmark:** [hammadshakeelai/candy-crush-async-1000-games](https://www.kaggle.com/code/hammadshakeelai/candy-crush-async-1000-games)
+- **Kaggle Double Dueling DQN Multi-Level GPU Learner:** [hammadshakeelai/candy-crush-dqn-learning-gpu](https://www.kaggle.com/code/hammadshakeelai/candy-crush-dqn-learning-gpu)
+- **Kaggle AlphaCandy Spatial Transformer & GRPO All-Levels Trainer:** [hammadshakeelai/alphacandy-transformer-all-levels](https://www.kaggle.com/code/hammadshakeelai/alphacandy-transformer-all-levels)
 
 ---
 
