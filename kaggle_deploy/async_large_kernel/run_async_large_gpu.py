@@ -1,15 +1,15 @@
 """
 AlphaCandy Grandmaster: Production Async Large GPU Campaign Runner.
-Evaluates large-scale campaigns (e.g. 2,500 - 5,000 official King levels) across
-Kaggle GPU & 4 vCPUs using parallel async workers and neural ensemble fusion.
+Scales Grandmaster Multi-Paradigm Neural Fleet across 2,500+ Official King Levels
+on Kaggle Dual Tesla T4 GPUs & 4 vCPUs.
 Features:
-  - Multi-Worker Parallelism with Centralized GPU Acceleration (Tesla T4 / P100)
-  - Unified Neural Fleet: Master Double Dueling DQN + Master AlphaCandy Spatial Transformer + GRPO + CANDYRL
-  - 14.4M Parameter AlphaCandy Large Architecture Support
+  - 4 Parallel Workers with Multi-GPU context isolation
+  - Master Neural Weights: Double Dueling DQN Master + AlphaCandy Spatial Transformer Master
+  - AlphaCandy Large Architecture Support (~14.4M parameters)
   - Depth-2 Tactical Lookahead with Beam Search Pruning (top-k=6)
   - 5-Layer Defensive Zero-Error Guards (graceful recovery on non-standard levels)
   - Multi-Attempt Solving with dynamic seed rotation and progressive endgame escalation
-  - Real-time periodic checkpointing to progress_large.json & SQLite master database
+  - Real-time periodic checkpointing to progress_async_large.json & SQLite master database
   - Auto-generated Markdown analytics report with win-rate distributions across game modes
 """
 
@@ -51,6 +51,7 @@ def setup_environment() -> tuple:
     data_json_found = None
     sqlite_found = None
 
+    # Walk input_root to discover source code and datasets
     for root, dirs, files in os.walk(input_root):
         if "candy_crush_pkg.zip" in files and src_root is None:
             zip_path = os.path.join(root, "candy_crush_pkg.zip")
@@ -61,46 +62,54 @@ def setup_environment() -> tuple:
                 src_root = work_dir
                 print("[INFO] Extraction complete.")
             except Exception as e:
-                print(f"[WARN] Error extracting zip: {e}")
+                print(f"[WARN] Failed extracting zip: {e}")
+
+        # If already unzipped directory with core and models
+        if "core" in dirs and "models" in dirs and src_root is None:
+            src_root = root
+            print(f"[INFO] Discovered source tree at: {src_root}")
 
         if "candycrush_master_levels.json" in files:
             data_json_found = os.path.join(root, "candycrush_master_levels.json")
         elif "configs_v1.208.json" in files and not data_json_found:
             data_json_found = os.path.join(root, "configs_v1.208.json")
 
-        if "candycrush_master_levels.sqlite" in files:
+        if "candycrush_master_levels.sqlite" in files and not sqlite_found:
             sqlite_found = os.path.join(root, "candycrush_master_levels.sqlite")
 
-    if src_root is None:
-        if os.path.exists(os.path.join(work_dir, "core")):
-            src_root = work_dir
-        elif not os.path.exists("/kaggle"):
-            src_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+    # Fallback to local repo root if running outside Kaggle
+    if not src_root:
+        candidate_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+        if os.path.exists(os.path.join(candidate_root, "core", "king_level_loader.py")):
+            src_root = candidate_root
 
-    if src_root:
-        for p in [src_root, work_dir]:
-            if p not in sys.path:
-                sys.path.insert(0, p)
+    # Copy files from src_root into work_dir if outside work_dir
+    if src_root and os.path.abspath(src_root) != os.path.abspath(work_dir):
+        print(f"[INFO] Copying source files from {src_root} to {work_dir}...")
+        for item in os.listdir(src_root):
+            s_item = os.path.join(src_root, item)
+            d_item = os.path.join(work_dir, item)
+            if not os.path.exists(d_item):
+                try:
+                    if os.path.isdir(s_item):
+                        shutil.copytree(s_item, d_item)
+                    else:
+                        shutil.copy2(s_item, d_item)
+                except Exception as e:
+                    print(f"[WARN] Failed copying {item}: {e}")
 
-    # Link datasets into working data directory
-    data_target_dir = os.path.join(work_dir, "data")
-    os.makedirs(data_target_dir, exist_ok=True)
+    # Set paths in sys.path
+    if work_dir not in sys.path:
+        sys.path.insert(0, work_dir)
+    if src_root and src_root not in sys.path:
+        sys.path.insert(0, src_root)
 
     if data_json_found:
-        dst = os.path.join(data_target_dir, "candycrush_master_levels.json")
-        if not os.path.exists(dst):
-            try:
-                shutil.copy2(data_json_found, dst)
-            except Exception:
-                pass
-
+        os.environ["KING_CONFIG_PATH"] = data_json_found
+        print(f"[INFO] Set KING_CONFIG_PATH={data_json_found}")
     if sqlite_found:
-        dst = os.path.join(data_target_dir, "candycrush_master_levels.sqlite")
-        if not os.path.exists(dst):
-            try:
-                shutil.copy2(sqlite_found, dst)
-            except Exception:
-                pass
+        os.environ["KING_SQLITE_PATH"] = sqlite_found
+        print(f"[INFO] Set KING_SQLITE_PATH={sqlite_found}")
 
     cuda_avail = torch.cuda.is_available()
     device_name = torch.cuda.get_device_name(0) if cuda_avail else "CPU"
@@ -152,7 +161,7 @@ def init_parallel_worker(args: tuple):
 
         grpo_ckpt = "checkpoints/candy_crush_grandmaster_superhuman.pt"
 
-        # Check subdirectories
+        # Check subdirectories if needed
         for prefix in [work_dir, os.path.join(work_dir, "candy_crush_pkg")]:
             if prefix and os.path.exists(prefix):
                 for p_var, c_var in [("dqn", dqn_ckpt), ("trans", trans_ckpt), ("grpo", grpo_ckpt)]:
@@ -224,69 +233,73 @@ def solve_level_safe_task(level_arg: Any) -> Dict[str, Any]:
             return {
                 "level_id": level_id,
                 "won": bool(res.get("won", False)),
-                "attempts": int(res.get("attempts", 1)),
+                "attempts": int(res.get("attempt", 1)),
                 "moves_used": int(res.get("moves_used", 0)),
                 "moves_limit": int(cfg.moves_limit),
+                "moves_remaining": int(res.get("moves_remaining", 0)),
                 "score": int(res.get("final_score", 0)),
-                "duration_sec": time.time() - t_start,
-                "game_mode": str(cfg.level_type.name if hasattr(cfg.level_type, "name") else cfg.level_type),
+                "objectives_remaining": int(res.get("objectives_remaining", 0)),
+                "game_mode": cfg.level_type.name,
+                "duration_sec": float(res.get("duration_sec", time.time() - t_start)),
                 "error": None
             }
-        except Exception as e:
-            # Fallback to heuristic play on unexpected error
+        except Exception:
+            # Fall back to tactical heuristic solver on unexpected error
             pass
 
-    # Step 3: Heuristic fallback
+    # Step 3: Defensive Fallback Solver (Pure Tactical Ensemble)
     try:
-        from core.reverse_engine import ReverseEngineState, ReverseCandyEngine
+        from core.reverse_engine import ReverseCandyEngine, ReverseEngineState
         from models.candyrl_ensemble import GrandmasterCandyRLEnsemble
 
         engine = ReverseCandyEngine()
         ensemble = GrandmasterCandyRLEnsemble(engine)
-        state = ReverseEngineState(cfg)
-        engine.initialize_board(state, seed=42 + level_id)
 
-        step = 0
-        limit = min(cfg.moves_limit, 80)
-        while not state.game_over and step < limit:
-            legal = engine.get_legal_moves(state)
-            if not legal:
-                if not engine.shuffle_board(state):
+        best_fallback_res = None
+        for attempt in range(1, max_attempts + 1):
+            state = ReverseEngineState(cfg)
+            engine.initialize_board(state, seed=42 + level_id * 17 + attempt * 733)
+            step = 0
+            while not state.has_won() and not state.has_lost() and step < cfg.moves_limit:
+                legal = engine.get_legal_moves(state)
+                if not legal:
                     break
-                continue
-            best_mv = None
-            best_sc = -1e9
-            for r, c, d in legal:
-                sc = ensemble.evaluate_move(state, r, c, d)
-                if sc > best_sc:
-                    best_sc = sc
-                    best_mv = (r, c, d)
-            if best_mv:
-                engine.step(state, best_mv[0], best_mv[1], best_mv[2])
-            step += 1
+                best_m = max(legal, key=lambda m: ensemble.evaluate_move(state, m[0], m[1], m[2]))
+                engine.execute_move(state, best_m[0], best_m[1], best_m[2])
+                step += 1
 
-        return {
-            "level_id": level_id,
-            "won": bool(state.is_won()),
-            "attempts": 1,
-            "moves_used": step,
-            "moves_limit": int(cfg.moves_limit),
-            "score": int(state.score),
-            "duration_sec": time.time() - t_start,
-            "game_mode": str(cfg.level_type.name if hasattr(cfg.level_type, "name") else cfg.level_type),
-            "error": "FallbackUsed"
-        }
-    except Exception as e:
+            won = state.has_won()
+            f_res = {
+                "level_id": level_id,
+                "won": won,
+                "attempts": attempt,
+                "moves_used": step,
+                "moves_limit": int(cfg.moves_limit),
+                "moves_remaining": int(state.moves_left),
+                "score": int(state.score),
+                "objectives_remaining": int(state.remaining_objectives_count()),
+                "game_mode": cfg.level_type.name,
+                "duration_sec": float(time.time() - t_start),
+                "fallback_mode": True,
+                "error": None
+            }
+            if won:
+                return f_res
+            if best_fallback_res is None or f_res["score"] > best_fallback_res["score"]:
+                best_fallback_res = f_res
+
+        return best_fallback_res or f_res
+    except Exception as e_crit:
         return {
             "level_id": level_id,
             "won": False,
             "attempts": 1,
             "moves_used": 0,
-            "moves_limit": int(getattr(cfg, "moves_limit", 30)),
+            "moves_limit": int(getattr(cfg, "moves_limit", 0)),
             "score": 0,
-            "duration_sec": time.time() - t_start,
-            "game_mode": "ERROR",
-            "error": f"FatalError: {str(e)}"
+            "game_mode": getattr(cfg.level_type, "name", "UNKNOWN") if hasattr(cfg, "level_type") else "UNKNOWN",
+            "duration_sec": float(time.time() - t_start),
+            "error": f"CriticalFallbackError: {str(e_crit)}"
         }
 
 
