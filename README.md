@@ -108,13 +108,16 @@ Candy-Crush-AI/
 │   ├── 05_High_Throughput_Parallelism/     # GPU sharding, async workers, zero-error guards
 │   └── 06_Campaign_Progress_and_Benchmarks/# Levels 1–300 records & 1,000-game Kaggle benchmark
 ├── models/                       # Neural network architectures & tactical ensembles
+│   ├── grandmaster_consensus_agent.py # Tri-paradigm consensus solver (Large + DQN + Lookahead)
+│   ├── alphacandy_large_agent.py      # Standalone 14.4M pure neural transformer agent
 │   ├── grandmaster_unified_agent.py   # Unified multi-paradigm agent
-│   ├── spatial_transformer_net.py     # 20-channel Spatial Self-Attention Transformer
+│   ├── spatial_transformer_net.py     # 20-channel Spatial Self-Attention Transformer & Large Net
 │   ├── candy_dqn.py                   # Double Dueling DQN with PER
 │   ├── network.py                     # GRPO Policy-Value Dual-Head ResNet
 │   ├── superhuman_solver.py           # Adaptive hybrid expectimax solver
 │   └── candyrl_ensemble.py            # CANDYRL expert tactical ensemble
 ├── tests/                        # Comprehensive physics and mechanics unit tests
+├── train_alphacandy_large.py     # Dedicated trainer for AlphaCandy Large (14.4M params)
 ├── train_dqn.py                  # Double Dueling DQN training script
 ├── train_grpo.py                 # GRPO training pipeline
 ├── train_spatial_transformer_gpu.py # AlphaCandy Spatial Transformer GPU trainer

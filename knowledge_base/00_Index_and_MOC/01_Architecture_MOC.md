@@ -44,9 +44,11 @@ flowchart TD
 
 ## 📑 Core Architectural Notes
 
-- **Master Synthesis:**
+- **Master Synthesis & Consensus:**
+  - **[[Grandmaster_Consensus_Architecture]]**: Tri-paradigm consensus fusion (AlphaCandy Large + DQN Master + Tactical Ensemble) with dynamic phase-weighted scoring and multi-depth expectimax lookahead (100% milestone win rate).
   - **[[Grandmaster_Unified_Agent]]**: The flagship agent unifying all reinforcement learning and heuristic paradigms into an 85.7%+ win rate solver.
 - **Deep Neural Networks:**
+  - **[[Pure_AlphaCandy_Large_Agent]]**: Standalone 14.4M-parameter pure neural solver operating without tree search or heuristic lookahead (< 2 ms GPU latency).
   - **[[AlphaCandy_Large_Architecture]]**: Scaled-up ~14.4M parameter architecture with 256 channels, 2-stage 8-Head Spatial Self-Attention, and deep 6-block residual backbone.
   - **[[AlphaCandy_Spatial_Transformer]]**: 20-channel tensor representation, 4-Head Multi-Head Spatial Self-Attention across 81 cells, canonical 144-action policy head, and win probability estimator.
   - **[[Double_Dueling_DQN_PER]]**: Decoupled value stream $V(s) \in \mathbb{R}^1$ and advantage stream $A(s,a) \in \mathbb{R}^{144}$ with Prioritized Experience Replay and Polyak target updates ($\tau=0.005$).
