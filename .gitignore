@@ -11,3 +11,6 @@ kaggle_deploy/src/*.csv
 kaggle_deploy/src/*.json
 kaggle_deploy/src/*.sqlite
 checkpoints/*_local.pt
+
+data/apks/
+*.apk

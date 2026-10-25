@@ -1,3 +1,7 @@
+<div align="center">
+
+<img src="assets/banner.png" alt="AlphaCandy: Superhuman Match-3 AI Banner" width="100%" />
+
 # 🍬 AlphaCandy: Superhuman Reinforcement Learning & Spatial Transformers for Candy Crush Saga
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -8,6 +12,8 @@
 [![Knowledge Base](https://img.shields.io/badge/Obsidian-Knowledge%20Base-7A3EE8.svg)](knowledge_base/00_Index_and_MOC/00_Home_MOC.md)
 
 **AlphaCandy** is a superhuman artificial intelligence, deep reinforcement learning, and spatial transformer system designed to master all **23,355+ official King levels** of Candy Crush Saga. It synthesizes model-free Deep Q-Learning (Double Dueling DQN), non-Euclidean Graph Self-Attention Transformers (AlphaCandy Spatial Net), Group Relative Policy Optimization (GRPO), and adaptive stochastic Expectimax lookahead.
+
+</div>
 
 ---
 
