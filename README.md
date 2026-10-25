@@ -90,6 +90,9 @@ Candy-Crush-AI/
 │   ├── async_large_kernel/       # Async 2,500+ games large campaign runner with Master models
 │   │   ├── kernel-metadata.json
 │   │   └── run_async_large_gpu.py
+│   ├── alphacandy_large_gpu_trainer/  # AlphaCandy Large (14.4M) Tensor Core continuous trainer
+│   │   ├── kernel-metadata.json
+│   │   └── run_large_gpu_continuous.py
 │   ├── dqn_gpu_kernel/           # Multi-level Double Dueling DQN GPU learner
 │   │   ├── kernel-metadata.json
 │   │   └── run_dqn_all_levels_gpu.py
@@ -190,6 +193,7 @@ python campaign/campaign_manager.py --start 101 --end 300 --workers 6 --max-atte
 - **Kaggle Double Dueling DQN Multi-Level GPU Learner:** [hammadshakeelai/candy-crush-dqn-learning-gpu](https://www.kaggle.com/code/hammadshakeelai/candy-crush-dqn-learning-gpu)
 - **Kaggle AlphaCandy Spatial Transformer & GRPO All-Levels Trainer:** [hammadshakeelai/alphacandy-transformer-all-levels](https://www.kaggle.com/code/hammadshakeelai/alphacandy-transformer-all-levels)
 - **Kaggle Async Large 2,500+ Games GPU Runner:** [hammadshakeelai/alphacandy-async-grandmaster-large-gpu](https://www.kaggle.com/code/hammadshakeelai/alphacandy-async-grandmaster-large-gpu)
+- **Kaggle AlphaCandy Large 14.4M GPU Continuous Trainer:** [hammadshakeelai/alphacandy-large-gpu-continuous-trainer](https://www.kaggle.com/code/hammadshakeelai/alphacandy-large-gpu-continuous-trainer)
 
 ---
 

@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-large-gpu-continuous-trainer",
+  "title": "AlphaCandy Large GPU Continuous Trainer",
+  "code_file": "run_large_gpu_continuous.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
