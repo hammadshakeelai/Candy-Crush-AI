@@ -36,6 +36,7 @@ flowchart TD
 ## 📑 Core Mechanics Notes
 
 - **Physics, Percolation & Criticality:**
+  - **[[Dispensers_Portals_and_Non_Euclidean_Board_Topology]]**: Formulating board flow as Directed Acyclic Graphs (DAG), topological sorting of infill, dispenser cannons (`ammoCannons`), and wormhole connectivity.
   - **[[Percolation_Theory_and_Cascade_Physics]]**: Grid hypergraph representation, weak proper colorings, branching processes ($R_0$), and self-organized criticality in cascade chains.
   - **[[King_Engine_Core_Physics]]**: Deterministic falling physics, sliding diagonal infill, cascade propagation order, and grid masking.
   - **[[Dispenser_Refill_and_RNG_Distribution]]**: Pseudo-random number generator seeding, color distribution tables, dispenser choking, and column refill precedence.

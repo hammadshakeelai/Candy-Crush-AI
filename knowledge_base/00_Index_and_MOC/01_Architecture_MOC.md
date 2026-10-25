@@ -54,6 +54,7 @@ flowchart TD
   - **[[Double_Dueling_DQN_PER]]**: Decoupled value stream $V(s) \in \mathbb{R}^1$ and advantage stream $A(s,a) \in \mathbb{R}^{144}$ with Prioritized Experience Replay and Polyak target updates ($\tau=0.005$).
   - **[[GRPO_Policy_Value_ResNet]]**: Group Relative Policy Optimization on 19-channel inputs, computing group-relative advantage without maintaining an expensive critic network.
 - **Search & Lookahead:**
+  - **[[Multi_Depth_Expectimax_with_Afterstate_Pruning]]**: Stochastic MuZero afterstate factoring for 300× search speedup, evaluating deterministic match cascades before random dispenser refills.
   - **[[Adaptive_Expectimax_Lookahead]]**: Chance-node stochastic tree expansion, 1-ply candidate pruning, and selective 2/3-ply depth escalation for endgame closing.
 - **Theoretical Foundations:**
   - **[[Single_Model_Continual_Learning_Proof]]**: Mathematical and empirical proof on parameter capacity, Lipschitz smoothness, and continual learning bounds across 23,355 levels.
