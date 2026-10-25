@@ -66,70 +66,28 @@ def solve_until_won(args: tuple) -> Dict[str, Any]:
             "level_id": int(level_id),
             "won": False,
             "error": str(e),
-            "attempts": 0
+            "attempt": 0
         }
 
-    best_res = None
-    t0 = time.time()
+    initial_seed = (level_id * 10007 + 42) % 1000003
+    res = _WORKER_AGENT.solve_level(cfg, max_attempts=max_attempts, seed=initial_seed)
 
-    for attempt in range(1, max_attempts + 1):
-        # Rotate seeds to find favorable opening distribution
-        run_seed = (level_id * 10007 + attempt * 733 + 42) % 1000003
+    won = bool(res.get("won", False))
+    att = int(res.get("attempt", 1))
 
-        # Escalate search parameters dynamically on higher attempts
-        if attempt >= 5:
-            _WORKER_AGENT.search_depth = 3
-            _WORKER_AGENT.top_k_candidates = 8
-        elif attempt >= 3:
-            _WORKER_AGENT.search_depth = 2
-            _WORKER_AGENT.top_k_candidates = 6
-        else:
-            _WORKER_AGENT.search_depth = 2
-            _WORKER_AGENT.top_k_candidates = 4
-
-        state = ReverseEngineState(cfg)
-        _WORKER_ENGINE.initialize_board(state, seed=run_seed)
-
-        step = 0
-        moves_limit = cfg.moves_limit
-        shuffles = 0
-
-        while not state.has_won() and not state.has_lost() and step < moves_limit:
-            escalate = (attempt >= 2) or (state.moves_left <= 8)
-            best = _WORKER_AGENT.select_best_move(state, escalate=escalate)
-            if best is None:
-                shuffles += 1
-                if shuffles > 3:
-                    break
-                _WORKER_ENGINE.initialize_board(state)
-                continue
-            shuffles = 0
-            r, c, d, _ = best
-            _WORKER_ENGINE.execute_move(state, r, c, d)
-            step += 1
-
-        won = state.has_won()
-        cur_res = {
-            "level_id": int(level_id),
-            "won": won,
-            "attempt": attempt,
-            "winning_seed": run_seed if won else None,
-            "moves_used": step,
-            "moves_limit": int(cfg.moves_limit),
-            "moves_remaining": int(state.moves_left),
-            "final_score": int(state.score),
-            "objectives_remaining": int(state.remaining_objectives_count()),
-            "level_type": cfg.level_type.name,
-            "duration_sec": round(time.time() - t0, 2)
-        }
-
-        if won:
-            return cur_res
-
-        if best_res is None or cur_res["objectives_remaining"] < best_res["objectives_remaining"]:
-            best_res = cur_res
-
-    return best_res or cur_res
+    return {
+        "level_id": int(level_id),
+        "won": won,
+        "attempt": att,
+        "winning_seed": (initial_seed + (att - 1) * 313) if won else None,
+        "moves_used": int(res.get("moves_used", 0)),
+        "moves_limit": int(cfg.moves_limit),
+        "moves_remaining": int(res.get("moves_remaining", 0)),
+        "final_score": int(res.get("final_score", 0)),
+        "objectives_remaining": int(res.get("objectives_remaining", 0)),
+        "level_type": cfg.level_type.name,
+        "duration_sec": round(float(res.get("duration_sec", 0.0)), 2)
+    }
 
 
 class MasteryHunter:

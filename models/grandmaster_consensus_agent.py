@@ -174,7 +174,7 @@ class GrandmasterConsensusAgent:
         return candidates
 
     def select_best_move(
-        self, state: ReverseEngineState
+        self, state: ReverseEngineState, escalate: bool = False
     ) -> Optional[Tuple[int, int, Direction, float, Dict[str, Any]]]:
         """
         Selects best action using Consensus Scoring + Adaptive Lookahead Search.
@@ -189,13 +189,13 @@ class GrandmasterConsensusAgent:
         top_k = candidates[:self.top_k_candidates]
 
         # Fast path if best candidate has massive consensus margin
-        if len(candidates) > 1 and (candidates[0]["consensus_score"] - candidates[1]["consensus_score"] > 0.45):
+        if not escalate and len(candidates) > 1 and (candidates[0]["consensus_score"] - candidates[1]["consensus_score"] > 0.45):
             m = candidates[0]["move"]
             return (m[0], m[1], m[2], candidates[0]["consensus_score"], candidates[0])
 
         # Dynamic Search Depth
         win_p = candidates[0]["win_prob"]
-        if state.moves_left <= 4 or (0.25 <= win_p <= 0.65):
+        if escalate or state.moves_left <= 6 or (0.20 <= win_p <= 0.70):
             effective_depth = max(self.search_depth, 2)
         else:
             effective_depth = 1
