@@ -54,6 +54,8 @@ class GrandmasterCandyRLEnsemble:
             combo_bonus += 250000.0  # Cross clear
         elif s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
             combo_bonus += 150000.0  # Single color wipe
+        elif s1 == SpecialCandy.JELLY_FISH or s2 == SpecialCandy.JELLY_FISH:
+            combo_bonus += 350000.0  # Jelly Fish homing strikes!
 
         # ==============================================================
         # 2. SIMULATE 1-PLY CONSEQUENCE

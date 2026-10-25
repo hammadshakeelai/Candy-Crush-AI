@@ -74,6 +74,23 @@ if not data_json_found and not sqlite_found:
     print("[FATAL] No level data (configs_v1.208.json / candycrush_master_levels.sqlite) found in /kaggle/input")
     sys.exit(1)
 
+# Hot-patch device bug in train_spatial_transformer_gpu if running from cached input
+for check_path in [
+    os.path.join(work_dir, "train_spatial_transformer_gpu.py"),
+    os.path.join(work_dir, "candy_crush_pkg", "train_spatial_transformer_gpu.py")
+]:
+    if os.path.exists(check_path):
+        with open(check_path, "r", encoding="utf-8") as f:
+            t_code = f.read()
+        if "action_dist.log_prob(torch.tensor(a_idx)).item()" in t_code:
+            print("[INFO] Hot-patching action_dist.log_prob device target...")
+            t_code = t_code.replace(
+                "action_dist.log_prob(torch.tensor(a_idx)).item()",
+                "action_dist.log_prob(torch.tensor(a_idx, device=device)).item()"
+            )
+            with open(check_path, "w", encoding="utf-8") as f:
+                f.write(t_code)
+
 # 2. Verify GPU status
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"[INFO] Compute Device: {device}")

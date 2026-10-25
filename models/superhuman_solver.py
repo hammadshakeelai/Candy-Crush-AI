@@ -200,9 +200,12 @@ class SuperhumanSolver:
             best = self.select_best_move(state)
             if best is None:
                 shuffle_count += 1
-                if shuffle_count > 3:
+                if shuffle_count > 6:
                     break
-                self.engine.initialize_board(state)
+                if hasattr(self.engine, "shuffle_board"):
+                    self.engine.shuffle_board(state)
+                else:
+                    self.engine.initialize_board(state)
                 continue
 
             shuffle_count = 0
@@ -249,10 +252,19 @@ class SuperhumanSolver:
             state = ReverseEngineState(config)
             self.engine.initialize_board(state, seed=seed)
 
+            # Adaptive search deepening on higher retry attempts
+            orig_depth = self.search_depth
+            orig_top_k = self.top_k_candidates
+            if attempt >= 3:
+                self.search_depth = max(orig_depth, 3)
+                self.top_k_candidates = max(orig_top_k, 7)
+
             if verbose and attempt > 1:
-                print(f"\n--> Attempt {attempt}/{max_attempts} for Level {config.level_id} (Seed: {seed})")
+                print(f"\n--> Attempt {attempt}/{max_attempts} for Level {config.level_id} (Seed: {seed}, Depth: {self.search_depth})")
 
             res = self._play_single_attempt(state, max_moves=max_moves, verbose=verbose)
+            self.search_depth = orig_depth
+            self.top_k_candidates = orig_top_k
             res["attempts"] = attempt
 
             if res["won"]:
@@ -260,7 +272,8 @@ class SuperhumanSolver:
                     print(f"=== Level {config.level_id}: WON on Attempt {attempt}/{max_attempts}! ({res['duration_sec']:.2f}s, Score: {res['final_score']:,}) ===")
                 return res
 
-            if best_res is None or res["final_score"] > best_res["final_score"]:
+            if best_res is None or (not best_res.get("won", False) and state.remaining_objectives_count() < best_res.get("remaining_objectives", 999)):
+                res["remaining_objectives"] = state.remaining_objectives_count()
                 best_res = res
 
         return best_res or res

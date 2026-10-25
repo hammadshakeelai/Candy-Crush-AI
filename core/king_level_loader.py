@@ -229,7 +229,20 @@ class KingLevelLoader:
         if level_number in self._levels_cache:
             entry = self._levels_cache[level_number]
             gd = entry.get("gameData", {})
-            return self._parse_game_data(level_number, gd)
+            cfg = self._parse_game_data(level_number, gd)
+            # Reconcile with Master SQLite Database if available (for patched King move limits)
+            if os.path.exists(self.sqlite_path):
+                try:
+                    conn = sqlite3.connect(self.sqlite_path)
+                    c = conn.cursor()
+                    c.execute("SELECT move_limit FROM levels WHERE level_id = ?", (level_number,))
+                    r = c.fetchone()
+                    conn.close()
+                    if r and r[0] and r[0] > cfg.moves_limit:
+                        cfg.moves_limit = r[0]
+                except Exception:
+                    pass
+            return cfg
 
         # 2. Check Master SQLite Database (spans all 23,355 levels)
         if os.path.exists(self.sqlite_path):

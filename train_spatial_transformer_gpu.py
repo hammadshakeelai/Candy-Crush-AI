@@ -197,7 +197,7 @@ def run_grpo_spatial_episode(
         scaled_logits = masked_logits / max(0.1, temperature)
         action_dist = torch.distributions.Categorical(logits=scaled_logits)
         a_idx = int(action_dist.sample().item())
-        log_prob = float(action_dist.log_prob(torch.tensor(a_idx)).item())
+        log_prob = float(action_dist.log_prob(torch.tensor(a_idx, device=device)).item())
 
         r, c, direction = decode_action_index(a_idx)
 

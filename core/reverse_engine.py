@@ -30,6 +30,7 @@ class SpecialCandy(IntEnum):
     STRIPED_VERTICAL = 2
     WRAPPED = 3
     COLOR_BOMB = 4
+    JELLY_FISH = 5
 
 
 class Blocker(IntEnum):
@@ -201,16 +202,58 @@ class ReverseCandyEngine:
         # In Ingredient levels, ensure an active ingredient is on the board
         if state.config.level_type == LevelType.INGREDIENTS and np.sum(state.ingredients != Ingredient.NONE) == 0:
             spawned = False
-            # Check center columns first for best initial spawn
             col_order = sorted(range(state.width), key=lambda c: abs(c - state.width // 2))
+            valid_cols = []
             for c in col_order:
-                for top_r in range(state.height):
-                    if state.is_valid_cell(top_r, c) and state.blockers[top_r, c] == Blocker.NONE:
-                        state.ingredients[top_r, c] = Ingredient.CHERRY
-                        spawned = True
+                bottom_candidates = [r for r in range(state.height - 1, -1, -1) if state.active_grid[r, c]]
+                if not bottom_candidates:
+                    continue
+                bot_r = bottom_candidates[0]
+                top_candidates = [r for r in range(state.height) if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE]
+                if not top_candidates:
+                    continue
+                tp_r = top_candidates[0]
+                if all(state.active_grid[r, c] for r in range(tp_r, bot_r + 1)):
+                    valid_cols.append((tp_r, c))
+
+            if not valid_cols:
+                for c in col_order:
+                    for top_r in range(state.height):
+                        if state.is_valid_cell(top_r, c) and state.blockers[top_r, c] == Blocker.NONE:
+                            valid_cols.append((top_r, c))
+                            break
+                    if valid_cols:
                         break
-                if spawned:
-                    break
+
+            if valid_cols:
+                top_r, c = valid_cols[0]
+                state.ingredients[top_r, c] = Ingredient.CHERRY
+
+    def shuffle_board(self, state: ReverseEngineState) -> bool:
+        """Reshuffles board candies when no moves exist (official King Reshuffle mechanic)."""
+        coords = []
+        colors = []
+        for r in range(state.height):
+            for c in range(state.width):
+                if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE:
+                    has_neighbor = any(state.is_valid_cell(r + dr, c + dc) for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)])
+                    if has_neighbor:
+                        coords.append((r, c))
+                        if state.colors[r, c] != CandyColor.EMPTY:
+                            colors.append(state.colors[r, c])
+                        else:
+                            colors.append(random.randint(1, state.num_colors))
+
+        if len(coords) < 3:
+            return False
+
+        for _ in range(30):
+            random.shuffle(colors)
+            for idx, (r, c) in enumerate(coords):
+                state.colors[r, c] = colors[idx]
+            if self.get_legal_moves(state):
+                return True
+        return False
 
     def get_legal_moves(self, state: ReverseEngineState) -> List[Tuple[int, int, Direction]]:
         """Scans all legal swaps."""
@@ -315,6 +358,23 @@ class ReverseCandyEngine:
             step_score = 0
             for r, c in cleared_coords:
                 step_score += 60
+
+                # Check for Jelly Fish trigger before clearing
+                if state.specials[r, c] == SpecialCandy.JELLY_FISH:
+                    targets = []
+                    for jr in range(state.height):
+                        for jc in range(state.width):
+                            if state.active_grid[jr, jc] and state.jellies[jr, jc] > 0:
+                                is_iso = not any(state.is_valid_cell(jr+dr, jc+dc) for dr, dc in [(-1,0),(1,0),(0,-1),(0,1)])
+                                targets.append((is_iso, state.blockers[jr, jc] != Blocker.NONE, jr, jc))
+                    targets.sort(key=lambda t: (t[0], t[1]), reverse=True)
+                    for _, _, tr, tc in targets[:3]:
+                        if state.blockers[tr, tc] != Blocker.NONE:
+                            state.blockers[tr, tc] = Blocker.NONE
+                        if state.jellies[tr, tc] > 0:
+                            state.jellies[tr, tc] -= 1
+                        step_score += 1500
+
                 state.colors[r, c] = CandyColor.EMPTY
                 state.specials[r, c] = SpecialCandy.NONE
 
@@ -373,7 +433,7 @@ class ReverseCandyEngine:
     ) -> Tuple[bool, int]:
         s1, s2 = state.specials[r1, c1], state.specials[r2, c2]
 
-        # Combo 1: Color Bomb + Color Bomb = Complete Board Clear
+        # Combo 1: Color Bomb + Color Bomb = Complete Board Clear (2 layers)
         if s1 == SpecialCandy.COLOR_BOMB and s2 == SpecialCandy.COLOR_BOMB:
             for r in range(state.height):
                 for c in range(state.width):
@@ -382,7 +442,7 @@ class ReverseCandyEngine:
                         state.specials[r, c] = SpecialCandy.NONE
                         state.blockers[r, c] = Blocker.NONE
                         if state.jellies[r, c] > 0:
-                            state.jellies[r, c] -= 1
+                            state.jellies[r, c] = max(0, state.jellies[r, c] - 2)
             return True, 60000
 
         # Combo 2: Color Bomb + Striped = All tiles of that color turn into Striped and fire simultaneously!
@@ -406,17 +466,27 @@ class ReverseCandyEngine:
                 if s_dir == SpecialCandy.STRIPED_HORIZONTAL:
                     for cc in range(state.width):
                         if state.is_valid_cell(dr, cc):
-                            state.colors[dr, cc] = CandyColor.EMPTY
-                            state.blockers[dr, cc] = Blocker.NONE
+                            if state.blockers[dr, cc] != Blocker.NONE:
+                                state.blockers[dr, cc] = Blocker.NONE
                             if state.jellies[dr, cc] > 0:
                                 state.jellies[dr, cc] -= 1
+                            has_refill_above = any(state.active_grid[ar, cc] for ar in range(dr))
+                            if state.jellies[dr, cc] > 0 and not has_refill_above:
+                                pass
+                            else:
+                                state.colors[dr, cc] = CandyColor.EMPTY
                 else:  # STRIPED_VERTICAL
                     for rr in range(state.height):
                         if state.is_valid_cell(rr, dc):
-                            state.colors[rr, dc] = CandyColor.EMPTY
-                            state.blockers[rr, dc] = Blocker.NONE
+                            if state.blockers[rr, dc] != Blocker.NONE:
+                                state.blockers[rr, dc] = Blocker.NONE
                             if state.jellies[rr, dc] > 0:
                                 state.jellies[rr, dc] -= 1
+                            has_refill_above = any(state.active_grid[ar, dc] for ar in range(rr))
+                            if state.jellies[rr, dc] > 0 and not has_refill_above:
+                                pass
+                            else:
+                                state.colors[rr, dc] = CandyColor.EMPTY
 
             return True, 35000
 
@@ -429,21 +499,29 @@ class ReverseCandyEngine:
                 if 0 <= rr < state.height:
                     for cc in range(state.width):
                         if state.is_valid_cell(rr, cc):
-                            state.colors[rr, cc] = CandyColor.EMPTY
-                            state.specials[rr, cc] = SpecialCandy.NONE
-                            state.blockers[rr, cc] = Blocker.NONE
+                            if state.blockers[rr, cc] != Blocker.NONE:
+                                state.blockers[rr, cc] = Blocker.NONE
                             if state.jellies[rr, cc] > 0:
                                 state.jellies[rr, cc] -= 1
+                            has_refill_above = any(state.active_grid[ar, cc] for ar in range(rr))
+                            if state.jellies[rr, cc] > 0 and not has_refill_above:
+                                pass
+                            else:
+                                state.colors[rr, cc] = CandyColor.EMPTY
             for dc in [-1, 0, 1]:
                 cc = target_c + dc
                 if 0 <= cc < state.width:
                     for rr in range(state.height):
                         if state.is_valid_cell(rr, cc):
-                            state.colors[rr, cc] = CandyColor.EMPTY
-                            state.specials[rr, cc] = SpecialCandy.NONE
-                            state.blockers[rr, cc] = Blocker.NONE
+                            if state.blockers[rr, cc] != Blocker.NONE:
+                                state.blockers[rr, cc] = Blocker.NONE
                             if state.jellies[rr, cc] > 0:
                                 state.jellies[rr, cc] -= 1
+                            has_refill_above = any(state.active_grid[ar, cc] for ar in range(rr))
+                            if state.jellies[rr, cc] > 0 and not has_refill_above:
+                                pass
+                            else:
+                                state.colors[rr, cc] = CandyColor.EMPTY
             return True, 20000
 
         # Combo 4: Striped + Striped = 1 Row + 1 Column cross clear
@@ -451,16 +529,26 @@ class ReverseCandyEngine:
            s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL):
             for cc in range(state.width):
                 if state.is_valid_cell(r1, cc):
-                    state.colors[r1, cc] = CandyColor.EMPTY
-                    state.blockers[r1, cc] = Blocker.NONE
+                    if state.blockers[r1, cc] != Blocker.NONE:
+                        state.blockers[r1, cc] = Blocker.NONE
                     if state.jellies[r1, cc] > 0:
                         state.jellies[r1, cc] -= 1
+                    has_refill_above = any(state.active_grid[ar, cc] for ar in range(r1))
+                    if state.jellies[r1, cc] > 0 and not has_refill_above:
+                        pass
+                    else:
+                        state.colors[r1, cc] = CandyColor.EMPTY
             for rr in range(state.height):
                 if state.is_valid_cell(rr, c1):
-                    state.colors[rr, c1] = CandyColor.EMPTY
-                    state.blockers[rr, c1] = Blocker.NONE
+                    if state.blockers[rr, c1] != Blocker.NONE:
+                        state.blockers[rr, c1] = Blocker.NONE
                     if state.jellies[rr, c1] > 0:
                         state.jellies[rr, c1] -= 1
+                    has_refill_above = any(state.active_grid[ar, c1] for ar in range(rr))
+                    if state.jellies[rr, c1] > 0 and not has_refill_above:
+                        pass
+                    else:
+                        state.colors[rr, c1] = CandyColor.EMPTY
             return True, 8000
 
         # Combo 5: Wrapped + Wrapped = Dual 5x5 explosion
@@ -469,16 +557,33 @@ class ReverseCandyEngine:
                 for dc in range(-2, 3):
                     rr, cc = r2 + dr, c2 + dc
                     if state.is_valid_cell(rr, cc):
-                        state.colors[rr, cc] = CandyColor.EMPTY
+                        if state.blockers[rr, cc] != Blocker.NONE:
+                            state.blockers[rr, cc] = Blocker.NONE
+                        if state.jellies[rr, cc] > 0:
+                            state.jellies[rr, cc] -= 1
+                        has_refill_above = any(state.active_grid[ar, cc] for ar in range(rr))
+                        if state.jellies[rr, cc] > 0 and not has_refill_above:
+                            pass
+                        else:
+                            state.colors[rr, cc] = CandyColor.EMPTY
             return True, 15000
 
-        # Combo 6: Color Bomb + Normal = Wipes single color
+        # Combo 6: Color Bomb + Normal = Wipes single color & damages jellies / clears locks
         if s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
             target_col = state.colors[r2, c2] if s1 == SpecialCandy.COLOR_BOMB else state.colors[r1, c1]
             for r in range(state.height):
                 for c in range(state.width):
-                    if state.colors[r, c] == target_col:
-                        state.colors[r, c] = CandyColor.EMPTY
+                    if state.colors[r, c] == target_col and state.active_grid[r, c]:
+                        if state.blockers[r, c] != Blocker.NONE:
+                            state.blockers[r, c] = Blocker.NONE
+                        if state.jellies[r, c] > 0:
+                            state.jellies[r, c] -= 1
+                        has_refill_above = any(state.active_grid[ar, c] for ar in range(r))
+                        if state.jellies[r, c] > 0 and not has_refill_above:
+                            pass
+                        else:
+                            state.colors[r, c] = CandyColor.EMPTY
+                        state.specials[r, c] = SpecialCandy.NONE
             state.colors[r1, c1] = CandyColor.EMPTY
             state.colors[r2, c2] = CandyColor.EMPTY
             return True, 7000
@@ -584,7 +689,11 @@ class ReverseCandyEngine:
             for r in range(write_idx, -1, -1):
                 if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE:
                     state.colors[r, c] = random.randint(1, state.num_colors)
-                    state.specials[r, c] = SpecialCandy.NONE
+                    has_cannon = state.config.cannons and (c in [6, 7] or len(state.config.cannons) > 0)
+                    if has_cannon and random.random() < 0.35:
+                        state.specials[r, c] = SpecialCandy.JELLY_FISH
+                    else:
+                        state.specials[r, c] = SpecialCandy.NONE
 
         # Dynamic ingredient dispenser (works across all irregular board shapes)
         if state.config.level_type == LevelType.INGREDIENTS:
@@ -593,14 +702,31 @@ class ReverseCandyEngine:
             if needed > 0 and current_on_screen == 0:
                 spawned = False
                 col_order = sorted(range(state.width), key=lambda c: abs(c - state.width // 2))
-                for col in col_order:
-                    for top_r in range(state.height):
-                        if state.is_valid_cell(top_r, col) and state.blockers[top_r, col] == Blocker.NONE:
-                            state.ingredients[top_r, col] = Ingredient.CHERRY
-                            spawned = True
+                valid_cols = []
+                for c in col_order:
+                    bottom_candidates = [r for r in range(state.height - 1, -1, -1) if state.active_grid[r, c]]
+                    if not bottom_candidates:
+                        continue
+                    bot_r = bottom_candidates[0]
+                    top_candidates = [r for r in range(state.height) if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE]
+                    if not top_candidates:
+                        continue
+                    tp_r = top_candidates[0]
+                    if all(state.active_grid[r, c] for r in range(tp_r, bot_r + 1)):
+                        valid_cols.append((tp_r, c))
+
+                if not valid_cols:
+                    for c in col_order:
+                        for top_r in range(state.height):
+                            if state.is_valid_cell(top_r, c) and state.blockers[top_r, c] == Blocker.NONE:
+                                valid_cols.append((top_r, c))
+                                break
+                        if valid_cols:
                             break
-                    if spawned:
-                        break
+
+                if valid_cols:
+                    top_r, col = valid_cols[0]
+                    state.ingredients[top_r, col] = Ingredient.CHERRY
 
     def _collect_ingredients_at_bottom(self, state: ReverseEngineState) -> None:
         """Checks if ingredients reached the bottom-most active cell and collects them."""
