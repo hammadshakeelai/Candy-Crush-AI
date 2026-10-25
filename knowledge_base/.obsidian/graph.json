@@ -1,0 +1,53 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "localJumps": 1,
+  "localBacklinks": true,
+  "localForelinks": true,
+  "localInterlinks": false,
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#moc",
+      "color": { "a": 1, "rgb": 14701138 }
+    },
+    {
+      "query": "tag:#research",
+      "color": { "a": 1, "rgb": 3843583 }
+    },
+    {
+      "query": "tag:#architecture",
+      "color": { "a": 1, "rgb": 65518 }
+    },
+    {
+      "query": "tag:#mechanics",
+      "color": { "a": 1, "rgb": 16753920 }
+    },
+    {
+      "query": "tag:#database",
+      "color": { "a": 1, "rgb": 16711900 }
+    },
+    {
+      "query": "tag:#parallelism",
+      "color": { "a": 1, "rgb": 3394815 }
+    },
+    {
+      "query": "tag:#benchmark",
+      "color": { "a": 1, "rgb": 65280 }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.2,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1
+}

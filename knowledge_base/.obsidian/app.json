@@ -1,0 +1,9 @@
+{
+  "useMarkdownLinks": false,
+  "livePreview": true,
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "spellcheck": false,
+  "attachmentFolderPath": "assets"
+}
