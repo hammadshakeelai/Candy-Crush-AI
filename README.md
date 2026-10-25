@@ -121,6 +121,11 @@ Candy-Crush-AI/
 │   ├── network.py                     # GRPO Policy-Value Dual-Head ResNet
 │   ├── superhuman_solver.py           # Adaptive hybrid expectimax solver
 │   └── candyrl_ensemble.py            # CANDYRL expert tactical ensemble
+├── notebooks/                    # 📓 Interactive Jupyter & Google Colab Notebooks
+│   ├── Candy_Crush_Master_EDA.ipynb                       # Pre-rendered 10,298-level master EDA
+│   ├── AlphaCandy_Grandmaster_Interactive_Showcase.ipynb  # Live step-by-step game replay & neural heatmaps
+│   ├── AlphaCandy_Kaggle_GPU_2500_Benchmark_Analysis.ipynb # 2,500-level Kaggle GPU campaign telemetry
+│   └── candy_crush_colab_training.ipynb                   # 1-click Colab / Kaggle GPU trainer (AMP FP16)
 ├── tests/                        # Comprehensive physics and mechanics unit tests
 ├── train_alphacandy_large.py     # Dedicated trainer for AlphaCandy Large (14.4M params)
 ├── train_dqn.py                  # Double Dueling DQN training script
@@ -143,6 +148,17 @@ The repository includes a fully configured **Obsidian Vault** inside `knowledge_
   - 🔴 `#database`: SQLite schemas & EDA telemetry
   - 🟡 `#benchmark`: Empirical validation & throughput records
 - **Entry Point:** Start navigating from [`knowledge_base/00_Index_and_MOC/00_Home_MOC.md`](knowledge_base/00_Index_and_MOC/00_Home_MOC.md).
+
+---
+
+## 📓 Interactive Notebooks Suite
+
+The repository includes four production-ready, fully executed Jupyter Notebooks with pre-rendered high-DPI charts:
+
+1. **[`Candy_Crush_Master_EDA.ipynb`](notebooks/Candy_Crush_Master_EDA.ipynb)**: Full-spectrum Exploratory Data Analysis across 10,298+ official King level blueprints, move compression budgets, game mode distributions, and blocker placement densities.
+2. **[`AlphaCandy_Grandmaster_Interactive_Showcase.ipynb`](notebooks/AlphaCandy_Grandmaster_Interactive_Showcase.ipynb)**: Interactive live board visualizer, step-by-step game trace on milestone King levels, spatial policy heatmaps $P(a|s)$, and Q-value landscapes.
+3. **[`AlphaCandy_Kaggle_GPU_2500_Benchmark_Analysis.ipynb`](notebooks/AlphaCandy_Kaggle_GPU_2500_Benchmark_Analysis.ipynb)**: Empirical analysis of the 2,500-level Kaggle GPU campaign, mode win rates (85.7% Ingredients vs. 47.7% Jelly), first-attempt mastery, and multi-GPU throughput scaling.
+4. **[`candy_crush_colab_training.ipynb`](notebooks/candy_crush_colab_training.ipynb)**: One-click training pipeline for Google Colab and Kaggle with Tensor Core FP16 Automatic Mixed Precision (AMP).
 
 ---
 
