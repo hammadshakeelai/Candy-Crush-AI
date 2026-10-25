@@ -35,10 +35,13 @@ flowchart TD
 
 ## 📑 Core Mechanics Notes
 
-- **Physics & Gravity:**
+- **Physics, Percolation & Criticality:**
+  - **[[Percolation_Theory_and_Cascade_Physics]]**: Grid hypergraph representation, weak proper colorings, branching processes ($R_0$), and self-organized criticality in cascade chains.
   - **[[King_Engine_Core_Physics]]**: Deterministic falling physics, sliding diagonal infill, cascade propagation order, and grid masking.
   - **[[Dispenser_Refill_and_RNG_Distribution]]**: Pseudo-random number generator seeding, color distribution tables, dispenser choking, and column refill precedence.
   - **[[Portals_and_Teleporters_Topology]]**: Directed graph mapping of non-Euclidean board connections, entrance-exit momentum conservation, and drop cascades across voids.
+- **Level Design & Telemetry Architecture:**
+  - **[[King_Level_Design_Pillars_and_Telemetry]]**: The 4 Design Pillars (GDC), Complexity Staircase, Level Completion Rate (LCR), and automated AI playtest calibration.
 - **Blockers & Obstacles:**
   - **[[Blocker_Hierarchy_and_Damage_Phases]]**: Complete breakdown of Chocolate, Licorice Swirls, Multi-hit Frosting, Toffee Swirls, Magic Mixers, Cake Bombs, Popcorn, and Frogs.
 - **Specials & Combinations:**
