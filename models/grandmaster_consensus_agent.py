@@ -54,11 +54,18 @@ class GrandmasterConsensusAgent:
 
         # 1. Initialize AlphaCandy Large Net (~14.4M params)
         self.large_net = AlphaCandyLargeNet(in_channels=20, hidden_dim=256, num_actions=144).to(self.device)
-        large_ckpt = large_transformer_ckpt or "checkpoints/alphacandy_large_net.pt"
-        if not os.path.exists(large_ckpt):
-            large_ckpt = "checkpoints/alphacandy_spatial_transformer_master.pt"
+        large_ckpt = large_transformer_ckpt
+        if large_ckpt is None:
+            for cand in [
+                "checkpoints/alphacandy_large_net_master.pt",
+                "checkpoints/alphacandy_large_net.pt",
+                "checkpoints/alphacandy_spatial_transformer_master.pt"
+            ]:
+                if os.path.exists(cand):
+                    large_ckpt = cand
+                    break
 
-        if os.path.exists(large_ckpt):
+        if large_ckpt and os.path.exists(large_ckpt):
             try:
                 sd = torch.load(large_ckpt, map_location=self.device)
                 if self.device.type == "cpu":

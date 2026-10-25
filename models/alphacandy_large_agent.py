@@ -53,6 +53,7 @@ class AlphaCandyLargeAgent:
         resolved_ckpt = checkpoint_path
         if resolved_ckpt is None:
             candidates = [
+                "checkpoints/alphacandy_large_net_master.pt",
                 "checkpoints/alphacandy_large_net.pt",
                 "checkpoints/alphacandy_spatial_transformer_master.pt",
                 "checkpoints/alphacandy_spatial_transformer_local.pt",

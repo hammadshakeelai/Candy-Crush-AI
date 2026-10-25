@@ -217,9 +217,15 @@ loader = KingLevelLoader()
 config = loader.load_level(25)
 
 # Pure 14.4M-parameter Spatial Transformer policy (< 2 ms latency)
-agent = AlphaCandyLargeAgent(model_path="checkpoints/alphacandy_large_net_master.pt", device="cpu")
+agent = AlphaCandyLargeAgent(checkpoint_path="checkpoints/alphacandy_large_net_master.pt", device="cpu")
 result = agent.solve_level(config)
 print(f"Level 25: Won={result['won']} in {result['moves_used']} moves (Score: {result['final_score']:,})")
+```
+
+### 7. Run Grandmaster Edge-Case Campaign Hunter (Levels 301–1,000)
+```bash
+# Autonomous multi-worker campaign hunter classifying edge cases across 700 King levels
+python campaign/edge_case_hunter.py --start 301 --end 1000 --workers 6 --max-attempts 2
 ```
 
 ---
