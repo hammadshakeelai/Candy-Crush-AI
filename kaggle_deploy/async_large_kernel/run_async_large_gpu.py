@@ -307,8 +307,13 @@ def save_checkpoint(results: List[Dict[str, Any]], work_dir: str):
     """Saves atomic progress checkpoint to JSON and SQLite."""
     try:
         progress_path = os.path.join(work_dir, "progress_async_large.json")
-        with open(progress_path, "w") as f:
-            json.dump(results, f, indent=2)
+        tmp_path = progress_path + ".tmp"
+        with open(tmp_path, "w") as f:
+            json.dump(
+                results, f, indent=2,
+                default=lambda x: bool(x) if isinstance(x, (bool, np.bool_)) else (int(x) if isinstance(x, (np.integer, int)) else str(x))
+            )
+        os.replace(tmp_path, progress_path)
 
         db_path = os.path.join(work_dir, "campaign_large.sqlite")
         conn = sqlite3.connect(db_path)
@@ -424,8 +429,8 @@ def generate_benchmark_report(results: List[Dict[str, Any]], total_elapsed: floa
 
 def main():
     parser = argparse.ArgumentParser(description="AlphaCandy Async Large GPU Campaign Runner")
-    parser.add_argument("--start", type=int, default=1, help="Starting level ID (default: 1)")
-    parser.add_argument("--end", type=int, default=2500, help="Ending level ID (default: 2500)")
+    parser.add_argument("--start", type=int, default=2501, help="Starting level ID (default: 2501)")
+    parser.add_argument("--end", type=int, default=5000, help="Ending level ID (default: 5000)")
     parser.add_argument("--workers", type=int, default=4, help="Number of parallel workers (default: 4)")
     parser.add_argument("--attempts", type=int, default=2, help="Max attempts per level (default: 2)")
     parser.add_argument("--model-size", type=str, default="master", choices=["standard", "master", "large"],
