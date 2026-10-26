@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-mastery-hunter-100-percent",
+  "title": "AlphaCandy Mastery Hunter 100 Percent",
+  "code_file": "run_mastery_100_percent.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
