@@ -11,6 +11,14 @@ kaggle_deploy/src/*.csv
 kaggle_deploy/src/*.json
 kaggle_deploy/src/*.sqlite
 checkpoints/*_local.pt
+campaign/kaggle_harvest_5000/checkpoints/
+campaign/kaggle_harvest_5000/core/
+campaign/kaggle_harvest_5000/models/
+campaign/kaggle_harvest_5000/analysis/
+campaign/kaggle_harvest_5000/campaign/
+campaign/kaggle_harvest_5000/*.tmp
+campaign/kaggle_harvest_5000/README.md
+campaign/kaggle_harvest_5000/requirements.txt
 
 data/apks/
 *.apk
