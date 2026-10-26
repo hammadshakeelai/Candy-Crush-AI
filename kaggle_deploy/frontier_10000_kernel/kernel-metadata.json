@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-frontier-10001-to-12500",
+  "title": "AlphaCandy Frontier 10001 to 12500",
+  "code_file": "run_frontier_10001_12500.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
