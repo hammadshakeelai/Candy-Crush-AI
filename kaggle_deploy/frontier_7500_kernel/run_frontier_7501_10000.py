@@ -20,6 +20,11 @@ from typing import Dict, Any, List
 from multiprocessing import Pool, cpu_count
 import torch
 
+for _p in ["/kaggle/working", "/kaggle/working/candy_crush_pkg", os.getcwd()]:
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+os.environ["PYTHONPATH"] = f"/kaggle/working:/kaggle/working/candy_crush_pkg:{os.environ.get('PYTHONPATH', '')}"
+
 _WORKER_AGENT = None
 _WORKER_LOADER = None
 _WORKER_PROCEDURAL_GEN = None
@@ -71,8 +76,23 @@ def setup_environment() -> tuple:
     return work_dir, src_root
 
 
-def init_worker():
+def init_worker(paths: tuple = None):
     global _WORKER_AGENT, _WORKER_LOADER, _WORKER_PROCEDURAL_GEN
+    if paths:
+        work_dir, src_root = paths
+        for p in [src_root, work_dir]:
+            if p and p not in sys.path:
+                sys.path.insert(0, p)
+        if work_dir and os.path.exists(work_dir):
+            try:
+                os.chdir(work_dir)
+            except Exception:
+                pass
+    else:
+        for p in ["/kaggle/working", "/kaggle/working/candy_crush_pkg", os.getcwd()]:
+            if os.path.exists(p) and p not in sys.path:
+                sys.path.insert(0, p)
+
     from core.king_level_loader import KingLevelLoader
     from core.procedural_levels import ProceduralKingGenerator
     from core.reverse_engine import ReverseCandyEngine
@@ -166,7 +186,7 @@ def main():
     won_count = 0
     t_start = time.time()
 
-    with Pool(processes=workers, initializer=init_worker) as pool:
+    with Pool(processes=workers, initializer=init_worker, initargs=((work_dir, src_root),)) as pool:
         for idx, res in enumerate(pool.imap(solve_frontier_level_task, task_args, chunksize=4), 1):
             results.append(res)
             if res["won"]:
