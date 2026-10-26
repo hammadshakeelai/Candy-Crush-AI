@@ -97,10 +97,23 @@ def run_pipeline():
                         main_prog = json.load(f)
 
                     ingested = 0
-                    for k, v in async_data.get("completed_levels", {}).items():
-                        if v.get("won"):
-                            main_prog["completed_levels"][str(k)] = v
-                            ingested += 1
+                    if isinstance(async_data, list):
+                        for item in async_data:
+                            lvl_k = str(item.get("level_id"))
+                            if item.get("won"):
+                                main_prog["completed_levels"][lvl_k] = item
+                                ingested += 1
+                            elif lvl_k not in main_prog["completed_levels"]:
+                                main_prog["completed_levels"][lvl_k] = item
+                    elif isinstance(async_data, dict):
+                        levels_dict = async_data.get("completed_levels", async_data)
+                        for k, v in levels_dict.items():
+                            if isinstance(v, dict):
+                                if v.get("won"):
+                                    main_prog["completed_levels"][str(k)] = v
+                                    ingested += 1
+                                elif str(k) not in main_prog["completed_levels"]:
+                                    main_prog["completed_levels"][str(k)] = v
 
                     won_cnt = sum(1 for x in main_prog["completed_levels"].values() if x.get("won"))
                     tot_cnt = len(main_prog["completed_levels"])
