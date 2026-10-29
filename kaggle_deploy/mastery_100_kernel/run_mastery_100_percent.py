@@ -51,13 +51,35 @@ def setup_environment() -> tuple:
             except Exception as e:
                 print(f"[WARN] Failed extracting zip: {e}")
 
+        if "core" in dirs and "models" in dirs and src_root is None:
+            src_root = root
+            print(f"[INFO] Discovered source tree at: {src_root}")
+
         if "candycrush_master_levels.json" in files:
             data_json_found = os.path.join(root, "candycrush_master_levels.json")
         if "candycrush_master_levels.sqlite" in files:
             sqlite_found = os.path.join(root, "candycrush_master_levels.sqlite")
 
     if not src_root:
-        src_root = work_dir
+        candidate_root = "/kaggle/input/candy-crush-grandmaster-rl/candy_crush_pkg"
+        if os.path.exists(os.path.join(candidate_root, "core", "king_level_loader.py")):
+            src_root = candidate_root
+        else:
+            src_root = work_dir
+
+    if src_root and os.path.abspath(src_root) != os.path.abspath(work_dir):
+        print(f"[INFO] Copying source files from {src_root} to {work_dir}...")
+        for item in os.listdir(src_root):
+            s_item = os.path.join(src_root, item)
+            d_item = os.path.join(work_dir, item)
+            if not os.path.exists(d_item):
+                try:
+                    if os.path.isdir(s_item):
+                        shutil.copytree(s_item, d_item)
+                    else:
+                        shutil.copy2(s_item, d_item)
+                except Exception as e:
+                    print(f"[WARN] Failed copying {item}: {e}")
 
     for p in [work_dir, src_root]:
         if p and p not in sys.path:
