@@ -25,6 +25,7 @@ graph TD
     Home --> Parallel["⚡ High-Throughput Parallelism"]
     Home --> Bench["🏆 Campaign & Benchmarks"]
 
+    Arch --> M0["[[AlphaCandy_Omega_Super_Model_Architecture]]"]
     Arch --> M1["[[Grandmaster_Unified_Agent]]"]
     Arch --> M2["[[AlphaCandy_Spatial_Transformer]]"]
     Arch --> M3["[[Double_Dueling_DQN_PER]]"]
@@ -73,6 +74,7 @@ graph TD
    - **King AI Research (Gudmundsson et al., 2018):** Human-like playtesting with deep CNNs over telemetry data ([[King_2018_Human_Like_Playtesting_CNN]]).
    - **CANDYRL / BaziGooshi (Karimi et al., 2021):** Hybrid RL combining intrinsic skill learning with extrinsic rewards for zero-shot level generalization ([[Karimi_2021_CANDYRL_BaziGooshi_Hybrid_RL]]).
 2. **Superhuman AI Paradigms:**
+   - **AlphaCandy-Omega Super Model:** 36.01M-parameter unified Graph-Spatial Quantile Super Model fusing 12-block Portal Graph Self-Attention, 32-quantile distributional Huber loss, and internal latent world rollouts ([[AlphaCandy_Omega_Super_Model_Architecture]]).
    - **Double Dueling DQN with PER:** Decouples state value $V(s)$ from advantage $A(s,a)$ with Prioritized Experience Replay ([[Double_Dueling_DQN_PER]]).
    - **AlphaCandy Spatial Transformer:** 4-head Multi-Head Spatial Self-Attention (MHSA) treating cells as tokens to attend across non-Euclidean voids and teleporters ([[AlphaCandy_Spatial_Transformer]]).
    - **Unified Multi-Paradigm Ensemble:** Synthesizes DQN advantages, Transformer priors, GRPO policy, and CANDYRL tactical heuristics into consensus actions ([[Grandmaster_Unified_Agent]]).

@@ -29,12 +29,24 @@
 
 ## 🧠 System Architecture
 
-AlphaCandy decouples state representation, value advantage estimation, spatial graph self-attention, and tactical combos into a unified consensus engine:
+AlphaCandy decouples state representation, value advantage estimation, spatial graph self-attention, and tactical combos into a unified consensus engine, crowned by the sovereign **AlphaCandy-Omega Super Model**:
 
 ```mermaid
 flowchart TD
     State["Game Board State s (20-Channel Spatial Tensor)"]
     
+    subgraph Omega["AlphaCandy-Omega 36.01M Super Model"]
+        direction TB
+        Stem["Multi-Scale Conv Stem (384 ch)"] --> Tokens["81 Tokens + 2D Positional Embeddings"]
+        Tokens --> GraphAttn["12-Block Portal Graph Self-Attention<br>Softmax(QK^T/√d + M_portal + M_gravity)V"]
+        GraphAttn --> Heads["Multi-Task Sovereign Heads"]
+        Heads --> PolicyHead["Policy π_θ(a|s) [144 Actions]"]
+        Heads --> QuantileHead["32-Quantile Z_θ(s,a) & CVaR_0.25"]
+        Heads --> WinHead["Calibrated Win Prob V_θ(s)"]
+        Heads --> HazardHead["Blocker Hazard Auxiliary Map"]
+        Heads --> LatentWorld["Latent Transition Net g_θ(z_t, a_t)"]
+    end
+
     subgraph MultiParadigm["Grandmaster Consensus Engine"]
         DQN["Double Dueling DQN<br>A(s, a) & Q(s, a)"]
         Trans["AlphaCandy Spatial Transformer<br>P(a|s) & P(Win|s)"]
@@ -42,19 +54,16 @@ flowchart TD
         Tactical["CANDYRL Ensemble<br>Heuristic Utility H(s, a)"]
     end
 
-    State --> DQN
-    State --> Trans
-    State --> GRPO
-    State --> Tactical
+    State --> Omega
+    State --> MultiParadigm
 
-    DQN --> Blend["Dynamic Weighting Layer<br>w_ens·H + w_trans·P + w_dqn·Q + w_grpo·π"]
-    Trans --> Blend
-    GRPO --> Blend
-    Tactical --> Blend
-
+    MultiParadigm --> Blend["Dynamic Weighting Layer<br>w_ens·H + w_trans·P + w_dqn·Q + w_grpo·π"]
     Blend --> TopK["Ranked Top-K Legal Candidates"]
     TopK --> Search["Adaptive Expectimax Lookahead<br>(Endgame & Constraint Escalation)"]
+    
+    Omega --> OmegaAction["CVaR Risk-Averse Action / Latent Rollouts"]
     Search --> Action["Optimal Action (r, c, d)"]
+    OmegaAction -.-> Action
 ```
 
 ---
@@ -70,6 +79,7 @@ Candy-Crush-AI/
 │   ├── campaign_manager.py       # Multi-process campaign execution engine
 │   └── progress.json             # Persistent campaign progress (Levels 1–2,500: 86.04% Won, 2,151/2,500)
 ├── checkpoints/                  # Pre-trained deep reinforcement learning checkpoints
+│   ├── alphacandy_omega_master.pt                # Master AlphaCandy-Omega 36.01M checkpoint
 │   ├── alphacandy_large_net_master.pt            # Master AlphaCandy Large ~14.4M checkpoint (Kaggle GPU)
 │   ├── alphacandy_large_net.pt                   # AlphaCandy Large Dual-Head Spatial Attention (27.5 MB)
 │   ├── alphacandy_spatial_transformer_local.pt   # Continuous local GRPO transformer (Round 105+)
@@ -86,6 +96,12 @@ Candy-Crush-AI/
 │   ├── configs_v1.208.json              # Raw King level configurations (21.4 MB)
 │   └── candycrush_eda_dataset.csv       # Flattened telemetry dataset (1.9 MB)
 ├── kaggle_deploy/                # Production Kaggle GPU deployment packages & kernels
+│   ├── alphacandy_omega_gpu_trainer/  # AlphaCandy-Omega 36M Super Model Tensor Core GPU trainer
+│   │   ├── kernel-metadata.json
+│   │   └── run_omega_gpu_continuous.py
+│   ├── mastery_100_kernel/       # Version 4 100% Mastery cloud hunter on Levels 1–2,500
+│   │   ├── kernel-metadata.json
+│   │   └── run_mastery_100_percent.py
 │   ├── async_1000_kernel/        # Async 1,000 games in ~10 minutes runner
 │   │   ├── kernel-metadata.json
 │   │   └── run_async_1000_games.py
@@ -108,11 +124,12 @@ Candy-Crush-AI/
 │   ├── 00_Index_and_MOC/         # Master Maps of Content (Home, Architecture, Mechanics, EDA)
 │   ├── 01_Research_Literature/   # Peer-reviewed academic literature (Walsh, King, Karimi, MuZero)
 │   ├── 02_Game_Engine_Reverse_Engineering/ # Physics, portals, dispensers, blocker matrices
-│   ├── 03_AI_Models_and_Paradigms/         # DQN, Transformers, GRPO, Expectimax, Proofs
+│   ├── 03_AI_Models_and_Paradigms/         # DQN, Transformers, GRPO, Expectimax, Proofs, Omega Super Model
 │   ├── 04_Level_Database_and_EDA/          # Database schemas, move distributions, difficulty tiers
 │   ├── 05_High_Throughput_Parallelism/     # GPU sharding, async workers, zero-error guards
 │   └── 06_Campaign_Progress_and_Benchmarks/# Levels 1–300 records & 1,000-game Kaggle benchmark
 ├── models/                       # Neural network architectures & tactical ensembles
+│   ├── alphacandy_omega.py       # AlphaCandy-Omega 36.01M Unified Graph-Spatial Quantile Super Model
 │   ├── grandmaster_consensus_agent.py # Tri-paradigm consensus solver (Large + DQN + Lookahead)
 │   ├── alphacandy_large_agent.py      # Standalone 14.4M pure neural transformer agent
 │   ├── grandmaster_unified_agent.py   # Unified multi-paradigm agent
@@ -127,6 +144,9 @@ Candy-Crush-AI/
 │   ├── AlphaCandy_Kaggle_GPU_2500_Benchmark_Analysis.ipynb # 2,500-level Kaggle GPU campaign telemetry
 │   └── candy_crush_colab_training.ipynb                   # 1-click Colab / Kaggle GPU trainer (AMP FP16)
 ├── tests/                        # Comprehensive physics and mechanics unit tests
+├── training/                     # Offline demonstration mining & dataset builders
+│   └── mine_winning_trajectories.py # Trajectory miner from 8,782 won King levels
+├── train_alphacandy_omega.py     # AlphaCandy-Omega 36.01M Super Model distillation trainer
 ├── train_alphacandy_large.py     # Dedicated trainer for AlphaCandy Large (14.4M params)
 ├── train_dqn.py                  # Double Dueling DQN training script
 ├── train_grpo.py                 # GRPO training pipeline
@@ -228,11 +248,18 @@ print(f"Level 25: Won={result['won']} in {result['moves_used']} moves (Score: {r
 python campaign/edge_case_hunter.py --start 301 --end 1000 --workers 6 --max-attempts 2
 ```
 
+### 8. Train AlphaCandy-Omega 36.01M Super Model (Dual GPU Distillation)
+```bash
+# Trains 36.01M Super Model using Quantile Huber Loss & AMP FP16 on Dual T4 GPUs
+python train_alphacandy_omega.py --epochs 25 --batch-size 128 --lr 2e-4
+```
+
 ---
 
 ## 🌐 Kaggle Resources
 
 - **Kaggle Dataset:** [hammadshakeelai/candy-crush-grandmaster-rl](https://www.kaggle.com/datasets/hammadshakeelai/candy-crush-grandmaster-rl)
+- **Kaggle AlphaCandy-Omega 36M GPU Trainer:** [hammadshakeelai/alphacandy-omega-gpu-trainer](https://www.kaggle.com/code/hammadshakeelai/alphacandy-omega-gpu-trainer)
 - **Kaggle 1,000 Games High-Throughput Benchmark:** [hammadshakeelai/candy-crush-async-1000-games](https://www.kaggle.com/code/hammadshakeelai/candy-crush-async-1000-games)
 - **Kaggle Double Dueling DQN Multi-Level GPU Learner:** [hammadshakeelai/candy-crush-dqn-learning-gpu](https://www.kaggle.com/code/hammadshakeelai/candy-crush-dqn-learning-gpu)
 - **Kaggle AlphaCandy Spatial Transformer & GRPO All-Levels Trainer:** [hammadshakeelai/alphacandy-transformer-all-levels](https://www.kaggle.com/code/hammadshakeelai/alphacandy-transformer-all-levels)
