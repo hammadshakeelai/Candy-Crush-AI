@@ -19,11 +19,11 @@
 
 ## 🌟 Key Highlights & Milestones
 
-- 🏆 **100% Batch 1 Mastery:** **100 / 100 Won (100.0% Win Rate)** across Levels 1–100 via adaptive multi-attempt seed rotation and engine enhancements.
-- 🎯 **85.7% Grandmaster Milestone Win Rate:** Crushes canonical King benchmark levels (Level 50 won in 20/24 moves, Level 100 won in 10/28 moves).
-- ⚡ **Async 1,000 Games in ~10 Minutes:** High-throughput parallel architecture running across Kaggle Dual Tesla T4 GPUs with zero runtime errors.
+- 🏆 **8,782 Levels Won across 14,700 King Levels (59.74% Global Win Rate):** Massive cloud benchmark scaled across 15,000 consecutive levels of official King blueprints.
+- 🎯 **86.04% Mastery on Levels 1–2,500 (2,151 / 2,500 Won):** Perfect 100% completion on Levels 1–100 (**100/100**), 97.00% on Levels 101–300 (**194/200**, only 6 levels remaining!), 88.43% on Levels 301–1,000, and 82.53% on Levels 1,001–2,500.
+- ⚡ **High-Throughput Cloud Campaign Fleet:** Parallelized across concurrent Kaggle cloud sessions with zero GPU quota depletion (pure CPU execution) and zero-error defensive crash recovery.
 - 📊 **23,355 Indexed Official Levels:** Complete master SQLite database (`data/candycrush_master_levels.sqlite`) containing 13,435 raw tile maps and 23,045 verified move limits.
-- 📚 **Obsidian Knowledge Base System:** 20+ interconnected academic and engineering notes linked with bidirectional wiki-links (`[[...]]`), KaTeX formulas, and Mermaid diagrams.
+- 📚 **Obsidian Knowledge Base System:** Complete research and engineering vault linked with bidirectional wiki-links (`[[...]]`), KaTeX mathematical proofs, and Mermaid diagrams.
 
 ---
 
@@ -68,7 +68,7 @@ Candy-Crush-AI/
 │   └── benchmark_grandmaster_unified.json
 ├── campaign/                     # Autonomous 10,000+ level campaign runner
 │   ├── campaign_manager.py       # Multi-process campaign execution engine
-│   └── progress.json             # Persistent campaign progress (Levels 1–300: 82.33%)
+│   └── progress.json             # Persistent campaign progress (Levels 1–2,500: 86.04% Won, 2,151/2,500)
 ├── checkpoints/                  # Pre-trained deep reinforcement learning checkpoints
 │   ├── alphacandy_large_net_master.pt            # Master AlphaCandy Large ~14.4M checkpoint (Kaggle GPU)
 │   ├── alphacandy_large_net.pt                   # AlphaCandy Large Dual-Head Spatial Attention (27.5 MB)

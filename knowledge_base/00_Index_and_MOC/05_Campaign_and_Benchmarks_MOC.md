@@ -28,11 +28,13 @@ xychart-beta
 ## 📑 Core Campaign & Benchmark Notes
 
 - **Campaign Progress:**
+  - **[[Grandmaster_Frontier_15000_Levels_Milestone_Report]]**: Historic **15,000-level cloud benchmark & mastery milestone**. Evaluated 14,700 levels, conquering **8,782 levels won (59.74% overall campaign win rate)**. Levels 1–2,500 mastery surged to **2,151 / 2,500 Won (86.04%)**, with **100/100 (100.0%)** on Levels 1–100 and **194/200 (97.0%)** on Levels 101–300.
+  - **[[Kaggle_5000_Level_Grand_Benchmark_Report]]**: Intensive 9-hour evaluation across Levels 2,501–5,000 (**1,412 / 2,500 Won, 87.61% first-attempt win ratio**).
   - **[[Grandmaster_Edge_Case_Campaign_Levels_1001_to_2500]]**: Completed campaign hunter evaluating Levels 1,001–2,500 (**997/1,500 Won, 66.47% Win Rate, 83.6% Ingredients Win Rate, Level 2500 conquered in 9 moves**), bringing cumulative progression to **1,735 / 2,500 Won (69.40%)**.
   - **[[Grandmaster_Edge_Case_Campaign_Levels_301_to_1000]]**: Completed campaign hunter evaluating Levels 301–1,000 (**491/700 Won, 70.14% Win Rate, 89.0% Ingredients Win Rate, Level 1000 conquered in 5 moves**), bringing cumulative progression to **738/1,000 Won (73.80%)**.
   - **[[Campaign_Milestones_1_to_300]]**:
     - **Batch 1 (Levels 1–100): 100/100 WON (100.0% Win Rate)**. Complete mastery of opening 100 levels via seed rotation and engine enhancements.
-    - **Batch 2 (Levels 101–300): 147/200 WON (73.5% initial pass)**, cumulative 247/300 (82.33%) across levels 1–300.
+    - **Batch 2 (Levels 101–300): 194/200 WON (97.0% Win Rate)** (Only 6 levels remaining!).
 - **Kaggle GPU Benchmarking & Learning Fleet:**
   - **[[Kaggle_2500_Level_Benchmark_Report]]**: Massive 2,500-level cloud benchmark on Dual Tesla T4 GPUs (**1,399/2,500 Solved, 85.7% Ingredients win rate, 1.91s/level throughput**).
   - **[[Multi_Model_Kaggle_GPU_Learning_Fleet]]**: Active dual GPU fleet training Double Dueling DQN and AlphaCandy Large (~14.4M) across King levels.
