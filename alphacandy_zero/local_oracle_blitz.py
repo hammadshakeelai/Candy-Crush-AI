@@ -14,6 +14,7 @@ and exports golden winning trajectories to `runs/oracle_golden_blitz.pt`.
 import os
 import time
 import json
+import numpy as np
 import multiprocessing as mp
 from pathlib import Path
 
@@ -40,6 +41,12 @@ def _solve_w(args):
     samples = res.pop("samples", [])
     if not res["won"]:
         samples = []
+    # Strip any remaining ndarrays from diagnosis before serialization
+    if "diagnosis" in res and isinstance(res["diagnosis"], dict):
+        diag = res["diagnosis"]
+        for k in list(diag.keys()):
+            if isinstance(diag[k], np.ndarray):
+                diag[k] = diag[k].tolist()
     res["elapsed_sec"] = round(time.time() - t0, 2)
     return res, samples
 
@@ -48,30 +55,11 @@ def main():
     unsolved_path = Path("campaign/unsolved_levels_1_2500.json")
     unsolved = json.loads(unsolved_path.read_text())["unsolved_levels"]
 
-    ing_levels = []
-    score_order_levels = []
-    island_levels = []
-    low_obj_levels = []
-    for lv in unsolved:
-        cfg = _LOADER.load_level(lv)
-        diag = diagnose_level(cfg)
-        if cfg.level_type == LevelType.INGREDIENTS:
-            ing_levels.append(lv)
-        elif cfg.level_type == LevelType.SCORE:
-            score_order_levels.append(lv)
-        elif diag.isolated_objective_cells:
-            island_levels.append(lv)
-        elif diag.initial_objectives <= 32:
-            low_obj_levels.append(lv)
+    target_levels = [414, 462, 478, 524, 606, 608, 656, 918, 946, 953, 954, 956, 967, 975, 1053, 1178, 1205, 1292, 1318, 1349, 1351, 1368, 1390, 1488]
+    print(f"[Local Oracle Blitz 301-1500 Residuals] Launching 6-worker parallel search across {len(target_levels)} unsolved levels...", flush=True)
+    print(f"  Targets ({len(target_levels)}): {target_levels}", flush=True)
 
-    target_levels = ing_levels + score_order_levels + island_levels[:16] + low_obj_levels[:12]
-    print(f"[Local Oracle Blitz Batch 2] Launching 6-worker parallel search across {len(target_levels)} high-yield unsolved levels...", flush=True)
-    print(f"  -> Ingredients ({len(ing_levels)}): {ing_levels}", flush=True)
-    print(f"  -> Calibrated Order/Score ({len(score_order_levels)}): {score_order_levels[:20]}...", flush=True)
-    print(f"  -> Island-Snipe (16): {island_levels[:16]}", flush=True)
-    print(f"  -> Low-Obj Jelly (12): {low_obj_levels[:12]}", flush=True)
-
-    tasks = [(lv, 12, 8, 6) for lv in target_levels]
+    tasks = [(lv, 18, 12, 10) for lv in target_levels]
     t_start = time.time()
     results = []
     golden_samples = []
