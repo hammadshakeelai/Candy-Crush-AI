@@ -1,0 +1,94 @@
+{
+  "won_count": 0,
+  "won_levels": [],
+  "results": [
+    {
+      "level_id": 2245,
+      "won": false,
+      "moves_used": 17,
+      "moves_limit": 18,
+      "remaining_objectives": 6,
+      "initial_objectives": 82,
+      "winning_seed": null,
+      "elapsed_sec": 26.66,
+      "error": null
+    },
+    {
+      "level_id": 2243,
+      "won": false,
+      "moves_used": 26,
+      "moves_limit": 27,
+      "remaining_objectives": 11,
+      "initial_objectives": 46,
+      "winning_seed": null,
+      "elapsed_sec": 41.9,
+      "error": null
+    },
+    {
+      "level_id": 1660,
+      "won": false,
+      "moves_used": 22,
+      "moves_limit": 23,
+      "remaining_objectives": 6,
+      "initial_objectives": 6,
+      "winning_seed": null,
+      "elapsed_sec": 53.02,
+      "error": null
+    },
+    {
+      "level_id": 2445,
+      "won": false,
+      "moves_used": 25,
+      "moves_limit": 26,
+      "remaining_objectives": 3,
+      "initial_objectives": 112,
+      "winning_seed": null,
+      "elapsed_sec": 34.74,
+      "error": null
+    },
+    {
+      "level_id": 1656,
+      "won": false,
+      "moves_used": 30,
+      "moves_limit": 31,
+      "remaining_objectives": 3,
+      "initial_objectives": 44,
+      "winning_seed": null,
+      "elapsed_sec": 69.48,
+      "error": null
+    },
+    {
+      "level_id": 2482,
+      "won": false,
+      "moves_used": 29,
+      "moves_limit": 30,
+      "remaining_objectives": 9,
+      "initial_objectives": 86,
+      "winning_seed": null,
+      "elapsed_sec": 43.4,
+      "error": null
+    },
+    {
+      "level_id": 953,
+      "won": false,
+      "moves_used": 29,
+      "moves_limit": 30,
+      "remaining_objectives": 3,
+      "initial_objectives": 82,
+      "winning_seed": null,
+      "elapsed_sec": 43.87,
+      "error": null
+    },
+    {
+      "level_id": 1951,
+      "won": false,
+      "moves_used": 31,
+      "moves_limit": 32,
+      "remaining_objectives": 6,
+      "initial_objectives": 103,
+      "winning_seed": null,
+      "elapsed_sec": 42.51,
+      "error": null
+    }
+  ]
+}
