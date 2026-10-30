@@ -1,0 +1,903 @@
+{
+  "evaluated": 24,
+  "won_count": 4,
+  "won_levels": [
+    414,
+    524,
+    946,
+    1053
+  ],
+  "near_misses_le2": [
+    462,
+    918,
+    956,
+    975
+  ],
+  "results": [
+    {
+      "level_id": 414,
+      "won": true,
+      "attempts_used": 1,
+      "winning_seed": 696415,
+      "moves_used": 27,
+      "moves_limit": 32,
+      "moves_remaining": 5,
+      "final_score": 133492,
+      "objectives_remaining": 0,
+      "initial_objectives": 56,
+      "elapsed_sec": 12.44,
+      "diagnosis": {
+        "level_id": 414,
+        "level_type": "JELLY",
+        "moves_limit": 32,
+        "active_cells": 67,
+        "initial_objectives": 56,
+        "required_pace": 1.75,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 2,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 3 objective cell(s) [(4, 4), (8, 0), (8, 8)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 462,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "moves_remaining": 1,
+      "final_score": 44035,
+      "objectives_remaining": 0,
+      "initial_objectives": 16,
+      "elapsed_sec": 107.86,
+      "diagnosis": {
+        "level_id": 462,
+        "level_type": "JELLY",
+        "moves_limit": 20,
+        "active_cells": 63,
+        "initial_objectives": 16,
+        "required_pace": 0.8,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [
+          2,
+          6
+        ],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 606,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "moves_remaining": 1,
+      "final_score": 22533,
+      "objectives_remaining": 5,
+      "initial_objectives": 5,
+      "elapsed_sec": 125.51,
+      "diagnosis": {
+        "level_id": 606,
+        "level_type": "JELLY",
+        "moves_limit": 20,
+        "active_cells": 35,
+        "initial_objectives": 5,
+        "required_pace": 0.25,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 5 objective cell(s) [(0, 0), (0, 2), (1, 1), (2, 0), (2, 2)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 946,
+      "won": true,
+      "attempts_used": 1,
+      "winning_seed": 731405,
+      "moves_used": 16,
+      "moves_limit": 21,
+      "moves_remaining": 5,
+      "final_score": 164787,
+      "objectives_remaining": 0,
+      "initial_objectives": 79,
+      "elapsed_sec": 11.74,
+      "diagnosis": {
+        "level_id": 946,
+        "level_type": "JELLY",
+        "moves_limit": 21,
+        "active_cells": 70,
+        "initial_objectives": 79,
+        "required_pace": 3.762,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 478,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 28,
+      "moves_limit": 29,
+      "moves_remaining": 1,
+      "final_score": 293509,
+      "objectives_remaining": 14,
+      "initial_objectives": 112,
+      "elapsed_sec": 203.89,
+      "diagnosis": {
+        "level_id": 478,
+        "level_type": "JELLY",
+        "moves_limit": 29,
+        "active_cells": 62,
+        "initial_objectives": 112,
+        "required_pace": 3.862,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [
+          8
+        ],
+        "chocolate_cells": 0,
+        "frosting_cells": 2,
+        "licorice_cells": 6,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 656,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 34,
+      "moves_limit": 35,
+      "moves_remaining": 1,
+      "final_score": 252530,
+      "objectives_remaining": 12,
+      "initial_objectives": 122,
+      "elapsed_sec": 256.48,
+      "diagnosis": {
+        "level_id": 656,
+        "level_type": "JELLY",
+        "moves_limit": 35,
+        "active_cells": 61,
+        "initial_objectives": 122,
+        "required_pace": 3.486,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 5,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 954,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 23,
+      "moves_limit": 24,
+      "moves_remaining": 1,
+      "final_score": 161838,
+      "objectives_remaining": 7,
+      "initial_objectives": 90,
+      "elapsed_sec": 81.39,
+      "diagnosis": {
+        "level_id": 954,
+        "level_type": "JELLY",
+        "moves_limit": 24,
+        "active_cells": 46,
+        "initial_objectives": 90,
+        "required_pace": 3.75,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [
+          0
+        ],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 608,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 29,
+      "moves_limit": 30,
+      "moves_remaining": 1,
+      "final_score": 230354,
+      "objectives_remaining": 7,
+      "initial_objectives": 100,
+      "elapsed_sec": 297.31,
+      "diagnosis": {
+        "level_id": 608,
+        "level_type": "JELLY",
+        "moves_limit": 30,
+        "active_cells": 73,
+        "initial_objectives": 100,
+        "required_pace": 3.333,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 6,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 524,
+      "won": true,
+      "attempts_used": 10,
+      "winning_seed": 15520,
+      "moves_used": 19,
+      "moves_limit": 37,
+      "moves_remaining": 18,
+      "final_score": 117739,
+      "objectives_remaining": 0,
+      "initial_objectives": 54,
+      "elapsed_sec": 311.77,
+      "diagnosis": {
+        "level_id": 524,
+        "level_type": "JELLY",
+        "moves_limit": 37,
+        "active_cells": 67,
+        "initial_objectives": 54,
+        "required_pace": 1.459,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 12,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 953,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 29,
+      "moves_limit": 30,
+      "moves_remaining": 1,
+      "final_score": 189563,
+      "objectives_remaining": 4,
+      "initial_objectives": 82,
+      "elapsed_sec": 220.96,
+      "diagnosis": {
+        "level_id": 953,
+        "level_type": "JELLY",
+        "moves_limit": 30,
+        "active_cells": 52,
+        "initial_objectives": 82,
+        "required_pace": 2.733,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            8
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 2 objective cell(s) [(0, 8), (1, 7)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1053,
+      "won": true,
+      "attempts_used": 9,
+      "winning_seed": 8559,
+      "moves_used": 13,
+      "moves_limit": 16,
+      "moves_remaining": 3,
+      "final_score": 235826,
+      "objectives_remaining": 0,
+      "initial_objectives": 98,
+      "elapsed_sec": 73.96,
+      "diagnosis": {
+        "level_id": 1053,
+        "level_type": "JELLY",
+        "moves_limit": 16,
+        "active_cells": 49,
+        "initial_objectives": 98,
+        "required_pace": 6.125,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 16,
+        "frosting_cells": 0,
+        "licorice_cells": 9,
+        "solvable_in_principle": true,
+        "notes": [
+          "HIGH_PACE_FORTRESS: 6.12 objectives/move requires mass special combos.",
+          "CHOCOLATE_CONTAGION: 16 initial chocolate spawners."
+        ]
+      }
+    },
+    {
+      "level_id": 918,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 22,
+      "moves_limit": 23,
+      "moves_remaining": 1,
+      "final_score": 87802,
+      "objectives_remaining": 0,
+      "initial_objectives": 90,
+      "elapsed_sec": 302.37,
+      "diagnosis": {
+        "level_id": 918,
+        "level_type": "JELLY",
+        "moves_limit": 23,
+        "active_cells": 81,
+        "initial_objectives": 90,
+        "required_pace": 3.913,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 9,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 967,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 26,
+      "moves_limit": 30,
+      "moves_remaining": 4,
+      "final_score": 45345,
+      "objectives_remaining": 20,
+      "initial_objectives": 32,
+      "elapsed_sec": 259.16,
+      "diagnosis": {
+        "level_id": 967,
+        "level_type": "JELLY",
+        "moves_limit": 30,
+        "active_cells": 65,
+        "initial_objectives": 32,
+        "required_pace": 1.067,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 1,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 1292,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "moves_remaining": 1,
+      "final_score": 262124,
+      "objectives_remaining": 5,
+      "initial_objectives": 122,
+      "elapsed_sec": 163.75,
+      "diagnosis": {
+        "level_id": 1292,
+        "level_type": "JELLY",
+        "moves_limit": 20,
+        "active_cells": 66,
+        "initial_objectives": 122,
+        "required_pace": 6.1,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [
+          3
+        ],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 27,
+        "solvable_in_principle": true,
+        "notes": [
+          "HIGH_PACE_FORTRESS: 6.10 objectives/move requires mass special combos."
+        ]
+      }
+    },
+    {
+      "level_id": 975,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 42,
+      "moves_limit": 43,
+      "moves_remaining": 1,
+      "final_score": 263811,
+      "objectives_remaining": 1,
+      "initial_objectives": 124,
+      "elapsed_sec": 346.87,
+      "diagnosis": {
+        "level_id": 975,
+        "level_type": "JELLY",
+        "moves_limit": 43,
+        "active_cells": 66,
+        "initial_objectives": 124,
+        "required_pace": 2.884,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            4
+          ],
+          [
+            8,
+            4
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 1,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 2 objective cell(s) [(0, 4), (8, 4)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1349,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "moves_remaining": 1,
+      "final_score": 115911,
+      "objectives_remaining": 3,
+      "initial_objectives": 50,
+      "elapsed_sec": 86.75,
+      "diagnosis": {
+        "level_id": 1349,
+        "level_type": "JELLY",
+        "moves_limit": 20,
+        "active_cells": 25,
+        "initial_objectives": 50,
+        "required_pace": 2.5,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            3,
+            6
+          ]
+        ],
+        "dead_columns_without_spawner": [
+          0,
+          1,
+          7,
+          8
+        ],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 1 objective cell(s) [(3, 6)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 956,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 31,
+      "moves_limit": 32,
+      "moves_remaining": 1,
+      "final_score": 90551,
+      "objectives_remaining": 0,
+      "initial_objectives": 20,
+      "elapsed_sec": 391.86,
+      "diagnosis": {
+        "level_id": 956,
+        "level_type": "JELLY",
+        "moves_limit": 32,
+        "active_cells": 65,
+        "initial_objectives": 20,
+        "required_pace": 0.625,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 1205,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 25,
+      "moves_limit": 27,
+      "moves_remaining": 2,
+      "final_score": 89830,
+      "objectives_remaining": 4,
+      "initial_objectives": 38,
+      "elapsed_sec": 306.91,
+      "diagnosis": {
+        "level_id": 1205,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "active_cells": 45,
+        "initial_objectives": 38,
+        "required_pace": 1.407,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            8
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 2 objective cell(s) [(0, 0), (0, 8)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1318,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 30,
+      "moves_limit": 31,
+      "moves_remaining": 1,
+      "final_score": 208776,
+      "objectives_remaining": 3,
+      "initial_objectives": 99,
+      "elapsed_sec": 179.29,
+      "diagnosis": {
+        "level_id": 1318,
+        "level_type": "JELLY",
+        "moves_limit": 31,
+        "active_cells": 54,
+        "initial_objectives": 99,
+        "required_pace": 3.194,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            8,
+            5
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 9,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 9 objective cell(s) [(0, 0), (0, 2), (0, 4), (0, 6), (0, 8), (8, 1), (8, 3), (8, 5), (8, 7)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1178,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 34,
+      "moves_limit": 35,
+      "moves_remaining": 1,
+      "final_score": 179016,
+      "objectives_remaining": 5,
+      "initial_objectives": 78,
+      "elapsed_sec": 366.21,
+      "diagnosis": {
+        "level_id": 1178,
+        "level_type": "JELLY",
+        "moves_limit": 35,
+        "active_cells": 60,
+        "initial_objectives": 78,
+        "required_pace": 2.229,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 13,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 4 objective cell(s) [(0, 0), (0, 8), (8, 0), (8, 8)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1368,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 26,
+      "moves_limit": 27,
+      "moves_remaining": 1,
+      "final_score": 209628,
+      "objectives_remaining": 14,
+      "initial_objectives": 93,
+      "elapsed_sec": 175.3,
+      "diagnosis": {
+        "level_id": 1368,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "active_cells": 59,
+        "initial_objectives": 93,
+        "required_pace": 3.444,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 2,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    },
+    {
+      "level_id": 1351,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 31,
+      "moves_limit": 32,
+      "moves_remaining": 1,
+      "final_score": 29179,
+      "objectives_remaining": 3,
+      "initial_objectives": 4,
+      "elapsed_sec": 259.32,
+      "diagnosis": {
+        "level_id": 1351,
+        "level_type": "JELLY",
+        "moves_limit": 32,
+        "active_cells": 52,
+        "initial_objectives": 4,
+        "required_pace": 0.125,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            8
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 2 objective cell(s) [(0, 0), (0, 8)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1488,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 35,
+      "moves_limit": 36,
+      "moves_remaining": 1,
+      "final_score": 162355,
+      "objectives_remaining": 8,
+      "initial_objectives": 64,
+      "elapsed_sec": 287.95,
+      "diagnosis": {
+        "level_id": 1488,
+        "level_type": "JELLY",
+        "moves_limit": 36,
+        "active_cells": 59,
+        "initial_objectives": 64,
+        "required_pace": 1.778,
+        "void_objectives": 0,
+        "isolated_objective_cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            8
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            8,
+            8
+          ]
+        ],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 1,
+        "solvable_in_principle": true,
+        "notes": [
+          "ISOLATED_ISLANDS: 5 objective cell(s) [(0, 0), (0, 8), (8, 0), (8, 4), (8, 8)] have 0 active neighbours; direct swaps impossible \u2014 must clear via remote Striped laser / Color Bomb / Jelly Fish."
+        ]
+      }
+    },
+    {
+      "level_id": 1390,
+      "won": false,
+      "attempts_used": 10,
+      "winning_seed": null,
+      "moves_used": 32,
+      "moves_limit": 33,
+      "moves_remaining": 1,
+      "final_score": 51051,
+      "objectives_remaining": 18,
+      "initial_objectives": 26,
+      "elapsed_sec": 346.53,
+      "diagnosis": {
+        "level_id": 1390,
+        "level_type": "JELLY",
+        "moves_limit": 33,
+        "active_cells": 57,
+        "initial_objectives": 26,
+        "required_pace": 0.788,
+        "void_objectives": 0,
+        "isolated_objective_cells": [],
+        "dead_columns_without_spawner": [],
+        "chocolate_cells": 0,
+        "frosting_cells": 0,
+        "licorice_cells": 0,
+        "solvable_in_principle": true,
+        "notes": []
+      }
+    }
+  ]
+}

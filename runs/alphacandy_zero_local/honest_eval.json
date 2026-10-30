@@ -1,0 +1,107 @@
+{
+  "levels_count": 8,
+  "seeds_per_level": 3,
+  "num_simulations": 16,
+  "mean_single_seed_win_rate": 0.4583,
+  "pass_at_k_rate": 0.5,
+  "levels_passed": 4,
+  "elapsed_sec": 185.17,
+  "per_level": [
+    {
+      "level_id": 1,
+      "level_type": "JELLY",
+      "moves_limit": 28,
+      "seeds_tested": 3,
+      "wins": 3,
+      "single_seed_win_rate": 1.0,
+      "pass_at_k": true,
+      "mean_objective_clearance": 1.0,
+      "winning_seed": 1101,
+      "moves_used_on_win": 2
+    },
+    {
+      "level_id": 12,
+      "level_type": "JELLY",
+      "moves_limit": 25,
+      "seeds_tested": 3,
+      "wins": 2,
+      "single_seed_win_rate": 0.6667,
+      "pass_at_k": true,
+      "mean_objective_clearance": 1.0,
+      "winning_seed": 2212,
+      "moves_used_on_win": 21
+    },
+    {
+      "level_id": 25,
+      "level_type": "INGREDIENTS",
+      "moves_limit": 22,
+      "seeds_tested": 3,
+      "wins": 0,
+      "single_seed_win_rate": 0.0,
+      "pass_at_k": false,
+      "mean_objective_clearance": 0.0,
+      "winning_seed": null,
+      "moves_used_on_win": null
+    },
+    {
+      "level_id": 50,
+      "level_type": "JELLY",
+      "moves_limit": 25,
+      "seeds_tested": 3,
+      "wins": 3,
+      "single_seed_win_rate": 1.0,
+      "pass_at_k": true,
+      "mean_objective_clearance": 1.0,
+      "winning_seed": 6050,
+      "moves_used_on_win": 15
+    },
+    {
+      "level_id": 70,
+      "level_type": "JELLY",
+      "moves_limit": 30,
+      "seeds_tested": 3,
+      "wins": 3,
+      "single_seed_win_rate": 1.0,
+      "pass_at_k": true,
+      "mean_objective_clearance": 1.0,
+      "winning_seed": 8070,
+      "moves_used_on_win": 15
+    },
+    {
+      "level_id": 235,
+      "level_type": "JELLY",
+      "moves_limit": 32,
+      "seeds_tested": 3,
+      "wins": 0,
+      "single_seed_win_rate": 0.0,
+      "pass_at_k": false,
+      "mean_objective_clearance": 0.7963,
+      "winning_seed": null,
+      "moves_used_on_win": null
+    },
+    {
+      "level_id": 272,
+      "level_type": "INGREDIENTS",
+      "moves_limit": 27,
+      "seeds_tested": 3,
+      "wins": 0,
+      "single_seed_win_rate": 0.0,
+      "pass_at_k": false,
+      "mean_objective_clearance": 0.1333,
+      "winning_seed": null,
+      "moves_used_on_win": null
+    },
+    {
+      "level_id": 279,
+      "level_type": "JELLY",
+      "moves_limit": 30,
+      "seeds_tested": 3,
+      "wins": 0,
+      "single_seed_win_rate": 0.0,
+      "pass_at_k": false,
+      "mean_objective_clearance": 0.8413,
+      "winning_seed": null,
+      "moves_used_on_win": null
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "won_levels": [
+    1318,
+    1368
+  ],
+  "results": [
+    {
+      "level_id": 1178,
+      "won": false,
+      "score": 207943,
+      "objectives_remaining": 5,
+      "initial_objectives": 78,
+      "moves_remaining": 1,
+      "elapsed_sec": 431.68
+    },
+    {
+      "level_id": 1205,
+      "won": false,
+      "score": 141214,
+      "objectives_remaining": 3,
+      "initial_objectives": 38,
+      "moves_remaining": 1,
+      "elapsed_sec": 354.45
+    },
+    {
+      "level_id": 1292,
+      "won": false,
+      "score": 315472,
+      "objectives_remaining": 2,
+      "initial_objectives": 122,
+      "moves_remaining": 2,
+      "elapsed_sec": 208.41
+    },
+    {
+      "level_id": 1318,
+      "won": true,
+      "score": 273641,
+      "objectives_remaining": 0,
+      "initial_objectives": 99,
+      "moves_remaining": 0,
+      "elapsed_sec": 61.18
+    },
+    {
+      "level_id": 1349,
+      "won": false,
+      "score": 117675,
+      "objectives_remaining": 3,
+      "initial_objectives": 50,
+      "moves_remaining": 2,
+      "elapsed_sec": 84.6
+    },
+    {
+      "level_id": 1351,
+      "won": false,
+      "score": 28398,
+      "objectives_remaining": 3,
+      "initial_objectives": 4,
+      "moves_remaining": 5,
+      "elapsed_sec": 360.1
+    },
+    {
+      "level_id": 1368,
+      "won": true,
+      "score": 236868,
+      "objectives_remaining": 0,
+      "initial_objectives": 93,
+      "moves_remaining": 3,
+      "elapsed_sec": 51.48
+    },
+    {
+      "level_id": 1390,
+      "won": false,
+      "score": 74950,
+      "objectives_remaining": 20,
+      "initial_objectives": 26,
+      "moves_remaining": 6,
+      "elapsed_sec": 507.02
+    },
+    {
+      "level_id": 1488,
+      "won": false,
+      "score": 156963,
+      "objectives_remaining": 8,
+      "initial_objectives": 64,
+      "moves_remaining": 1,
+      "elapsed_sec": 420.34
+    }
+  ]
+}
