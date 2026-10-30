@@ -1,7 +1,7 @@
 {
   "suite": "AlphaCandy-Omega Architectural Ablations & Head-to-Head Micro-Experiments",
   "seed": 42,
-  "total_runtime_sec": 10.094,
+  "total_runtime_sec": 17.706,
   "ablations": {
     "ablation_1_edge_swap_head": {
       "ablation_id": 1,
@@ -19,7 +19,7 @@
       "convergence_speedup_x": 1.0,
       "final_val_accuracy_bilinear_pct": 88.51,
       "final_val_accuracy_flat_pct": 50.71,
-      "elapsed_sec": 3.627
+      "elapsed_sec": 7.424
     },
     "ablation_2_s6_color_invariance": {
       "ablation_id": 2,
@@ -30,7 +30,7 @@
       "standard_conv2d_top1_action_consistency_pct": 26.88,
       "s6_symmetric_stem_logit_variation_pct": 0.0,
       "s6_symmetric_stem_top1_action_consistency_pct": 100.0,
-      "elapsed_sec": 0.387
+      "elapsed_sec": 0.831
     },
     "ablation_3_pace_quantile_tilting": {
       "ablation_id": 3,
@@ -78,7 +78,7 @@
           "desperate_behind_move_b_selection_pct": 100.0
         }
       },
-      "elapsed_sec": 0.083
+      "elapsed_sec": 0.082
     },
     "ablation_4_zobrist_dag_deduplication": {
       "ablation_id": 4,
@@ -100,10 +100,10 @@
         },
         "level_25": {
           "level_id": 25,
-          "total_states_generated": 577,
-          "unique_zobrist_states": 512,
-          "duplicate_transpositions": 65,
-          "deduplication_rate_pct": 11.27
+          "total_states_generated": 582,
+          "unique_zobrist_states": 543,
+          "duplicate_transpositions": 39,
+          "deduplication_rate_pct": 6.7
         },
         "level_50": {
           "level_id": 50,
@@ -113,12 +113,12 @@
           "deduplication_rate_pct": 21.58
         }
       },
-      "total_nodes_evaluated": 1628,
-      "total_unique_states": 1262,
-      "total_commuting_duplicates": 366,
-      "overall_deduplication_rate_pct": 22.48,
-      "effective_search_compression_ratio": 1.29,
-      "elapsed_sec": 4.222
+      "total_nodes_evaluated": 1633,
+      "total_unique_states": 1293,
+      "total_commuting_duplicates": 340,
+      "overall_deduplication_rate_pct": 20.82,
+      "effective_search_compression_ratio": 1.26,
+      "elapsed_sec": 5.997
     },
     "ablation_5_gumbel_sequential_halving": {
       "ablation_id": 5,
@@ -145,7 +145,7 @@
         }
       },
       "regret_reduction_vs_greedy_topk_pct": 37.94,
-      "elapsed_sec": 0.04
+      "elapsed_sec": 0.071
     },
     "ablation_6_human_persona_gravity_bias": {
       "ablation_id": 6,
@@ -167,7 +167,7 @@
       },
       "bottom_vs_top_cascade_depth_gain_pct": 33.24,
       "bottom_vs_top_score_gain_pct": 63.99,
-      "elapsed_sec": 1.659
+      "elapsed_sec": 3.21
     }
   }
 }

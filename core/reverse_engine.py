@@ -148,11 +148,11 @@ class ReverseEngineState:
         if self.config.level_type == LevelType.SCORE:
             return self.score >= self.config.target_score
         elif self.config.level_type == LevelType.JELLY:
-            return np.sum(self.jellies > 0) == 0 and self.score >= self.config.target_score
+            return np.sum(self.jellies > 0) == 0
         elif self.config.level_type == LevelType.INGREDIENTS:
             return self.ingredients_collected >= self.config.target_ingredients
         elif self.config.level_type == LevelType.BLOCKERS:
-            return np.sum(self.blockers > 0) == 0 and self.score >= self.config.target_score
+            return np.sum(self.blockers > 0) == 0
         return False
 
     def has_lost(self) -> bool:

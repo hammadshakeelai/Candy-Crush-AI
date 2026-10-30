@@ -1,6 +1,6 @@
 # Architectural Ablations & Head-to-Head Micro-Experiment Report
 
-**Execution Runtime:** `10.094s` (CPU) | **Seed:** `42` | **Status:** All 6 Hypotheses Verified
+**Execution Runtime:** `17.706s` (CPU) | **Seed:** `42` | **Status:** All 6 Hypotheses Verified
 
 ---
 
@@ -11,7 +11,7 @@
 | **1** | **Bilinear Symmetric Edge-Swap Head** | Flat `Linear(81*d, 144)` (`373,392` params) | $\text{MLP}([z_u+z_v, |z_u-z_v|, z_u \odot z_v])$ (`4,705` params) | **100.0% swap symmetry** (0.0 discrepancy), **1.0x faster convergence** (`45` vs `45` epochs), **79.4x fewer params** |
 | **2** | **$S_6$ Color-Permutation Invariance** | Standard 20-ch `Conv2d` Stem | Shared Per-Color Symmetric Stem ($S_6$ Pooling) | Standard `Conv2d` varies by **58.71%** (Top-1 consistency `26.88%`); Shared Stem has **0.0000% variance** (**100.0% invariance**) |
 | **3** | **Pace-Controlled Dynamic Quantile Tilting** | Fixed Scalar $\mathbb{E}[Q]$ & Static $\text{CVaR}$ | Dynamic $\text{CVaR}_{0.20}$ (Ahead) $\leftrightarrow$ $\text{CVaR}_{0.90}^+$ (Behind) | Scalar $\mathbb{E}[Q]$ loses **100.0%** of Desperate Behind games; Dynamic Tilting wins **93.4%** Safe Ahead AND **23.4%** Desperate Behind |
-| **4** | **Zobrist Transposition Table DAG Deduplication** | Naive Tree Enumeration (Levels 1, 25, 50) | 64-Bit Zobrist Hash DAG Deduplication (Depth 3) | **22.48%** of depth-3 states (`366/1628`) are commuting duplicates ($A \to B \equiv B \to A$), yielding **1.29x** search compression |
+| **4** | **Zobrist Transposition Table DAG Deduplication** | Naive Tree Enumeration (Levels 1, 25, 50) | 64-Bit Zobrist Hash DAG Deduplication (Depth 3) | **20.82%** of depth-3 states (`340/1633`) are commuting duplicates ($A \to B \equiv B \to A$), yielding **1.26x** search compression |
 | **5** | **Gumbel Sequential Halving ($N=6$ Budget)** | Greedy Top-6 Rollouts / Pure Prior | Gumbel-Top-$k$ Sequential Halving + Completed $Q$ | Reduces simple regret by **37.94%** vs Greedy Top-6 (`0.2187` vs `0.3524`) & achieves **47.1%** optimal pick rate |
 | **6** | **Human Playtester Persona Comparison** | Top-Down Reading Bias (Rows `0..2`) | Bottom-Up Gravity Bias (Rows `6..8`) | Bottom-row swaps yield **+33.24%** deeper cascades (`2.216` vs `1.663`), **+63.99%** higher score/swap, and **63.35%** vs **37.39%** multi-cascade rate |
 
@@ -69,9 +69,9 @@ When two spatially separated swaps $A$ (e.g., left columns) and $B$ (e.g., right
 | King Level | Depth-3 States Generated | Unique Zobrist 64-Bit States | Commuting Duplicate States | DAG Deduplication Rate |
 | :--- | :---: | :---: | :---: | :---: |
 | **Level 1** | `467` | `292` | `175` | **37.47%** |
-| **Level 25** | `577` | `512` | `65` | **11.27%** |
+| **Level 25** | `582` | `543` | `39` | **6.7%** |
 | **Level 50** | `584` | `458` | `126` | **21.58%** |
-| **Combined Total** | `1628` | `1262` | `366` | **22.48%** (`1.29x` compression) |
+| **Combined Total** | `1633` | `1293` | `340` | **20.82%** (`1.26x` compression) |
 
 ---
 
