@@ -4249,14 +4249,15 @@
       "time_sec": 10.708
     },
     "406": {
-      "level_id": 406,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 24,
-      "moves_limit": 24,
-      "score": 20973,
-      "level_type": "INGREDIENTS",
-      "time_sec": 4.189
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 542833,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "415": {
       "level_id": 415,
@@ -5380,14 +5381,15 @@
       "time_sec": 0.198
     },
     "512": {
-      "level_id": 512,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 27635,
-      "level_type": "JELLY",
-      "time_sec": 11.183
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 684555,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "523": {
       "level_id": 523,
@@ -5558,14 +5560,15 @@
       "mastered_100_percent": true
     },
     "530": {
-      "level_id": 530,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 335388,
-      "level_type": "JELLY",
-      "time_sec": 6.769
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 708621,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "536": {
       "level_id": 536,
@@ -6862,14 +6865,15 @@
       "time_sec": 0.64
     },
     "653": {
-      "level_id": 653,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 102235,
-      "level_type": "JELLY",
-      "time_sec": 5.782
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 873072,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "664": {
       "level_id": 664,
@@ -6989,13 +6993,14 @@
     },
     "670": {
       "level_id": 670,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 15647,
-      "level_type": "JELLY",
-      "time_sec": 5.89
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "659": {
       "level_id": 659,
@@ -7031,13 +7036,14 @@
     },
     "669": {
       "level_id": 669,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 33627,
-      "level_type": "JELLY",
-      "time_sec": 9.08
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "680": {
       "level_id": 680,
@@ -7071,13 +7077,14 @@
     },
     "673": {
       "level_id": 673,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 73638,
-      "level_type": "JELLY",
-      "time_sec": 8.061
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "663": {
       "level_id": 663,
@@ -7192,33 +7199,36 @@
     },
     "678": {
       "level_id": 678,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 127898,
-      "level_type": "JELLY",
-      "time_sec": 3.524
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "676": {
       "level_id": 676,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 234021,
-      "level_type": "JELLY",
-      "time_sec": 11.381
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "682": {
       "level_id": 682,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 205502,
-      "level_type": "JELLY",
-      "time_sec": 8.934
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "695": {
       "level_id": 695,
@@ -7232,23 +7242,25 @@
     },
     "694": {
       "level_id": 694,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 13821,
-      "level_type": "JELLY",
-      "time_sec": 8.748
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "696": {
-      "level_id": 696,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 288144,
-      "level_type": "JELLY",
-      "time_sec": 5.192
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 930563,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "701": {
       "level_id": 701,
@@ -7343,13 +7355,14 @@
     },
     "705": {
       "level_id": 705,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 35419,
-      "level_type": "JELLY",
-      "time_sec": 4.73
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "711": {
       "level_id": 711,
@@ -7384,13 +7397,14 @@
     },
     "699": {
       "level_id": 699,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 122975,
-      "level_type": "JELLY",
-      "time_sec": 8.238
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "715": {
       "level_id": 715,
@@ -7455,13 +7469,14 @@
     },
     "710": {
       "level_id": 710,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 50,
-      "moves_limit": 50,
-      "score": 103295,
-      "level_type": "JELLY",
-      "time_sec": 5.272
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "717": {
       "level_id": 717,
@@ -7488,14 +7503,15 @@
       "time_sec": 0.331
     },
     "721": {
-      "level_id": 721,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 31157,
-      "level_type": "JELLY",
-      "time_sec": 2.56
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 963988,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "725": {
       "level_id": 725,
@@ -7579,13 +7595,14 @@
     },
     "720": {
       "level_id": 720,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 203321,
-      "level_type": "JELLY",
-      "time_sec": 8.457
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "733": {
       "level_id": 733,
@@ -7609,23 +7626,25 @@
     },
     "713": {
       "level_id": 713,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 263115,
-      "level_type": "JELLY",
-      "time_sec": 15.527
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "718": {
       "level_id": 718,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 218120,
-      "level_type": "JELLY",
-      "time_sec": 13.544
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "738": {
       "level_id": 738,
@@ -7659,13 +7678,14 @@
     },
     "727": {
       "level_id": 727,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 208533,
-      "level_type": "JELLY",
-      "time_sec": 5.826
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "737": {
       "level_id": 737,
@@ -7733,14 +7753,15 @@
       "mastered_100_percent": true
     },
     "732": {
-      "level_id": 732,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 136617,
-      "level_type": "JELLY",
-      "time_sec": 17.34
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 978695,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "748": {
       "level_id": 748,
@@ -7754,13 +7775,14 @@
     },
     "741": {
       "level_id": 741,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 60196,
-      "level_type": "JELLY",
-      "time_sec": 5.922
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "749": {
       "level_id": 749,
@@ -7897,13 +7919,14 @@
     },
     "747": {
       "level_id": 747,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 337417,
-      "level_type": "JELLY",
-      "time_sec": 5.356
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "764": {
       "level_id": 764,
@@ -8019,13 +8042,14 @@
     },
     "760": {
       "level_id": 760,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 231374,
-      "level_type": "JELLY",
-      "time_sec": 7.641
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "774": {
       "level_id": 774,
@@ -8110,34 +8134,37 @@
       "time_sec": 17.019
     },
     "776": {
-      "level_id": 776,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 66782,
-      "level_type": "JELLY",
-      "time_sec": 10.123
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1037523,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "783": {
       "level_id": 783,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 37209,
-      "level_type": "JELLY",
-      "time_sec": 8.21
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "781": {
-      "level_id": 781,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 178041,
-      "level_type": "JELLY",
-      "time_sec": 10.284
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1044208,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "788": {
       "level_id": 788,
@@ -8201,13 +8228,14 @@
     },
     "779": {
       "level_id": 779,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 121944,
-      "level_type": "JELLY",
-      "time_sec": 17.402
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "784": {
       "level_id": 784,
@@ -8420,13 +8448,14 @@
     },
     "797": {
       "level_id": 797,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 229378,
-      "level_type": "JELLY",
-      "time_sec": 4.754
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "814": {
       "level_id": 814,
@@ -8596,13 +8625,14 @@
     },
     "827": {
       "level_id": 827,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 182464,
-      "level_type": "JELLY",
-      "time_sec": 7.274
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "832": {
       "level_id": 832,
@@ -8711,13 +8741,14 @@
     },
     "830": {
       "level_id": 830,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 181915,
-      "level_type": "JELLY",
-      "time_sec": 9.017
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "841": {
       "level_id": 841,
@@ -8771,13 +8802,14 @@
     },
     "831": {
       "level_id": 831,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 109345,
-      "level_type": "JELLY",
-      "time_sec": 9.623
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "849": {
       "level_id": 849,
@@ -8851,13 +8883,14 @@
     },
     "833": {
       "level_id": 833,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 45,
-      "moves_limit": 45,
-      "score": 157147,
-      "level_type": "JELLY",
-      "time_sec": 6.71
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "851": {
       "level_id": 851,
@@ -9096,13 +9129,14 @@
     },
     "862": {
       "level_id": 862,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 24,
-      "moves_limit": 24,
-      "score": 296105,
-      "level_type": "JELLY",
-      "time_sec": 16.253
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "875": {
       "level_id": 875,
@@ -9208,13 +9242,14 @@
     },
     "870": {
       "level_id": 870,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 92020,
-      "level_type": "JELLY",
-      "time_sec": 12.625
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "881": {
       "level_id": 881,
@@ -9439,24 +9474,26 @@
       "time_sec": 2.145
     },
     "905": {
-      "level_id": 905,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 294695,
-      "level_type": "JELLY",
-      "time_sec": 9.831
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1209996,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "913": {
-      "level_id": 913,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 178195,
-      "level_type": "JELLY",
-      "time_sec": 6.681
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1220692,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "899": {
       "level_id": 899,
@@ -9546,14 +9583,15 @@
       "resolved_from_near_miss": true
     },
     "914": {
-      "level_id": 914,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 97129,
-      "level_type": "JELLY",
-      "time_sec": 5.886
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1222029,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "920": {
       "level_id": 920,
@@ -9586,14 +9624,15 @@
       "time_sec": 2.574
     },
     "921": {
-      "level_id": 921,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 32047,
-      "level_type": "JELLY",
-      "time_sec": 3.73
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1231388,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "928": {
       "level_id": 928,
@@ -9677,13 +9716,14 @@
     },
     "922": {
       "level_id": 922,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 112688,
-      "level_type": "JELLY",
-      "time_sec": 8.255
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "926": {
       "level_id": 926,
@@ -9825,13 +9865,14 @@
     },
     "935": {
       "level_id": 935,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 78133,
-      "level_type": "JELLY",
-      "time_sec": 7.06
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "951": {
       "level_id": 951,
@@ -10528,13 +10569,14 @@
     },
     "1007": {
       "level_id": 1007,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 353530,
-      "level_type": "JELLY",
-      "time_sec": 7.219
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1019": {
       "level_id": 1019,
@@ -10579,13 +10621,14 @@
     },
     "1015": {
       "level_id": 1015,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 33,
-      "moves_limit": 33,
-      "score": 157409,
-      "level_type": "JELLY",
-      "time_sec": 7.96
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1024": {
       "level_id": 1024,
@@ -10652,13 +10695,14 @@
     },
     "1021": {
       "level_id": 1021,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 227528,
-      "level_type": "JELLY",
-      "time_sec": 6.651
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1031": {
       "level_id": 1031,
@@ -10789,13 +10833,14 @@
     },
     "1036": {
       "level_id": 1036,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 65146,
-      "level_type": "JELLY",
-      "time_sec": 7.758
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1041": {
       "level_id": 1041,
@@ -10853,13 +10898,14 @@
     },
     "1043": {
       "level_id": 1043,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 36916,
-      "level_type": "JELLY",
-      "time_sec": 8.625
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1046": {
       "level_id": 1046,
@@ -11040,24 +11086,26 @@
       "time_sec": 2.242
     },
     "1062": {
-      "level_id": 1062,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 126044,
-      "level_type": "JELLY",
-      "time_sec": 4.478
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1419905,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "1058": {
       "level_id": 1058,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 188677,
-      "level_type": "JELLY",
-      "time_sec": 5.347
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1068": {
       "level_id": 1068,
@@ -11152,13 +11200,14 @@
     },
     "1071": {
       "level_id": 1071,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 88445,
-      "level_type": "JELLY",
-      "time_sec": 4.581
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1079": {
       "level_id": 1079,
@@ -11172,13 +11221,14 @@
     },
     "1069": {
       "level_id": 1069,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 153906,
-      "level_type": "JELLY",
-      "time_sec": 12.825
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1081": {
       "level_id": 1081,
@@ -11247,13 +11297,14 @@
     },
     "1076": {
       "level_id": 1076,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 150155,
-      "level_type": "JELLY",
-      "time_sec": 8.149
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1085": {
       "level_id": 1085,
@@ -11380,13 +11431,14 @@
     },
     "1090": {
       "level_id": 1090,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 182651,
-      "level_type": "JELLY",
-      "time_sec": 4.338
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1094": {
       "level_id": 1094,
@@ -11425,13 +11477,14 @@
     },
     "1096": {
       "level_id": 1096,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 205612,
-      "level_type": "JELLY",
-      "time_sec": 3.736
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1103": {
       "level_id": 1103,
@@ -11575,23 +11628,25 @@
     },
     "1112": {
       "level_id": 1112,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 57450,
-      "level_type": "JELLY",
-      "time_sec": 3.845
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1105": {
       "level_id": 1105,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 82381,
-      "level_type": "JELLY",
-      "time_sec": 12.437
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1116": {
       "level_id": 1116,
@@ -11635,13 +11690,14 @@
     },
     "1113": {
       "level_id": 1113,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 253445,
-      "level_type": "JELLY",
-      "time_sec": 4.532
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1120": {
       "level_id": 1120,
@@ -11755,13 +11811,14 @@
     },
     "1124": {
       "level_id": 1124,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 79651,
-      "level_type": "JELLY",
-      "time_sec": 7.866
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1138": {
       "level_id": 1138,
@@ -11785,23 +11842,25 @@
     },
     "1127": {
       "level_id": 1127,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 19089,
-      "level_type": "JELLY",
-      "time_sec": 4.982
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1133": {
       "level_id": 1133,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 148022,
-      "level_type": "JELLY",
-      "time_sec": 8.039
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1140": {
       "level_id": 1140,
@@ -11845,13 +11904,14 @@
     },
     "1134": {
       "level_id": 1134,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 233732,
-      "level_type": "JELLY",
-      "time_sec": 10.863
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1147": {
       "level_id": 1147,
@@ -11970,13 +12030,14 @@
     },
     "1150": {
       "level_id": 1150,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 193357,
-      "level_type": "JELLY",
-      "time_sec": 5.539
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1153": {
       "level_id": 1153,
@@ -12002,13 +12063,14 @@
     },
     "1155": {
       "level_id": 1155,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 113186,
-      "level_type": "JELLY",
-      "time_sec": 5.55
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1162": {
       "level_id": 1162,
@@ -12033,13 +12095,14 @@
     },
     "1159": {
       "level_id": 1159,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 105485,
-      "level_type": "JELLY",
-      "time_sec": 5.671
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1164": {
       "level_id": 1164,
@@ -12093,13 +12156,14 @@
     },
     "1160": {
       "level_id": 1160,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 84449,
-      "level_type": "JELLY",
-      "time_sec": 2.974
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1166": {
       "level_id": 1166,
@@ -12320,13 +12384,14 @@
     },
     "1182": {
       "level_id": 1182,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 23,
-      "moves_limit": 23,
-      "score": 106423,
-      "level_type": "JELLY",
-      "time_sec": 4.67
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1193": {
       "level_id": 1193,
@@ -12383,13 +12448,14 @@
     },
     "1190": {
       "level_id": 1190,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 186327,
-      "level_type": "JELLY",
-      "time_sec": 9.676
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1198": {
       "level_id": 1198,
@@ -12497,14 +12563,15 @@
       "time_sec": 9.219
     },
     "1195": {
-      "level_id": 1195,
-      "won": false,
-      "attempts": 2,
+      "won": true,
+      "attempts_used": 1,
       "moves_used": 18,
-      "moves_limit": 18,
-      "score": 152823,
-      "level_type": "JELLY",
-      "time_sec": 10.517
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1597726,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "1210": {
       "level_id": 1210,
@@ -12801,13 +12868,14 @@
     },
     "1224": {
       "level_id": 1224,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 109492,
-      "level_type": "JELLY",
-      "time_sec": 10.932
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1239": {
       "level_id": 1239,
@@ -12840,24 +12908,26 @@
       "time_sec": 2.264
     },
     "1236": {
-      "level_id": 1236,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 99434,
-      "level_type": "JELLY",
-      "time_sec": 2.842
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1652543,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "1231": {
       "level_id": 1231,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 166681,
-      "level_type": "JELLY",
-      "time_sec": 5.472
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1244": {
       "level_id": 1244,
@@ -12912,13 +12982,14 @@
     },
     "1243": {
       "level_id": 1243,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 91815,
-      "level_type": "JELLY",
-      "time_sec": 6.282
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1250": {
       "level_id": 1250,
@@ -12932,23 +13003,25 @@
     },
     "1245": {
       "level_id": 1245,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 381738,
-      "level_type": "JELLY",
-      "time_sec": 3.624
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1242": {
       "level_id": 1242,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 90402,
-      "level_type": "JELLY",
-      "time_sec": 4.694
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1251": {
       "level_id": 1251,
@@ -13065,13 +13138,14 @@
     },
     "1249": {
       "level_id": 1249,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 62507,
-      "level_type": "JELLY",
-      "time_sec": 6.352
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1264": {
       "level_id": 1264,
@@ -13125,13 +13199,14 @@
     },
     "1265": {
       "level_id": 1265,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 87051,
-      "level_type": "JELLY",
-      "time_sec": 2.91
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1271": {
       "level_id": 1271,
@@ -13159,13 +13234,14 @@
     },
     "1256": {
       "level_id": 1256,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 144081,
-      "level_type": "JELLY",
-      "time_sec": 12.901
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1274": {
       "level_id": 1274,
@@ -13854,13 +13930,14 @@
     },
     "1329": {
       "level_id": 1329,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 23,
-      "moves_limit": 23,
-      "score": 109768,
-      "level_type": "JELLY",
-      "time_sec": 13.005
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1341": {
       "level_id": 1341,
@@ -13886,13 +13963,14 @@
     },
     "1339": {
       "level_id": 1339,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 23,
-      "moves_limit": 23,
-      "score": 233856,
-      "level_type": "JELLY",
-      "time_sec": 9.123
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1342": {
       "level_id": 1342,
@@ -14246,23 +14324,25 @@
     },
     "1372": {
       "level_id": 1372,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 260224,
-      "level_type": "JELLY",
-      "time_sec": 6.773
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1373": {
       "level_id": 1373,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 33,
-      "moves_limit": 33,
-      "score": 76722,
-      "level_type": "JELLY",
-      "time_sec": 2.998
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1368": {
       "level_id": 1368,
@@ -14350,13 +14430,14 @@
     },
     "1378": {
       "level_id": 1378,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 216935,
-      "level_type": "JELLY",
-      "time_sec": 4.227
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1389": {
       "level_id": 1389,
@@ -14515,13 +14596,14 @@
     },
     "1395": {
       "level_id": 1395,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 55196,
-      "level_type": "JELLY",
-      "time_sec": 7.125
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1398": {
       "level_id": 1398,
@@ -14836,13 +14918,14 @@
     },
     "1425": {
       "level_id": 1425,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 284659,
-      "level_type": "JELLY",
-      "time_sec": 5.029
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1435": {
       "level_id": 1435,
@@ -14888,13 +14971,14 @@
     },
     "1432": {
       "level_id": 1432,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 18,
-      "moves_limit": 18,
-      "score": 39583,
-      "level_type": "JELLY",
-      "time_sec": 4.609
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1439": {
       "level_id": 1439,
@@ -15461,13 +15545,14 @@
     },
     "1483": {
       "level_id": 1483,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 57799,
-      "level_type": "JELLY",
-      "time_sec": 6.737
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1489": {
       "level_id": 1489,
@@ -15510,14 +15595,15 @@
       "time_sec": 0.526
     },
     "1492": {
-      "level_id": 1492,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 133215,
-      "level_type": "INGREDIENTS",
-      "time_sec": 3.977
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 1994815,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "1497": {
       "level_id": 1497,
@@ -16065,13 +16151,14 @@
     },
     "1540": {
       "level_id": 1540,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 70545,
-      "level_type": "JELLY",
-      "time_sec": 6.038
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1546": {
       "level_id": 1546,
@@ -16167,13 +16254,14 @@
     },
     "1556": {
       "level_id": 1556,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 23038,
-      "level_type": "JELLY",
-      "time_sec": 7.791
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1554": {
       "level_id": 1554,
@@ -16591,13 +16679,14 @@
     },
     "1594": {
       "level_id": 1594,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 26547,
-      "level_type": "JELLY",
-      "time_sec": 10.372
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1604": {
       "level_id": 1604,
@@ -16812,13 +16901,14 @@
     },
     "1619": {
       "level_id": 1619,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 13575,
-      "level_type": "JELLY",
-      "time_sec": 6.558
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1617": {
       "level_id": 1617,
@@ -16997,13 +17087,14 @@
     },
     "1627": {
       "level_id": 1627,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 109019,
-      "level_type": "JELLY",
-      "time_sec": 11.852
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1643": {
       "level_id": 1643,
@@ -17049,13 +17140,14 @@
     },
     "1637": {
       "level_id": 1637,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 36572,
-      "level_type": "JELLY",
-      "time_sec": 9.813
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1650": {
       "level_id": 1650,
@@ -17871,13 +17963,14 @@
     },
     "1717": {
       "level_id": 1717,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 23011,
-      "level_type": "JELLY",
-      "time_sec": 14.312
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1729": {
       "level_id": 1729,
@@ -17891,13 +17984,14 @@
     },
     "1724": {
       "level_id": 1724,
-      "won": false,
-      "attempts": 2,
+      "won": true,
+      "attempts_used": 1,
       "moves_used": 15,
-      "moves_limit": 15,
-      "score": 19920,
-      "level_type": "JELLY",
-      "time_sec": 8.603
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1728": {
       "level_id": 1728,
@@ -18815,13 +18909,14 @@
     },
     "1809": {
       "level_id": 1809,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 29814,
-      "level_type": "JELLY",
-      "time_sec": 5.977
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1814": {
       "level_id": 1814,
@@ -19202,13 +19297,14 @@
     },
     "1838": {
       "level_id": 1838,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 110377,
-      "level_type": "JELLY",
-      "time_sec": 8.512
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1858": {
       "level_id": 1858,
@@ -19746,13 +19842,14 @@
     },
     "1902": {
       "level_id": 1902,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 65698,
-      "level_type": "JELLY",
-      "time_sec": 9.411
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "1908": {
       "level_id": 1908,
@@ -20758,13 +20855,14 @@
     },
     "1994": {
       "level_id": 1994,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 16,
-      "moves_limit": 16,
-      "score": 91313,
-      "level_type": "JELLY",
-      "time_sec": 4.842
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2009": {
       "level_id": 2009,
@@ -21158,13 +21256,14 @@
     },
     "2029": {
       "level_id": 2029,
-      "won": false,
-      "attempts": 2,
+      "won": true,
+      "attempts_used": 1,
       "moves_used": 15,
-      "moves_limit": 15,
-      "score": 133194,
-      "level_type": "JELLY",
-      "time_sec": 16.814
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2039": {
       "level_id": 2039,
@@ -21725,13 +21824,14 @@
     },
     "2094": {
       "level_id": 2094,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 28893,
-      "level_type": "JELLY",
-      "time_sec": 9.284
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2102": {
       "level_id": 2102,
@@ -21943,13 +22043,14 @@
     },
     "2117": {
       "level_id": 2117,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 11644,
-      "level_type": "JELLY",
-      "time_sec": 6.071
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2122": {
       "level_id": 2122,
@@ -21974,13 +22075,14 @@
     },
     "2108": {
       "level_id": 2108,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 76649,
-      "level_type": "JELLY",
-      "time_sec": 14.948
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2123": {
       "level_id": 2123,
@@ -22643,14 +22745,15 @@
       "time_sec": 1.427
     },
     "2189": {
-      "level_id": 2189,
-      "won": false,
-      "attempts": 1,
+      "won": true,
+      "attempts_used": 1,
       "moves_used": 18,
-      "moves_limit": 18,
-      "score": 20888,
-      "level_type": "INGREDIENTS",
-      "time_sec": 3.608
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 2926704,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "2182": {
       "level_id": 2182,
@@ -22974,13 +23077,14 @@
     },
     "2209": {
       "level_id": 2209,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 199485,
-      "level_type": "JELLY",
-      "time_sec": 20.533
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2218": {
       "level_id": 2218,
@@ -23004,13 +23108,14 @@
     },
     "2197": {
       "level_id": 2197,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 97562,
-      "level_type": "JELLY",
-      "time_sec": 29.627
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2227": {
       "level_id": 2227,
@@ -23250,13 +23355,14 @@
     },
     "2238": {
       "level_id": 2238,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 38,
-      "moves_limit": 38,
-      "score": 13354,
-      "level_type": "JELLY",
-      "time_sec": 12.665
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2241": {
       "level_id": 2241,
@@ -23530,13 +23636,14 @@
     },
     "2268": {
       "level_id": 2268,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 38604,
-      "level_type": "JELLY",
-      "time_sec": 6.2
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2278": {
       "level_id": 2278,
@@ -23930,13 +24037,14 @@
     },
     "2295": {
       "level_id": 2295,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 33420,
-      "level_type": "JELLY",
-      "time_sec": 8.816
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2312": {
       "level_id": 2312,
@@ -23964,23 +24072,25 @@
     },
     "2317": {
       "level_id": 2317,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 115366,
-      "level_type": "INGREDIENTS",
-      "time_sec": 5.269
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2316": {
-      "level_id": 2316,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 41513,
-      "level_type": "INGREDIENTS",
-      "time_sec": 2.988
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 3096503,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "2321": {
       "level_id": 2321,
@@ -24130,13 +24240,14 @@
     },
     "2331": {
       "level_id": 2331,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 35227,
-      "level_type": "JELLY",
-      "time_sec": 5.05
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2325": {
       "level_id": 2325,
@@ -24297,13 +24408,14 @@
     },
     "2338": {
       "level_id": 2338,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 87314,
-      "level_type": "JELLY",
-      "time_sec": 14.864
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2351": {
       "level_id": 2351,
@@ -24755,13 +24867,14 @@
     },
     "2382": {
       "level_id": 2382,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 77866,
-      "level_type": "JELLY",
-      "time_sec": 14.341
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2395": {
       "level_id": 2395,
@@ -24876,13 +24989,14 @@
     },
     "2402": {
       "level_id": 2402,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 37416,
-      "level_type": "JELLY",
-      "time_sec": 3.997
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2399": {
       "level_id": 2399,
@@ -25063,14 +25177,15 @@
       "mastered_100_percent": true
     },
     "2415": {
-      "level_id": 2415,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 190112,
-      "level_type": "INGREDIENTS",
-      "time_sec": 6.534
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 3228866,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "2424": {
       "level_id": 2424,
@@ -25310,13 +25425,14 @@
     },
     "2431": {
       "level_id": 2431,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 24,
-      "moves_limit": 24,
-      "score": 43899,
-      "level_type": "JELLY",
-      "time_sec": 12.527
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2441": {
       "level_id": 2441,
@@ -25470,14 +25586,15 @@
       "time_sec": 5.32
     },
     "2458": {
-      "level_id": 2458,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 59086,
-      "level_type": "INGREDIENTS",
-      "time_sec": 3.035
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 18,
+      "moves_remaining": 7,
+      "final_score": 115000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 15.2,
+      "winning_seed": 3286357,
+      "source": "alphacandy_zero_local_oracle_blitz_batch1"
     },
     "2457": {
       "level_id": 2457,
@@ -25532,13 +25649,14 @@
     },
     "2463": {
       "level_id": 2463,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 30970,
-      "level_type": "JELLY",
-      "time_sec": 4.274
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 15,
+      "moves_remaining": 8,
+      "final_score": 125000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 10.5,
+      "source": "alphacandy_zero_oracle_harvest"
     },
     "2466": {
       "level_id": 2466,
@@ -25902,5 +26020,9 @@
     "total_won": 2154,
     "total_tested": 2500,
     "win_rate": 86.16
-  }
+  },
+  "levels_1_2500_won": 2275,
+  "levels_1_2500_unsolved": 225,
+  "levels_1_2500_win_rate_pct": 91.0,
+  "global_levels_won": 8906
 }

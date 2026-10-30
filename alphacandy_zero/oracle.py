@@ -204,8 +204,13 @@ def oracle_potential(
     if state.chocolate_destroyed_this_turn:
         score += 95.0
 
-    # 5. Tie-breaker: normalized game score
-    score += min(50.0, state.score / 5000.0)
+    # 5. Score progress: if no jellies remain on a JELLY/ORDER level, reaching target_score is the sole win condition!
+    if state.config.level_type == LevelType.JELLY and rem == 0:
+        score += state.score / 80.0
+    elif state.config.level_type == LevelType.SCORE:
+        score += state.score / 80.0
+    else:
+        score += min(120.0, state.score / 2500.0)
     return float(score)
 
 

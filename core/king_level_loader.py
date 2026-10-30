@@ -185,6 +185,17 @@ class KingLevelLoader:
 
         target_ing = max(ingredient_count, 1) if level_type == LevelType.INGREDIENTS else 0
 
+        # Calibrate King "Order" mode levels that contain 0 jellies on the board:
+        # In ReverseCandyEngine, regular candy clears award 60 pts (without +1,000 jelly bonus),
+        # so Order levels with 0 jellies map to LevelType.SCORE with target_score calibrated
+        # to the order item quantity (`_itemsToOrder`) and move budget.
+        if "Order" in game_mode and int(np.sum(jellies)) == 0:
+            level_type = LevelType.SCORE
+            order_items = gd.get("_itemsToOrder", [])
+            order_qty = sum(int(item.get("quantity", 0)) for item in order_items if isinstance(item, dict))
+            calibrated = max(6000, min(max(order_qty, 15) * 120, move_limit * 850))
+            target_score = min(target_score, calibrated)
+
         # Advanced King mechanics extraction
         portals = gd.get("portals", [])
         cannons = gd.get("cannons", [])
