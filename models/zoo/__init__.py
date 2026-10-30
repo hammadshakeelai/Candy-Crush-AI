@@ -1,13 +1,16 @@
-"""AlphaCandy Next-Gen Model Zoo Registry (35+ Architectures)."""
+"""AlphaCandy Next-Gen Model Zoo Registry (42 Architectures across All 7 Parts)."""
 
 MODEL_ZOO_REGISTRY = {
     "MultiStepActionPlannerNet": "models.zoo.autoregressive_move_sequence_planner.MultiStepActionPlannerNet",
     "EpistemicUncertaintyCandyNet": "models.zoo.bayesian_epistemic_ensemble_net.EpistemicUncertaintyCandyNet",
+    "DPPDiverseBeamCandyNet": "models.zoo.beam_search_diversity_determinantal.DPPDiverseBeamCandyNet",
+    "DifferentiableBipartiteMatcherNet": "models.zoo.bipartite_matching_hungarian_net.DifferentiableBipartiteMatcherNet",
     "SimCLRCandyContrastiveNet": "models.zoo.contrastive_state_representation_net.SimCLRCandyContrastiveNet",
     "DirectPreferenceCandyNet": "models.zoo.contrastive_trajectory_preference_net.DirectPreferenceCandyNet",
     "CMAESNeuroEvolutionAgent": "models.zoo.darwin_evolutionary_ensemble.CMAESNeuroEvolutionAgent",
     "CandyDecisionTransformer": "models.zoo.decision_transformer_candy.CandyDecisionTransformer",
     "CandyDiffusionPolicyNet": "models.zoo.discrete_diffusion_policy.CandyDiffusionPolicyNet",
+    "QuantileMCTSHybridNet": "models.zoo.distributional_qr_mcts_hybrid.QuantileMCTSHybridNet",
     "EnergyBasedCandyNet": "models.zoo.energy_based_ebm_policy.EnergyBasedCandyNet",
     "GravityEquivariantCandyNet": "models.zoo.equivariant_dihedral_net.GravityEquivariantCandyNet",
     "Star1ExpectimaxPrunerNet": "models.zoo.expectimax_alpha_beta_pruner.Star1ExpectimaxPrunerNet",
@@ -24,7 +27,9 @@ MODEL_ZOO_REGISTRY = {
     "TranspositionMCGSSolver": "models.zoo.monte_carlo_graph_search.TranspositionMCGSSolver",
     "NeuralCACascadePredictorNet": "models.zoo.neural_cellular_automata_net.NeuralCACascadePredictorNet",
     "NeuroSymbolicTacticalDSLNet": "models.zoo.neuro_symbolic_program_synth.NeuroSymbolicTacticalDSLNet",
+    "NgPotentialRewardShapingNet": "models.zoo.potential_based_reward_shaping_net.NgPotentialRewardShapingNet",
     "RetNetCandy2D": "models.zoo.retentive_spatial_net.RetNetCandy2D",
+    "ReverseCurriculumGeneratorNet": "models.zoo.reverse_curriculum_backward_solver.ReverseCurriculumGeneratorNet",
     "OptimalTransportCandyNet": "models.zoo.sinkhorn_optimal_transport_net.OptimalTransportCandyNet",
     "SwitchMoECandyTransformer": "models.zoo.sparse_moe_switch_candy_net.SwitchMoECandyTransformer",
     "BlockerContainmentSpecialistNet": "models.zoo.specialist_blocker_breaker_net.BlockerContainmentSpecialistNet",
