@@ -46,6 +46,7 @@ flowchart TD
 
 - **Master Synthesis & Consensus:**
   - **[[AlphaCandy_Omega_Super_Model_Architecture]]**: Sovereign 36.01M-parameter unified Super Model synthesizing 12-block Portal Graph Self-Attention, 32-Quantile Distributional RL (IQN/QR-DQN), CVaR risk-aware action selection, calibrated win estimation, and internal latent dynamics rollouts.
+  - **[[Synthetic_Tactics_Curriculum_Experiment]]**: Micro-puzzle curriculum pre-training (80/20 natural-synthetic blend) with 5 grandmaster tactical archetypes and empirical A/B generalization verification.
   - **[[Grandmaster_Consensus_Architecture]]**: Tri-paradigm consensus fusion (AlphaCandy Large + DQN Master + Tactical Ensemble) with dynamic phase-weighted scoring and multi-depth expectimax lookahead (100% milestone win rate).
   - **[[Grandmaster_Unified_Agent]]**: The flagship agent unifying all reinforcement learning and heuristic paradigms into an 85.7%+ win rate solver.
 - **Deep Neural Networks:**

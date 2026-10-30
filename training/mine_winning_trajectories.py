@@ -15,7 +15,7 @@ import numpy as np
 import torch
 
 from core.king_level_loader import KingLevelLoader
-from core.candy_env import CandyCrushEnv
+from core.candy_env import CandyCrushGymEnv
 from core.candy_engine import CandyEngine
 
 
@@ -90,7 +90,7 @@ def generate_demonstration_tensors(
         except Exception:
             continue
 
-        env = CandyCrushEnv(cfg, engine=engine, seed=seed)
+        env = CandyCrushGymEnv(cfg, engine=engine, seed=seed)
         obs = env.reset()
 
         moves_total = cfg.moves_limit
