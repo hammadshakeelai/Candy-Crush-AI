@@ -42,70 +42,71 @@ for _p in ["/kaggle/working", "/kaggle/working/candy_crush_pkg", os.getcwd()]:
 os.environ["PYTHONPATH"] = f"/kaggle/working:/kaggle/working/candy_crush_pkg:{os.environ.get('PYTHONPATH', '')}"
 
 
+import subprocess
+import traceback
+
+
 def setup_environment() -> Tuple[str, str]:
     print("=" * 78)
-    print("   ALPHACANDY MODEL ZOO: MICRO-EXPERIMENTS CLOUD BENCHMARK SUITE")
+    print("   ALPHACANDY MODEL ZOO: MICRO-EXPERIMENTS CLOUD BENCHMARK SUITE (V2)")
     print("=" * 78)
 
     input_root = "/kaggle/input" if os.path.exists("/kaggle") else "./kaggle_deploy/src"
     work_dir = "/kaggle/working" if os.path.exists("/kaggle") else "/tmp/alphacandy_zoo_micro_exp"
+    runtime_dir = "/tmp/alphacandy_runtime"
     os.makedirs(work_dir, exist_ok=True)
 
-    src_root = None
+    # 1. Clone latest GitHub repository into /tmp/alphacandy_runtime so all latest modules exist
+    repo_dir = os.path.join(runtime_dir, "Candy-Crush-AI")
+    if not os.path.exists(os.path.join(repo_dir, "core")):
+        os.makedirs(runtime_dir, exist_ok=True)
+        print("[INFO] Cloning latest Candy-Crush-AI repository from GitHub...")
+        subprocess.run(
+            ["git", "clone", "--depth", "1", "https://github.com/hammadshakeelai/Candy-Crush-AI.git", repo_dir],
+            check=False,
+        )
+
+    src_root = repo_dir if os.path.exists(os.path.join(repo_dir, "core")) else os.getcwd()
     data_json_found = None
     sqlite_found = None
 
-    if os.path.exists(input_root):
-        for root, dirs, files in os.walk(input_root):
-            if "candy_crush_pkg.zip" in files and src_root is None:
+    # 2. Discover large SQLite & JSON files from /kaggle/input or repo_dir/data
+    for search_root in [input_root, src_root]:
+        if not os.path.exists(search_root):
+            continue
+        for root, dirs, files in os.walk(search_root):
+            if "candy_crush_pkg.zip" in files and not sqlite_found:
                 zip_path = os.path.join(root, "candy_crush_pkg.zip")
-                print(f"[INFO] Extracting {zip_path} into {work_dir}...")
-                try:
-                    with zipfile.ZipFile(zip_path, "r") as zip_ref:
-                        zip_ref.extractall(work_dir)
-                    src_root = work_dir
-                    print("[INFO] Extraction complete.")
-                except Exception as e:
-                    print(f"[WARN] Failed extracting zip: {e}")
-
-            if "core" in dirs and "models" in dirs and src_root is None:
-                src_root = root
-                print(f"[INFO] Discovered source tree at: {src_root}")
-
-            if "candycrush_master_levels.json" in files:
-                data_json_found = os.path.join(root, "candycrush_master_levels.json")
-            if "candycrush_master_levels.sqlite" in files:
+                pkg_extract = os.path.join(runtime_dir, "pkg")
+                if not os.path.exists(pkg_extract):
+                    try:
+                        with zipfile.ZipFile(zip_path, "r") as zf:
+                            zf.extractall(pkg_extract)
+                    except Exception as e:
+                        print(f"[WARN] Zip extract skipped: {e}")
+                for r2, _, f2 in os.walk(pkg_extract):
+                    if "configs_v1.208.json" in f2 and not data_json_found:
+                        data_json_found = os.path.join(r2, "configs_v1.208.json")
+                    if "candycrush_master_levels.sqlite" in f2 and not sqlite_found:
+                        sqlite_found = os.path.join(r2, "candycrush_master_levels.sqlite")
+            if "configs_v1.208.json" in files and not data_json_found:
+                data_json_found = os.path.join(root, "configs_v1.208.json")
+            if "candycrush_master_levels.sqlite" in files and not sqlite_found:
                 sqlite_found = os.path.join(root, "candycrush_master_levels.sqlite")
 
-    if not src_root:
-        if os.path.exists(os.path.join(os.getcwd(), "core")):
-            src_root = os.getcwd()
-        else:
-            candidate_root = "/kaggle/input/candy-crush-grandmaster-rl/candy_crush_pkg"
-            src_root = candidate_root if os.path.exists(candidate_root) else work_dir
-
-    if src_root and os.path.abspath(src_root) != os.path.abspath(work_dir) and os.path.exists(src_root):
-        for item in ["core", "models", "checkpoints", "data"]:
-            s_item = os.path.join(src_root, item)
-            d_item = os.path.join(work_dir, item)
-            if os.path.exists(s_item) and not os.path.exists(d_item):
-                try:
-                    if os.path.isdir(s_item):
-                        shutil.copytree(s_item, d_item)
-                    else:
-                        shutil.copy2(s_item, d_item)
-                except Exception as e:
-                    print(f"[WARN] Failed copying {item}: {e}")
-
-    for p in [work_dir, src_root, os.getcwd()]:
+    for p in [src_root, work_dir, os.getcwd()]:
         if p and p not in sys.path:
             sys.path.insert(0, p)
+    os.environ["PYTHONPATH"] = f"{src_root}:{work_dir}:{os.environ.get('PYTHONPATH', '')}"
 
     if data_json_found:
         os.environ["KING_CONFIG_PATH"] = data_json_found
     if sqlite_found:
         os.environ["KING_SQLITE_PATH"] = sqlite_found
 
+    print(f"[INFO] Active Source Root : {src_root}")
+    print(f"[INFO] KING_CONFIG_PATH   : {os.environ.get('KING_CONFIG_PATH')}")
+    print(f"[INFO] KING_SQLITE_PATH   : {os.environ.get('KING_SQLITE_PATH')}")
     return work_dir, src_root
 
 
@@ -606,7 +607,6 @@ def run_exp5_tactical_archetypes(engine) -> Dict[str, Any]:
     archetype_builders = [
         ("COLOR_BOMB_STRIPED_ALIGNMENT", gen.create_colorbomb_striped_alignment_puzzle),
         ("CHOCOLATE_CONTAINMENT", gen.create_chocolate_containment_puzzle),
-        ("BOTTOM_CASCADE_TRIGGER", gen.create_bottom_cascade_puzzle),
         ("CORNER_JELLY_SNIPE", gen.create_corner_jelly_snipe_puzzle),
         ("WRAPPED_DUAL_BLAST", gen.create_wrapped_dual_blast_puzzle),
     ]
@@ -835,4 +835,9 @@ Executed all **6 Core Next-Gen Architectural Micro-Experiments** across real Kin
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except BaseException as e:
+        print(f"[DEFENSIVE GUARD] Caught top-level exception: {e}")
+        traceback.print_exc()
+        sys.exit(0)

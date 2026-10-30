@@ -1,0 +1,17 @@
+{
+  "id": "hammadshakeelai/alphacandy-zero-oracle-shard-1501-to-2000",
+  "title": "AlphaCandy Zero Oracle Shard 1501 to 2000",
+  "code_file": "run_zero_oracle_1501_2000.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

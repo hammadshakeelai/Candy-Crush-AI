@@ -1,0 +1,17 @@
+{
+  "id": "hammadshakeelai/alphacandy-zero-cpu-arena-and-plr-trainer",
+  "title": "AlphaCandy Zero CPU Arena and PLR Trainer",
+  "code_file": "run_zero_cpu_arena_and_plr.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "hammadshakeelai/alphacandy-zero-oracle-shard-651-to-1000",
+  "title": "AlphaCandy Zero Oracle Shard 651 to 1000",
+  "code_file": "run_zero_oracle_651_1000.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
