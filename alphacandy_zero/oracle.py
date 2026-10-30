@@ -188,6 +188,15 @@ def oracle_potential(
     adj_pairs = int(np.sum(spec_mask[:, :-1] & spec_mask[:, 1:]) + np.sum(spec_mask[:-1, :] & spec_mask[1:, :]))
     score += adj_pairs * 260.0
 
+    # Reward Color Bombs adjacent to candies that match isolated objective colors
+    if len(cb_coords) > 0 and len(isolated_cells) > 0:
+        iso_alive_colors = {int(state.colors[ir, ic]) for ir, ic in isolated_cells if state.jellies[ir, ic] > 0}
+        for cbr, cbc in cb_coords:
+            for ar, ac in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                nr, nc = int(cbr + ar), int(cbc + ac)
+                if state.is_valid_cell(nr, nc) and int(state.colors[nr, nc]) in iso_alive_colors:
+                    score += 350.0
+
     # 3. Ingredient downward gravity progress & unobstructed column lanes (e.g. Level 272)
     if state.config.level_type == LevelType.INGREDIENTS:
         ing_pos = np.argwhere(state.ingredients > 0)
