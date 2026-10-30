@@ -1,0 +1,101 @@
+{
+  "shard": "301-1500",
+  "target_count": 16,
+  "evaluated_count": 5,
+  "newly_won_count": 1,
+  "newly_won_levels": [
+    954
+  ],
+  "near_miss_le2_count": 1,
+  "still_unsolved_levels": [
+    478,
+    606,
+    656,
+    953
+  ],
+  "win_rate_on_shard": 20.0,
+  "elapsed_sec": 1239.11,
+  "finished": true,
+  "results": [
+    {
+      "level_id": 606,
+      "level_type": "JELLY",
+      "moves_limit": 20,
+      "initial_objectives": 5,
+      "isolated_islands": 5,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 19,
+      "moves_remaining": 1,
+      "final_score": 25884,
+      "best_remaining_objectives": 5,
+      "elapsed_sec": 618.39,
+      "error": null
+    },
+    {
+      "level_id": 954,
+      "level_type": "JELLY",
+      "moves_limit": 24,
+      "initial_objectives": 90,
+      "isolated_islands": 0,
+      "won": true,
+      "winning_seed": 548836,
+      "attempts_used": 6,
+      "moves_used": 24,
+      "moves_remaining": 0,
+      "final_score": 191373,
+      "best_remaining_objectives": 0,
+      "elapsed_sec": 215.2,
+      "error": null
+    },
+    {
+      "level_id": 953,
+      "level_type": "JELLY",
+      "moves_limit": 30,
+      "initial_objectives": 82,
+      "isolated_islands": 2,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 29,
+      "moves_remaining": 1,
+      "final_score": 202587,
+      "best_remaining_objectives": 1,
+      "elapsed_sec": 878.58,
+      "error": null
+    },
+    {
+      "level_id": 478,
+      "level_type": "JELLY",
+      "moves_limit": 29,
+      "initial_objectives": 112,
+      "isolated_islands": 0,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 28,
+      "moves_remaining": 1,
+      "final_score": 285747,
+      "best_remaining_objectives": 9,
+      "elapsed_sec": 968.92,
+      "error": null
+    },
+    {
+      "level_id": 656,
+      "level_type": "JELLY",
+      "moves_limit": 35,
+      "initial_objectives": 122,
+      "isolated_islands": 0,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 34,
+      "moves_remaining": 1,
+      "final_score": 248347,
+      "best_remaining_objectives": 9,
+      "elapsed_sec": 1229.56,
+      "error": null
+    }
+  ]
+}

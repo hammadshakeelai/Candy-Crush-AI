@@ -26123,8 +26123,8 @@
     "total_tested": 2500,
     "win_rate": 86.16
   },
-  "levels_1_2500_won": 2401,
-  "levels_1_2500_unsolved": 99,
-  "levels_1_2500_win_rate_pct": 96.04,
-  "global_levels_won": 9032
+  "levels_1_2500_won": 2416,
+  "levels_1_2500_unsolved": 84,
+  "levels_1_2500_win_rate_pct": 96.64,
+  "global_levels_won": 9047
 }
