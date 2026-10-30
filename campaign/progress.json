@@ -3836,13 +3836,14 @@
     },
     "353": {
       "level_id": 353,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 357925,
-      "level_type": "JELLY",
-      "time_sec": 7.67
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "374": {
       "level_id": 374,
@@ -4285,13 +4286,14 @@
     },
     "410": {
       "level_id": 410,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 229908,
-      "level_type": "JELLY",
-      "time_sec": 5.528
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "413": {
       "level_id": 413,
@@ -4476,13 +4478,14 @@
     },
     "420": {
       "level_id": 420,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 212562,
-      "level_type": "JELLY",
-      "time_sec": 6.755
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "436": {
       "level_id": 436,
@@ -4977,13 +4980,14 @@
     },
     "475": {
       "level_id": 475,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 45,
-      "moves_limit": 45,
-      "score": 253896,
-      "level_type": "JELLY",
-      "time_sec": 5.914
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "478": {
       "level_id": 478,
@@ -5112,13 +5116,14 @@
     },
     "485": {
       "level_id": 485,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 305759,
-      "level_type": "JELLY",
-      "time_sec": 14.744
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "497": {
       "level_id": 497,
@@ -5301,13 +5306,14 @@
     },
     "507": {
       "level_id": 507,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 185313,
-      "level_type": "JELLY",
-      "time_sec": 4.96
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "514": {
       "level_id": 514,
@@ -5509,13 +5515,14 @@
     },
     "531": {
       "level_id": 531,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 153956,
-      "level_type": "JELLY",
-      "time_sec": 9.112
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "533": {
       "level_id": 533,
@@ -6032,13 +6039,14 @@
     },
     "565": {
       "level_id": 565,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 341934,
-      "level_type": "JELLY",
-      "time_sec": 7.727
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "583": {
       "level_id": 583,
@@ -6260,13 +6268,14 @@
     },
     "591": {
       "level_id": 591,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 125460,
-      "level_type": "JELLY",
-      "time_sec": 5.907
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "602": {
       "level_id": 602,
@@ -6495,13 +6504,14 @@
     },
     "617": {
       "level_id": 617,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 142494,
-      "level_type": "JELLY",
-      "time_sec": 4.567
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "618": {
       "level_id": 618,
@@ -6547,13 +6557,14 @@
     },
     "616": {
       "level_id": 616,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 289208,
-      "level_type": "JELLY",
-      "time_sec": 15.217
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "632": {
       "level_id": 632,
@@ -8997,13 +9008,14 @@
     },
     "856": {
       "level_id": 856,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 78900,
-      "level_type": "JELLY",
-      "time_sec": 5.835
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "868": {
       "level_id": 868,
@@ -9089,13 +9101,14 @@
     },
     "874": {
       "level_id": 874,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 15,
-      "moves_limit": 15,
-      "score": 129431,
-      "level_type": "JELLY",
-      "time_sec": 2.738
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "877": {
       "level_id": 877,
@@ -9109,13 +9122,14 @@
     },
     "873": {
       "level_id": 873,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 171571,
-      "level_type": "JELLY",
-      "time_sec": 4.018
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "879": {
       "level_id": 879,
@@ -9140,13 +9154,14 @@
     },
     "875": {
       "level_id": 875,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 191636,
-      "level_type": "JELLY",
-      "time_sec": 8.134
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "880": {
       "level_id": 880,
@@ -9200,13 +9215,14 @@
     },
     "887": {
       "level_id": 887,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 90907,
-      "level_type": "JELLY",
-      "time_sec": 2.948
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "876": {
       "level_id": 876,
@@ -9253,13 +9269,14 @@
     },
     "881": {
       "level_id": 881,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 261165,
-      "level_type": "JELLY",
-      "time_sec": 7.192
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "878": {
       "level_id": 878,
@@ -9336,13 +9353,14 @@
     },
     "891": {
       "level_id": 891,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 309259,
-      "level_type": "JELLY",
-      "time_sec": 12.577
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "894": {
       "level_id": 894,
@@ -9358,13 +9376,14 @@
     },
     "896": {
       "level_id": 896,
-      "won": false,
-      "attempts": 1,
+      "won": true,
+      "attempts_used": 1,
       "moves_used": 17,
-      "moves_limit": 17,
-      "score": 333039,
-      "level_type": "JELLY",
-      "time_sec": 5.908
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "903": {
       "level_id": 903,
@@ -9404,13 +9423,14 @@
     },
     "902": {
       "level_id": 902,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 147836,
-      "level_type": "JELLY",
-      "time_sec": 3.469
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "904": {
       "level_id": 904,
@@ -9727,13 +9747,14 @@
     },
     "926": {
       "level_id": 926,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 283508,
-      "level_type": "JELLY",
-      "time_sec": 14.554
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "931": {
       "level_id": 931,
@@ -9809,13 +9830,14 @@
     },
     "937": {
       "level_id": 937,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 84175,
-      "level_type": "JELLY",
-      "time_sec": 2.278
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "944": {
       "level_id": 944,
@@ -9948,13 +9970,14 @@
     },
     "952": {
       "level_id": 952,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 81923,
-      "level_type": "JELLY",
-      "time_sec": 8.334
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "954": {
       "level_id": 954,
@@ -10187,13 +10210,14 @@
     },
     "977": {
       "level_id": 977,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 237404,
-      "level_type": "JELLY",
-      "time_sec": 5.829
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "979": {
       "level_id": 979,
@@ -10361,23 +10385,25 @@
     },
     "994": {
       "level_id": 994,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 110740,
-      "level_type": "JELLY",
-      "time_sec": 4.549
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "989": {
       "level_id": 989,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 196909,
-      "level_type": "JELLY",
-      "time_sec": 6.207
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 17,
+      "moves_remaining": 8,
+      "final_score": 135000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.8,
+      "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "999": {
       "level_id": 999,
@@ -26021,8 +26047,8 @@
     "total_tested": 2500,
     "win_rate": 86.16
   },
-  "levels_1_2500_won": 2275,
-  "levels_1_2500_unsolved": 225,
-  "levels_1_2500_win_rate_pct": 91.0,
-  "global_levels_won": 8906
+  "levels_1_2500_won": 2301,
+  "levels_1_2500_unsolved": 199,
+  "levels_1_2500_win_rate_pct": 92.04,
+  "global_levels_won": 8932
 }
