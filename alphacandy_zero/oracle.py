@@ -249,8 +249,20 @@ def _is_special_combo_swap(
             hits = sum(1 for ir, ic in iso_alive if int(state.colors[ir, ic]) == target_col)
             if hits > 0:
                 return 650.0 * hits
-            return -250.0  # preserve Color Bomb until it can snipe an isolated island or pair with a special!
+            if state.moves_left <= 5:
+                return 180.0  # Endgame desperation: detonate to trigger massive board wipe & cascade
+            return -150.0  # preserve Color Bomb until it can snipe an isolated island or pair with a special!
         return 90.0
+
+    # Direct Striped Laser Snipe on isolated objective cells
+    if isolated_cells:
+        for ir, ic in isolated_cells:
+            if state.jellies[ir, ic] > 0:
+                if (s1 == SpecialCandy.STRIPED_HORIZONTAL and r == ir) or (s2 == SpecialCandy.STRIPED_HORIZONTAL and r2 == ir):
+                    return 550.0
+                if (s1 == SpecialCandy.STRIPED_VERTICAL and c == ic) or (s2 == SpecialCandy.STRIPED_VERTICAL and c2 == ic):
+                    return 550.0
+
     return 0.0
 
 
