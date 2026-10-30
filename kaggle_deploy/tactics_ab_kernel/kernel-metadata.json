@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-tactics-ab-experiment",
+  "title": "AlphaCandy Tactics AB Experiment",
+  "code_file": "run_tactics_ab_experiment.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

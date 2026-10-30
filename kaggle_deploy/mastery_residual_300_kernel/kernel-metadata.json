@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-mastery-residual-300",
+  "title": "AlphaCandy Mastery Residual 300 Perfect",
+  "code_file": "run_residual_300_mastery.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
