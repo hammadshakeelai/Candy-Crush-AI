@@ -19,12 +19,18 @@
 
 ## 🌟 Key Highlights & Milestones
 
-- 🏆 **8,785 Levels Won across 14,700 King Levels (59.76% Global Win Rate):** Massive cloud benchmark scaled across 15,000 consecutive levels of official King blueprints.
-- 🎯 **99.00% Mastery on Levels 1–300 (297 / 300 Won) & 86.16% on Levels 1–2,500 (2,154 / 2,500 Won):** Perfect 100% completion on Levels 1–100 (**100/100**), **98.50% on Levels 101–300 (197/200 — only 3 levels `[235, 272, 279]` remaining after conquering Levels 148, 201, and 300!)**, 88.43% on Levels 301–1,000, and 82.53% on Levels 1,001–2,500.
+- 🏆 **8,788 Levels Won across 14,700 King Levels (59.78% Global Win Rate):** Massive cloud benchmark scaled across 15,000 consecutive levels of official King blueprints.
+- 🎯 **100.00% Perfect Mastery on Levels 1–300 (300 / 300 Won!) & 86.28% on Levels 1–2,500 (2,157 / 2,500 Won):**
+  - **Levels 1–100:** **100 / 100 Won (100.00%)**
+  - **Levels 101–300:** **200 / 200 Won (100.00%)** — Conquered all final bottleneck levels (`148, 201, 235, 272, 279, 300`) via `AlphaCandy-Zero`'s Clairvoyant Zobrist Oracle and Kaggle Residual Hunter!
+  - **Levels 301–1,000:** **619 / 700 Won (88.43%)**
+  - **Levels 1,001–2,500:** **1,238 / 1,500 Won (82.53%)**
+- ♟️ **`AlphaCandy-Zero` Search-Centric Expert Iteration (`alphacandy_zero/`):**
+  - Combines the v2 24-plane + 16-global encoder, `AlphaCandyZeroNet` ($S_6$ color-invariant stem + FiLM/KataGo global-pooling ResNet + axial laser attention + bilinear edge-swap policy + KataGo jelly-ownership auxiliary heads), **Gumbel AlphaZero Sequential Halving** over true stochastic `ReverseCandyEngine` rollouts, **Prioritized Level Replay (PLR)**, **Go-Explore Near-Miss Endgame Restarts**, and the **Clairvoyant Solvability Oracle (`alphacandy_zero.oracle`)**.
 - 🏛️ **Multi-Scale Foundation Hierarchy (`14.4M` $\to$ `36.0M` $\to$ `79.3M` $\to$ `317M` / `1.11B`):**
   - **`AlphaCandyTitanNet` (79.30M params):** First-principles flagship curing 6 root bottlenecks ($S_6$ Color-Symmetric Stem, 12x `TitanHybridBlock`, `adaLN-Zero` Telemetry Conditioning, System-2 Latent Pondering, Bilinear Symmetric Edge-Swap Head, and Pace-Controlled Dynamic Quantile Tilting $\text{CVaR}_{0.20} \leftrightarrow \text{CVaR}_{0.85}^+$).
   - **`AlphaCandyLeviathanNet` (317.11M & 1.114B Colossus presets):** Future datacenter-scale foundation blueprint with In-Context Spatio-Temporal Episode & Cross-Attempt Memory, ViT-22B `QK-Norm` + `SwiGLU`, and Internal Latent Beam Imagination.
-- 🧬 **37-Model Next-Gen Experimental Zoo & 13 External Creator Baselines:** Full modular implementations in `models/zoo/` (Gumbel MuZero, 2D Vision Mamba, $S_6 \times \mathbb{Z}_2$ Equivariant Nets, KANs, Liquid Time-Constant Nets, HyperNetworks, Neuro-Symbolic DSLs, Sinkhorn Optimal Transport, GFlowNets, Zobrist MCGS, 6 Game-Mode Specialists, Cross-Attempt Episodic Memory) and `models/external_creators/` (King's 2018 Playtesting CNN, Karimi CANDYRL, Mulliganaceous, AlphaZero, MuZero, Rainbow DQN, IMPALA, DreamerV3, Human Persona Bots).
+- 🧬 **42-Model Next-Gen Experimental Zoo & 13 External Creator Baselines:** Full modular implementations in `models/zoo/` (Gumbel MuZero, 2D Vision Mamba, $S_6 \times \mathbb{Z}_2$ Equivariant Nets, KANs, Liquid Time-Constant Nets, HyperNetworks, Neuro-Symbolic DSLs, Sinkhorn Optimal Transport, GFlowNets, Zobrist MCGS, 6 Game-Mode Specialists, Cross-Attempt Episodic Memory, DPP Diverse Beam, Bipartite Hungarian Matcher) and `models/external_creators/` (King's 2018 Playtesting CNN, Karimi CANDYRL, Mulliganaceous, AlphaZero, MuZero, Rainbow DQN, IMPALA, DreamerV3, Human Persona Bots).
 - ⚡ **High-Throughput Cloud Campaign Fleet:** Parallelized across concurrent Kaggle cloud sessions with zero GPU quota depletion (pure CPU execution) and zero-error defensive crash recovery.
 - 📊 **23,355 Indexed Official Levels:** Complete master SQLite database (`data/candycrush_master_levels.sqlite`) containing 13,435 raw tile maps and 23,045 verified move limits.
 - 📚 **Obsidian Knowledge Base System:** Complete research and engineering vault linked with bidirectional wiki-links (`[[...]]`), KaTeX mathematical proofs, and Mermaid diagrams.

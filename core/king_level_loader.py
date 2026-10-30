@@ -150,8 +150,9 @@ class KingLevelLoader:
                 elif "004" in tokens:
                     jellies[r, c] = 2
 
-                # Blockers: Chocolate ('009', '010'), Licorice ('008', '017'), Frosting ('007', '021', '022')
-                if "009" in tokens or "010" in tokens:
+                # Blockers: Chocolate ('009'), Licorice ('008', '017'), Frosting ('007', '021', '022')
+                # Note: '010' is the Drop-Down Ingredient Exit arrow, NOT Chocolate!
+                if "009" in tokens:
                     blockers[r, c] = Blocker.CHOCOLATE
                 elif "008" in tokens or "017" in tokens:
                     blockers[r, c] = Blocker.LICORICE
@@ -171,7 +172,7 @@ class KingLevelLoader:
                     specials[r, c] = SpecialCandy.STRIPED_VERTICAL
                 elif "050" in tokens:
                     specials[r, c] = SpecialCandy.WRAPPED
-                elif "054" in tokens:
+                elif "054" in tokens or "049" in tokens:
                     specials[r, c] = SpecialCandy.COLOR_BOMB
 
                 # Ingredients: Cherry ('018'), Hazelnut ('020' when drop mode)

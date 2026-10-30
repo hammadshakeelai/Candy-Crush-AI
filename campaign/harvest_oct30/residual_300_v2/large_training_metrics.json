@@ -1,0 +1,242 @@
+[
+  {
+    "cycle": 1,
+    "demo_loss": 5.082472324371338,
+    "demo_acc": 1.4814814814814816,
+    "grpo_mean_reward": 691.8005981445312,
+    "cycle_duration_sec": 69.78957843780518,
+    "total_elapsed_min": 1.16386981010437
+  },
+  {
+    "cycle": 2,
+    "demo_loss": 5.312017798423767,
+    "demo_acc": 1.2605042016806722,
+    "grpo_mean_reward": 718.6630249023438,
+    "cycle_duration_sec": 59.22298622131348,
+    "total_elapsed_min": 2.1517531355222066
+  },
+  {
+    "cycle": 3,
+    "demo_loss": 5.159757971763611,
+    "demo_acc": 0.0,
+    "grpo_mean_reward": 1102.2926025390625,
+    "cycle_duration_sec": 58.00781869888306,
+    "total_elapsed_min": 3.1192400892575582
+  },
+  {
+    "cycle": 4,
+    "demo_loss": 5.69895076751709,
+    "demo_acc": 0.3472222222222222,
+    "grpo_mean_reward": 886.0516357421875,
+    "cycle_duration_sec": 66.29959487915039,
+    "total_elapsed_min": 4.225050055980683
+  },
+  {
+    "cycle": 5,
+    "demo_loss": 5.147200107574463,
+    "demo_acc": 0.0,
+    "grpo_mean_reward": 588.8883056640625,
+    "cycle_duration_sec": 49.68036651611328,
+    "total_elapsed_min": 5.053745536009471
+  },
+  {
+    "cycle": 6,
+    "demo_loss": 5.111639738082886,
+    "demo_acc": 0.8888888888888888,
+    "grpo_mean_reward": 629.8771362304688,
+    "cycle_duration_sec": 53.013808488845825,
+    "total_elapsed_min": 5.937991201877594
+  },
+  {
+    "cycle": 7,
+    "demo_loss": 5.160363435745239,
+    "demo_acc": 0.4016064257028112,
+    "grpo_mean_reward": 1061.389892578125,
+    "cycle_duration_sec": 59.16039252281189,
+    "total_elapsed_min": 6.924691013495127
+  },
+  {
+    "cycle": 8,
+    "demo_loss": 5.084826827049255,
+    "demo_acc": 1.4851485148514851,
+    "grpo_mean_reward": 787.404541015625,
+    "cycle_duration_sec": 50.39490795135498,
+    "total_elapsed_min": 7.765277965863546
+  },
+  {
+    "cycle": 9,
+    "demo_loss": 5.059016108512878,
+    "demo_acc": 0.0,
+    "grpo_mean_reward": 741.6683349609375,
+    "cycle_duration_sec": 59.86249923706055,
+    "total_elapsed_min": 8.763656942049662
+  },
+  {
+    "cycle": 10,
+    "demo_loss": 5.145956707000733,
+    "demo_acc": 0.0,
+    "grpo_mean_reward": 605.91162109375,
+    "cycle_duration_sec": 56.222208976745605,
+    "total_elapsed_min": 9.701376934846243
+  },
+  {
+    "cycle": 11,
+    "demo_loss": 5.259122967720032,
+    "demo_acc": 1.4634146341463417,
+    "grpo_mean_reward": 984.0895385742188,
+    "cycle_duration_sec": 48.3637011051178,
+    "total_elapsed_min": 10.508111667633056
+  },
+  {
+    "cycle": 12,
+    "demo_loss": 5.099235653877258,
+    "demo_acc": 0.43103448275862066,
+    "grpo_mean_reward": 719.2911987304688,
+    "cycle_duration_sec": 58.63970422744751,
+    "total_elapsed_min": 11.486116472880045
+  },
+  {
+    "cycle": 13,
+    "demo_loss": 5.092324256896973,
+    "demo_acc": 0.8547008547008548,
+    "grpo_mean_reward": 916.2669677734375,
+    "cycle_duration_sec": 54.68296933174133,
+    "total_elapsed_min": 12.398267976442973
+  },
+  {
+    "cycle": 14,
+    "demo_loss": 5.076323509216309,
+    "demo_acc": 0.8438818565400843,
+    "grpo_mean_reward": 882.4042358398438,
+    "cycle_duration_sec": 52.436848402023315,
+    "total_elapsed_min": 13.27290357351303
+  },
+  {
+    "cycle": 15,
+    "demo_loss": 4.987179279327393,
+    "demo_acc": 1.4760147601476015,
+    "grpo_mean_reward": 802.990234375,
+    "cycle_duration_sec": 56.06687021255493,
+    "total_elapsed_min": 14.208048741022745
+  },
+  {
+    "cycle": 16,
+    "demo_loss": 5.069156527519226,
+    "demo_acc": 0.46511627906976744,
+    "grpo_mean_reward": 642.0703735351562,
+    "cycle_duration_sec": 49.16278791427612,
+    "total_elapsed_min": 15.028150169054667
+  },
+  {
+    "cycle": 17,
+    "demo_loss": 4.982957124710083,
+    "demo_acc": 1.3043478260869565,
+    "grpo_mean_reward": 861.306640625,
+    "cycle_duration_sec": 59.31763553619385,
+    "total_elapsed_min": 16.0175049384435
+  },
+  {
+    "cycle": 18,
+    "demo_loss": 4.999948024749756,
+    "demo_acc": 0.8333333333333334,
+    "grpo_mean_reward": 992.626708984375,
+    "cycle_duration_sec": 62.540610551834106,
+    "total_elapsed_min": 17.060527082284292
+  },
+  {
+    "cycle": 19,
+    "demo_loss": 5.606615304946899,
+    "demo_acc": 1.2396694214876034,
+    "grpo_mean_reward": 531.739501953125,
+    "cycle_duration_sec": 56.46353721618652,
+    "total_elapsed_min": 18.00231265227
+  },
+  {
+    "cycle": 20,
+    "demo_loss": 5.033028602600098,
+    "demo_acc": 1.4285714285714286,
+    "grpo_mean_reward": 785.099853515625,
+    "cycle_duration_sec": 56.306161403656006,
+    "total_elapsed_min": 18.94145329793294
+  },
+  {
+    "cycle": 21,
+    "demo_loss": 5.109446287155151,
+    "demo_acc": 0.9009009009009009,
+    "grpo_mean_reward": 738.222412109375,
+    "cycle_duration_sec": 49.34763479232788,
+    "total_elapsed_min": 19.76462699174881
+  },
+  {
+    "cycle": 22,
+    "demo_loss": 5.032272815704346,
+    "demo_acc": 1.1278195488721803,
+    "grpo_mean_reward": 1282.76708984375,
+    "cycle_duration_sec": 61.8882851600647,
+    "total_elapsed_min": 20.79677767753601
+  },
+  {
+    "cycle": 23,
+    "demo_loss": 5.760427474975586,
+    "demo_acc": 1.4563106796116505,
+    "grpo_mean_reward": 580.4560546875,
+    "cycle_duration_sec": 40.04703688621521,
+    "total_elapsed_min": 21.464928495883942
+  },
+  {
+    "cycle": 24,
+    "demo_loss": 5.111620903015137,
+    "demo_acc": 0.0,
+    "grpo_mean_reward": 1025.8291015625,
+    "cycle_duration_sec": 49.51685667037964,
+    "total_elapsed_min": 22.290915819009147
+  },
+  {
+    "cycle": 25,
+    "demo_loss": 5.258686304092407,
+    "demo_acc": 0.3952569169960474,
+    "grpo_mean_reward": 710.7757568359375,
+    "cycle_duration_sec": 59.090465784072876,
+    "total_elapsed_min": 23.276472703615823
+  },
+  {
+    "cycle": 26,
+    "demo_loss": 4.973601341247559,
+    "demo_acc": 1.593625498007968,
+    "grpo_mean_reward": 617.88232421875,
+    "cycle_duration_sec": 55.499046325683594,
+    "total_elapsed_min": 24.20213247934977
+  },
+  {
+    "cycle": 27,
+    "demo_loss": 5.134747791290283,
+    "demo_acc": 1.1111111111111112,
+    "grpo_mean_reward": 854.2681884765625,
+    "cycle_duration_sec": 61.93679761886597,
+    "total_elapsed_min": 25.235087863604228
+  },
+  {
+    "cycle": 28,
+    "demo_loss": 5.0160040855407715,
+    "demo_acc": 0.904977375565611,
+    "grpo_mean_reward": 868.46044921875,
+    "cycle_duration_sec": 52.54151940345764,
+    "total_elapsed_min": 26.111464615662893
+  },
+  {
+    "cycle": 29,
+    "demo_loss": 5.279124641418457,
+    "demo_acc": 1.1494252873563218,
+    "grpo_mean_reward": 993.1152954101562,
+    "cycle_duration_sec": 62.15449857711792,
+    "total_elapsed_min": 27.148051671187083
+  },
+  {
+    "cycle": 30,
+    "demo_loss": 4.986195087432861,
+    "demo_acc": 0.4784688995215311,
+    "grpo_mean_reward": 3463.543701171875,
+    "cycle_duration_sec": 50.982425928115845,
+    "total_elapsed_min": 27.99845317999522
+  }
+]

@@ -2516,13 +2516,15 @@
     },
     "235": {
       "level_id": 235,
-      "won": false,
+      "won": true,
       "attempts": 1,
-      "moves_used": 32,
+      "winning_seed": 351681,
+      "moves_used": 22,
       "moves_limit": 32,
-      "score": 382742,
+      "score": 370633,
       "level_type": "JELLY",
-      "time_sec": 62.0998055934906
+      "time_sec": 11.88,
+      "model": "AlphaCandy-Zero Clairvoyant Oracle"
     },
     "241": {
       "level_id": 241,
@@ -2908,13 +2910,15 @@
     },
     "272": {
       "level_id": 272,
-      "won": false,
+      "won": true,
       "attempts": 1,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 83909,
+      "winning_seed": 721940,
+      "moves_used": 14,
+      "moves_limit": 27,
+      "score": 82859,
       "level_type": "INGREDIENTS",
-      "time_sec": 65.97953152656555
+      "time_sec": 6.39,
+      "model": "AlphaCandy-Zero Clairvoyant Oracle"
     },
     "286": {
       "level_id": 286,
@@ -2938,13 +2942,15 @@
     },
     "279": {
       "level_id": 279,
-      "won": false,
-      "attempts": 3,
-      "moves_used": 30,
+      "won": true,
+      "attempts": 5,
+      "winning_seed": 823665,
+      "moves_used": 8,
       "moves_limit": 30,
-      "score": 92063,
+      "score": 396648,
       "level_type": "JELLY",
-      "time_sec": 42.14523792266846
+      "time_sec": 43.53,
+      "model": "AlphaCandy-Zero Oracle & Kaggle Residual Hunter V2"
     },
     "289": {
       "level_id": 289,

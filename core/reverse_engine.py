@@ -124,12 +124,17 @@ class ReverseEngineState:
         self.chocolate_destroyed_this_turn = False
 
     def copy(self) -> "ReverseEngineState":
-        new_state = ReverseEngineState(self.config)
-        new_state.colors = np.copy(self.colors)
-        new_state.specials = np.copy(self.specials)
-        new_state.jellies = np.copy(self.jellies)
-        new_state.blockers = np.copy(self.blockers)
-        new_state.ingredients = np.copy(self.ingredients)
+        new_state = object.__new__(ReverseEngineState)
+        new_state.config = self.config
+        new_state.height = self.height
+        new_state.width = self.width
+        new_state.num_colors = self.num_colors
+        new_state.active_grid = self.active_grid
+        new_state.colors = self.colors.copy()
+        new_state.specials = self.specials.copy()
+        new_state.jellies = self.jellies.copy()
+        new_state.blockers = self.blockers.copy()
+        new_state.ingredients = self.ingredients.copy()
         new_state.moves_left = self.moves_left
         new_state.score = self.score
         new_state.ingredients_collected = self.ingredients_collected
@@ -340,9 +345,14 @@ class ReverseCandyEngine:
         total_score = combo_score
         cascade_depth = 0
 
-        # Perform swap
-        state.colors[r1, c1], state.colors[r2, c2] = state.colors[r2, c2], state.colors[r1, c1]
-        state.specials[r1, c1], state.specials[r2, c2] = state.specials[r2, c2], state.specials[r1, c1]
+        # Perform swap only if not already consumed by a special combination
+        if not combo_handled:
+            state.colors[r1, c1], state.colors[r2, c2] = state.colors[r2, c2], state.colors[r1, c1]
+            state.specials[r1, c1], state.specials[r2, c2] = state.specials[r2, c2], state.specials[r1, c1]
+            state.ingredients[r1, c1], state.ingredients[r2, c2] = state.ingredients[r2, c2], state.ingredients[r1, c1]
+        else:
+            state.specials[r1, c1] = SpecialCandy.NONE
+            state.specials[r2, c2] = SpecialCandy.NONE
 
         # 2. Quiescence Loop (Cascades & Explosions)
         while True:
@@ -685,9 +695,9 @@ class ReverseCandyEngine:
                             state.ingredients[r, c] = Ingredient.NONE
                     write_idx -= 1
 
-            # Refill empty slots from write_idx up to 0 with random candies
-            for r in range(write_idx, -1, -1):
-                if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE:
+            # Refill empty slots (including any ingredient tile whose candy color was cleared)
+            for r in range(state.height - 1, -1, -1):
+                if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE and state.colors[r, c] == CandyColor.EMPTY:
                     state.colors[r, c] = random.randint(1, state.num_colors)
                     has_cannon = state.config.cannons and (c in [6, 7] or len(state.config.cannons) > 0)
                     if has_cannon and random.random() < 0.35:
@@ -729,16 +739,23 @@ class ReverseCandyEngine:
                     state.ingredients[top_r, col] = Ingredient.CHERRY
 
     def _collect_ingredients_at_bottom(self, state: ReverseEngineState) -> None:
-        """Checks if ingredients reached the bottom-most active cell and collects them."""
-        for c in range(state.width):
-            for r in range(state.height - 1, -1, -1):
-                if state.is_valid_cell(r, c):
-                    if state.ingredients[r, c] != Ingredient.NONE and state.blockers[r, c] == Blocker.NONE:
-                        state.ingredients_collected += 1
-                        state.ingredients[r, c] = Ingredient.NONE
-                        state.colors[r, c] = CandyColor.EMPTY
-                        state.score += 10000
-                    break
+        """Checks if ingredients reached the bottom-most active cell, collects them, and cascades column gravity."""
+        while True:
+            collected_any = False
+            for c in range(state.width):
+                for r in range(state.height - 1, -1, -1):
+                    if state.is_valid_cell(r, c):
+                        if state.ingredients[r, c] != Ingredient.NONE and state.blockers[r, c] == Blocker.NONE:
+                            state.ingredients_collected += 1
+                            state.ingredients[r, c] = Ingredient.NONE
+                            state.colors[r, c] = CandyColor.EMPTY
+                            state.score += 10000
+                            collected_any = True
+                        break
+            if collected_any:
+                self._apply_gravity_and_refill(state)
+            else:
+                break
 
     def _expand_chocolate(self, state: ReverseEngineState) -> None:
         """Expands 1 chocolate block to an adjacent candy if no chocolate was cleared."""
@@ -747,7 +764,12 @@ class ReverseCandyEngine:
         for r, c in chocolate_coords:
             for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                 nr, nc = r + dr, c + dc
-                if state.is_valid_cell(nr, nc) and state.blockers[nr, nc] == Blocker.NONE and state.specials[nr, nc] == SpecialCandy.NONE:
+                if (
+                    state.is_valid_cell(nr, nc)
+                    and state.blockers[nr, nc] == Blocker.NONE
+                    and state.specials[nr, nc] == SpecialCandy.NONE
+                    and state.ingredients[nr, nc] == Ingredient.NONE
+                ):
                     state.blockers[nr, nc] = Blocker.CHOCOLATE
                     state.colors[nr, nc] = CandyColor.EMPTY
                     return

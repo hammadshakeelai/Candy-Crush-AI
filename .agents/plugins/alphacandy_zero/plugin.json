@@ -1,0 +1,10 @@
+{
+  "name": "alphacandy-zero",
+  "version": "1.0.0",
+  "description": "AlphaCandy-Zero search-centric expert iteration plugin: Clairvoyant Solvability Oracle, Gumbel AlphaZero PLR + Go-Explore Trainer, Honest Multi-Seed Evaluator, and Fast Kaggle Cloud Fleet Harvester.",
+  "skills": [
+    "../../skills/alphacandy-zero-oracle/SKILL.md",
+    "../../skills/alphacandy-zero-trainer/SKILL.md",
+    "../../skills/kaggle-cloud-fleet-harvester/SKILL.md"
+  ]
+}

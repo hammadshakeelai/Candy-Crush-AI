@@ -1,0 +1,58 @@
+{
+  "milestone_levels": [1, 10, 23, 25, 50, 100, 250],
+  "summary": {
+    "Pure DQN": {
+      "total_tested": 7,
+      "wins": 2,
+      "win_rate_pct": 28.57,
+      "avg_moves_used": 20.57,
+      "avg_score": 129492.1,
+      "avg_time_sec": 0.463
+    },
+    "Pure Transformer (Untrained)": {
+      "total_tested": 7,
+      "wins": 1,
+      "win_rate_pct": 14.29,
+      "avg_moves_used": 21.14,
+      "avg_score": 94999.1,
+      "avg_time_sec": 0.816
+    },
+    "Grandmaster Unified": {
+      "total_tested": 7,
+      "wins": 6,
+      "win_rate_pct": 85.71,
+      "avg_moves_used": 14.71,
+      "avg_score": 132345.9,
+      "avg_time_sec": 16.971
+    }
+  },
+  "details": {
+    "Pure DQN": [
+      {"level_id": 1, "level_type": "JELLY", "moves_limit": 15, "won": true, "moves_used": 2, "final_score": 502, "objectives_remaining": 0, "duration_sec": 0.16},
+      {"level_id": 10, "level_type": "JELLY", "moves_limit": 22, "won": false, "moves_used": 22, "final_score": 163804, "objectives_remaining": 6, "duration_sec": 1.77},
+      {"level_id": 23, "level_type": "JELLY", "moves_limit": 25, "won": false, "moves_used": 25, "final_score": 138741, "objectives_remaining": 18, "duration_sec": 0.29},
+      {"level_id": 25, "level_type": "INGREDIENTS", "moves_limit": 22, "won": true, "moves_used": 18, "final_score": 43853, "objectives_remaining": 0, "duration_sec": 0.19},
+      {"level_id": 50, "level_type": "JELLY", "moves_limit": 24, "won": false, "moves_used": 24, "final_score": 468803, "objectives_remaining": 12, "duration_sec": 0.34},
+      {"level_id": 100, "level_type": "INGREDIENTS", "moves_limit": 28, "won": false, "moves_used": 28, "final_score": 62351, "objectives_remaining": 5, "duration_sec": 0.21},
+      {"level_id": 250, "level_type": "JELLY", "moves_limit": 25, "won": false, "moves_used": 25, "final_score": 28395, "objectives_remaining": 42, "duration_sec": 0.27}
+    ],
+    "Pure Transformer (Untrained)": [
+      {"level_id": 1, "level_type": "JELLY", "moves_limit": 15, "won": true, "moves_used": 2, "final_score": 826, "objectives_remaining": 0, "duration_sec": 0.18},
+      {"level_id": 10, "level_type": "JELLY", "moves_limit": 22, "won": false, "moves_used": 22, "final_score": 116930, "objectives_remaining": 11, "duration_sec": 3.59},
+      {"level_id": 23, "level_type": "JELLY", "moves_limit": 25, "won": false, "moves_used": 25, "final_score": 108772, "objectives_remaining": 25, "duration_sec": 0.45},
+      {"level_id": 25, "level_type": "INGREDIENTS", "moves_limit": 22, "won": false, "moves_used": 22, "final_score": 47348, "objectives_remaining": 1, "duration_sec": 0.29},
+      {"level_id": 50, "level_type": "JELLY", "moves_limit": 24, "won": false, "moves_used": 24, "final_score": 288811, "objectives_remaining": 29, "duration_sec": 0.55},
+      {"level_id": 100, "level_type": "INGREDIENTS", "moves_limit": 28, "won": false, "moves_used": 28, "final_score": 76848, "objectives_remaining": 3, "duration_sec": 0.28},
+      {"level_id": 250, "level_type": "JELLY", "moves_limit": 25, "won": false, "moves_used": 25, "final_score": 25459, "objectives_remaining": 43, "duration_sec": 0.37}
+    ],
+    "Grandmaster Unified": [
+      {"level_id": 1, "level_type": "JELLY", "moves_limit": 15, "won": true, "moves_used": 2, "final_score": 1150, "objectives_remaining": 0, "duration_sec": 0.56},
+      {"level_id": 10, "level_type": "JELLY", "moves_limit": 22, "won": true, "moves_used": 15, "final_score": 127184, "objectives_remaining": 0, "duration_sec": 21.15},
+      {"level_id": 23, "level_type": "JELLY", "moves_limit": 25, "won": true, "moves_used": 19, "final_score": 225075, "objectives_remaining": 0, "duration_sec": 24.15},
+      {"level_id": 25, "level_type": "INGREDIENTS", "moves_limit": 22, "won": true, "moves_used": 12, "final_score": 37978, "objectives_remaining": 0, "duration_sec": 11.62},
+      {"level_id": 50, "level_type": "JELLY", "moves_limit": 24, "won": true, "moves_used": 20, "final_score": 397058, "objectives_remaining": 0, "duration_sec": 29.01},
+      {"level_id": 100, "level_type": "INGREDIENTS", "moves_limit": 28, "won": true, "moves_used": 10, "final_score": 102071, "objectives_remaining": 0, "duration_sec": 4.51},
+      {"level_id": 250, "level_type": "JELLY", "moves_limit": 25, "won": false, "moves_used": 25, "final_score": 35903, "objectives_remaining": 42, "duration_sec": 27.80}
+    ]
+  }
+}

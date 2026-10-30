@@ -1,0 +1,35 @@
+{
+  "total_levels_targeted": 1000,
+  "total_levels_completed": 1000,
+  "total_levels_won": 744,
+  "win_rate_percent": 74.4,
+  "total_time_seconds": 2016.01,
+  "total_time_minutes": 33.6,
+  "avg_time_per_level_sec": 6.978,
+  "throughput_levels_per_min": 29.76,
+  "attempt_breakdown": {
+    "attempt_1_wins": 665,
+    "attempt_1_pct": 89.38,
+    "attempt_2_wins": 79,
+    "attempt_2_pct": 10.62,
+    "attempt_3_plus_wins": 0,
+    "attempt_3_plus_pct": 0.0
+  },
+  "game_mode_performance": {
+    "JELLY": {
+      "tested": 720,
+      "won": 500,
+      "win_rate": 69.44
+    },
+    "INGREDIENTS": {
+      "tested": 279,
+      "won": 243,
+      "win_rate": 87.1
+    },
+    "SCORE": {
+      "tested": 1,
+      "won": 1,
+      "win_rate": 100.0
+    }
+  }
+}

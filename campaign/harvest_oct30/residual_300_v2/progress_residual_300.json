@@ -1,0 +1,35 @@
+[
+  {
+    "level_id": 272,
+    "won": false,
+    "attempt": 80,
+    "winning_seed": null,
+    "moves_used": 18,
+    "moves_limit": 18,
+    "final_score": 0,
+    "duration_sec": 443.57,
+    "error": "MaxAttemptsExhausted"
+  },
+  {
+    "level_id": 235,
+    "won": false,
+    "attempt": 80,
+    "winning_seed": null,
+    "moves_used": 21,
+    "moves_limit": 21,
+    "final_score": 0,
+    "duration_sec": 882.51,
+    "error": "MaxAttemptsExhausted"
+  },
+  {
+    "level_id": 279,
+    "won": true,
+    "attempt": 71,
+    "winning_seed": 354235,
+    "moves_used": 20,
+    "moves_limit": 20,
+    "final_score": 396648,
+    "duration_sec": 1023.17,
+    "error": null
+  }
+]
