@@ -1534,13 +1534,14 @@
     },
     "148": {
       "level_id": 148,
-      "won": false,
-      "attempts": 3,
-      "moves_used": 27,
+      "won": true,
+      "attempts": 22,
+      "winning_seed": 655293,
+      "moves_used": 9,
       "moves_limit": 27,
-      "score": 344248,
+      "score": 317330,
       "level_type": "INGREDIENTS",
-      "time_sec": 29.873766660690308
+      "time_sec": 438.36
     },
     "139": {
       "level_id": 139,
@@ -2180,13 +2181,14 @@
     },
     "201": {
       "level_id": 201,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 337171,
+      "won": true,
+      "attempts": 9,
+      "winning_seed": 82714,
+      "moves_used": 18,
+      "moves_limit": 18,
+      "score": 297554,
       "level_type": "JELLY",
-      "time_sec": 65.74487280845642
+      "time_sec": 303.57
     },
     "207": {
       "level_id": 207,
@@ -3100,13 +3102,14 @@
     },
     "300": {
       "level_id": 300,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 312051,
+      "won": true,
+      "attempts": 8,
+      "winning_seed": 65485,
+      "moves_used": 21,
+      "moves_limit": 23,
+      "score": 403647,
       "level_type": "JELLY",
-      "time_sec": 31.118921041488647
+      "time_sec": 270.0
     },
     "301": {
       "level_id": 301,
@@ -25890,9 +25893,8 @@
     }
   },
   "stats": {
-    "total_won": 2151,
+    "total_won": 2154,
     "total_tested": 2500,
-    "win_rate": 86.04,
-    "updated_at": "2026-10-30 13:36:51"
+    "win_rate": 86.16
   }
 }

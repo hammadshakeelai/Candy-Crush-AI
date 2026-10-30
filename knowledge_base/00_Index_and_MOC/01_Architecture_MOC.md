@@ -44,11 +44,20 @@ flowchart TD
 
 ## 📑 Core Architectural Notes
 
-- **Master Synthesis & Consensus:**
+- **Master Synthesis & Foundation Models:**
+  - **[[AlphaCandy_Leviathan_300M_and_Colossus_1B_Future_Blueprint]]**: Flagship **`AlphaCandyTitanNet` (79.30M params)** with 6 first-principles breakthroughs ($S_6$ Color-Symmetric Stem, 12x `TitanHybridBlock`, `adaLN-Zero` Telemetry Conditioning, System-2 Pondering, Bilinear Edge-Swap Head, and Pace-Controlled Dynamic Quantile Tilting $\text{CVaR}_{0.20} \leftrightarrow \text{CVaR}_{0.85}^+$) and Future Datacenter-Scale **`AlphaCandyLeviathanNet` (317M & 1.11B Colossus)** with In-Context Spatio-Temporal Episode & Cross-Attempt Memory, `QK-Norm`, and Latent Beam Imagination.
+  - **[[AlphaCandy_NextGen_Model_Zoo_and_Micro_Experiments]]**: The 37-Architecture Next-Gen Experimental Model Zoo (`models/zoo/`) spanning Gumbel MuZero, 2D Vision Mamba, $S_6 \times \mathbb{Z}_2$ Equivariant Nets, KANs, Liquid Time-Constant Networks, HyperNetworks, Neuro-Symbolic DSLs, Sinkhorn Optimal Transport, GFlowNets, Zobrist MCGS, 6 Game-Mode Specialists, and Cross-Attempt Episodic KV-Memory Transformers.
+  - **[[External_GitHub_Creators_and_Baselines_Comparison]]**: Reproduction and head-to-head tournament benchmarking of 13 external GitHub creator & canonical RL baselines (`KingPlaytestCNN2018`, `MulliganaceousPolicyNet`, `KarimiCandyRL2020`, `AlphaZeroVanilla2017Net`, `MuZeroVanilla2020Net`, `RainbowDQN2018Net`, `ImpalaResNetBaseline`, `DreamerV3DiscreteRSSMNet`, `UCTCreatorAgent`, `HumanPersonaBots`).
   - **[[AlphaCandy_Omega_Super_Model_Architecture]]**: Sovereign 36.01M-parameter unified Super Model synthesizing 12-block Portal Graph Self-Attention, 32-Quantile Distributional RL (IQN/QR-DQN), CVaR risk-aware action selection, calibrated win estimation, and internal latent dynamics rollouts.
-  - **[[Synthetic_Tactics_Curriculum_Experiment]]**: Micro-puzzle curriculum pre-training (80/20 natural-synthetic blend) with 5 grandmaster tactical archetypes and empirical A/B generalization verification.
+  - **[[Synthetic_Tactics_Curriculum_Experiment]]**: Micro-puzzle curriculum pre-training (80/20 natural-synthetic blend) across 12 grandmaster tactical archetypes and empirical A/B generalization verification (`+18.2%` Kaggle win rate boost).
   - **[[Grandmaster_Consensus_Architecture]]**: Tri-paradigm consensus fusion (AlphaCandy Large + DQN Master + Tactical Ensemble) with dynamic phase-weighted scoring and multi-depth expectimax lookahead (100% milestone win rate).
   - **[[Grandmaster_Unified_Agent]]**: The flagship agent unifying all reinforcement learning and heuristic paradigms into an 85.7%+ win rate solver.
+- **Historical & Forensic Audits:**
+  - **[[Project_History_Red_Team_Critique_and_Evolution]]**: Complete chronological evolution and red-team critique of past blind spots, cloud fleet lessons, and strategic roadmap to 100% campaign mastery.
+  - **[[Forensic_Autopsy_of_Unsolved_Levels_and_History]]**: Statistical autopsy of the unsolved levels in Levels 1–2,500 (`97.1%` Jelly, `48.4%` Chocolate, `29.8%` Licorice Locks, `28.9%` Portals vs `98.27%` Ingredients already won).
+  - **[[Physics_Engine_Audit_and_Historical_Evolution]]**: Deep technical audit of `ReverseCandyEngine`, special candy combo matrices, and model-engine co-design.
+  - **[[Encyclopedia_of_Grandmaster_Candy_Crush_Tactics]]**: Comprehensive tactical encyclopedia of 12+ grandmaster human speedrunning techniques mapped to synthetic micro-puzzles.
+  - **[[2024_2026_Frontier_Combinatorial_Game_AI_Survey]]**: Survey of 2024–2026 discrete combinatorial puzzle AI paradigms.
 - **Deep Neural Networks:**
   - **[[AlphaCandy_Omega_Super_Model_Architecture]]**: The 36.01M flagship graph-spatial quantile super model architecture with multi-task loss distillation.
   - **[[Pure_AlphaCandy_Large_Agent]]**: Standalone 14.4M-parameter pure neural solver operating without tree search or heuristic lookahead (< 2 ms GPU latency).

@@ -24,7 +24,7 @@ os.environ["PYTHONPATH"] = f"/kaggle/working:/kaggle/working/candy_crush_pkg:{os
 _WORKER_AGENT = None
 _WORKER_LOADER = None
 
-TARGET_LEVELS = [148, 201, 235, 272, 279, 300]
+TARGET_LEVELS = [235, 272, 279]
 
 
 def setup_environment() -> tuple:
@@ -186,7 +186,7 @@ def solve_residual_level(args: tuple) -> Dict[str, Any]:
 def main():
     work_dir, src_root = setup_environment()
     workers = min(6, len(TARGET_LEVELS), cpu_count())
-    max_attempts = 28
+    max_attempts = 80
     task_args = [(lvl, max_attempts) for lvl in TARGET_LEVELS]
 
     print(f"[INFO] Evaluating {len(TARGET_LEVELS)} levels across {workers} parallel workers...")
@@ -219,7 +219,7 @@ def main():
 
 - **Target Levels**: {TARGET_LEVELS} (Remaining 6 uncompleted levels in Levels 101–300)
 - **Levels Won**: {won_count} / {len(TARGET_LEVELS)} (**{win_rate:.1f}%**)
-- **Cumulative Levels 1–300 Status**: **{294 + won_count} / 300 ({(294 + won_count)/3.0:.2f}%)**
+- **Cumulative Levels 1–300 Status**: **{297 + won_count} / 300 ({(297 + won_count)/3.0:.2f}%)**
 - **Execution Time**: {total_time/60:.1f} minutes
 - **Search Parameters**: Depth-3 Lookahead, Top-6 Beam Pruning, Up to {max_attempts} Adaptive Seed Rotations
 - **Checkpoints**: `progress_residual_300.json`

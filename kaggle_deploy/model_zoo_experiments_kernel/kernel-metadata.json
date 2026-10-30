@@ -1,0 +1,15 @@
+{
+  "id": "hammadshakeelai/alphacandy-model-zoo-micro-experiments",
+  "title": "AlphaCandy Model Zoo Micro Experiments",
+  "code_file": "run_zoo_micro_experiments_kaggle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "false",
+  "enable_gpu": "false",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "hammadshakeelai/candy-crush-grandmaster-rl"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}

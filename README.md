@@ -19,8 +19,12 @@
 
 ## 🌟 Key Highlights & Milestones
 
-- 🏆 **8,782 Levels Won across 14,700 King Levels (59.74% Global Win Rate):** Massive cloud benchmark scaled across 15,000 consecutive levels of official King blueprints.
-- 🎯 **86.04% Mastery on Levels 1–2,500 (2,151 / 2,500 Won):** Perfect 100% completion on Levels 1–100 (**100/100**), 97.00% on Levels 101–300 (**194/200**, only 6 levels remaining!), 88.43% on Levels 301–1,000, and 82.53% on Levels 1,001–2,500.
+- 🏆 **8,785 Levels Won across 14,700 King Levels (59.76% Global Win Rate):** Massive cloud benchmark scaled across 15,000 consecutive levels of official King blueprints.
+- 🎯 **99.00% Mastery on Levels 1–300 (297 / 300 Won) & 86.16% on Levels 1–2,500 (2,154 / 2,500 Won):** Perfect 100% completion on Levels 1–100 (**100/100**), **98.50% on Levels 101–300 (197/200 — only 3 levels `[235, 272, 279]` remaining after conquering Levels 148, 201, and 300!)**, 88.43% on Levels 301–1,000, and 82.53% on Levels 1,001–2,500.
+- 🏛️ **Multi-Scale Foundation Hierarchy (`14.4M` $\to$ `36.0M` $\to$ `79.3M` $\to$ `317M` / `1.11B`):**
+  - **`AlphaCandyTitanNet` (79.30M params):** First-principles flagship curing 6 root bottlenecks ($S_6$ Color-Symmetric Stem, 12x `TitanHybridBlock`, `adaLN-Zero` Telemetry Conditioning, System-2 Latent Pondering, Bilinear Symmetric Edge-Swap Head, and Pace-Controlled Dynamic Quantile Tilting $\text{CVaR}_{0.20} \leftrightarrow \text{CVaR}_{0.85}^+$).
+  - **`AlphaCandyLeviathanNet` (317.11M & 1.114B Colossus presets):** Future datacenter-scale foundation blueprint with In-Context Spatio-Temporal Episode & Cross-Attempt Memory, ViT-22B `QK-Norm` + `SwiGLU`, and Internal Latent Beam Imagination.
+- 🧬 **37-Model Next-Gen Experimental Zoo & 13 External Creator Baselines:** Full modular implementations in `models/zoo/` (Gumbel MuZero, 2D Vision Mamba, $S_6 \times \mathbb{Z}_2$ Equivariant Nets, KANs, Liquid Time-Constant Nets, HyperNetworks, Neuro-Symbolic DSLs, Sinkhorn Optimal Transport, GFlowNets, Zobrist MCGS, 6 Game-Mode Specialists, Cross-Attempt Episodic Memory) and `models/external_creators/` (King's 2018 Playtesting CNN, Karimi CANDYRL, Mulliganaceous, AlphaZero, MuZero, Rainbow DQN, IMPALA, DreamerV3, Human Persona Bots).
 - ⚡ **High-Throughput Cloud Campaign Fleet:** Parallelized across concurrent Kaggle cloud sessions with zero GPU quota depletion (pure CPU execution) and zero-error defensive crash recovery.
 - 📊 **23,355 Indexed Official Levels:** Complete master SQLite database (`data/candycrush_master_levels.sqlite`) containing 13,435 raw tile maps and 23,045 verified move limits.
 - 📚 **Obsidian Knowledge Base System:** Complete research and engineering vault linked with bidirectional wiki-links (`[[...]]`), KaTeX mathematical proofs, and Mermaid diagrams.
@@ -129,7 +133,12 @@ Candy-Crush-AI/
 │   ├── 05_High_Throughput_Parallelism/     # GPU sharding, async workers, zero-error guards
 │   └── 06_Campaign_Progress_and_Benchmarks/# Levels 1–300 records & 1,000-game Kaggle benchmark
 ├── models/                       # Neural network architectures & tactical ensembles
-│   ├── alphacandy_omega.py       # AlphaCandy-Omega 36.01M Unified Graph-Spatial Quantile Super Model
+│   ├── alphacandy_leviathan_300m.py   # Future 317M & 1.11B Datacenter Foundation Model (Meta-Device Ready)
+│   ├── alphacandy_titan.py            # AlphaCandy-Titan 79.30M First-Principles Flagship Network
+│   ├── alphacandy_titan_agent.py      # Titan Solver Wrapper with 16-dim Micro-Physics & Dynamic CVaR Tilting
+│   ├── alphacandy_omega.py            # AlphaCandy-Omega 36.01M Unified Graph-Spatial Quantile Super Model
+│   ├── zoo/                           # 37 Next-Gen Experimental Architectures (Mamba, KAN, GFlowNet, MCGS, etc.)
+│   ├── external_creators/             # 13 External GitHub Creator & Canonical RL Baselines + Tournament Arena
 │   ├── grandmaster_consensus_agent.py # Tri-paradigm consensus solver (Large + DQN + Lookahead)
 │   ├── alphacandy_large_agent.py      # Standalone 14.4M pure neural transformer agent
 │   ├── grandmaster_unified_agent.py   # Unified multi-paradigm agent

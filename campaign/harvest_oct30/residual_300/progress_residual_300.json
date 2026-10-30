@@ -1,0 +1,68 @@
+[
+  {
+    "level_id": 272,
+    "won": false,
+    "attempt": 28,
+    "winning_seed": null,
+    "moves_used": 18,
+    "moves_limit": 18,
+    "final_score": 0,
+    "duration_sec": 261.44,
+    "error": "MaxAttemptsExhausted"
+  },
+  {
+    "level_id": 201,
+    "won": true,
+    "attempt": 9,
+    "winning_seed": 82714,
+    "moves_used": 18,
+    "moves_limit": 18,
+    "final_score": 297554,
+    "duration_sec": 303.57,
+    "error": null
+  },
+  {
+    "level_id": 148,
+    "won": true,
+    "attempt": 22,
+    "winning_seed": 655293,
+    "moves_used": 9,
+    "moves_limit": 27,
+    "final_score": 317330,
+    "duration_sec": 438.36,
+    "error": null
+  },
+  {
+    "level_id": 235,
+    "won": false,
+    "attempt": 28,
+    "winning_seed": null,
+    "moves_used": 21,
+    "moves_limit": 21,
+    "final_score": 0,
+    "duration_sec": 529.23,
+    "error": "MaxAttemptsExhausted"
+  },
+  {
+    "level_id": 300,
+    "won": true,
+    "attempt": 8,
+    "winning_seed": 65485,
+    "moves_used": 21,
+    "moves_limit": 23,
+    "final_score": 403647,
+    "duration_sec": 270.0,
+    "error": null
+  },
+  {
+    "level_id": 279,
+    "won": false,
+    "attempt": 28,
+    "winning_seed": null,
+    "moves_used": 20,
+    "moves_limit": 20,
+    "final_score": 0,
+    "duration_sec": 447.32,
+    "error": "MaxAttemptsExhausted"
+  }
+]

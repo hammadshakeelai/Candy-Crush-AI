@@ -47,6 +47,7 @@ flowchart TD
   - **[[Blocker_Hierarchy_and_Damage_Phases]]**: Complete breakdown of Chocolate, Licorice Swirls, Multi-hit Frosting, Toffee Swirls, Magic Mixers, Cake Bombs, Popcorn, and Frogs.
 - **Specials & Combinations:**
   - **[[Special_Candies_and_Combinations]]**: Creation requirements (4-match, T/L-shape, 5-in-a-row) and 10 canonical combination interactions (e.g. Color Bomb + Striped, Wrapped + Wrapped).
+  - **[[Encyclopedia_of_Grandmaster_Candy_Crush_Tactics]]**: Complete tactical encyclopedia of 14 grandmaster human Candy Crush techniques, mathematical reward terms, synthetic micro-puzzles, and bottleneck level breakdowns (Levels 65, 70, 147, 148, 201, 235, 272, 300).
 - **Objectives & Victory Conditions:**
   - **[[Objective_Types_and_Evaluation]]**: Mechanics of Jelly clearing (single/double), Ingredients delivery, Target Score, Order fulfillment, and Mixed objectives.
 

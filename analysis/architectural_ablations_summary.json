@@ -1,0 +1,173 @@
+{
+  "suite": "AlphaCandy-Omega Architectural Ablations & Head-to-Head Micro-Experiments",
+  "seed": 42,
+  "total_runtime_sec": 10.094,
+  "ablations": {
+    "ablation_1_edge_swap_head": {
+      "ablation_id": 1,
+      "name": "Bilinear Symmetric Edge-Swap Head vs. Flat Linear-144 Head",
+      "bilinear_symmetric_params": 4705,
+      "flat_linear_144_params": 373392,
+      "param_reduction_factor": 79.4,
+      "bilinear_swap_direction_consistency_pct": 100.0,
+      "bilinear_max_directional_discrepancy": 0.0,
+      "asymmetric_swap_direction_consistency_pct": 53.11,
+      "flat_swap_direction_consistency_pct": 92.19,
+      "target_val_accuracy_pct": 90.0,
+      "bilinear_epochs_to_converge": 45,
+      "flat_epochs_to_converge": 45,
+      "convergence_speedup_x": 1.0,
+      "final_val_accuracy_bilinear_pct": 88.51,
+      "final_val_accuracy_flat_pct": 50.71,
+      "elapsed_sec": 3.627
+    },
+    "ablation_2_s6_color_invariance": {
+      "ablation_id": 2,
+      "name": "S_6 Color-Permutation Invariance Verification",
+      "num_boards_tested": 32,
+      "num_s6_permutations_tested": 60,
+      "standard_conv2d_logit_variation_pct": 58.71,
+      "standard_conv2d_top1_action_consistency_pct": 26.88,
+      "s6_symmetric_stem_logit_variation_pct": 0.0,
+      "s6_symmetric_stem_top1_action_consistency_pct": 100.0,
+      "elapsed_sec": 0.387
+    },
+    "ablation_3_pace_quantile_tilting": {
+      "ablation_id": 3,
+      "name": "Pace-Controlled Dynamic Quantile Tilting (CVaR_0.20 vs CVaR_0.90^+)",
+      "num_scenarios_per_regime": 500,
+      "move_a_stats": {
+        "mean": 1.2,
+        "std": 0.2,
+        "cvar_020": 0.92,
+        "cvar_090_plus": 1.55
+      },
+      "move_b_stats": {
+        "mean": 1.0,
+        "std": 3.5,
+        "cvar_020": -1.29,
+        "cvar_090_plus": 8.94
+      },
+      "policy_results": {
+        "scalar_mean": {
+          "safe_ahead_win_rate_pct": 96.4,
+          "safe_ahead_move_a_selection_pct": 100.0,
+          "desperate_behind_win_rate_pct": 0.0,
+          "desperate_behind_loss_rate_pct": 100.0,
+          "desperate_behind_move_b_selection_pct": 0.0
+        },
+        "static_cvar_020": {
+          "safe_ahead_win_rate_pct": 97.4,
+          "safe_ahead_move_a_selection_pct": 100.0,
+          "desperate_behind_win_rate_pct": 0.0,
+          "desperate_behind_loss_rate_pct": 100.0,
+          "desperate_behind_move_b_selection_pct": 0.0
+        },
+        "static_cvar_090_plus": {
+          "safe_ahead_win_rate_pct": 21.4,
+          "safe_ahead_move_a_selection_pct": 0.0,
+          "desperate_behind_win_rate_pct": 22.4,
+          "desperate_behind_loss_rate_pct": 77.6,
+          "desperate_behind_move_b_selection_pct": 100.0
+        },
+        "pace_dynamic_tilting": {
+          "safe_ahead_win_rate_pct": 93.4,
+          "safe_ahead_move_a_selection_pct": 100.0,
+          "desperate_behind_win_rate_pct": 23.4,
+          "desperate_behind_loss_rate_pct": 76.6,
+          "desperate_behind_move_b_selection_pct": 100.0
+        }
+      },
+      "elapsed_sec": 0.083
+    },
+    "ablation_4_zobrist_dag_deduplication": {
+      "ablation_id": 4,
+      "name": "Zobrist Transposition Table DAG Deduplication Rate (Depth-3)",
+      "levels_evaluated": [
+        1,
+        25,
+        50
+      ],
+      "search_depth": 3,
+      "max_branch_cap": 8,
+      "per_level": {
+        "level_1": {
+          "level_id": 1,
+          "total_states_generated": 467,
+          "unique_zobrist_states": 292,
+          "duplicate_transpositions": 175,
+          "deduplication_rate_pct": 37.47
+        },
+        "level_25": {
+          "level_id": 25,
+          "total_states_generated": 577,
+          "unique_zobrist_states": 512,
+          "duplicate_transpositions": 65,
+          "deduplication_rate_pct": 11.27
+        },
+        "level_50": {
+          "level_id": 50,
+          "total_states_generated": 584,
+          "unique_zobrist_states": 458,
+          "duplicate_transpositions": 126,
+          "deduplication_rate_pct": 21.58
+        }
+      },
+      "total_nodes_evaluated": 1628,
+      "total_unique_states": 1262,
+      "total_commuting_duplicates": 366,
+      "overall_deduplication_rate_pct": 22.48,
+      "effective_search_compression_ratio": 1.29,
+      "elapsed_sec": 4.222
+    },
+    "ablation_5_gumbel_sequential_halving": {
+      "ablation_id": 5,
+      "name": "Gumbel Sequential Halving vs. Greedy Top-K under Low Simulation Budget (N=6)",
+      "simulation_budget_N": 6,
+      "num_bandit_states": 1000,
+      "num_legal_actions": 16,
+      "methods": {
+        "pure_prior_top1": {
+          "mean_simple_regret": 0.2705,
+          "optimal_action_rate_pct": 42.4
+        },
+        "uniform_random_n6": {
+          "mean_simple_regret": 0.6464,
+          "optimal_action_rate_pct": 18.5
+        },
+        "greedy_topk_n6": {
+          "mean_simple_regret": 0.3524,
+          "optimal_action_rate_pct": 34.3
+        },
+        "gumbel_seq_halving_n6": {
+          "mean_simple_regret": 0.2187,
+          "optimal_action_rate_pct": 47.1
+        }
+      },
+      "regret_reduction_vs_greedy_topk_pct": 37.94,
+      "elapsed_sec": 0.04
+    },
+    "ablation_6_human_persona_gravity_bias": {
+      "ablation_id": 6,
+      "name": "Human Playtester Persona Comparison (Top-Down Rows 0..2 vs Bottom-Up Rows 6..8)",
+      "num_boards_evaluated": 50,
+      "top_down_persona_rows_0_2": {
+        "num_swaps_evaluated": 460,
+        "avg_cascade_depth": 1.663,
+        "avg_cascade_multiplier": 1.665,
+        "avg_score_per_swap": 634.9,
+        "multi_cascade_rate_pct": 37.39
+      },
+      "bottom_up_persona_rows_6_8": {
+        "num_swaps_evaluated": 352,
+        "avg_cascade_depth": 2.216,
+        "avg_cascade_multiplier": 1.886,
+        "avg_score_per_swap": 1041.1,
+        "multi_cascade_rate_pct": 63.35
+      },
+      "bottom_vs_top_cascade_depth_gain_pct": 33.24,
+      "bottom_vs_top_score_gain_pct": 63.99,
+      "elapsed_sec": 1.659
+    }
+  }
+}

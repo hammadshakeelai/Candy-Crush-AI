@@ -1,0 +1,175 @@
+{
+  "variant_a": {
+    "variant": "Variant A (Control Baseline)",
+    "won_count": 3,
+    "total_levels": 11,
+    "win_rate": 27.27272727272727,
+    "total_duration": 136.71,
+    "details": {
+      "10": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 22,
+        "moves_limit": 22,
+        "duration": 18.74
+      },
+      "23": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 25,
+        "moves_limit": 25,
+        "duration": 17.04
+      },
+      "25": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 11,
+        "moves_limit": 22,
+        "duration": 1.72
+      },
+      "50": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 17,
+        "moves_limit": 22,
+        "duration": 7.11
+      },
+      "100": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 22,
+        "moves_limit": 24,
+        "duration": 4.78
+      },
+      "148": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 27,
+        "moves_limit": 27,
+        "duration": 11.35
+      },
+      "201": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 18,
+        "moves_limit": 18,
+        "duration": 18.9
+      },
+      "235": {
+        "won": false,
+        "attempt": 1,
+        "moves_used": 21,
+        "moves_limit": 21,
+        "duration": 9.6
+      },
+      "272": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 18,
+        "moves_limit": 18,
+        "duration": 4.47
+      },
+      "279": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 20,
+        "moves_limit": 20,
+        "duration": 13.83
+      },
+      "300": {
+        "won": false,
+        "attempt": 1,
+        "moves_used": 23,
+        "moves_limit": 23,
+        "duration": 28.01
+      }
+    }
+  },
+  "variant_b": {
+    "variant": "Variant B (Tactical Augmented)",
+    "won_count": 5,
+    "total_levels": 11,
+    "win_rate": 45.45454545454545,
+    "total_duration": 133.25,
+    "details": {
+      "10": {
+        "won": true,
+        "attempt": 2,
+        "moves_used": 14,
+        "moves_limit": 22,
+        "duration": 13.64
+      },
+      "23": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 22,
+        "moves_limit": 25,
+        "duration": 7.1
+      },
+      "25": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 5,
+        "moves_limit": 22,
+        "duration": 0.96
+      },
+      "50": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 18,
+        "moves_limit": 22,
+        "duration": 9.78
+      },
+      "100": {
+        "won": true,
+        "attempt": 1,
+        "moves_used": 18,
+        "moves_limit": 24,
+        "duration": 2.43
+      },
+      "148": {
+        "won": false,
+        "attempt": 1,
+        "moves_used": 27,
+        "moves_limit": 27,
+        "duration": 13.71
+      },
+      "201": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 18,
+        "moves_limit": 18,
+        "duration": 23.46
+      },
+      "235": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 21,
+        "moves_limit": 21,
+        "duration": 12.75
+      },
+      "272": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 18,
+        "moves_limit": 18,
+        "duration": 4.96
+      },
+      "279": {
+        "won": false,
+        "attempt": 2,
+        "moves_used": 20,
+        "moves_limit": 20,
+        "duration": 13.0
+      },
+      "300": {
+        "won": false,
+        "attempt": 1,
+        "moves_used": 23,
+        "moves_limit": 23,
+        "duration": 31.44
+      }
+    }
+  },
+  "delta_wins": 2
+}
