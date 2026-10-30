@@ -1,0 +1,83 @@
+{
+  "shard": "301-1500",
+  "target_count": 12,
+  "evaluated_count": 4,
+  "newly_won_count": 0,
+  "newly_won_levels": [],
+  "near_miss_le2_count": 1,
+  "still_unsolved_levels": [
+    953,
+    1205,
+    1292,
+    1349
+  ],
+  "win_rate_on_shard": 0.0,
+  "elapsed_sec": 1144.4,
+  "finished": true,
+  "results": [
+    {
+      "level_id": 1349,
+      "level_type": "JELLY",
+      "moves_limit": 20,
+      "initial_objectives": 50,
+      "isolated_islands": 1,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 17,
+      "moves_remaining": 3,
+      "final_score": 101834,
+      "best_remaining_objectives": 3,
+      "elapsed_sec": 310.22,
+      "error": null
+    },
+    {
+      "level_id": 1292,
+      "level_type": "JELLY",
+      "moves_limit": 20,
+      "initial_objectives": 122,
+      "isolated_islands": 0,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 19,
+      "moves_remaining": 1,
+      "final_score": 306274,
+      "best_remaining_objectives": 4,
+      "elapsed_sec": 652.34,
+      "error": null
+    },
+    {
+      "level_id": 953,
+      "level_type": "JELLY",
+      "moves_limit": 30,
+      "initial_objectives": 82,
+      "isolated_islands": 2,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 29,
+      "moves_remaining": 1,
+      "final_score": 202587,
+      "best_remaining_objectives": 1,
+      "elapsed_sec": 761.63,
+      "error": null
+    },
+    {
+      "level_id": 1205,
+      "level_type": "JELLY",
+      "moves_limit": 27,
+      "initial_objectives": 38,
+      "isolated_islands": 2,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 10,
+      "moves_used": 26,
+      "moves_remaining": 1,
+      "final_score": 82135,
+      "best_remaining_objectives": 3,
+      "elapsed_sec": 1135.37,
+      "error": null
+    }
+  ]
+}
