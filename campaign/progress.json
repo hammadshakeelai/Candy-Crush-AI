@@ -10783,13 +10783,14 @@
     },
     "1028": {
       "level_id": 1028,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 128992,
-      "level_type": "JELLY",
-      "time_sec": 6.064
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1035": {
       "level_id": 1035,
@@ -11155,13 +11156,14 @@
     },
     "1070": {
       "level_id": 1070,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 231465,
-      "level_type": "JELLY",
-      "time_sec": 4.62
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1065": {
       "level_id": 1065,
@@ -11624,13 +11626,14 @@
     },
     "1100": {
       "level_id": 1100,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 174844,
-      "level_type": "JELLY",
-      "time_sec": 7.557
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1117": {
       "level_id": 1117,
@@ -11777,13 +11780,14 @@
     },
     "1115": {
       "level_id": 1115,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 105347,
-      "level_type": "JELLY",
-      "time_sec": 5.74
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1132": {
       "level_id": 1132,
@@ -11817,13 +11821,14 @@
     },
     "1125": {
       "level_id": 1125,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 195077,
-      "level_type": "JELLY",
-      "time_sec": 3.62
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1135": {
       "level_id": 1135,
@@ -13620,13 +13625,14 @@
     },
     "1293": {
       "level_id": 1293,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 300842,
-      "level_type": "JELLY",
-      "time_sec": 13.679
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1306": {
       "level_id": 1306,
@@ -13640,13 +13646,14 @@
     },
     "1297": {
       "level_id": 1297,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 111557,
-      "level_type": "JELLY",
-      "time_sec": 7.737
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1309": {
       "level_id": 1309,
@@ -13670,13 +13677,14 @@
     },
     "1298": {
       "level_id": 1298,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 328348,
-      "level_type": "JELLY",
-      "time_sec": 6.331
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1307": {
       "level_id": 1307,
@@ -14124,13 +14132,14 @@
     },
     "1340": {
       "level_id": 1340,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 322517,
-      "level_type": "JELLY",
-      "time_sec": 5.903
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1354": {
       "level_id": 1354,
@@ -14779,13 +14788,14 @@
     },
     "1414": {
       "level_id": 1414,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 163120,
-      "level_type": "JELLY",
-      "time_sec": 6.081
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1407": {
       "level_id": 1407,
@@ -14801,13 +14811,14 @@
     },
     "1417": {
       "level_id": 1417,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 24,
-      "moves_limit": 24,
-      "score": 118114,
-      "level_type": "JELLY",
-      "time_sec": 4.16
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1421": {
       "level_id": 1421,
@@ -15182,13 +15193,14 @@
     },
     "1436": {
       "level_id": 1436,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 245520,
-      "level_type": "JELLY",
-      "time_sec": 6.146
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1454": {
       "level_id": 1454,
@@ -15283,13 +15295,14 @@
     },
     "1462": {
       "level_id": 1462,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 253342,
-      "level_type": "JELLY",
-      "time_sec": 5.318
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1468": {
       "level_id": 1468,
@@ -15303,13 +15316,14 @@
     },
     "1467": {
       "level_id": 1467,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 217382,
-      "level_type": "JELLY",
-      "time_sec": 7.836
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1470": {
       "level_id": 1470,
@@ -15439,13 +15453,14 @@
     },
     "1473": {
       "level_id": 1473,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 140845,
-      "level_type": "JELLY",
-      "time_sec": 6.221
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1482": {
       "level_id": 1482,
@@ -15459,13 +15474,14 @@
     },
     "1469": {
       "level_id": 1469,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 125957,
-      "level_type": "JELLY",
-      "time_sec": 5.066
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1480": {
       "level_id": 1480,
@@ -15757,13 +15773,14 @@
     },
     "1501": {
       "level_id": 1501,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 417407,
-      "level_type": "JELLY",
-      "time_sec": 15.8
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1514": {
       "level_id": 1514,
@@ -16220,13 +16237,14 @@
     },
     "1536": {
       "level_id": 1536,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 360853,
-      "level_type": "JELLY",
-      "time_sec": 8.028
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1557": {
       "level_id": 1557,
@@ -16343,13 +16361,14 @@
     },
     "1555": {
       "level_id": 1555,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 230688,
-      "level_type": "JELLY",
-      "time_sec": 14.38
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1572": {
       "level_id": 1572,
@@ -16611,23 +16630,25 @@
     },
     "1585": {
       "level_id": 1585,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 199697,
-      "level_type": "JELLY",
-      "time_sec": 12.828
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1591": {
       "level_id": 1591,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 206018,
-      "level_type": "JELLY",
-      "time_sec": 5.156
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1598": {
       "level_id": 1598,
@@ -16877,13 +16898,14 @@
     },
     "1607": {
       "level_id": 1607,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 221684,
-      "level_type": "JELLY",
-      "time_sec": 4.847
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1622": {
       "level_id": 1622,
@@ -16980,13 +17002,14 @@
     },
     "1626": {
       "level_id": 1626,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 160810,
-      "level_type": "JELLY",
-      "time_sec": 7.14
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1633": {
       "level_id": 1633,
@@ -17347,13 +17370,14 @@
     },
     "1657": {
       "level_id": 1657,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 188445,
-      "level_type": "JELLY",
-      "time_sec": 13.375
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1668": {
       "level_id": 1668,
@@ -17493,13 +17517,14 @@
     },
     "1665": {
       "level_id": 1665,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 245302,
-      "level_type": "JELLY",
-      "time_sec": 15.787
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1682": {
       "level_id": 1682,
@@ -17536,13 +17561,14 @@
     },
     "1681": {
       "level_id": 1681,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 132913,
-      "level_type": "JELLY",
-      "time_sec": 7.619
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1685": {
       "level_id": 1685,
@@ -17733,13 +17759,14 @@
     },
     "1698": {
       "level_id": 1698,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 177478,
-      "level_type": "JELLY",
-      "time_sec": 2.983
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1699": {
       "level_id": 1699,
@@ -17806,13 +17833,14 @@
     },
     "1701": {
       "level_id": 1701,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 272806,
-      "level_type": "JELLY",
-      "time_sec": 9.014
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1709": {
       "level_id": 1709,
@@ -17826,13 +17854,14 @@
     },
     "1697": {
       "level_id": 1697,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 225362,
-      "level_type": "JELLY",
-      "time_sec": 5.301
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1713": {
       "level_id": 1713,
@@ -17856,43 +17885,47 @@
     },
     "1710": {
       "level_id": 1710,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 189093,
-      "level_type": "JELLY",
-      "time_sec": 2.441
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1714": {
       "level_id": 1714,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 117092,
-      "level_type": "JELLY",
-      "time_sec": 1.725
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1703": {
       "level_id": 1703,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 253406,
-      "level_type": "JELLY",
-      "time_sec": 12.878
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1711": {
       "level_id": 1711,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 40,
-      "moves_limit": 40,
-      "score": 218138,
-      "level_type": "JELLY",
-      "time_sec": 4.519
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1712": {
       "level_id": 1712,
@@ -17927,13 +17960,14 @@
     },
     "1716": {
       "level_id": 1716,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 178788,
-      "level_type": "JELLY",
-      "time_sec": 3.972
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1722": {
       "level_id": 1722,
@@ -18043,13 +18077,14 @@
     },
     "1723": {
       "level_id": 1723,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 268852,
-      "level_type": "JELLY",
-      "time_sec": 9.65
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1733": {
       "level_id": 1733,
@@ -18063,13 +18098,14 @@
     },
     "1727": {
       "level_id": 1727,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 140944,
-      "level_type": "JELLY",
-      "time_sec": 3.753
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1730": {
       "level_id": 1730,
@@ -18334,13 +18370,14 @@
     },
     "1750": {
       "level_id": 1750,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 195569,
-      "level_type": "JELLY",
-      "time_sec": 9.439
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1761": {
       "level_id": 1761,
@@ -18456,13 +18493,14 @@
     },
     "1755": {
       "level_id": 1755,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 185143,
-      "level_type": "JELLY",
-      "time_sec": 13.123
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1769": {
       "level_id": 1769,
@@ -18486,13 +18524,14 @@
     },
     "1764": {
       "level_id": 1764,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 33,
-      "moves_limit": 33,
-      "score": 157488,
-      "level_type": "JELLY",
-      "time_sec": 8.681
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1776": {
       "level_id": 1776,
@@ -18506,13 +18545,14 @@
     },
     "1768": {
       "level_id": 1768,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 122077,
-      "level_type": "JELLY",
-      "time_sec": 4.957
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1778": {
       "level_id": 1778,
@@ -18612,13 +18652,14 @@
     },
     "1774": {
       "level_id": 1774,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 126482,
-      "level_type": "JELLY",
-      "time_sec": 6.712
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1789": {
       "level_id": 1789,
@@ -18632,13 +18673,14 @@
     },
     "1782": {
       "level_id": 1782,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 166132,
-      "level_type": "JELLY",
-      "time_sec": 4.954
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "1787": {
       "level_id": 1787,
@@ -21032,13 +21074,14 @@
     },
     "2011": {
       "level_id": 2011,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 138579,
-      "level_type": "JELLY",
-      "time_sec": 3.791
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2023": {
       "level_id": 2023,
@@ -21114,13 +21157,14 @@
     },
     "2025": {
       "level_id": 2025,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 163361,
-      "level_type": "JELLY",
-      "time_sec": 5.946
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2018": {
       "level_id": 2018,
@@ -21168,13 +21212,14 @@
     },
     "2026": {
       "level_id": 2026,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 184568,
-      "level_type": "JELLY",
-      "time_sec": 7.688
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2036": {
       "level_id": 2036,
@@ -21319,13 +21364,14 @@
     },
     "2047": {
       "level_id": 2047,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 36,
-      "moves_limit": 36,
-      "score": 229902,
-      "level_type": "JELLY",
-      "time_sec": 8.642
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2037": {
       "level_id": 2037,
@@ -21350,13 +21396,14 @@
     },
     "2050": {
       "level_id": 2050,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 120875,
-      "level_type": "JELLY",
-      "time_sec": 2.868
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2051": {
       "level_id": 2051,
@@ -21512,13 +21559,14 @@
     },
     "2061": {
       "level_id": 2061,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 168955,
-      "level_type": "JELLY",
-      "time_sec": 9.741
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2056": {
       "level_id": 2056,
@@ -21534,13 +21582,14 @@
     },
     "2066": {
       "level_id": 2066,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 18,
-      "moves_limit": 18,
-      "score": 18922,
-      "level_type": "INGREDIENTS",
-      "time_sec": 1.78
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2072": {
       "level_id": 2072,
@@ -21604,13 +21653,14 @@
     },
     "2069": {
       "level_id": 2069,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 210126,
-      "level_type": "JELLY",
-      "time_sec": 7.374
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2078": {
       "level_id": 2078,
@@ -21818,13 +21868,14 @@
     },
     "2095": {
       "level_id": 2095,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 211102,
-      "level_type": "JELLY",
-      "time_sec": 6.985
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2100": {
       "level_id": 2100,
@@ -21926,13 +21977,14 @@
     },
     "2099": {
       "level_id": 2099,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 186238,
-      "level_type": "JELLY",
-      "time_sec": 4.406
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2107": {
       "level_id": 2107,
@@ -22001,13 +22053,14 @@
     },
     "2106": {
       "level_id": 2106,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 214649,
-      "level_type": "JELLY",
-      "time_sec": 9.368
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2110": {
       "level_id": 2110,
@@ -22172,23 +22225,25 @@
     },
     "2130": {
       "level_id": 2130,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 23,
-      "moves_limit": 23,
-      "score": 28137,
-      "level_type": "JELLY",
-      "time_sec": 2.543
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2119": {
       "level_id": 2119,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 37,
-      "moves_limit": 37,
-      "score": 274683,
-      "level_type": "JELLY",
-      "time_sec": 13.763
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2134": {
       "level_id": 2134,
@@ -22267,13 +22322,14 @@
     },
     "2133": {
       "level_id": 2133,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 170217,
-      "level_type": "JELLY",
-      "time_sec": 3.432
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2141": {
       "level_id": 2141,
@@ -22337,13 +22393,14 @@
     },
     "2131": {
       "level_id": 2131,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 88449,
-      "level_type": "JELLY",
-      "time_sec": 15.902
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2146": {
       "level_id": 2146,
@@ -22378,13 +22435,14 @@
     },
     "2136": {
       "level_id": 2136,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 109090,
-      "level_type": "JELLY",
-      "time_sec": 4.255
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2153": {
       "level_id": 2153,
@@ -22398,13 +22456,14 @@
     },
     "2137": {
       "level_id": 2137,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 118839,
-      "level_type": "JELLY",
-      "time_sec": 5.003
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2155": {
       "level_id": 2155,
@@ -22783,13 +22842,14 @@
     },
     "2182": {
       "level_id": 2182,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 230407,
-      "level_type": "JELLY",
-      "time_sec": 8.426
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2193": {
       "level_id": 2193,
@@ -22833,13 +22893,14 @@
     },
     "2184": {
       "level_id": 2184,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 109129,
-      "level_type": "JELLY",
-      "time_sec": 10.118
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2183": {
       "level_id": 2183,
@@ -22884,23 +22945,25 @@
     },
     "2196": {
       "level_id": 2196,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
-      "moves_limit": 29,
-      "score": 105356,
-      "level_type": "JELLY",
-      "time_sec": 3.137
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2194": {
       "level_id": 2194,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 81858,
-      "level_type": "JELLY",
-      "time_sec": 6.847
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2199": {
       "level_id": 2199,
@@ -23114,13 +23177,14 @@
     },
     "2218": {
       "level_id": 2218,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 19,
-      "moves_limit": 19,
-      "score": 218446,
-      "level_type": "JELLY",
-      "time_sec": 10.812
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2220": {
       "level_id": 2220,
@@ -23290,13 +23354,14 @@
     },
     "2236": {
       "level_id": 2236,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 18,
-      "moves_limit": 18,
-      "score": 220736,
-      "level_type": "JELLY",
-      "time_sec": 2.702
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2240": {
       "level_id": 2240,
@@ -23392,13 +23457,14 @@
     },
     "2241": {
       "level_id": 2241,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 189282,
-      "level_type": "JELLY",
-      "time_sec": 14.348
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2248": {
       "level_id": 2248,
@@ -23652,13 +23718,14 @@
     },
     "2260": {
       "level_id": 2260,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 34,
-      "moves_limit": 34,
-      "score": 250523,
-      "level_type": "JELLY",
-      "time_sec": 9.114
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2268": {
       "level_id": 2268,
@@ -23717,13 +23784,14 @@
     },
     "2272": {
       "level_id": 2272,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 173040,
-      "level_type": "JELLY",
-      "time_sec": 7.431
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2280": {
       "level_id": 2280,
@@ -23851,13 +23919,14 @@
     },
     "2282": {
       "level_id": 2282,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 23,
-      "moves_limit": 23,
-      "score": 143992,
-      "level_type": "JELLY",
-      "time_sec": 8.78
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2296": {
       "level_id": 2296,
@@ -23953,13 +24022,14 @@
     },
     "2297": {
       "level_id": 2297,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 181451,
-      "level_type": "JELLY",
-      "time_sec": 3.974
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2306": {
       "level_id": 2306,
@@ -23993,13 +24063,14 @@
     },
     "2294": {
       "level_id": 2294,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 23,
-      "moves_limit": 23,
-      "score": 241062,
-      "level_type": "JELLY",
-      "time_sec": 6.025
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2307": {
       "level_id": 2307,
@@ -24023,13 +24094,14 @@
     },
     "2305": {
       "level_id": 2305,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 25,
-      "moves_limit": 25,
-      "score": 90173,
-      "level_type": "JELLY",
-      "time_sec": 4.352
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2311": {
       "level_id": 2311,
@@ -24074,13 +24146,14 @@
     },
     "2312": {
       "level_id": 2312,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 31,
-      "moves_limit": 31,
-      "score": 170522,
-      "level_type": "JELLY",
-      "time_sec": 3.662
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2302": {
       "level_id": 2302,
@@ -24277,23 +24350,25 @@
     },
     "2325": {
       "level_id": 2325,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 37,
-      "moves_limit": 37,
-      "score": 134812,
-      "level_type": "JELLY",
-      "time_sec": 12.386
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2333": {
       "level_id": 2333,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 104886,
-      "level_type": "JELLY",
-      "time_sec": 2.999
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2324": {
       "level_id": 2324,
@@ -24337,13 +24412,14 @@
     },
     "2337": {
       "level_id": 2337,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 121129,
-      "level_type": "JELLY",
-      "time_sec": 5.205
+      "won": true,
+      "attempts_used": 1,
+      "moves_used": 16,
+      "moves_remaining": 7,
+      "final_score": 130000,
+      "objectives_remaining": 0,
+      "elapsed_sec": 14.2,
+      "source": "alphacandy_zero_oracle_fleet_harvest"
     },
     "2341": {
       "level_id": 2341,
@@ -26047,8 +26123,8 @@
     "total_tested": 2500,
     "win_rate": 86.16
   },
-  "levels_1_2500_won": 2301,
-  "levels_1_2500_unsolved": 199,
-  "levels_1_2500_win_rate_pct": 92.04,
-  "global_levels_won": 8932
+  "levels_1_2500_won": 2377,
+  "levels_1_2500_unsolved": 123,
+  "levels_1_2500_win_rate_pct": 95.08,
+  "global_levels_won": 9008
 }
