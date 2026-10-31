@@ -60586,11 +60586,718 @@
       "moves_limit": 23,
       "winning_seed": 910131,
       "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7180": {
+      "won": true,
+      "moves": 19,
+      "moves_limit": 27,
+      "winning_seed": 850089,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7208": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 130282,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7207": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 35,
+      "winning_seed": 120275,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7204": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 26,
+      "winning_seed": 90254,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7210": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 150296,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7206": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 110268,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7201": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 25,
+      "winning_seed": 60233,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7214": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 21,
+      "winning_seed": 190324,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7212": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 29,
+      "winning_seed": 170310,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7215": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 24,
+      "winning_seed": 200331,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7211": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 32,
+      "winning_seed": 160303,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7220": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 21,
+      "winning_seed": 250366,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7218": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 31,
+      "winning_seed": 230352,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7203": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 25,
+      "winning_seed": 80247,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7219": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 240359,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7202": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 27,
+      "winning_seed": 70240,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7225": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 33,
+      "winning_seed": 300401,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7222": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 27,
+      "winning_seed": 270380,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7224": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 30,
+      "winning_seed": 290394,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7205": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 29,
+      "winning_seed": 100261,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7227": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 24,
+      "winning_seed": 320415,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7229": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 25,
+      "winning_seed": 340429,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7221": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 28,
+      "winning_seed": 260373,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7209": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 33,
+      "winning_seed": 140289,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7213": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 30,
+      "winning_seed": 180317,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7216": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 26,
+      "winning_seed": 210338,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7217": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 30,
+      "winning_seed": 220345,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7233": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 23,
+      "winning_seed": 380457,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7235": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 29,
+      "winning_seed": 400471,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7237": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 29,
+      "winning_seed": 420485,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7232": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 23,
+      "winning_seed": 370450,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7223": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 35,
+      "winning_seed": 280387,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7236": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 25,
+      "winning_seed": 410478,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7228": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 24,
+      "winning_seed": 330422,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7240": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 30,
+      "winning_seed": 450506,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7242": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 30,
+      "winning_seed": 470520,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7241": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 460513,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7239": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 26,
+      "winning_seed": 440499,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7243": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 30,
+      "winning_seed": 480527,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7231": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 29,
+      "winning_seed": 360443,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7244": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 30,
+      "winning_seed": 490534,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7230": {
+      "won": true,
+      "moves": 9,
+      "moves_limit": 32,
+      "winning_seed": 350436,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7238": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 25,
+      "winning_seed": 430492,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7249": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 27,
+      "winning_seed": 540569,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7248": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 22,
+      "winning_seed": 530562,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7250": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 22,
+      "winning_seed": 550576,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7251": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 30,
+      "winning_seed": 560583,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7246": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 23,
+      "winning_seed": 510548,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7226": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 30,
+      "winning_seed": 310408,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7234": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 32,
+      "winning_seed": 390464,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7252": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 35,
+      "winning_seed": 570590,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7254": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 33,
+      "winning_seed": 590604,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7258": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 630632,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7253": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 580597,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7260": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 28,
+      "winning_seed": 650646,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7261": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 660653,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7259": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 23,
+      "winning_seed": 640639,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7264": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 33,
+      "winning_seed": 690674,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7263": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 27,
+      "winning_seed": 680667,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7266": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 28,
+      "winning_seed": 710688,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7257": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 23,
+      "winning_seed": 620625,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7268": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 730702,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7256": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 27,
+      "winning_seed": 610618,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7269": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 27,
+      "winning_seed": 740709,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7271": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 27,
+      "winning_seed": 760723,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7255": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 32,
+      "winning_seed": 600611,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7245": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 27,
+      "winning_seed": 500541,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7247": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 30,
+      "winning_seed": 520555,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7265": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 22,
+      "winning_seed": 700681,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7273": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 29,
+      "winning_seed": 780737,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7278": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 23,
+      "winning_seed": 830772,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7270": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 27,
+      "winning_seed": 750716,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7280": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 850786,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7262": {
+      "won": true,
+      "moves": 8,
+      "moves_limit": 30,
+      "winning_seed": 670660,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7282": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 28,
+      "winning_seed": 870800,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7281": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 30,
+      "winning_seed": 860793,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7276": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 24,
+      "winning_seed": 810758,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7267": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 30,
+      "winning_seed": 720695,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7284": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 27,
+      "winning_seed": 890814,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7275": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 30,
+      "winning_seed": 800751,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7279": {
+      "won": true,
+      "moves": 8,
+      "moves_limit": 25,
+      "winning_seed": 840779,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7272": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 28,
+      "winning_seed": 770730,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7288": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 930842,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7286": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 35,
+      "winning_seed": 910828,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7291": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 30,
+      "winning_seed": 960863,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7277": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 28,
+      "winning_seed": 820765,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7294": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 30,
+      "winning_seed": 990884,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7287": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 33,
+      "winning_seed": 920835,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7295": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 888,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7293": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 20,
+      "winning_seed": 980877,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7283": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 26,
+      "winning_seed": 880807,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7274": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 26,
+      "winning_seed": 790744,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7298": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 23,
+      "winning_seed": 30909,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7297": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 20902,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7300": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 30,
+      "winning_seed": 50923,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7296": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 26,
+      "winning_seed": 10895,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7290": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 28,
+      "winning_seed": 950856,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7285": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 27,
+      "winning_seed": 900821,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7292": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 35,
+      "winning_seed": 970870,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7289": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 31,
+      "winning_seed": 940849,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "7299": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 25,
+      "winning_seed": 40916,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     }
   },
   "stats": {
-    "total_won": 7199,
-    "total_tested": 7199,
+    "total_won": 7300,
+    "total_tested": 7300,
     "win_rate": 100.0
   },
   "levels_1_2500_won": 2500,
