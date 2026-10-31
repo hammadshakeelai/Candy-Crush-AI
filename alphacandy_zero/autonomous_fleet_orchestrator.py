@@ -47,7 +47,7 @@ def get_cmd_output(cmd, timeout=15):
 
 def check_local_strike():
     """Ensure local multi-core fortress assault is active."""
-    code, out, _ = get_cmd_output(["pgrep", "-f", "alphacandy_zero/local_mastery_strike.py"])
+    code, out, _ = get_cmd_output(["pgrep", "-f", "local_mastery_strike.py"])
     if code == 0 and out:
         pids = out.split()
         return "RUNNING", f"{len(pids)} worker processes active"
@@ -62,7 +62,13 @@ def check_local_strike():
         py = sys.executable
 
     with open(log_path, "a") as f_out:
-        p = subprocess.Popen([py, str(strike_script)], stdout=f_out, stderr=subprocess.STDOUT, cwd=str(REPO_ROOT))
+        p = subprocess.Popen(
+            [py, str(strike_script)],
+            stdout=f_out,
+            stderr=subprocess.STDOUT,
+            cwd=str(REPO_ROOT),
+            start_new_session=True,
+        )
     
     return "LAUNCHED", f"PID {p.pid} logging to {log_path.name}"
 

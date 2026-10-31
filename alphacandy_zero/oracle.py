@@ -516,6 +516,13 @@ def _package_oracle_result(
         else np.zeros(81, bool)
     )
     samples = []
+    titan_samples = []
+    try:
+        from models.spatial_transformer_net import encode_spatial_board_tensor
+        has_titan_enc = True
+    except Exception:
+        has_titan_enc = False
+
     for st, legal, a_idx in node.history:
         planes, g = encode_state(st, init_obj, legal)
         pi = np.zeros(NUM_ACTIONS, np.float32)
@@ -531,6 +538,13 @@ def _package_oracle_result(
             "jmask": jel_now,
             "jtgt": jel_now & (~final_jelly),
         })
+        if won and has_titan_enc:
+            titan_samples.append({
+                "state": encode_spatial_board_tensor(st),
+                "action": int(a_idx),
+                "win_target": 1.0,
+                "move_ratio": float(st.moves_left) / float(max(1, cfg.moves_limit)),
+            })
     return {
         "level_id": cfg.level_id,
         "won": won,
@@ -545,6 +559,7 @@ def _package_oracle_result(
         "elapsed_sec": round(elapsed, 2),
         "diagnosis": diag.__dict__,
         "samples": samples,
+        "titan_samples": titan_samples,
     }
 
 

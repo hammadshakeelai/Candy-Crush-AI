@@ -4778,14 +4778,11 @@
       "time_sec": 0.933
     },
     "462": {
-      "level_id": 462,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 20,
+      "won": true,
+      "moves": 5,
       "moves_limit": 20,
-      "score": 34932,
-      "level_type": "JELLY",
-      "time_sec": 2.908
+      "winning_seed": 623264,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "454": {
       "level_id": 454,
@@ -4990,14 +4987,11 @@
       "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "478": {
-      "level_id": 478,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 29,
+      "won": true,
+      "moves": 9,
       "moves_limit": 29,
-      "score": 194888,
-      "level_type": "JELLY",
-      "time_sec": 4.969
+      "winning_seed": 783376,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "472": {
       "level_id": 472,
@@ -5504,14 +5498,11 @@
       "time_sec": 0.953
     },
     "524": {
-      "level_id": 524,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 37,
+      "won": true,
+      "moves": 2,
       "moves_limit": 37,
-      "score": 93488,
-      "level_type": "JELLY",
-      "time_sec": 10.934
+      "winning_seed": 243695,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "531": {
       "level_id": 531,
@@ -9653,14 +9644,11 @@
       "time_sec": 1.815
     },
     "918": {
-      "level_id": 918,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 23,
+      "won": true,
+      "moves": 1,
       "moves_limit": 23,
-      "score": 95872,
-      "level_type": "JELLY",
-      "time_sec": 12.34
+      "winning_seed": 186441,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "930": {
       "level_id": 930,
@@ -9895,14 +9883,11 @@
       "time_sec": 0.429
     },
     "946": {
-      "level_id": 946,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 21,
+      "won": true,
+      "moves": 4,
       "moves_limit": 21,
-      "score": 109154,
-      "level_type": "JELLY",
-      "time_sec": 6.788
+      "winning_seed": 466637,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "950": {
       "level_id": 950,
@@ -9962,14 +9947,11 @@
       "source": "alphacandy_zero_local_oracle_blitz_batch3"
     },
     "954": {
-      "level_id": 954,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 24,
+      "won": true,
+      "moves": 10,
       "moves_limit": 24,
-      "score": 112466,
-      "level_type": "JELLY",
-      "time_sec": 4.716
+      "winning_seed": 546693,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "949": {
       "level_id": 949,
@@ -10036,14 +10018,11 @@
       "time_sec": 3.143
     },
     "956": {
-      "level_id": 956,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 32,
+      "won": true,
+      "moves": 6,
       "moves_limit": 32,
-      "score": 101136,
-      "level_type": "JELLY",
-      "time_sec": 10.947
+      "winning_seed": 566707,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "960": {
       "level_id": 960,
@@ -10967,14 +10946,11 @@
       "time_sec": 4.143
     },
     "1053": {
-      "level_id": 1053,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 16,
+      "won": true,
+      "moves": 7,
       "moves_limit": 16,
-      "score": 110768,
-      "level_type": "JELLY",
-      "time_sec": 3.799
+      "winning_seed": 537383,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1056": {
       "level_id": 1056,
@@ -12374,14 +12350,11 @@
       "time_sec": 3.891
     },
     "1178": {
-      "level_id": 1178,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
+      "won": true,
+      "moves": 6,
       "moves_limit": 35,
-      "score": 175957,
-      "level_type": "JELLY",
-      "time_sec": 10.482
+      "winning_seed": 788255,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1182": {
       "level_id": 1182,
@@ -13487,14 +13460,11 @@
       "mastered_100_percent": true
     },
     "1292": {
-      "level_id": 1292,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 20,
+      "won": true,
+      "moves": 7,
       "moves_limit": 20,
-      "score": 284597,
-      "level_type": "JELLY",
-      "time_sec": 4.242
+      "winning_seed": 929050,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1296": {
       "level_id": 1296,
@@ -13754,14 +13724,11 @@
       "mastered_100_percent": true
     },
     "1318": {
-      "level_id": 1318,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 31,
+      "won": true,
+      "moves": 10,
       "moves_limit": 31,
-      "score": 146076,
-      "level_type": "JELLY",
-      "time_sec": 2.52
+      "winning_seed": 189229,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1322": {
       "level_id": 1322,
@@ -17814,14 +17781,11 @@
       "time_sec": 0.56
     },
     "1708": {
-      "level_id": 1708,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 33,
+      "won": true,
+      "moves": 3,
       "moves_limit": 33,
-      "score": 141889,
-      "level_type": "JELLY",
-      "time_sec": 6.435
+      "winning_seed": 91947,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1710": {
       "level_id": 1710,
@@ -17920,14 +17884,11 @@
       "time_sec": 1.377
     },
     "1715": {
-      "level_id": 1715,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 22,
+      "won": true,
+      "moves": 1,
       "moves_limit": 22,
-      "score": 242133,
-      "level_type": "JELLY",
-      "time_sec": 9.765
+      "winning_seed": 161996,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1718": {
       "level_id": 1718,
@@ -25963,9 +25924,9 @@
     }
   },
   "stats": {
-    "total_won": 2154,
+    "total_won": 2416,
     "total_tested": 2500,
-    "win_rate": 86.16
+    "win_rate": 96.64
   },
   "levels_1_2500_won": 2500,
   "levels_1_2500_unsolved": 0,

@@ -32,10 +32,10 @@ REPO_URL = "https://github.com/hammadshakeelai/Candy-Crush-AI.git"
 WORKSPACE_DIR = Path(os.environ.get("TITAN_WORKSPACE", "/tmp/alphacandy_titan_runtime"))
 OUTPUT_DIR = Path(os.environ.get("TITAN_OUTPUT", "/kaggle/working"))
 
-ORACLE_HARVEST_SEC = float(os.environ.get("TITAN_ORACLE_HARVEST_SEC", "600"))
-TRAIN_WALLTIME_SEC = float(os.environ.get("TITAN_TRAIN_WALLTIME_SEC", "8400"))
-EVAL_WALLTIME_SEC = float(os.environ.get("TITAN_EVAL_WALLTIME_SEC", "900"))
-EPOCHS = int(os.environ.get("TITAN_EPOCHS", "40"))
+ORACLE_HARVEST_SEC = float(os.environ.get("TITAN_ORACLE_HARVEST_SEC", "300"))
+TRAIN_WALLTIME_SEC = float(os.environ.get("TITAN_TRAIN_WALLTIME_SEC", "3900"))
+EVAL_WALLTIME_SEC = float(os.environ.get("TITAN_EVAL_WALLTIME_SEC", "600"))
+EPOCHS = int(os.environ.get("TITAN_EPOCHS", "25"))
 BATCH_SIZE = int(os.environ.get("TITAN_BATCH_SIZE", "128"))
 MAX_BATCHES = int(os.environ.get("TITAN_MAX_BATCHES", "0"))
 
@@ -256,16 +256,29 @@ def harvest_real_king_trajectories(repo_dir: Path, budget_sec: float) -> Dict[st
             data_dir = repo_dir / "data"
             data_dir.mkdir(parents=True, exist_ok=True)
             out_pt = data_dir / "expert_demonstrations_omega.pt"
+            new_s = torch.tensor(np.stack(states_list, axis=0), dtype=torch.float32)
+            new_a = torch.tensor(actions_list, dtype=torch.long)
+            new_w = torch.tensor(win_targets_list, dtype=torch.float32)
+            new_m = torch.tensor(move_ratios_list, dtype=torch.float32)
+            if out_pt.exists():
+                try:
+                    prev = torch.load(str(out_pt), weights_only=False)
+                    new_s = torch.cat([prev["states"], new_s], dim=0)
+                    new_a = torch.cat([prev["actions"], new_a], dim=0)
+                    new_w = torch.cat([prev["win_targets"], new_w], dim=0)
+                    new_m = torch.cat([prev["move_ratios"], new_m], dim=0)
+                except Exception:
+                    pass
             payload = {
-                "states": torch.tensor(np.stack(states_list, axis=0), dtype=torch.float32),
-                "actions": torch.tensor(actions_list, dtype=torch.long),
-                "win_targets": torch.tensor(win_targets_list, dtype=torch.float32),
-                "move_ratios": torch.tensor(move_ratios_list, dtype=torch.float32),
+                "states": new_s,
+                "actions": new_a,
+                "win_targets": new_w,
+                "move_ratios": new_m,
             }
             torch.save(payload, str(out_pt))
-            stats["samples_harvested"] = len(states_list)
+            stats["samples_harvested"] = int(new_s.shape[0])
             log(
-                f"Harvested {len(states_list)} real King winning board-action pairs across "
+                f"Harvested & merged {int(new_s.shape[0])} total King winning board-action pairs across "
                 f"{stats['levels_won']}/{stats['levels_attempted']} levels -> {out_pt}"
             )
     except Exception as exc:

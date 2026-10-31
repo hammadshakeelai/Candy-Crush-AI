@@ -29,6 +29,7 @@ UNSOLVED_PATH = Path("campaign/unsolved_levels_1_2500.json")
 PROGRESS_PATH = Path("campaign/progress.json")
 OUT_PATH = Path("runs/local_mastery_strike_results.json")
 GOLDEN_PATH = Path("runs/fortress_golden_trajectories.pt")
+TITAN_DEMO_PATH = Path("data/expert_demonstrations_omega.pt")
 
 DEFAULT_TARGETS = [
     606, 1351, 1349, 975, 1205, 953, 656, 967, 1390, 1488,
@@ -63,6 +64,7 @@ def _solve_single(lid: int):
             "winning_seed": res.get("winning_seed"),
             "elapsed_sec": round(elapsed, 2),
             "samples": res.get("samples", []) if res.get("won") else [],
+            "titan_samples": res.get("titan_samples", []) if res.get("won") else [],
             "error": None,
         }
     except Exception as e:
@@ -71,6 +73,7 @@ def _solve_single(lid: int):
             "won": False,
             "elapsed_sec": round(time.time() - t0, 2),
             "samples": [],
+            "titan_samples": [],
             "error": str(e),
         }
 
@@ -124,6 +127,7 @@ def main():
     with mp.Pool(processes=num_workers) as pool:
         for r in pool.imap_unordered(_solve_single, target_levels):
             samples = r.pop("samples", [])
+            titan_samples = r.pop("titan_samples", [])
             results.append(r)
             lid = r["level_id"]
             if r["won"]:
@@ -131,6 +135,26 @@ def main():
                 if samples:
                     golden_samples.extend(samples)
                     torch.save(golden_samples, GOLDEN_PATH)
+                if titan_samples:
+                    try:
+                        import numpy as np
+                        new_s = torch.tensor(np.stack([x["state"] for x in titan_samples], axis=0), dtype=torch.float32)
+                        new_a = torch.tensor([x["action"] for x in titan_samples], dtype=torch.long)
+                        new_w = torch.tensor([x["win_target"] for x in titan_samples], dtype=torch.float32)
+                        new_m = torch.tensor([x["move_ratio"] for x in titan_samples], dtype=torch.float32)
+                        if TITAN_DEMO_PATH.exists():
+                            prev = torch.load(TITAN_DEMO_PATH, weights_only=False)
+                            new_s = torch.cat([prev["states"], new_s], dim=0)
+                            new_a = torch.cat([prev["actions"], new_a], dim=0)
+                            new_w = torch.cat([prev["win_targets"], new_w], dim=0)
+                            new_m = torch.cat([prev["move_ratios"], new_m], dim=0)
+                        TITAN_DEMO_PATH.parent.mkdir(parents=True, exist_ok=True)
+                        torch.save(
+                            {"states": new_s, "actions": new_a, "win_targets": new_w, "move_ratios": new_m},
+                            TITAN_DEMO_PATH,
+                        )
+                    except Exception:
+                        pass
                 # Update unsolved registry and master progress.json immediately
                 if UNSOLVED_PATH.exists():
                     try:
