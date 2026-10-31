@@ -40767,18 +40767,918 @@
       "elapsed_sec": 25.72,
       "winning_seed": 379564,
       "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4550": {
+      "level": 4550,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 33,
+      "elapsed_sec": 1.29,
+      "winning_seed": 531757,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4548": {
+      "level": 4548,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 28,
+      "elapsed_sec": 1.36,
+      "winning_seed": 511743,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4544": {
+      "level": 4544,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "elapsed_sec": 1.41,
+      "winning_seed": 471715,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4549": {
+      "level": 4549,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 24,
+      "elapsed_sec": 1.47,
+      "winning_seed": 521750,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4551": {
+      "level": 4551,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 16,
+      "elapsed_sec": 1.56,
+      "winning_seed": 541764,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4545": {
+      "level": 4545,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "elapsed_sec": 1.62,
+      "winning_seed": 481722,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4553": {
+      "level": 4553,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 20,
+      "elapsed_sec": 2.04,
+      "winning_seed": 561778,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4555": {
+      "level": 4555,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 21,
+      "elapsed_sec": 1.07,
+      "winning_seed": 581792,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4547": {
+      "level": 4547,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 26,
+      "elapsed_sec": 2.68,
+      "winning_seed": 501736,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4557": {
+      "level": 4557,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 37,
+      "elapsed_sec": 1.02,
+      "winning_seed": 601806,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4559": {
+      "level": 4559,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 24,
+      "elapsed_sec": 1.05,
+      "winning_seed": 621820,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4558": {
+      "level": 4558,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "elapsed_sec": 1.18,
+      "winning_seed": 611813,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4556": {
+      "level": 4556,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 31,
+      "elapsed_sec": 1.6,
+      "winning_seed": 591799,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4554": {
+      "level": 4554,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "elapsed_sec": 2.13,
+      "winning_seed": 571785,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4561": {
+      "level": 4561,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 1.07,
+      "winning_seed": 641834,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4563": {
+      "level": 4563,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 24,
+      "elapsed_sec": 1.12,
+      "winning_seed": 661848,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4565": {
+      "level": 4565,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 31,
+      "elapsed_sec": 1.32,
+      "winning_seed": 681862,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4567": {
+      "level": 4567,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 15,
+      "elapsed_sec": 1.07,
+      "winning_seed": 701876,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4552": {
+      "level": 4552,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 24,
+      "elapsed_sec": 5.11,
+      "winning_seed": 551771,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4569": {
+      "level": 4569,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "elapsed_sec": 1.0,
+      "winning_seed": 721890,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4570": {
+      "level": 4570,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "elapsed_sec": 0.98,
+      "winning_seed": 731897,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4560": {
+      "level": 4560,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "elapsed_sec": 3.46,
+      "winning_seed": 631827,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4566": {
+      "level": 4566,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 26,
+      "elapsed_sec": 2.89,
+      "winning_seed": 691869,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4572": {
+      "level": 4572,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "elapsed_sec": 1.08,
+      "winning_seed": 751911,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4575": {
+      "level": 4575,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "elapsed_sec": 1.16,
+      "winning_seed": 781932,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4564": {
+      "level": 4564,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 19,
+      "elapsed_sec": 4.16,
+      "winning_seed": 671855,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4576": {
+      "level": 4576,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 19,
+      "elapsed_sec": 0.96,
+      "winning_seed": 791939,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4562": {
+      "level": 4562,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 21,
+      "elapsed_sec": 4.83,
+      "winning_seed": 651841,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4578": {
+      "level": 4578,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 15,
+      "elapsed_sec": 0.9,
+      "winning_seed": 811953,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4579": {
+      "level": 4579,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "elapsed_sec": 1.05,
+      "winning_seed": 821960,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4581": {
+      "level": 4581,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "elapsed_sec": 0.82,
+      "winning_seed": 841974,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4546": {
+      "level": 4546,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 26,
+      "elapsed_sec": 9.69,
+      "winning_seed": 491729,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4574": {
+      "level": 4574,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "elapsed_sec": 3.61,
+      "winning_seed": 771925,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4584": {
+      "level": 4584,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 21,
+      "elapsed_sec": 1.44,
+      "winning_seed": 871995,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4585": {
+      "level": 4585,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "elapsed_sec": 0.92,
+      "winning_seed": 882002,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4586": {
+      "level": 4586,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "elapsed_sec": 1.1,
+      "winning_seed": 892009,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4573": {
+      "level": 4573,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 21,
+      "elapsed_sec": 5.66,
+      "winning_seed": 761918,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4568": {
+      "level": 4568,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "elapsed_sec": 7.36,
+      "winning_seed": 711883,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4587": {
+      "level": 4587,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "elapsed_sec": 1.11,
+      "winning_seed": 902016,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4590": {
+      "level": 4590,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 17,
+      "elapsed_sec": 1.0,
+      "winning_seed": 932037,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4580": {
+      "level": 4580,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "elapsed_sec": 4.81,
+      "winning_seed": 831967,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4577": {
+      "level": 4577,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 26,
+      "elapsed_sec": 6.14,
+      "winning_seed": 801946,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4571": {
+      "level": 4571,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 20,
+      "elapsed_sec": 7.59,
+      "winning_seed": 741904,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4583": {
+      "level": 4583,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 33,
+      "elapsed_sec": 4.11,
+      "winning_seed": 861988,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4593": {
+      "level": 4593,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "elapsed_sec": 1.11,
+      "winning_seed": 962058,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4592": {
+      "level": 4592,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 16,
+      "elapsed_sec": 1.82,
+      "winning_seed": 952051,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4588": {
+      "level": 4588,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 32,
+      "elapsed_sec": 2.93,
+      "winning_seed": 912023,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4589": {
+      "level": 4589,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 15,
+      "elapsed_sec": 2.84,
+      "winning_seed": 922030,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4595": {
+      "level": 4595,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "elapsed_sec": 1.08,
+      "winning_seed": 982072,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4596": {
+      "level": 4596,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 28,
+      "elapsed_sec": 1.05,
+      "winning_seed": 992079,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4594": {
+      "level": 4594,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "elapsed_sec": 1.54,
+      "winning_seed": 972065,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4597": {
+      "level": 4597,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "elapsed_sec": 1.13,
+      "winning_seed": 2083,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4582": {
+      "level": 4582,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 21,
+      "elapsed_sec": 5.91,
+      "winning_seed": 851981,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4598": {
+      "level": 4598,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "elapsed_sec": 1.07,
+      "winning_seed": 12090,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4599": {
+      "level": 4599,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 21,
+      "elapsed_sec": 1.17,
+      "winning_seed": 22097,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4600": {
+      "level": 4600,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 23,
+      "elapsed_sec": 1.32,
+      "winning_seed": 32104,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4602": {
+      "level": 4602,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "elapsed_sec": 1.31,
+      "winning_seed": 52118,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4606": {
+      "level": 4606,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 21,
+      "elapsed_sec": 1.21,
+      "winning_seed": 92146,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4603": {
+      "level": 4603,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 32,
+      "elapsed_sec": 1.75,
+      "winning_seed": 62125,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4605": {
+      "level": 4605,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 18,
+      "elapsed_sec": 1.7,
+      "winning_seed": 82139,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4608": {
+      "level": 4608,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "elapsed_sec": 1.05,
+      "winning_seed": 112160,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4604": {
+      "level": 4604,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 19,
+      "elapsed_sec": 2.07,
+      "winning_seed": 72132,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4613": {
+      "level": 4613,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 29,
+      "elapsed_sec": 0.94,
+      "winning_seed": 162195,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4611": {
+      "level": 4611,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 24,
+      "elapsed_sec": 1.11,
+      "winning_seed": 142181,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4591": {
+      "level": 4591,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 24,
+      "elapsed_sec": 5.87,
+      "winning_seed": 942044,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4609": {
+      "level": 4609,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 27,
+      "elapsed_sec": 1.92,
+      "winning_seed": 122167,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4615": {
+      "level": 4615,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 35,
+      "elapsed_sec": 1.63,
+      "winning_seed": 182209,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4614": {
+      "level": 4614,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 26,
+      "elapsed_sec": 1.9,
+      "winning_seed": 172202,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4617": {
+      "level": 4617,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 29,
+      "elapsed_sec": 1.09,
+      "winning_seed": 202223,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4610": {
+      "level": 4610,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 34,
+      "elapsed_sec": 3.07,
+      "winning_seed": 132174,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4601": {
+      "level": 4601,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "elapsed_sec": 5.35,
+      "winning_seed": 42111,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4620": {
+      "level": 4620,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "elapsed_sec": 0.91,
+      "winning_seed": 232244,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4622": {
+      "level": 4622,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "elapsed_sec": 1.01,
+      "winning_seed": 252258,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4621": {
+      "level": 4621,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "elapsed_sec": 1.3,
+      "winning_seed": 242251,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4618": {
+      "level": 4618,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "elapsed_sec": 2.44,
+      "winning_seed": 212230,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4626": {
+      "level": 4626,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "elapsed_sec": 0.88,
+      "winning_seed": 292286,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4628": {
+      "level": 4628,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 33,
+      "elapsed_sec": 0.94,
+      "winning_seed": 312300,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4627": {
+      "level": 4627,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "elapsed_sec": 1.14,
+      "winning_seed": 302293,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4624": {
+      "level": 4624,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 23,
+      "elapsed_sec": 2.13,
+      "winning_seed": 272272,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4623": {
+      "level": 4623,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 21,
+      "elapsed_sec": 3.2,
+      "winning_seed": 262265,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4630": {
+      "level": 4630,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "elapsed_sec": 0.86,
+      "winning_seed": 332314,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4619": {
+      "level": 4619,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "elapsed_sec": 4.65,
+      "winning_seed": 222237,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4612": {
+      "level": 4612,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 28,
+      "elapsed_sec": 6.31,
+      "winning_seed": 152188,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4634": {
+      "level": 4634,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "elapsed_sec": 0.8,
+      "winning_seed": 372342,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4635": {
+      "level": 4635,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 16,
+      "elapsed_sec": 0.98,
+      "winning_seed": 382349,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4616": {
+      "level": 4616,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 33,
+      "elapsed_sec": 6.86,
+      "winning_seed": 192216,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4637": {
+      "level": 4637,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "elapsed_sec": 0.9,
+      "winning_seed": 402363,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4638": {
+      "level": 4638,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "elapsed_sec": 0.89,
+      "winning_seed": 412370,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4640": {
+      "level": 4640,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 33,
+      "elapsed_sec": 0.93,
+      "winning_seed": 432384,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4607": {
+      "level": 4607,
+      "won": true,
+      "moves_used": 6,
+      "moves_limit": 27,
+      "elapsed_sec": 10.73,
+      "winning_seed": 102153,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4625": {
+      "level": 4625,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "elapsed_sec": 6.74,
+      "winning_seed": 282279,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4642": {
+      "level": 4642,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "elapsed_sec": 0.91,
+      "winning_seed": 452398,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4629": {
+      "level": 4629,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 24,
+      "elapsed_sec": 5.96,
+      "winning_seed": 322307,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4633": {
+      "level": 4633,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 29,
+      "elapsed_sec": 5.98,
+      "winning_seed": 362335,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4636": {
+      "level": 4636,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 23,
+      "elapsed_sec": 5.75,
+      "winning_seed": 392356,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4641": {
+      "level": 4641,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "elapsed_sec": 3.88,
+      "winning_seed": 442391,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4639": {
+      "level": 4639,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "elapsed_sec": 4.45,
+      "winning_seed": 422377,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4631": {
+      "level": 4631,
+      "won": true,
+      "moves_used": 9,
+      "moves_limit": 25,
+      "elapsed_sec": 7.62,
+      "winning_seed": 342321,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4643": {
+      "level": 4643,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 26,
+      "elapsed_sec": 3.71,
+      "winning_seed": 462405,
+      "timestamp": "2026-10-31T18:12:00Z"
+    },
+    "4632": {
+      "level": 4632,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 26,
+      "elapsed_sec": 8.0,
+      "winning_seed": 352328,
+      "timestamp": "2026-10-31T18:12:00Z"
     }
   },
   "stats": {
-    "total_won": 4543,
-    "total_tested": 4543,
+    "total_won": 4643,
+    "total_tested": 4643,
     "win_rate": 100.0
   },
   "levels_1_2500_won": 2500,
   "levels_1_2500_unsolved": 0,
   "levels_1_2500_win_rate_pct": 100.0,
-  "global_levels_won": 4543,
-  "total_solved": 4543,
+  "global_levels_won": 4643,
+  "total_solved": 4643,
   "total_levels": 3550,
   "win_rate_percent": 100.0,
   "solved_levels": [
