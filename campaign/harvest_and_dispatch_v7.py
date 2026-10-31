@@ -26,9 +26,9 @@ MASTER_CKPT = REPO_ROOT / "checkpoints" / "alphacandy_titan_master.pt"
 GPU_DEPLOY_DIR = REPO_ROOT / "kaggle_deploy" / "alphacandy_titan_gpu_trainer"
 
 
-def get_cmd(cmd):
+def get_cmd(cmd, timeout=900):
     try:
-        r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=120)
+        r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=timeout)
         return r.returncode, r.stdout.strip(), r.stderr.strip()
     except Exception as e:
         return -1, "", str(e)
@@ -54,14 +54,15 @@ def main():
     # Locate downloaded master weights
     found_ckpt = None
     for p in HARVEST_DIR.rglob("alphacandy_titan_master.pt"):
-        found_ckpt = p
-        break
+        if p.stat().st_size > 100 * 1024 * 1024:
+            found_ckpt = p
+            break
 
     if found_ckpt and found_ckpt.exists():
         print(f"Updating local master checkpoint: {MASTER_CKPT} ({found_ckpt.stat().st_size / (1024*1024):.1f} MB)...")
         shutil.copy2(found_ckpt, MASTER_CKPT)
     else:
-        print("[Warning] alphacandy_titan_master.pt not found in harvest output!")
+        print("[Warning] Full alphacandy_titan_master.pt (>100MB) not found in harvest output; preserving existing checkpoint.")
 
     # Read and print summary metrics
     summary_file = HARVEST_DIR / "titan_gpu_summary.json"
