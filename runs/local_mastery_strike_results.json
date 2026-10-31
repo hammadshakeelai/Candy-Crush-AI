@@ -1,11 +1,21 @@
 {
-  "total_targets": 47,
-  "evaluated_count": 27,
-  "won_count": 27,
+  "total_targets": 57,
+  "evaluated_count": 57,
+  "won_count": 57,
   "won_levels": [
+    4944,
+    4945,
     4946,
+    4947,
     4948,
+    4949,
+    4950,
+    4951,
+    4952,
+    4953,
     4954,
+    4955,
+    4956,
     4957,
     4958,
     4959,
@@ -26,32 +36,140 @@
     4974,
     4975,
     4976,
+    4977,
     4978,
+    4979,
     4980,
+    4981,
+    4982,
+    4983,
     4984,
-    4985
+    4985,
+    4986,
+    4987,
+    4988,
+    4989,
+    4990,
+    4991,
+    4992,
+    4993,
+    4994,
+    4995,
+    4996,
+    4997,
+    4998,
+    4999,
+    5000
   ],
   "results": [
     {
-      "level_id": 4959,
+      "level_id": 4947,
       "won": true,
-      "moves_used": 2,
-      "moves_limit": 19,
+      "moves_used": 1,
+      "moves_limit": 34,
       "remaining_objectives": 0,
-      "initial_objectives": 9360,
-      "winning_seed": 624608,
-      "elapsed_sec": 2.77,
+      "initial_objectives": 1,
+      "winning_seed": 504524,
+      "elapsed_sec": 1.42,
       "error": null
     },
     {
-      "level_id": 4960,
+      "level_id": 4950,
       "won": true,
-      "moves_used": 1,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "remaining_objectives": 0,
+      "initial_objectives": 12500,
+      "winning_seed": 534545,
+      "elapsed_sec": 1.46,
+      "error": null
+    },
+    {
+      "level_id": 4953,
+      "won": true,
+      "moves_used": 2,
       "moves_limit": 25,
       "remaining_objectives": 0,
       "initial_objectives": 1,
-      "winning_seed": 634615,
-      "elapsed_sec": 3.25,
+      "winning_seed": 564566,
+      "elapsed_sec": 1.44,
+      "error": null
+    },
+    {
+      "level_id": 4952,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 20,
+      "remaining_objectives": 0,
+      "initial_objectives": 147,
+      "winning_seed": 554559,
+      "elapsed_sec": 1.59,
+      "error": null
+    },
+    {
+      "level_id": 4945,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "remaining_objectives": 0,
+      "initial_objectives": 94,
+      "winning_seed": 484510,
+      "elapsed_sec": 1.9,
+      "error": null
+    },
+    {
+      "level_id": 4944,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 19,
+      "remaining_objectives": 0,
+      "initial_objectives": 11880,
+      "winning_seed": 474503,
+      "elapsed_sec": 2.11,
+      "error": null
+    },
+    {
+      "level_id": 4949,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 35,
+      "remaining_objectives": 0,
+      "initial_objectives": 150,
+      "winning_seed": 524538,
+      "elapsed_sec": 2.39,
+      "error": null
+    },
+    {
+      "level_id": 4951,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 24,
+      "remaining_objectives": 0,
+      "initial_objectives": 130,
+      "winning_seed": 544552,
+      "elapsed_sec": 2.32,
+      "error": null
+    },
+    {
+      "level_id": 4956,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 18,
+      "remaining_objectives": 0,
+      "initial_objectives": 118,
+      "winning_seed": 594587,
+      "elapsed_sec": 1.09,
+      "error": null
+    },
+    {
+      "level_id": 4955,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "remaining_objectives": 0,
+      "initial_objectives": 11040,
+      "winning_seed": 584580,
+      "elapsed_sec": 1.21,
       "error": null
     },
     {
@@ -62,7 +180,29 @@
       "remaining_objectives": 0,
       "initial_objectives": 124,
       "winning_seed": 604594,
-      "elapsed_sec": 3.17,
+      "elapsed_sec": 1.13,
+      "error": null
+    },
+    {
+      "level_id": 4959,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 19,
+      "remaining_objectives": 0,
+      "initial_objectives": 9360,
+      "winning_seed": 624608,
+      "elapsed_sec": 1.06,
+      "error": null
+    },
+    {
+      "level_id": 4960,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "remaining_objectives": 0,
+      "initial_objectives": 1,
+      "winning_seed": 634615,
+      "elapsed_sec": 1.11,
       "error": null
     },
     {
@@ -73,7 +213,7 @@
       "remaining_objectives": 0,
       "initial_objectives": 6000,
       "winning_seed": 674643,
-      "elapsed_sec": 1.43,
+      "elapsed_sec": 1.03,
       "error": null
     },
     {
@@ -84,7 +224,7 @@
       "remaining_objectives": 0,
       "initial_objectives": 106,
       "winning_seed": 684650,
-      "elapsed_sec": 1.81,
+      "elapsed_sec": 1.05,
       "error": null
     },
     {
@@ -95,18 +235,7 @@
       "remaining_objectives": 0,
       "initial_objectives": 1,
       "winning_seed": 694657,
-      "elapsed_sec": 2.23,
-      "error": null
-    },
-    {
-      "level_id": 4968,
-      "won": true,
-      "moves_used": 1,
-      "moves_limit": 22,
-      "remaining_objectives": 0,
-      "initial_objectives": 110,
-      "winning_seed": 714671,
-      "elapsed_sec": 1.34,
+      "elapsed_sec": 0.83,
       "error": null
     },
     {
@@ -117,7 +246,18 @@
       "remaining_objectives": 0,
       "initial_objectives": 64,
       "winning_seed": 704664,
-      "elapsed_sec": 2.07,
+      "elapsed_sec": 1.21,
+      "error": null
+    },
+    {
+      "level_id": 4968,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "remaining_objectives": 0,
+      "initial_objectives": 110,
+      "winning_seed": 714671,
+      "elapsed_sec": 0.86,
       "error": null
     },
     {
@@ -128,7 +268,7 @@
       "remaining_objectives": 0,
       "initial_objectives": 13440,
       "winning_seed": 724678,
-      "elapsed_sec": 1.77,
+      "elapsed_sec": 1.03,
       "error": null
     },
     {
@@ -139,29 +279,7 @@
       "remaining_objectives": 0,
       "initial_objectives": 122,
       "winning_seed": 744692,
-      "elapsed_sec": 1.12,
-      "error": null
-    },
-    {
-      "level_id": 4972,
-      "won": true,
-      "moves_used": 1,
-      "moves_limit": 22,
-      "remaining_objectives": 0,
-      "initial_objectives": 4000,
-      "winning_seed": 754699,
-      "elapsed_sec": 1.22,
-      "error": null
-    },
-    {
-      "level_id": 4970,
-      "won": true,
-      "moves_used": 2,
-      "moves_limit": 30,
-      "remaining_objectives": 0,
-      "initial_objectives": 80,
-      "winning_seed": 734685,
-      "elapsed_sec": 2.59,
+      "elapsed_sec": 0.79,
       "error": null
     },
     {
@@ -172,51 +290,29 @@
       "remaining_objectives": 0,
       "initial_objectives": 129,
       "winning_seed": 574573,
-      "elapsed_sec": 10.66,
+      "elapsed_sec": 5.26,
       "error": null
     },
     {
-      "level_id": 4975,
-      "won": true,
-      "moves_used": 2,
-      "moves_limit": 26,
-      "remaining_objectives": 0,
-      "initial_objectives": 1,
-      "winning_seed": 784720,
-      "elapsed_sec": 1.25,
-      "error": null
-    },
-    {
-      "level_id": 4973,
-      "won": true,
-      "moves_used": 5,
-      "moves_limit": 24,
-      "remaining_objectives": 0,
-      "initial_objectives": 62,
-      "winning_seed": 764706,
-      "elapsed_sec": 3.42,
-      "error": null
-    },
-    {
-      "level_id": 4976,
-      "won": true,
-      "moves_used": 2,
-      "moves_limit": 26,
-      "remaining_objectives": 0,
-      "initial_objectives": 118,
-      "winning_seed": 794727,
-      "elapsed_sec": 1.11,
-      "error": null
-    },
-    {
-      "level_id": 4978,
+      "level_id": 4972,
       "won": true,
       "moves_used": 1,
-      "moves_limit": 18,
+      "moves_limit": 22,
       "remaining_objectives": 0,
-      "initial_objectives": 20,
-      "winning_seed": 814741,
-      "elapsed_sec": 1.22,
+      "initial_objectives": 4000,
+      "winning_seed": 754699,
+      "elapsed_sec": 0.82,
+      "error": null
+    },
+    {
+      "level_id": 4970,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 30,
+      "remaining_objectives": 0,
+      "initial_objectives": 80,
+      "winning_seed": 734685,
+      "elapsed_sec": 1.47,
       "error": null
     },
     {
@@ -227,18 +323,29 @@
       "remaining_objectives": 0,
       "initial_objectives": 104,
       "winning_seed": 494517,
-      "elapsed_sec": 13.34,
+      "elapsed_sec": 7.87,
       "error": null
     },
     {
-      "level_id": 4961,
+      "level_id": 4976,
       "won": true,
-      "moves_used": 6,
-      "moves_limit": 29,
+      "moves_used": 2,
+      "moves_limit": 26,
       "remaining_objectives": 0,
-      "initial_objectives": 101,
-      "winning_seed": 644622,
-      "elapsed_sec": 13.9,
+      "initial_objectives": 118,
+      "winning_seed": 794727,
+      "elapsed_sec": 1.08,
+      "error": null
+    },
+    {
+      "level_id": 4975,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "remaining_objectives": 0,
+      "initial_objectives": 1,
+      "winning_seed": 784720,
+      "elapsed_sec": 1.3,
       "error": null
     },
     {
@@ -249,18 +356,29 @@
       "remaining_objectives": 0,
       "initial_objectives": 140,
       "winning_seed": 514531,
-      "elapsed_sec": 14.12,
+      "elapsed_sec": 9.2,
       "error": null
     },
     {
-      "level_id": 4962,
+      "level_id": 4978,
       "won": true,
-      "moves_used": 7,
+      "moves_used": 1,
+      "moves_limit": 18,
+      "remaining_objectives": 0,
+      "initial_objectives": 20,
+      "winning_seed": 814741,
+      "elapsed_sec": 1.05,
+      "error": null
+    },
+    {
+      "level_id": 4973,
+      "won": true,
+      "moves_used": 5,
       "moves_limit": 24,
       "remaining_objectives": 0,
-      "initial_objectives": 130,
-      "winning_seed": 654629,
-      "elapsed_sec": 14.29,
+      "initial_objectives": 62,
+      "winning_seed": 764706,
+      "elapsed_sec": 2.85,
       "error": null
     },
     {
@@ -271,7 +389,7 @@
       "remaining_objectives": 0,
       "initial_objectives": 73,
       "winning_seed": 614601,
-      "elapsed_sec": 14.53,
+      "elapsed_sec": 8.02,
       "error": null
     },
     {
@@ -282,18 +400,29 @@
       "remaining_objectives": 0,
       "initial_objectives": 6000,
       "winning_seed": 834755,
-      "elapsed_sec": 1.45,
+      "elapsed_sec": 0.95,
       "error": null
     },
     {
-      "level_id": 4985,
+      "level_id": 4961,
       "won": true,
-      "moves_used": 1,
-      "moves_limit": 27,
+      "moves_used": 6,
+      "moves_limit": 29,
       "remaining_objectives": 0,
-      "initial_objectives": 6000,
-      "winning_seed": 884790,
-      "elapsed_sec": 1.04,
+      "initial_objectives": 101,
+      "winning_seed": 644622,
+      "elapsed_sec": 7.99,
+      "error": null
+    },
+    {
+      "level_id": 4962,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 24,
+      "remaining_objectives": 0,
+      "initial_objectives": 130,
+      "winning_seed": 654629,
+      "elapsed_sec": 8.0,
       "error": null
     },
     {
@@ -304,7 +433,18 @@
       "remaining_objectives": 0,
       "initial_objectives": 9,
       "winning_seed": 874783,
-      "elapsed_sec": 1.27,
+      "elapsed_sec": 1.03,
+      "error": null
+    },
+    {
+      "level_id": 4985,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "remaining_objectives": 0,
+      "initial_objectives": 6000,
+      "winning_seed": 884790,
+      "elapsed_sec": 0.98,
       "error": null
     },
     {
@@ -315,7 +455,40 @@
       "remaining_objectives": 0,
       "initial_objectives": 84,
       "winning_seed": 774713,
-      "elapsed_sec": 6.31,
+      "elapsed_sec": 4.98,
+      "error": null
+    },
+    {
+      "level_id": 4986,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "remaining_objectives": 0,
+      "initial_objectives": 48,
+      "winning_seed": 894797,
+      "elapsed_sec": 1.03,
+      "error": null
+    },
+    {
+      "level_id": 4987,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 30,
+      "remaining_objectives": 0,
+      "initial_objectives": 6000,
+      "winning_seed": 904804,
+      "elapsed_sec": 1.29,
+      "error": null
+    },
+    {
+      "level_id": 4988,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 32,
+      "remaining_objectives": 0,
+      "initial_objectives": 148,
+      "winning_seed": 914811,
+      "elapsed_sec": 1.32,
       "error": null
     },
     {
@@ -326,7 +499,194 @@
       "remaining_objectives": 0,
       "initial_objectives": 106,
       "winning_seed": 664636,
-      "elapsed_sec": 16.11,
+      "elapsed_sec": 10.39,
+      "error": null
+    },
+    {
+      "level_id": 4982,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 20,
+      "remaining_objectives": 0,
+      "initial_objectives": 70,
+      "winning_seed": 854769,
+      "elapsed_sec": 3.67,
+      "error": null
+    },
+    {
+      "level_id": 4979,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 23,
+      "remaining_objectives": 0,
+      "initial_objectives": 84,
+      "winning_seed": 824748,
+      "elapsed_sec": 5.19,
+      "error": null
+    },
+    {
+      "level_id": 4981,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 30,
+      "remaining_objectives": 0,
+      "initial_objectives": 92,
+      "winning_seed": 844762,
+      "elapsed_sec": 4.45,
+      "error": null
+    },
+    {
+      "level_id": 4994,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 23,
+      "remaining_objectives": 0,
+      "initial_objectives": 138,
+      "winning_seed": 974853,
+      "elapsed_sec": 1.31,
+      "error": null
+    },
+    {
+      "level_id": 4995,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "remaining_objectives": 0,
+      "initial_objectives": 1,
+      "winning_seed": 984860,
+      "elapsed_sec": 1.03,
+      "error": null
+    },
+    {
+      "level_id": 4996,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 34,
+      "remaining_objectives": 0,
+      "initial_objectives": 83,
+      "winning_seed": 994867,
+      "elapsed_sec": 1.21,
+      "error": null
+    },
+    {
+      "level_id": 4997,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "remaining_objectives": 0,
+      "initial_objectives": 6000,
+      "winning_seed": 4871,
+      "elapsed_sec": 1.05,
+      "error": null
+    },
+    {
+      "level_id": 4989,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 29,
+      "remaining_objectives": 0,
+      "initial_objectives": 12,
+      "winning_seed": 924818,
+      "elapsed_sec": 4.19,
+      "error": null
+    },
+    {
+      "level_id": 4993,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 32,
+      "remaining_objectives": 0,
+      "initial_objectives": 108,
+      "winning_seed": 964846,
+      "elapsed_sec": 4.01,
+      "error": null
+    },
+    {
+      "level_id": 5000,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "remaining_objectives": 0,
+      "initial_objectives": 15240,
+      "winning_seed": 34892,
+      "elapsed_sec": 2.74,
+      "error": null
+    },
+    {
+      "level_id": 4999,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "remaining_objectives": 0,
+      "initial_objectives": 114,
+      "winning_seed": 24885,
+      "elapsed_sec": 4.8,
+      "error": null
+    },
+    {
+      "level_id": 4991,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 21,
+      "remaining_objectives": 0,
+      "initial_objectives": 132,
+      "winning_seed": 944832,
+      "elapsed_sec": 9.61,
+      "error": null
+    },
+    {
+      "level_id": 4977,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 28,
+      "remaining_objectives": 0,
+      "initial_objectives": 80,
+      "winning_seed": 804734,
+      "elapsed_sec": 15.08,
+      "error": null
+    },
+    {
+      "level_id": 4992,
+      "won": true,
+      "moves_used": 9,
+      "moves_limit": 24,
+      "remaining_objectives": 0,
+      "initial_objectives": 122,
+      "winning_seed": 954839,
+      "elapsed_sec": 11.06,
+      "error": null
+    },
+    {
+      "level_id": 4983,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 25,
+      "remaining_objectives": 0,
+      "initial_objectives": 134,
+      "winning_seed": 864776,
+      "elapsed_sec": 16.24,
+      "error": null
+    },
+    {
+      "level_id": 4990,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 29,
+      "remaining_objectives": 0,
+      "initial_objectives": 122,
+      "winning_seed": 934825,
+      "elapsed_sec": 14.54,
+      "error": null
+    },
+    {
+      "level_id": 4998,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 27,
+      "remaining_objectives": 0,
+      "initial_objectives": 24,
+      "winning_seed": 14878,
+      "elapsed_sec": 16.86,
       "error": null
     }
   ]
