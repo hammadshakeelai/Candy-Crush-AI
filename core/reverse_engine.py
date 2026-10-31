@@ -361,7 +361,7 @@ class ReverseCandyEngine:
             state.specials[r2, c2] = SpecialCandy.NONE
 
         # 2. Quiescence Loop (Cascades & Explosions)
-        while True:
+        while cascade_depth < 60:
             cleared_coords, specials_to_spawn = self._detect_matches(state)
             if not cleared_coords and not combo_handled:
                 break
@@ -841,7 +841,9 @@ class ReverseCandyEngine:
 
     def _collect_ingredients_at_bottom(self, state: ReverseEngineState) -> None:
         """Checks if ingredients reached the bottom-most active cell, collects them, and cascades column gravity."""
-        while True:
+        max_iters = 20
+        while max_iters > 0:
+            max_iters -= 1
             collected_any = False
             for c in range(state.width):
                 for r in range(state.height - 1, -1, -1):

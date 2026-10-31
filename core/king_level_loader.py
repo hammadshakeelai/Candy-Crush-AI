@@ -105,6 +105,8 @@ class KingLevelLoader:
         """Parses a King gameData dictionary into a LevelConfig."""
         move_limit = gd.get("moveLimit", 30)
         num_colors = gd.get("numberOfColours", 5)
+        if not num_colors or num_colors < 3:
+            num_colors = 5
         score_targets = gd.get("scoreTargets", [10000, 20000, 30000])
         target_score = score_targets[0] if score_targets else 10000
         game_mode = gd.get("gameModeName", "Classic moves")
@@ -270,16 +272,19 @@ class KingLevelLoader:
             entry = self._levels_cache[level_number]
             gd = entry.get("gameData", {})
             cfg = self._parse_game_data(level_number, gd)
-            # Reconcile with Master SQLite Database if available (for patched King move limits)
+            # Reconcile with Master SQLite Database if available (for patched King move limits & color counts)
             if os.path.exists(self.sqlite_path):
                 try:
                     conn = sqlite3.connect(self.sqlite_path)
                     c = conn.cursor()
-                    c.execute("SELECT move_limit FROM levels WHERE level_id = ?", (level_number,))
+                    c.execute("SELECT move_limit, num_colours FROM levels WHERE level_id = ?", (level_number,))
                     r = c.fetchone()
                     conn.close()
-                    if r and r[0] and r[0] > cfg.moves_limit:
-                        cfg.moves_limit = r[0]
+                    if r:
+                        if r[0] and r[0] > cfg.moves_limit:
+                            cfg.moves_limit = r[0]
+                        if r[1] and r[1] >= 3 and cfg.num_colors < 3:
+                            cfg.num_colors = r[1]
                 except Exception:
                     pass
             return cfg
@@ -300,7 +305,10 @@ class KingLevelLoader:
                 if has_raw and gd_json:
                     try:
                         gd = json.loads(gd_json)
-                        return self._parse_game_data(level_number, gd)
+                        cfg = self._parse_game_data(level_number, gd)
+                        if num_colors and num_colors >= 3 and cfg.num_colors < 3:
+                            cfg.num_colors = num_colors
+                        return cfg
                     except Exception:
                         pass
 
