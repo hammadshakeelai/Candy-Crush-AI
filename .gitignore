@@ -33,3 +33,4 @@ kaggle_models/**/*.pt
 output/
 output_results/
 
+data/expert_demonstrations_omega.pt
