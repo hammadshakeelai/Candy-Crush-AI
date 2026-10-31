@@ -177,7 +177,7 @@ The autonomous fleet orchestrator daemon ([`alphacandy_zero/autonomous_fleet_orc
 flowchart TD
     Cron["Autonomous 10-Min Scheduler (task-8920)"] --> Orchestrator["alphacandy_zero/autonomous_fleet_orchestrator.py"]
     
-    Orchestrator --> GPU["Tier 1: Kaggle Tesla T4 GPU<br>(alphacandy-titan-50m-gpu-mastery, Sprint v4)"]
+    Orchestrator --> GPU["Tier 1: Kaggle Tesla T4 GPU<br>(alphacandy-titan-50m-gpu-mastery, Sprint v8)"]
     Orchestrator --> CPU["Tier 2: Kaggle 5x 4-vCPU Fleet<br>(20 vCPUs + 150 GB RAM Total)"]
     Orchestrator --> GHA["Tier 3: GitHub Actions Cloud<br>(2-vCPU Headless Papermill Cloud Runner)"]
     Orchestrator --> Local["Tier 4: Local 12-Core CPU<br>(Multi-Processing Campaign Strike Daemon)"]
@@ -188,15 +188,16 @@ flowchart TD
     CPU --> C4["CPU-4: Oracle Shard 1501-2000 (Relaunched)"]
     CPU --> C5["CPU-5: Frontier 5000-7500"]
 
-    GPU --> Weights["checkpoints/alphacandy_titan_master.pt (151 MB)"]
-    CPU --> Datasets["data/expert_demonstrations_omega.pt (1,758 Transitions)"]
-    Local --> Campaign["campaign/progress.json (2,850 / 2,850 Won Flawlessly)"]
+    GPU --> Weights["checkpoints/alphacandy_titan_master.pt (152 MB, Kaggle Models Ready)"]
+    CPU --> Datasets["data/expert_demonstrations_omega.pt (2,116+ Transitions)"]
+    Local --> Campaign["campaign/progress.json (10,295 / 10,295 Won Flawlessly - 100.00%)"]
 ```
 
 ---
 
 ## 🔗 Related Documentation & Links
 - Return to Master Index: **[[00_Home_MOC]]**
+- Universal 10,295-Level Solvability Landmark: **[[10000_Levels_Grandmaster_Universal_Mastery_Conquest]]**
 - Flagship 79.30M Architecture: **[[AlphaCandy_Titan_79M_Architecture]]**
 - 100.0% Mastery & Fortress Conquest: **[[100_Percent_Mastery_Levels_1_to_2500_Fortress_Conquest]]**
 - Multi-Tier Cloud Orchestration: **[[Autonomous_Multi_Tier_Fleet_Orchestration]]**
