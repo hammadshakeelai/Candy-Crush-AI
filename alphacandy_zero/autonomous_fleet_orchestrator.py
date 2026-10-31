@@ -37,7 +37,7 @@ def log_event(event_type: str, data: dict):
     print(f"[{record['timestamp']}] [{event_type}] {data}", flush=True)
 
 
-def get_cmd_output(cmd, timeout=15):
+def get_cmd_output(cmd, timeout=35):
     try:
         res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=timeout)
         return res.returncode, res.stdout.strip(), res.stderr.strip()
