@@ -220,6 +220,10 @@ class KingLevelLoader:
         cannons = gd.get("cannons", [])
         ammo_cannons = gd.get("ammoCannons", [])
         frog_stomach = gd.get("frogStomachSize", 0) or 0
+        striped_spawn = int(gd.get("stripedCandySpawn", 0) or 0)
+        striped_max = int(gd.get("stripedCandyMax", 0) or 0)
+        wrapped_spawn = int(gd.get("wrappedCandySpawn", 0) or 0)
+        wrapped_max = int(gd.get("wrappedCandyMax", 0) or 0)
         evil_spawner = None
         if gd.get("evilSpawnerElements"):
             evil_spawner = {
@@ -248,7 +252,11 @@ class KingLevelLoader:
             cannons=cannons,
             ammo_cannons=ammo_cannons,
             evil_spawner_config=evil_spawner,
-            frog_stomach_size=frog_stomach
+            frog_stomach_size=frog_stomach,
+            striped_candy_spawn=striped_spawn,
+            striped_candy_max=striped_max,
+            wrapped_candy_spawn=wrapped_spawn,
+            wrapped_candy_max=wrapped_max,
         )
 
     def load_level(self, level_number: int) -> LevelConfig:

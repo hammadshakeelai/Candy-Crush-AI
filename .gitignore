@@ -24,6 +24,10 @@ data/apks/
 *.apk
 runs/alphacandy_zero_local/*.pt
 checkpoints/alphacandy_titan_master.pt
+campaign/harvest*/**/*.pt
+campaign/harvest*/**/*.pt*
+kaggle_deploy/src/*.pt
+kaggle_models/**/*.pt
 
 # Headless notebook execution outputs
 output/

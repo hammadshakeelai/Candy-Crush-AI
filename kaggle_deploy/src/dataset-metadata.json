@@ -1,9 +1,21 @@
 {
-  "title": "Candy Crush Grandmaster RL Engine",
+  "title": "Candy Crush Grandmaster RL Engine & 23,355 Level Database",
   "id": "hammadshakeelai/candy-crush-grandmaster-rl",
+  "subtitle": "23,355 King Level Blueprints, Bit-Accurate Engine & Expert Trajectories",
+  "description": "# 🍬 Candy Crush Grandmaster RL Engine & 23,355 Official Level Master Database\n\n## 🌟 Overview\nThis dataset provides the definitive, production-grade research and reinforcement learning benchmark suite for **Candy Crush Saga** and Match-3 combinatorial planning. It unifies **23,355 official King level blueprints**, bit-accurate physics simulation assets, 20-channel expert demonstration tensors, and pre-trained neural solver weights.\n\n---\\n\n## 📦 Dataset Contents\n\n1. **`candycrush_master_levels.sqlite` (57.6 MB)**:\n   - Complete master SQLite database indexing **23,355 official levels**.\n   - Contains 13,435 raw tile maps, 23,045 verified move limits, blocker distributions, objective goals, dispenser positions, and official King token classifications (`'047'` Wrapped, `'048'` Color Bomb, `'071'` Striped Cannons, `'072'` Wrapped Cannons).\n\n2. **`expert_demonstrations_omega.pt` (30.1 MB)**:\n   - PyTorch tensor dataset containing **1,758+ authentic grandmaster winning transitions** encoded in canonical 20-channel `(20, 9, 9)` state representations.\n   - Includes state-action-reward-next_state tuples harvested from 100.0% solved campaigns.\n\n3. **`fortress_golden_trajectories.pt` (17.2 MB)**:\n   - Determinized golden winning trajectories for the 26 stubborn fortress levels conquered by the AlphaCandy-Zero Clairvoyant Beam Oracle.\n\n4. **`candycrush_eda_dataset.csv` (1.9 MB)**:\n   - Comprehensive tabular feature matrix across 10,298 King levels including move limits, color counts, game modes, blocker counts, and empirical difficulty scores.\n\n5. **`candycrush_master_levels.json` (13.3 MB) & `configs_v1.208.json` (22.5 MB)**:\n   - Full JSON level geometry and King production CDN dumps.\n\n6. **`king_benchmark_300.json` & `king_benchmark_500.json`**:\n   - Standardized evaluation benchmark splits for reproducible AI playtesting.\n\n7. **`titan_hard_level_evaluation.json`**:\n   - Empirical results on the 18 hard and fortress benchmark suite achieved by the flagship `AlphaCandyTitanNet` (**18 / 18 WON, 100.0%**).\n\n8. **`candy_crush_pkg.zip` (1.5 MB)**:\n   - Complete modular Python package containing the bit-accurate King physics engine (`core/reverse_engine.py`), the 43-model experimental zoo (`models/zoo/`), 15 external creator baselines (`models/external_creators/`), and the 79.30M parameter `AlphaCandyTitanNet` architecture.\n\n9. **Official Model Weights on Kaggle Models Hub**:\n   - Flagship neural weights are registered and published on Kaggle Models Hub at `hammadshakeelai/alphacandy-match3-solvers/PyTorch/pytorch-titan-and-model-zoo`.\n\n---\\n\n## 🏛️ Citation & License\nReleased under the permissive **MIT License** for open combinatorial game AI and reinforcement learning research.",
   "licenses": [
     {
       "name": "mit"
     }
+  ],
+  "keywords": [
+    "reinforcement-learning",
+    "deep-learning",
+    "game-ai",
+    "candy-crush",
+    "neural-networks",
+    "transformers",
+    "mcts",
+    "dataset"
   ]
 }

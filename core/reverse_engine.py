@@ -94,6 +94,10 @@ class LevelConfig:
     ammo_cannons: Optional[List[Any]] = None
     evil_spawner_config: Optional[Dict[str, Any]] = None
     frog_stomach_size: int = 0
+    striped_candy_spawn: int = 0
+    striped_candy_max: int = 0
+    wrapped_candy_spawn: int = 0
+    wrapped_candy_max: int = 0
 
 
 class ReverseEngineState:
@@ -785,6 +789,20 @@ class ReverseCandyEngine:
                             has_cannon = state.config.cannons and (c in [6, 7] or len(state.config.cannons) > 0)
                             if has_cannon and random.random() < 0.35:
                                 state.specials[r, c] = SpecialCandy.JELLY_FISH
+                            elif getattr(state.config, "striped_candy_spawn", 0) > 0 and random.random() < 0.35:
+                                max_str = getattr(state.config, "striped_candy_max", 4) or 4
+                                cur_str = int(np.sum((state.specials == SpecialCandy.STRIPED_HORIZONTAL) | (state.specials == SpecialCandy.STRIPED_VERTICAL)))
+                                if cur_str < max_str:
+                                    state.specials[r, c] = random.choice([SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL])
+                                else:
+                                    state.specials[r, c] = SpecialCandy.NONE
+                            elif getattr(state.config, "wrapped_candy_spawn", 0) > 0 and random.random() < 0.25:
+                                max_wr = getattr(state.config, "wrapped_candy_max", 4) or 4
+                                cur_wr = int(np.sum(state.specials == SpecialCandy.WRAPPED))
+                                if cur_wr < max_wr:
+                                    state.specials[r, c] = SpecialCandy.WRAPPED
+                                else:
+                                    state.specials[r, c] = SpecialCandy.NONE
                             else:
                                 state.specials[r, c] = SpecialCandy.NONE
 

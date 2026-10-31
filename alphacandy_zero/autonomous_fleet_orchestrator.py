@@ -76,10 +76,15 @@ def check_local_strike():
 def check_kaggle_gpu():
     """Check Kaggle GPU flagship trainer status."""
     py = str(REPO_ROOT / "venv" / "bin" / "kaggle")
-    code, out, _ = get_cmd_output([py, "kernels", "status", "hammadshakeelai/alphacandy-titan-50m-gpu-mastery"])
+    code, out, _ = get_cmd_output([py, "kernels", "status", "hammadshakeelai/alphacandy-titan-50m-gpu-mastery"], timeout=45)
     if "RUNNING" in out:
         return "RUNNING", "GPU sprint active"
     elif "COMPLETE" in out:
+        gpu_dir = REPO_ROOT / "kaggle_deploy" / "alphacandy_titan_gpu_trainer"
+        if gpu_dir.exists():
+            r_code, r_out, _ = get_cmd_output([py, "kernels", "push", "-p", str(gpu_dir)], timeout=60)
+            if r_code == 0:
+                return "RELAUNCHED", "GPU sprint completed; automatically dispatched next sprint on Tesla T4"
         return "COMPLETE", "GPU sprint finished; ready for harvest or next sprint"
     elif "QUEUED" in out:
         return "QUEUED", "GPU kernel queued"
@@ -103,7 +108,7 @@ def check_and_maintain_kaggle_cpu_fleet():
     active_count = 0
     
     for name, slug, deploy_dir in KAGGLE_CPU_FLEET:
-        code, out, _ = get_cmd_output([py, "kernels", "status", slug], timeout=15)
+        code, out, _ = get_cmd_output([py, "kernels", "status", slug], timeout=45)
         st = "UNKNOWN"
         if "RUNNING" in out:
             st = "RUNNING"
@@ -116,7 +121,7 @@ def check_and_maintain_kaggle_cpu_fleet():
             # Auto-relaunch completed worker so all 5 instances stay active continuously (30-50 min runs)
             deploy_path = REPO_ROOT / deploy_dir
             if deploy_path.exists():
-                r_code, r_out, _ = get_cmd_output([py, "kernels", "push", "-p", str(deploy_path)], timeout=30)
+                r_code, r_out, _ = get_cmd_output([py, "kernels", "push", "-p", str(deploy_path)], timeout=60)
                 if r_code == 0:
                     st = "RELAUNCHED"
                     active_count += 1
