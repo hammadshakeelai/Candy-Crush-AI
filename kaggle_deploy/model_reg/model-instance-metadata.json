@@ -1,0 +1,14 @@
+{
+  "ownerSlug": "INSERT_OWNER_SLUG_HERE",
+  "modelSlug": "INSERT_EXISTING_MODEL_SLUG_HERE",
+  "instanceSlug": "INSERT_INSTANCE_SLUG_HERE",
+  "framework": "INSERT_FRAMEWORK_HERE",
+  "overview": "",
+  "usage": "# Model Format\n\n# Training Data\n\n# Model Inputs\n\n# Model Outputs\n\n# Model Usage\n\n# Fine-tuning\n\n# Changelog\n",
+  "licenseName": "Apache 2.0",
+  "fineTunable": false,
+  "trainingData": [],
+  "modelInstanceType": "Unspecified",
+  "baseModelInstanceId": 0,
+  "externalBaseModelUrl": ""
+}

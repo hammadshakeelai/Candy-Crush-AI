@@ -1,0 +1,326 @@
+{
+  "model": "AlphaCandyTitanNet (79.30M)",
+  "checkpoint": "checkpoints/alphacandy_titan_master.pt",
+  "total_levels": 18,
+  "won_count": 18,
+  "win_rate_pct": 100.0,
+  "elapsed_sec": 346.09,
+  "results": [
+    {
+      "level_id": 65,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 2,
+      "moves_limit": 17,
+      "objectives_remaining": 0,
+      "final_score": 19824,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.6260647773742676,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 2
+      }
+    },
+    {
+      "level_id": 125,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "objectives_remaining": 0,
+      "final_score": 32772,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.08147430419921875,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 147,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "objectives_remaining": 0,
+      "final_score": 11331,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.028925657272338867,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 181,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 10,
+      "moves_limit": 30,
+      "objectives_remaining": 0,
+      "final_score": 318367,
+      "mean_epistemic_confidence": 0.9431556344032288,
+      "duration_sec": 12.62522554397583,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 1,
+        "MIRACLE_UPPER_CVAR85": 6,
+        "IMMEDIATE_WIN": 3
+      }
+    },
+    {
+      "level_id": 235,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 31,
+      "moves_limit": 32,
+      "objectives_remaining": 0,
+      "final_score": 406164,
+      "mean_epistemic_confidence": 0.9184317146578143,
+      "duration_sec": 11.881908893585205,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 1,
+        "MIRACLE_UPPER_CVAR85": 30,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 272,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 2,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "objectives_remaining": 0,
+      "final_score": 395959,
+      "mean_epistemic_confidence": 0.9181066751480103,
+      "duration_sec": 72.32845783233643,
+      "regime_counts": {
+        "SAFE_CVAR20": 20,
+        "NORMAL_EV": 6,
+        "MIRACLE_UPPER_CVAR85": 1,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 279,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 25,
+      "moves_limit": 30,
+      "objectives_remaining": 0,
+      "final_score": 67643,
+      "mean_epistemic_confidence": 0.9177354315916697,
+      "duration_sec": 22.212668895721436,
+      "regime_counts": {
+        "SAFE_CVAR20": 24,
+        "NORMAL_EV": 5,
+        "MIRACLE_UPPER_CVAR85": 1,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 300,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 14,
+      "moves_limit": 22,
+      "objectives_remaining": 0,
+      "final_score": 278078,
+      "mean_epistemic_confidence": 0.9235451476914542,
+      "duration_sec": 5.047560453414917,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 5,
+        "MIRACLE_UPPER_CVAR85": 8,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 350,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 4,
+      "moves_limit": 20,
+      "objectives_remaining": 0,
+      "final_score": 86616,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.3492269515991211,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 4
+      }
+    },
+    {
+      "level_id": 400,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 2,
+      "moves_limit": 31,
+      "objectives_remaining": 0,
+      "final_score": 8491,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.20978617668151855,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 2
+      }
+    },
+    {
+      "level_id": 606,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "objectives_remaining": 0,
+      "final_score": 10752,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.03314661979675293,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 656,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 34,
+      "moves_limit": 35,
+      "objectives_remaining": 0,
+      "final_score": 320605,
+      "mean_epistemic_confidence": 0.9179562773023333,
+      "duration_sec": 81.28822374343872,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 2,
+        "MIRACLE_UPPER_CVAR85": 33,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 953,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 2,
+      "moves_used": 27,
+      "moves_limit": 30,
+      "objectives_remaining": 0,
+      "final_score": 165900,
+      "mean_epistemic_confidence": 0.9206705269990144,
+      "duration_sec": 37.055274963378906,
+      "regime_counts": {
+        "SAFE_CVAR20": 6,
+        "NORMAL_EV": 4,
+        "MIRACLE_UPPER_CVAR85": 16,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 975,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 43,
+      "moves_limit": 43,
+      "objectives_remaining": 0,
+      "final_score": 236055,
+      "mean_epistemic_confidence": 0.9173334227051846,
+      "duration_sec": 18.74659514427185,
+      "regime_counts": {
+        "SAFE_CVAR20": 18,
+        "NORMAL_EV": 13,
+        "MIRACLE_UPPER_CVAR85": 12,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 1205,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 12,
+      "moves_limit": 27,
+      "objectives_remaining": 0,
+      "final_score": 119422,
+      "mean_epistemic_confidence": 0.9244460860888163,
+      "duration_sec": 5.442306280136108,
+      "regime_counts": {
+        "SAFE_CVAR20": 7,
+        "NORMAL_EV": 3,
+        "MIRACLE_UPPER_CVAR85": 1,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 1349,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 3,
+      "moves_used": 15,
+      "moves_limit": 20,
+      "objectives_remaining": 0,
+      "final_score": 161012,
+      "mean_epistemic_confidence": 0.9177821785211563,
+      "duration_sec": 47.065670013427734,
+      "regime_counts": {
+        "SAFE_CVAR20": 8,
+        "NORMAL_EV": 9,
+        "MIRACLE_UPPER_CVAR85": 3,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 1351,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 2,
+      "moves_used": 8,
+      "moves_limit": 32,
+      "objectives_remaining": 0,
+      "final_score": 38498,
+      "mean_epistemic_confidence": 0.9276415705680847,
+      "duration_sec": 29.925919771194458,
+      "regime_counts": {
+        "SAFE_CVAR20": 7,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 2437,
+      "category": "FORTRESS",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 29,
+      "moves_limit": 30,
+      "objectives_remaining": 0,
+      "mean_epistemic_confidence": 0.922
+    }
+  ]
+}

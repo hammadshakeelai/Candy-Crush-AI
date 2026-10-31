@@ -28,6 +28,9 @@ campaign/harvest*/**/*.pt
 campaign/harvest*/**/*.pt*
 kaggle_deploy/src/*.pt
 kaggle_models/**/*.pt
+kaggle_deploy/model_instance/checkpoints/
+kaggle_deploy/model_instance/models/
+kaggle_models/
 
 # Headless notebook execution outputs
 output/
