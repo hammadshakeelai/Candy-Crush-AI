@@ -26,11 +26,12 @@ os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
 SHARD_LABEL = "1501-2000"
-TARGET_LEVELS = [1794, 1958]
-BEAM_WIDTH = 24
+PRIORITY_TARGETS = [1794, 1958, 1515, 1530, 1550, 1575, 1600, 1650, 1700, 1750, 1800, 1850, 1900, 1950, 2000]
+TARGET_LEVELS = PRIORITY_TARGETS + [lvl for lvl in range(1501, 2001) if lvl not in PRIORITY_TARGETS]
+BEAM_WIDTH = 20
 MAX_BRANCH = 8
-NUM_SEEDS = 36
-MAX_WALLTIME_SEC = 1080.0  # 18 minutes strict safety cutoff
+NUM_SEEDS = 16
+MAX_WALLTIME_SEC = 2400.0  # 40 minutes extended safety cutoff (30-50 min target)
 
 KAGGLE_INPUT = Path("/kaggle/input")
 KAGGLE_WORKING = Path("/kaggle/working")

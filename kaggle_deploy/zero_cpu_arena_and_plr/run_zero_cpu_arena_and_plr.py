@@ -143,7 +143,7 @@ def run_external_creator_arena(out_dir: Path) -> dict:
 
 
 def run_alphacandy_zero_cpu_cycle(out_dir: Path) -> dict:
-    print("\n--- [Stage 3/3] Running AlphaCandy-Zero CPU Expert Iteration & Honest Eval ---", flush=True)
+    print("\n--- [Stage 3/3] Running AlphaCandy-Zero CPU Expert Iteration & Extended Multi-Seed Eval (~35-45 min) ---", flush=True)
     t0 = time.time()
     from alphacandy_zero.train import TrainConfig, AlphaCandyZeroTrainer
     from alphacandy_zero.evaluate import evaluate_levels, save_evaluation_report
@@ -151,13 +151,13 @@ def run_alphacandy_zero_cpu_cycle(out_dir: Path) -> dict:
     ckpt_dir = Path("/tmp/alphacandy_zero_ckpts")
     cfg = TrainConfig(
         preset="cpu",
-        levels=[1, 12, 25, 45, 70, 148, 201, 235, 272, 279, 300],
-        iterations=3,
-        episodes_per_iter=8,
-        train_steps_per_iter=16,
+        levels=[1, 12, 25, 45, 65, 70, 125, 147, 148, 181, 201, 235, 272, 279, 300, 350, 400],
+        iterations=12,
+        episodes_per_iter=20,
+        train_steps_per_iter=48,
         batch_size=32,
-        search_budget=16,
-        search_top_k=6,
+        search_budget=20,
+        search_top_k=8,
         near_miss_threshold=3,
         checkpoint_dir=str(ckpt_dir),
         device="cpu",
@@ -166,12 +166,12 @@ def run_alphacandy_zero_cpu_cycle(out_dir: Path) -> dict:
     history = trainer.run()
 
     eval_summary = evaluate_levels(
-        levels=[1, 25, 70, 148, 201, 235, 272, 279, 300],
-        seeds_per_level=3,
+        levels=[1, 25, 65, 70, 125, 148, 181, 201, 235, 272, 279, 300, 350, 400],
+        seeds_per_level=5,
         preset="cpu",
         checkpoint_path=str(ckpt_dir / "alphacandy_zero_cpu_latest.pt"),
-        search_budget=16,
-        search_top_k=6,
+        search_budget=24,
+        search_top_k=8,
         compare_legacy_master=True,
         device="cpu",
         verbose=True,

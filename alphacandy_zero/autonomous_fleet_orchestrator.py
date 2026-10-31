@@ -87,16 +87,47 @@ def check_kaggle_gpu():
         return "IDLE/UNKNOWN", out or "No status"
 
 
-def check_kaggle_cpu():
-    """Check Kaggle CPU mastery hunter status."""
+KAGGLE_CPU_FLEET = [
+    ("CPU-1 (Mastery Hunter)", "hammadshakeelai/alphacandy-mastery-hunter-100-percent", "kaggle_deploy/mastery_100_kernel"),
+    ("CPU-2 (Arena & PLR)", "hammadshakeelai/alphacandy-zero-cpu-arena-and-plr-trainer", "kaggle_deploy/zero_cpu_arena_and_plr"),
+    ("CPU-3 (Oracle 1001-1500)", "hammadshakeelai/alphacandy-zero-oracle-shard-1001-to-1500", "kaggle_deploy/zero_oracle_1001_1500"),
+    ("CPU-4 (Oracle 1501-2000)", "hammadshakeelai/alphacandy-zero-oracle-shard-1501-to-2000", "kaggle_deploy/zero_oracle_1501_2000"),
+    ("CPU-5 (Oracle 651-1000)", "hammadshakeelai/alphacandy-zero-oracle-shard-651-to-1000", "kaggle_deploy/zero_oracle_651_1000"),
+]
+
+
+def check_and_maintain_kaggle_cpu_fleet():
+    """Check all 5 Kaggle 4-vCPU instances and auto-relaunch any completed or idle workers."""
     py = str(REPO_ROOT / "venv" / "bin" / "kaggle")
-    code, out, _ = get_cmd_output([py, "kernels", "status", "hammadshakeelai/alphacandy-mastery-hunter-100-percent"])
-    if "RUNNING" in out:
-        return "RUNNING", "Broad horizon 4-vCPU solver active"
-    elif "COMPLETE" in out:
-        return "COMPLETE", "Mass solver finished; ready for telemetry harvest"
-    else:
-        return "STATUS", out or "No status"
+    fleet_statuses = {}
+    active_count = 0
+    
+    for name, slug, deploy_dir in KAGGLE_CPU_FLEET:
+        code, out, _ = get_cmd_output([py, "kernels", "status", slug], timeout=15)
+        st = "UNKNOWN"
+        if "RUNNING" in out:
+            st = "RUNNING"
+            active_count += 1
+        elif "QUEUED" in out:
+            st = "QUEUED"
+            active_count += 1
+        elif "COMPLETE" in out:
+            st = "COMPLETE"
+            # Auto-relaunch completed worker so all 5 instances stay active continuously (30-50 min runs)
+            deploy_path = REPO_ROOT / deploy_dir
+            if deploy_path.exists():
+                r_code, r_out, _ = get_cmd_output([py, "kernels", "push", "-p", str(deploy_path)], timeout=30)
+                if r_code == 0:
+                    st = "RELAUNCHED"
+                    active_count += 1
+        else:
+            st = out or "IDLE"
+            
+        fleet_statuses[name] = {"slug": slug, "status": st, "raw": out}
+
+    summary_msg = f"{active_count}/5 instances active"
+    overall_status = "RUNNING" if active_count >= 3 else "PARTIAL"
+    return overall_status, summary_msg, fleet_statuses
 
 
 def check_github_actions():
@@ -146,9 +177,11 @@ def run_orchestration_cycle():
     gpu_st, gpu_msg = check_kaggle_gpu()
     print(f"🚀 Kaggle Tesla T4 GPU: [{gpu_st}] {gpu_msg}")
     
-    # 3. Kaggle CPU
-    kcpu_st, kcpu_msg = check_kaggle_cpu()
-    print(f"☁️  Kaggle 4-vCPU Hunter: [{kcpu_st}] {kcpu_msg}")
+    # 3. Kaggle 5x 4-vCPU Fleet
+    kcpu_st, kcpu_msg, kcpu_details = check_and_maintain_kaggle_cpu_fleet()
+    print(f"☁️  Kaggle 5x 4-vCPU Fleet: [{kcpu_st}] {kcpu_msg}")
+    for inst_name, inst_info in kcpu_details.items():
+        print(f"     • {inst_name:<25}: [{inst_info['status']}]")
     
     # 4. GitHub Actions
     gha_st, gha_msg = check_github_actions()
@@ -158,7 +191,7 @@ def run_orchestration_cycle():
     summary = {
         "local_cpu": {"status": local_st, "details": local_msg},
         "kaggle_gpu": {"status": gpu_st, "details": gpu_msg},
-        "kaggle_cpu": {"status": kcpu_st, "details": kcpu_msg},
+        "kaggle_cpu_5x": {"status": kcpu_st, "details": kcpu_msg, "instances": kcpu_details},
         "github_actions": {"status": gha_st, "details": gha_msg}
     }
     log_event("FLEET_CYCLE", summary)
