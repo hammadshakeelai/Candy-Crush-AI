@@ -174,6 +174,9 @@ class KingLevelLoader:
                     specials[r, c] = SpecialCandy.WRAPPED
                 elif "054" in tokens or "049" in tokens:
                     specials[r, c] = SpecialCandy.COLOR_BOMB
+                elif "036" in tokens:
+                    # King Candy Frog / Jelly Fish token: homing clearance for isolated islands
+                    specials[r, c] = SpecialCandy.JELLY_FISH
 
                 # Ingredients: Cherry ('018'), Hazelnut ('020' when drop mode)
                 if "018" in tokens:
