@@ -185,7 +185,9 @@ def main():
                             "total_tested": len(cl),
                             "win_rate": round(100.0 * sum(1 for v in cl.values() if v.get("won")) / max(1, len(cl)), 2),
                         }
-                        PROGRESS_PATH.write_text(json.dumps(prog, indent=2))
+                        tmp_prog = PROGRESS_PATH.with_suffix(".json.tmp")
+                        tmp_prog.write_text(json.dumps(prog, indent=2))
+                        tmp_prog.replace(PROGRESS_PATH)
                     except Exception:
                         pass
                 print(
