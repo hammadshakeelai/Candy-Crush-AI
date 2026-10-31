@@ -236,34 +236,50 @@ def _is_special_combo_swap(
     dr, dc = OFFSETS[d]
     r2, c2 = r + dr, c + dc
     s1, s2 = int(state.specials[r, c]), int(state.specials[r2, c2])
+
+    # 1. Double Color Bomb (clears an entire board layer)
     if s1 == SpecialCandy.COLOR_BOMB and s2 == SpecialCandy.COLOR_BOMB:
-        return 800.0
-    if (s1 == SpecialCandy.COLOR_BOMB and s2 != SpecialCandy.NONE) or (
-        s2 == SpecialCandy.COLOR_BOMB and s1 != SpecialCandy.NONE
-    ):
-        return 520.0
-    # Wrapped + Striped Cross-Cannon Combination
+        return 3800.0 if isolated_cells else 1200.0
+
+    # 2. Color Bomb + Striped Combination (transforms all candies of that color into striped lasers)
+    is_color_bomb_striped = (
+        (s1 == SpecialCandy.COLOR_BOMB and s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL))
+        or (s2 == SpecialCandy.COLOR_BOMB and s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL))
+    )
+    if is_color_bomb_striped:
+        return 3500.0 if isolated_cells else 1100.0
+
+    # 3. Color Bomb + Wrapped Combination (dual-color massive board wipe)
+    is_color_bomb_wrapped = (
+        (s1 == SpecialCandy.COLOR_BOMB and s2 == SpecialCandy.WRAPPED)
+        or (s2 == SpecialCandy.COLOR_BOMB and s1 == SpecialCandy.WRAPPED)
+    )
+    if is_color_bomb_wrapped:
+        return 2500.0 if isolated_cells else 850.0
+
+    # 4. Wrapped + Striped Cross-Cannon Combination (3x3 cross clearing)
     is_wrapped_striped = (
         (s1 == SpecialCandy.WRAPPED and s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL))
         or (s2 == SpecialCandy.WRAPPED and s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL))
     )
     if is_wrapped_striped:
         if isolated_cells:
-            # 3-row horizontal and 3-column vertical blast
             for ir, ic in isolated_cells:
                 if state.jellies[ir, ic] > 0 and (abs(r - ir) <= 1 or abs(c - ic) <= 1):
-                    return 1450.0
-        return 650.0
+                    return 2200.0
+        return 750.0
 
     if s1 != SpecialCandy.NONE and s2 != SpecialCandy.NONE:
-        return 320.0
+        return 380.0
+
+    # 5. Color Bomb Single Detonation (targeted snipe on isolated colors)
     if s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
         target_col = int(state.colors[r2, c2] if s1 == SpecialCandy.COLOR_BOMB else state.colors[r, c])
         iso_alive = [(ir, ic) for ir, ic in isolated_cells if state.jellies[ir, ic] > 0]
         if iso_alive:
             hits = sum(1 for ir, ic in iso_alive if int(state.colors[ir, ic]) == target_col)
             if hits > 0:
-                return 1200.0 * hits
+                return 1800.0 * hits
             if state.moves_left <= 5:
                 return 250.0  # Endgame desperation: detonate to trigger massive board wipe & cascade
             return -150.0  # preserve Color Bomb until it can snipe an isolated island or pair with a special!
@@ -276,11 +292,11 @@ def _is_special_combo_swap(
                 if (s1 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)) or (
                     s2 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)
                 ):
-                    return 1100.0
+                    return 1400.0
                 if (s1 == SpecialCandy.STRIPED_VERTICAL and (c == ic or c2 == ic)) or (
                     s2 == SpecialCandy.STRIPED_VERTICAL and (c == ic or c2 == ic)
                 ):
-                    return 1100.0
+                    return 1400.0
 
     return 0.0
 
@@ -348,9 +364,11 @@ def solve_with_oracle(
                     if not legal:
                         continue
 
-                # Prioritize special-involving swaps, ingredient-column swaps, and bottom-row swaps
+                # Prioritize special-involving swaps, isolated-target swaps, ingredient-column swaps, and bottom-row swaps
                 if len(legal) > branch_per_node:
                     ing_cols = set(np.where(np.any(st.ingredients > 0, axis=0))[0].tolist())
+                    iso_cols = {ic for ir, ic in diag.isolated_objective_cells}
+                    iso_rows = {ir for ir, ic in diag.isolated_objective_cells}
                     pri_moves = []
                     reg_moves = []
                     for mv in legal:
@@ -362,18 +380,36 @@ def solve_with_oracle(
                             or st.specials[r2, c2] != 0
                             or c in ing_cols
                             or c2 in ing_cols
+                            or c in iso_cols
+                            or c2 in iso_cols
+                            or r in iso_rows
+                            or r2 in iso_rows
                             or r >= 6
                         ):
                             pri_moves.append(mv)
                         else:
                             reg_moves.append(mv)
-                    # Sort priority moves so bottom-most moves come first
-                    pri_moves.sort(key=lambda m: -m[0])
+                    # When isolated objectives exist in top rows (r <= 2), prioritize moves targeting isolated rows/cols first
+                    if any(ir <= 2 for ir, _ in diag.isolated_objective_cells):
+                        pri_moves.sort(
+                            key=lambda m: (
+                                0
+                                if (
+                                    m[1] in iso_cols
+                                    or (m[1] + OFFSETS[m[2]][1]) in iso_cols
+                                    or m[0] in iso_rows
+                                    or (m[0] + OFFSETS[m[2]][0]) in iso_rows
+                                )
+                                else -m[0]
+                            )
+                        )
+                    else:
+                        pri_moves.sort(key=lambda m: -m[0])
                     keep_reg = max(2, branch_per_node - len(pri_moves))
                     if len(reg_moves) > keep_reg:
                         stride = max(1, len(reg_moves) // keep_reg)
                         reg_moves = reg_moves[::stride][:keep_reg]
-                    candidates = (pri_moves + reg_moves)[: branch_per_node + 6]
+                    candidates = (pri_moves + reg_moves)[: branch_per_node + 8]
                 else:
                     candidates = legal
 
