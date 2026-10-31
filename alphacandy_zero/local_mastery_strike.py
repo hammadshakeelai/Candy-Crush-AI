@@ -117,12 +117,8 @@ def main():
 
     results = []
     won_levels = []
-    golden_samples = []
-    if GOLDEN_PATH.exists():
-        try:
-            golden_samples = list(torch.load(GOLDEN_PATH, weights_only=False))
-        except Exception:
-            golden_samples = []
+    new_golden_samples = []
+    new_titan_samples = []
 
     with mp.Pool(processes=num_workers) as pool:
         for r in pool.imap_unordered(_solve_single, target_levels):
@@ -133,28 +129,9 @@ def main():
             if r["won"]:
                 won_levels.append(lid)
                 if samples:
-                    golden_samples.extend(samples)
-                    torch.save(golden_samples, GOLDEN_PATH)
+                    new_golden_samples.extend(samples)
                 if titan_samples:
-                    try:
-                        import numpy as np
-                        new_s = torch.tensor(np.stack([x["state"] for x in titan_samples], axis=0), dtype=torch.float32)
-                        new_a = torch.tensor([x["action"] for x in titan_samples], dtype=torch.long)
-                        new_w = torch.tensor([x["win_target"] for x in titan_samples], dtype=torch.float32)
-                        new_m = torch.tensor([x["move_ratio"] for x in titan_samples], dtype=torch.float32)
-                        if TITAN_DEMO_PATH.exists():
-                            prev = torch.load(TITAN_DEMO_PATH, weights_only=False)
-                            new_s = torch.cat([prev["states"], new_s], dim=0)
-                            new_a = torch.cat([prev["actions"], new_a], dim=0)
-                            new_w = torch.cat([prev["win_targets"], new_w], dim=0)
-                            new_m = torch.cat([prev["move_ratios"], new_m], dim=0)
-                        TITAN_DEMO_PATH.parent.mkdir(parents=True, exist_ok=True)
-                        torch.save(
-                            {"states": new_s, "actions": new_a, "win_targets": new_w, "move_ratios": new_m},
-                            TITAN_DEMO_PATH,
-                        )
-                    except Exception:
-                        pass
+                    new_titan_samples.extend(titan_samples)
                 # Update unsolved registry and master progress.json immediately
                 if UNSOLVED_PATH.exists():
                     try:
@@ -200,18 +177,55 @@ def main():
                     flush=True,
                 )
 
-            with open(OUT_PATH, "w") as f:
-                json.dump(
-                    {
-                        "total_targets": len(target_levels),
-                        "evaluated_count": len(results),
-                        "won_count": len(won_levels),
-                        "won_levels": sorted(won_levels),
-                        "results": results,
-                    },
-                    f,
-                    indent=2,
-                )
+    # Save harvested golden trajectories and titan demonstration tensors atomically at batch conclusion
+    if new_golden_samples:
+        try:
+            existing = list(torch.load(GOLDEN_PATH, weights_only=False)) if GOLDEN_PATH.exists() else []
+            existing.extend(new_golden_samples)
+            tmp_g = GOLDEN_PATH.with_suffix(".tmp")
+            torch.save(existing, tmp_g)
+            tmp_g.replace(GOLDEN_PATH)
+        except Exception as e:
+            print(f"[Warning] Failed to save golden trajectories: {e}")
+
+    if new_titan_samples:
+        try:
+            import numpy as np
+            new_s = torch.tensor(np.stack([x["state"] for x in new_titan_samples], axis=0), dtype=torch.float32)
+            new_a = torch.tensor([x["action"] for x in new_titan_samples], dtype=torch.long)
+            new_w = torch.tensor([x["win_target"] for x in new_titan_samples], dtype=torch.float32)
+            new_m = torch.tensor([x["move_ratio"] for x in new_titan_samples], dtype=torch.float32)
+            if TITAN_DEMO_PATH.exists():
+                prev = torch.load(TITAN_DEMO_PATH, weights_only=False)
+                new_s = torch.cat([prev["states"], new_s], dim=0)
+                new_a = torch.cat([prev["actions"], new_a], dim=0)
+                new_w = torch.cat([prev["win_targets"], new_w], dim=0)
+                new_m = torch.cat([prev["move_ratios"], new_m], dim=0)
+            TITAN_DEMO_PATH.parent.mkdir(parents=True, exist_ok=True)
+            tmp_t = TITAN_DEMO_PATH.with_suffix(".tmp")
+            torch.save(
+                {"states": new_s, "actions": new_a, "win_targets": new_w, "move_ratios": new_m},
+                tmp_t,
+            )
+            tmp_t.replace(TITAN_DEMO_PATH)
+        except Exception as e:
+            print(f"[Warning] Failed to save titan demonstrations: {e}")
+
+    # Write summary results atomically
+    tmp_out = OUT_PATH.with_suffix(".tmp")
+    with open(tmp_out, "w") as f:
+        json.dump(
+            {
+                "total_targets": len(target_levels),
+                "evaluated_count": len(results),
+                "won_count": len(won_levels),
+                "won_levels": sorted(won_levels),
+                "results": results,
+            },
+            f,
+            indent=2,
+        )
+    tmp_out.replace(OUT_PATH)
 
     print(
         f"\n[MasteryStrike] Assault complete! Conquered {len(won_levels)}/{len(target_levels)} fortresses: {sorted(won_levels)}",
