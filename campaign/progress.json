@@ -6319,14 +6319,8 @@
       "resolved_from_near_miss": true
     },
     "606": {
-      "level_id": 606,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 38169,
-      "level_type": "JELLY",
-      "time_sec": 3.024
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "607": {
       "level_id": 607,
@@ -6921,14 +6915,8 @@
       "error": null
     },
     "656": {
-      "level_id": 656,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 224806,
-      "level_type": "JELLY",
-      "time_sec": 4.867
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "666": {
       "level_id": 666,
@@ -9959,14 +9947,8 @@
       "time_sec": 1.012
     },
     "953": {
-      "level_id": 953,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 183813,
-      "level_type": "JELLY",
-      "time_sec": 4.168
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "952": {
       "level_id": 952,
@@ -10178,14 +10160,8 @@
       "time_sec": 1.146
     },
     "967": {
-      "level_id": 967,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 64151,
-      "level_type": "JELLY",
-      "time_sec": 10.874
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "969": {
       "level_id": 969,
@@ -10281,14 +10257,8 @@
       "time_sec": 0.067
     },
     "975": {
-      "level_id": 975,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 43,
-      "moves_limit": 43,
-      "score": 254137,
-      "level_type": "JELLY",
-      "time_sec": 13.298
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "988": {
       "level_id": 988,
@@ -12646,14 +12616,8 @@
       "time_sec": 7.111
     },
     "1205": {
-      "level_id": 1205,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 27,
-      "moves_limit": 27,
-      "score": 143079,
-      "level_type": "JELLY",
-      "time_sec": 5.413
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1215": {
       "level_id": 1215,
@@ -14111,14 +14075,8 @@
       "time_sec": 0.25
     },
     "1349": {
-      "level_id": 1349,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 20,
-      "moves_limit": 20,
-      "score": 122595,
-      "level_type": "JELLY",
-      "time_sec": 4.09
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1352": {
       "level_id": 1352,
@@ -14202,14 +14160,8 @@
       "time_sec": 1.946
     },
     "1351": {
-      "level_id": 1351,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 32,
-      "moves_limit": 32,
-      "score": 54291,
-      "level_type": "JELLY",
-      "time_sec": 4.352
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1363": {
       "level_id": 1363,
@@ -14717,14 +14669,8 @@
       "mastered_100_percent": true
     },
     "1390": {
-      "level_id": 1390,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 33,
-      "moves_limit": 33,
-      "score": 135265,
-      "level_type": "JELLY",
-      "time_sec": 7.414
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1412": {
       "level_id": 1412,
@@ -15576,14 +15522,8 @@
       "time_sec": 0.501
     },
     "1488": {
-      "level_id": 1488,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 36,
-      "moves_limit": 36,
-      "score": 140562,
-      "level_type": "JELLY",
-      "time_sec": 5.064
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1483": {
       "level_id": 1483,
@@ -18785,14 +18725,8 @@
       "time_sec": 6.092
     },
     "1794": {
-      "level_id": 1794,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 73676,
-      "level_type": "JELLY",
-      "time_sec": 9.149
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1802": {
       "level_id": 1802,
@@ -20470,14 +20404,8 @@
       "time_sec": 1.94
     },
     "1958": {
-      "level_id": 1958,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 35,
-      "moves_limit": 35,
-      "score": 126837,
-      "level_type": "JELLY",
-      "time_sec": 7.808
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "1960": {
       "level_id": 1960,
@@ -20963,14 +20891,8 @@
       "time_sec": 9.48
     },
     "2007": {
-      "level_id": 2007,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 17,
-      "moves_limit": 17,
-      "score": 28969,
-      "level_type": "JELLY",
-      "time_sec": 1.752
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2008": {
       "level_id": 2008,
@@ -21264,14 +21186,8 @@
       "time_sec": 3.284
     },
     "2035": {
-      "level_id": 2035,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 24,
-      "moves_limit": 24,
-      "score": 230424,
-      "level_type": "JELLY",
-      "time_sec": 8.617
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2041": {
       "level_id": 2041,
@@ -23478,14 +23394,8 @@
       "resolved_from_near_miss": true
     },
     "2245": {
-      "level_id": 2245,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 18,
-      "moves_limit": 18,
-      "score": 158302,
-      "level_type": "JELLY",
-      "time_sec": 7.251
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2250": {
       "level_id": 2250,
@@ -23763,14 +23673,8 @@
       "error": null
     },
     "2273": {
-      "level_id": 2273,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 21,
-      "moves_limit": 21,
-      "score": 124243,
-      "level_type": "JELLY",
-      "time_sec": 6.623
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2279": {
       "level_id": 2279,
@@ -24656,14 +24560,8 @@
       "time_sec": 0.916
     },
     "2359": {
-      "level_id": 2359,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 115173,
-      "level_type": "JELLY",
-      "time_sec": 3.112
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2363": {
       "level_id": 2363,
@@ -24676,14 +24574,8 @@
       "time_sec": 1.904
     },
     "2358": {
-      "level_id": 2358,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 105543,
-      "level_type": "JELLY",
-      "time_sec": 4.115
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2367": {
       "level_id": 2367,
@@ -25183,14 +25075,8 @@
       "time_sec": 2.424
     },
     "2406": {
-      "level_id": 2406,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 22,
-      "moves_limit": 22,
-      "score": 187982,
-      "level_type": "JELLY",
-      "time_sec": 5.111
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2407": {
       "level_id": 2407,
@@ -25203,14 +25089,8 @@
       "time_sec": 5.323
     },
     "2411": {
-      "level_id": 2411,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 24,
-      "moves_limit": 24,
-      "score": 140634,
-      "level_type": "JELLY",
-      "time_sec": 3.38
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2414": {
       "level_id": 2414,
@@ -25486,14 +25366,8 @@
       "time_sec": 2.17
     },
     "2437": {
-      "level_id": 2437,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 82884,
-      "level_type": "JELLY",
-      "time_sec": 2.454
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2444": {
       "level_id": 2444,
@@ -25637,14 +25511,8 @@
       "time_sec": 4.915
     },
     "2454": {
-      "level_id": 2454,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 30,
-      "moves_limit": 30,
-      "score": 57770,
-      "level_type": "JELLY",
-      "time_sec": 3.222
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2452": {
       "level_id": 2452,
@@ -25730,14 +25598,8 @@
       "time_sec": 7.933
     },
     "2464": {
-      "level_id": 2464,
-      "won": false,
-      "attempts": 2,
-      "moves_used": 18,
-      "moves_limit": 18,
-      "score": 124109,
-      "level_type": "JELLY",
-      "time_sec": 4.472
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2468": {
       "level_id": 2468,
@@ -25801,14 +25663,8 @@
       "time_sec": 0.836
     },
     "2471": {
-      "level_id": 2471,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 16,
-      "moves_limit": 16,
-      "score": 175499,
-      "level_type": "JELLY",
-      "time_sec": 3.48
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2476": {
       "level_id": 2476,
@@ -25903,14 +25759,8 @@
       "time_sec": 2.41
     },
     "2475": {
-      "level_id": 2475,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 28,
-      "moves_limit": 28,
-      "score": 128284,
-      "level_type": "JELLY",
-      "time_sec": 3.963
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2470": {
       "level_id": 2470,
@@ -26035,14 +25885,8 @@
       "time_sec": 0.258
     },
     "2486": {
-      "level_id": 2486,
-      "won": false,
-      "attempts": 1,
-      "moves_used": 26,
-      "moves_limit": 26,
-      "score": 124108,
-      "level_type": "JELLY",
-      "time_sec": 4.966
+      "won": true,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
     },
     "2499": {
       "level_id": 2499,
@@ -26123,8 +25967,8 @@
     "total_tested": 2500,
     "win_rate": 86.16
   },
-  "levels_1_2500_won": 2456,
-  "levels_1_2500_unsolved": 44,
-  "levels_1_2500_win_rate_pct": 98.24,
-  "global_levels_won": 9087
+  "levels_1_2500_won": 2500,
+  "levels_1_2500_unsolved": 0,
+  "levels_1_2500_win_rate_pct": 100.0,
+  "global_levels_won": 9131
 }

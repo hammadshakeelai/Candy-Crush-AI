@@ -85,8 +85,27 @@ def diagnose_level(cfg: LevelConfig) -> LevelDiagnosis:
                 1 for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1))
                 if 0 <= r + dr < cfg.height and 0 <= c + dc < cfg.width and active[r + dr, c + dc]
             )
-            # Both 0-neighbor isolated islands and 1-neighbor cul-de-sac dead-ends
-            if nbr_count <= 1:
+            # Compute contiguous active horizontal and vertical spans through (r, c)
+            h_span = 1
+            cc = c - 1
+            while cc >= 0 and active[r, cc]:
+                h_span += 1
+                cc -= 1
+            cc = c + 1
+            while cc < cfg.width and active[r, cc]:
+                h_span += 1
+                cc += 1
+            v_span = 1
+            rr = r - 1
+            while rr >= 0 and active[rr, c]:
+                v_span += 1
+                rr -= 1
+            rr = r + 1
+            while rr < cfg.height and active[rr, c]:
+                v_span += 1
+                rr += 1
+            # 0-neighbor islands, 1-neighbor cul-de-sacs, and 2x2 isolated boxes (h_span < 3 and v_span < 3)
+            if nbr_count <= 1 or (h_span < 3 and v_span < 3):
                 isolated.append((r, c))
 
     dead_cols = [c for c in range(cfg.width) if not np.any(active[:, c])]
@@ -151,16 +170,27 @@ def oracle_potential(
     rem = float(state.remaining_objectives_count())
     score = (init_obj - rem) * 120.0
 
-    # 1. Extra reward for clearing isolated 1x1 island & cul-de-sac jellies (e.g. Level 279, 975, 1205)
+    # 1. Multi-layer health tracking for isolated island, cul-de-sac, and 2x2 box jellies
     iso_alive_rows = set()
     iso_alive_cols = set()
     for r, c in isolated_cells:
-        if state.jellies[r, c] == 0:
-            score += 3500.0  # Decisive reward for breaking the bottleneck cell!
+        rem_j = int(state.jellies[r, c])
+        rem_b = 1 if state.blockers[r, c] != Blocker.NONE else 0
+        rem_iso_hp = rem_j + rem_b
+        if rem_iso_hp == 0:
+            score += 5000.0  # Decisive reward for completely breaking the bottleneck cell!
         else:
-            score -= 1200.0  # Heavy penalty for leaving bottleneck cells uncleared!
+            # Every single layer stripped (double-jelly 2->1 or blocker 1->0) permanently increases score by +2400!
+            score -= 2400.0 * rem_iso_hp
             iso_alive_rows.add(r)
             iso_alive_cols.add(c)
+
+    # Dynamic endgame sniper mode: when <= 8 jellies remain anywhere, treat all remaining jellies as sniper targets
+    if rem <= 8 and state.config.level_type == LevelType.JELLY:
+        rem_coords = np.argwhere(state.jellies > 0)
+        for rr, cc in rem_coords:
+            iso_alive_rows.add(int(rr))
+            iso_alive_cols.add(int(cc))
 
     # 2. Special candies & laser alignment with remaining / isolated jellies
     spec = state.specials
@@ -170,7 +200,7 @@ def oracle_potential(
     wr_coords = np.argwhere(spec == SpecialCandy.WRAPPED)
     jf_coords = np.argwhere(spec == SpecialCandy.JELLY_FISH)
 
-    score += len(cb_coords) * 220.0 + len(jf_coords) * 160.0 + len(wr_coords) * 90.0
+    score += len(cb_coords) * 260.0 + len(jf_coords) * 240.0 + len(wr_coords) * 90.0
     score += (len(sh_coords) + len(sv_coords)) * 75.0
 
     # Reward vertical stripes in isolated columns and horizontal stripes in isolated rows
@@ -178,12 +208,12 @@ def oracle_potential(
         if int(c) in iso_alive_cols:
             score += 650.0
         elif np.any(state.jellies[:, c] > 0) or np.any(state.ingredients[:, c] > 0):
-            score += 45.0
+            score += 60.0
     for r, c in sh_coords:
         if int(r) in iso_alive_rows:
             score += 650.0
         elif np.any(state.jellies[r, :] > 0):
-            score += 35.0
+            score += 50.0
 
     # Reward adjacent special-special pairs ready to detonate next turn
     spec_mask = spec != SpecialCandy.NONE
@@ -269,6 +299,11 @@ def _is_special_combo_swap(
                     return 2200.0
         return 750.0
 
+    if s1 == SpecialCandy.JELLY_FISH or s2 == SpecialCandy.JELLY_FISH:
+        if s1 != SpecialCandy.NONE and s2 != SpecialCandy.NONE:
+            return 2800.0 if isolated_cells else 950.0
+        return 1800.0 if isolated_cells else 450.0
+
     if s1 != SpecialCandy.NONE and s2 != SpecialCandy.NONE:
         return 380.0
 
@@ -285,9 +320,13 @@ def _is_special_combo_swap(
             return -150.0  # preserve Color Bomb until it can snipe an isolated island or pair with a special!
         return 90.0
 
-    # Direct Striped Laser Snipe on isolated objective cells (bidirectional swap check)
-    if isolated_cells:
-        for ir, ic in isolated_cells:
+    # Direct Striped Laser Snipe on isolated objective cells or endgame remaining jellies (bidirectional swap check)
+    sniper_targets = list(isolated_cells)
+    if state.remaining_objectives_count() <= 8 and state.config.level_type == LevelType.JELLY:
+        for rr, cc in np.argwhere(state.jellies > 0):
+            sniper_targets.append((int(rr), int(cc)))
+    if sniper_targets:
+        for ir, ic in sniper_targets:
             if state.jellies[ir, ic] > 0:
                 if (s1 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)) or (
                     s2 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)

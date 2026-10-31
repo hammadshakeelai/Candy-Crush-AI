@@ -87,6 +87,7 @@ class LevelConfig:
     initial_ingredients: np.ndarray = field(default_factory=lambda: np.zeros((9, 9), dtype=np.int32))
     initial_colors: Optional[np.ndarray] = None
     initial_specials: Optional[np.ndarray] = None
+    cannon_specials: Optional[np.ndarray] = None
     target_ingredients: int = 0
     portals: Optional[List[Any]] = None
     cannons: Optional[List[Any]] = None
@@ -193,8 +194,9 @@ class ReverseCandyEngine:
                 if state.blockers[r, c] in (Blocker.CHOCOLATE, Blocker.FROSTING):
                     state.colors[r, c] = CandyColor.EMPTY
                     continue
-                # If cell already has a preset candy or special candy, keep it
-                if state.colors[r, c] != CandyColor.EMPTY or state.specials[r, c] != SpecialCandy.NONE:
+                # If cell already has a preset candy or a colorless Color Bomb, keep it.
+                # Preset colored specials (Striped, Wrapped, Jelly Fish) without an explicit color get assigned a valid color.
+                if state.colors[r, c] != CandyColor.EMPTY or state.specials[r, c] == SpecialCandy.COLOR_BOMB:
                     continue
                 forbidden = set()
                 if c >= 2 and state.colors[r, c - 1] == state.colors[r, c - 2]:
@@ -369,16 +371,21 @@ class ReverseCandyEngine:
             for r, c in cleared_coords:
                 step_score += 60
 
-                # Check for Jelly Fish trigger before clearing
+                # Check for Jelly Fish / Candy Frog trigger before clearing
                 if state.specials[r, c] == SpecialCandy.JELLY_FISH:
                     targets = []
                     for jr in range(state.height):
                         for jc in range(state.width):
                             if state.active_grid[jr, jc] and state.jellies[jr, jc] > 0:
-                                is_iso = not any(state.is_valid_cell(jr+dr, jc+dc) for dr, dc in [(-1,0),(1,0),(0,-1),(0,1)])
-                                targets.append((is_iso, state.blockers[jr, jc] != Blocker.NONE, jr, jc))
-                    targets.sort(key=lambda t: (t[0], t[1]), reverse=True)
-                    for _, _, tr, tc in targets[:3]:
+                                nbr_cnt = sum(
+                                    1 for dr_n, dc_n in [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                                    if state.is_valid_cell(jr + dr_n, jc + dc_n)
+                                )
+                                is_iso = nbr_cnt <= 1
+                                targets.append((is_iso, state.blockers[jr, jc] != Blocker.NONE, int(state.jellies[jr, jc]), jr, jc))
+                    targets.sort(key=lambda t: (t[0], t[1], t[2]), reverse=True)
+                    max_targets = 9 if getattr(state.config, "frog_stomach_size", 0) > 0 else 3
+                    for _, _, _, tr, tc in targets[:max_targets]:
                         if state.blockers[tr, tc] != Blocker.NONE:
                             state.blockers[tr, tc] = Blocker.NONE
                         if state.jellies[tr, tc] > 0:
@@ -578,9 +585,61 @@ class ReverseCandyEngine:
                             state.colors[rr, cc] = CandyColor.EMPTY
             return True, 15000
 
+        # Combo 5b: Color Bomb + Wrapped = Wipes two colors across the board
+        if (s1 == SpecialCandy.COLOR_BOMB and s2 == SpecialCandy.WRAPPED) or (
+            s2 == SpecialCandy.COLOR_BOMB and s1 == SpecialCandy.WRAPPED
+        ):
+            target_col1 = state.colors[r2, c2] if s1 == SpecialCandy.COLOR_BOMB else state.colors[r1, c1]
+            if target_col1 == CandyColor.EMPTY:
+                target_col1 = random.randint(1, state.num_colors)
+            target_col2 = (target_col1 % state.num_colors) + 1
+            for r in range(state.height):
+                for c in range(state.width):
+                    if state.active_grid[r, c] and state.colors[r, c] in (target_col1, target_col2):
+                        if state.blockers[r, c] != Blocker.NONE:
+                            state.blockers[r, c] = Blocker.NONE
+                        if state.jellies[r, c] > 0:
+                            state.jellies[r, c] -= 1
+                        has_refill_above = any(state.active_grid[ar, c] for ar in range(r))
+                        if state.jellies[r, c] > 0 and not has_refill_above:
+                            pass
+                        else:
+                            state.colors[r, c] = CandyColor.EMPTY
+                        state.specials[r, c] = SpecialCandy.NONE
+            state.colors[r1, c1] = CandyColor.EMPTY
+            state.colors[r2, c2] = CandyColor.EMPTY
+            return True, 25000
+
+        # Combo 5c: Jelly Fish / Candy Frog + Any Special = Homing school of fish targeting isolated/remaining jellies
+        if (s1 == SpecialCandy.JELLY_FISH and s2 != SpecialCandy.NONE) or (
+            s2 == SpecialCandy.JELLY_FISH and s1 != SpecialCandy.NONE
+        ):
+            targets = []
+            for jr in range(state.height):
+                for jc in range(state.width):
+                    if state.active_grid[jr, jc] and state.jellies[jr, jc] > 0:
+                        nbr_cnt = sum(
+                            1 for dr_n, dc_n in [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                            if state.is_valid_cell(jr + dr_n, jc + dc_n)
+                        )
+                        is_iso = nbr_cnt <= 1
+                        targets.append((is_iso, state.blockers[jr, jc] != Blocker.NONE, int(state.jellies[jr, jc]), jr, jc))
+            targets.sort(key=lambda t: (t[0], t[1], t[2]), reverse=True)
+            max_targets = 9 if (getattr(state.config, "frog_stomach_size", 0) > 0 or s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB) else 6
+            for _, _, _, tr, tc in targets[:max_targets]:
+                if state.blockers[tr, tc] != Blocker.NONE:
+                    state.blockers[tr, tc] = Blocker.NONE
+                if state.jellies[tr, tc] > 0:
+                    state.jellies[tr, tc] -= 1
+            state.colors[r1, c1] = CandyColor.EMPTY
+            state.colors[r2, c2] = CandyColor.EMPTY
+            return True, 18000
+
         # Combo 6: Color Bomb + Normal = Wipes single color & damages jellies / clears locks
         if s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
             target_col = state.colors[r2, c2] if s1 == SpecialCandy.COLOR_BOMB else state.colors[r1, c1]
+            if target_col == CandyColor.EMPTY:
+                target_col = random.randint(1, state.num_colors)
             for r in range(state.height):
                 for c in range(state.width):
                     if state.colors[r, c] == target_col and state.active_grid[r, c]:
@@ -649,23 +708,33 @@ class ReverseCandyEngine:
                     elif length >= 5:
                         specials_to_spawn.append((mid, c, SpecialCandy.COLOR_BOMB, CandyColor.EMPTY))
 
-        # Expand detonations for special candies inside matched_cells
+        # Expand detonations for special candies via BFS chain-reaction
         expanded = set(matched_cells)
-        for r, c in matched_cells:
+        queue = list(matched_cells)
+        detonated = set()
+        while queue:
+            r, c = queue.pop()
+            if (r, c) in detonated:
+                continue
             spec = state.specials[r, c]
-            if spec == SpecialCandy.STRIPED_HORIZONTAL:
-                for cc in range(state.width):
-                    if state.is_valid_cell(r, cc):
-                        expanded.add((r, cc))
-            elif spec == SpecialCandy.STRIPED_VERTICAL:
-                for rr in range(state.height):
-                    if state.is_valid_cell(rr, c):
-                        expanded.add((rr, c))
-            elif spec == SpecialCandy.WRAPPED:
-                for dr in [-1, 0, 1]:
-                    for dc in [-1, 0, 1]:
-                        if state.is_valid_cell(r + dr, c + dc):
-                            expanded.add((r + dr, c + dc))
+            if spec in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL, SpecialCandy.WRAPPED):
+                detonated.add((r, c))
+                if spec == SpecialCandy.STRIPED_HORIZONTAL:
+                    for cc in range(state.width):
+                        if state.is_valid_cell(r, cc) and (r, cc) not in expanded:
+                            expanded.add((r, cc))
+                            queue.append((r, cc))
+                elif spec == SpecialCandy.STRIPED_VERTICAL:
+                    for rr in range(state.height):
+                        if state.is_valid_cell(rr, c) and (rr, c) not in expanded:
+                            expanded.add((rr, c))
+                            queue.append((rr, c))
+                elif spec == SpecialCandy.WRAPPED:
+                    for dr in [-1, 0, 1]:
+                        for dc in [-1, 0, 1]:
+                            if state.is_valid_cell(r + dr, c + dc) and (r + dr, c + dc) not in expanded:
+                                expanded.add((r + dr, c + dc))
+                                queue.append((r + dr, c + dc))
 
         return expanded, specials_to_spawn
 
@@ -681,7 +750,11 @@ class ReverseCandyEngine:
                     write_idx = r - 1
                     continue
 
-                if state.colors[r, c] != CandyColor.EMPTY or state.ingredients[r, c] != Ingredient.NONE:
+                if (
+                    state.colors[r, c] != CandyColor.EMPTY
+                    or state.specials[r, c] != SpecialCandy.NONE
+                    or state.ingredients[r, c] != Ingredient.NONE
+                ):
                     if r != write_idx:
                         # Find valid write_idx that is not blocked
                         while write_idx > r and (not state.is_valid_cell(write_idx, c) or state.blockers[write_idx, c] != Blocker.NONE):
@@ -695,15 +768,25 @@ class ReverseCandyEngine:
                             state.ingredients[r, c] = Ingredient.NONE
                     write_idx -= 1
 
-            # Refill empty slots (including any ingredient tile whose candy color was cleared)
+            # Refill empty slots (including any ingredient tile whose candy color was cleared, but preserving colorless Color Bombs)
             for r in range(state.height - 1, -1, -1):
-                if state.is_valid_cell(r, c) and state.blockers[r, c] == Blocker.NONE and state.colors[r, c] == CandyColor.EMPTY:
+                if (
+                    state.is_valid_cell(r, c)
+                    and state.blockers[r, c] == Blocker.NONE
+                    and state.colors[r, c] == CandyColor.EMPTY
+                    and state.specials[r, c] != SpecialCandy.COLOR_BOMB
+                ):
                     state.colors[r, c] = random.randint(1, state.num_colors)
-                    has_cannon = state.config.cannons and (c in [6, 7] or len(state.config.cannons) > 0)
-                    if has_cannon and random.random() < 0.35:
-                        state.specials[r, c] = SpecialCandy.JELLY_FISH
-                    else:
-                        state.specials[r, c] = SpecialCandy.NONE
+                    if state.specials[r, c] == SpecialCandy.NONE:
+                        cannon_grid = getattr(state.config, "cannon_specials", None)
+                        if cannon_grid is not None and cannon_grid[r, c] != SpecialCandy.NONE:
+                            state.specials[r, c] = int(cannon_grid[r, c])
+                        else:
+                            has_cannon = state.config.cannons and (c in [6, 7] or len(state.config.cannons) > 0)
+                            if has_cannon and random.random() < 0.35:
+                                state.specials[r, c] = SpecialCandy.JELLY_FISH
+                            else:
+                                state.specials[r, c] = SpecialCandy.NONE
 
         # Dynamic ingredient dispenser (works across all irregular board shapes)
         if state.config.level_type == LevelType.INGREDIENTS:

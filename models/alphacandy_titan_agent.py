@@ -148,20 +148,14 @@ class AlphaCandyTitanAgent:
         corner_jellies_before = float(
             np.sum(state.jellies[:corner_h, :corner_w] * self._corner_mask[:corner_h, :corner_w])
         )
-        # Identify bottleneck isolated objective cells (<= 1 active neighbor)
-        isolated_cells: List[Tuple[int, int]] = []
-        if hasattr(state.config, "active_grid") and state.config.active_grid is not None:
-            active = state.config.active_grid
-            for r in range(min(9, state.height)):
-                for c in range(min(9, state.width)):
-                    if active[r, c] and state.jellies[r, c] > 0:
-                        nbr_cnt = 0
-                        for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-                            nr, nc = r + dr, c + dc
-                            if 0 <= nr < state.height and 0 <= nc < state.width and active[nr, nc]:
-                                nbr_cnt += 1
-                        if nbr_cnt <= 1:
-                            isolated_cells.append((r, c))
+        # Identify bottleneck isolated objective cells (<= 1 active neighbor or 2x2 isolated box)
+        isolated_cells = self._find_isolated_cells(state)
+        iso_rows = {ir for ir, _ in isolated_cells}
+        iso_cols = {ic for _, ic in isolated_cells}
+        if obj_before <= 8 and state.config.level_type == LevelType.JELLY:
+            for rr, cc in np.argwhere(state.jellies > 0):
+                iso_rows.add(int(rr))
+                iso_cols.add(int(cc))
 
         striped_before = int(
             np.sum(
@@ -182,7 +176,14 @@ class AlphaCandyTitanAgent:
             r2, c2 = r1 + dr, c1 + dc
             s1 = state.specials[r1, c1]
             s2 = state.specials[r2, c2] if state.is_valid_cell(r2, c2) else SpecialCandy.NONE
-            is_special_activation = 1.0 if (s1 != SpecialCandy.NONE or s2 != SpecialCandy.NONE) else 0.0
+            if s1 != SpecialCandy.NONE and s2 != SpecialCandy.NONE:
+                is_special_activation = 1.0
+            elif s1 == SpecialCandy.JELLY_FISH or s2 == SpecialCandy.JELLY_FISH or s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
+                is_special_activation = 0.95
+            elif s1 != SpecialCandy.NONE or s2 != SpecialCandy.NONE:
+                is_special_activation = 0.65
+            else:
+                is_special_activation = 0.0
 
             # Deterministic micro-physics rollout on cloned board state
             sim_state = state.copy()
@@ -215,8 +216,20 @@ class AlphaCandyTitanAgent:
             delta_isolated = 0.0
             if isolated_cells:
                 for ir, ic in isolated_cells:
-                    if state.jellies[ir, ic] > 0 and sim_state.jellies[ir, ic] == 0:
-                        delta_isolated += 1.0
+                    hp_before = int(state.jellies[ir, ic]) + (1 if state.blockers[ir, ic] != Blocker.NONE else 0)
+                    hp_after = int(sim_state.jellies[ir, ic]) + (1 if sim_state.blockers[ir, ic] != Blocker.NONE else 0)
+                    if hp_after < hp_before:
+                        delta_isolated += float(hp_before - hp_after) * (2.0 if hp_after == 0 else 1.25)
+
+            # Laser line-of-sight alignment with isolated/endgame rows & columns
+            laser_align = 0.0
+            if iso_cols or iso_rows:
+                for sr, sc in np.argwhere(sim_state.specials == SpecialCandy.STRIPED_VERTICAL):
+                    if int(sc) in iso_cols:
+                        laser_align += 0.5
+                for sr, sc in np.argwhere(sim_state.specials == SpecialCandy.STRIPED_HORIZONTAL):
+                    if int(sr) in iso_rows:
+                        laser_align += 0.5
 
             ing_collected_delta = sim_state.ingredients_collected - ing_collected_before
             ing_depth_after = self._ingredient_depth_sum(sim_state)
@@ -232,7 +245,7 @@ class AlphaCandyTitanAgent:
             micro_feats[a_idx, 4] = min(1.0, float(delta_jellies) / 6.0)
             micro_feats[a_idx, 5] = min(1.0, float(delta_blockers) / 6.0)
             micro_feats[a_idx, 6] = 1.0 if sim_state.chocolate_destroyed_this_turn else 0.0
-            micro_feats[a_idx, 7] = min(1.0, max(0.0, float(striped_after - striped_before)) / 2.0)
+            micro_feats[a_idx, 7] = min(1.0, max(0.0, float(striped_after - striped_before)) / 2.0 + laser_align)
             micro_feats[a_idx, 8] = min(1.0, max(0.0, float(wrapped_after - wrapped_before)) / 2.0)
             micro_feats[a_idx, 9] = 1.0 if bombs_after > bombs_before else 0.0
             micro_feats[a_idx, 10] = is_special_activation
@@ -243,6 +256,40 @@ class AlphaCandyTitanAgent:
             micro_feats[a_idx, 15] = won_now
 
         return micro_feats, legal_mask
+
+    @staticmethod
+    def _find_isolated_cells(state: ReverseEngineState) -> List[Tuple[int, int]]:
+        isolated_cells: List[Tuple[int, int]] = []
+        if hasattr(state.config, "active_grid") and state.config.active_grid is not None:
+            active = state.config.active_grid
+            for r in range(min(9, state.height)):
+                for c in range(min(9, state.width)):
+                    if active[r, c] and (state.jellies[r, c] > 0 or state.ingredients[r, c] > 0):
+                        nbr_cnt = sum(
+                            1 for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]
+                            if 0 <= r + dr < state.height and 0 <= c + dc < state.width and active[r + dr, c + dc]
+                        )
+                        h_span = 1
+                        cc = c - 1
+                        while cc >= 0 and active[r, cc]:
+                            h_span += 1
+                            cc -= 1
+                        cc = c + 1
+                        while cc < state.width and active[r, cc]:
+                            h_span += 1
+                            cc += 1
+                        v_span = 1
+                        rr = r - 1
+                        while rr >= 0 and active[rr, c]:
+                            v_span += 1
+                            rr -= 1
+                        rr = r + 1
+                        while rr < state.height and active[rr, c]:
+                            v_span += 1
+                            rr += 1
+                        if nbr_cnt <= 1 or (h_span < 3 and v_span < 3):
+                            isolated_cells.append((r, c))
+        return isolated_cells
 
     def select_best_move(
         self, state: ReverseEngineState
@@ -353,6 +400,44 @@ class AlphaCandyTitanAgent:
             neural_scores + self.micro_physics_weight * phys_score,
             -1e9,
         )
+
+        # 2-Ply Tactical Checkmate & Isolated-Snipe Lookahead in critical/endgame states
+        isolated_cells = self._find_isolated_cells(state)
+        if moves_left >= 2 and (objectives_left <= 12 or moves_left <= 10 or len(isolated_cells) > 0):
+            legal_indices = np.where(legal_mask_np)[0]
+            top_k = legal_indices[np.argsort(-total_scores[legal_indices])[:6]]
+            iso_hp_before = sum(
+                int(state.jellies[ir, ic]) + (1 if state.blockers[ir, ic] != Blocker.NONE else 0)
+                for ir, ic in isolated_cells
+            )
+            for cand_idx in top_k:
+                cr, cc, cd = decode_action_index(int(cand_idx))
+                sim1 = state.copy()
+                self.engine.execute_move(sim1, cr, cc, cd)
+                if sim1.has_won():
+                    total_scores[cand_idx] += 500.0
+                    break
+                if sim1.has_lost():
+                    continue
+                next_moves = self.engine.get_legal_moves(sim1)
+                best_2ply_bonus = 0.0
+                for nr, nc, nd in next_moves[:14]:
+                    sim2 = sim1.copy()
+                    self.engine.execute_move(sim2, nr, nc, nd)
+                    if sim2.has_won():
+                        best_2ply_bonus = max(best_2ply_bonus, 80.0)
+                        break
+                    obj_delta_2ply = max(0, objectives_left - sim2.remaining_objectives_count())
+                    iso_hp_after = sum(
+                        int(sim2.jellies[ir, ic]) + (1 if sim2.blockers[ir, ic] != Blocker.NONE else 0)
+                        for ir, ic in isolated_cells
+                    )
+                    iso_delta_2ply = max(0, iso_hp_before - iso_hp_after)
+                    bonus_2ply = 1.5 * float(obj_delta_2ply) + 5.0 * float(iso_delta_2ply)
+                    if bonus_2ply > best_2ply_bonus:
+                        best_2ply_bonus = bonus_2ply
+                total_scores[cand_idx] += best_2ply_bonus
+
         chosen_idx = int(np.argmax(total_scores))
         chosen_score = float(total_scores[chosen_idx])
         r, c, d = decode_action_index(chosen_idx)
@@ -364,13 +449,14 @@ class AlphaCandyTitanAgent:
     def solve_level(
         self,
         config: Union[LevelConfig, ReverseEngineState],
-        max_attempts: int = 3,
+        max_attempts: int = 5,
         max_moves: Optional[int] = None,
         seed: int = 42,
     ) -> Dict[str, Any]:
         """
         Solves a Candy Crush level using `AlphaCandyTitanNet` with pace-adaptive
-        quantile tilting and 16-channel micro-physics injection.
+        quantile tilting, 16-channel micro-physics injection, 2-ply tactical
+        lookahead, and Go-Explore near-miss endgame branching.
         Compatible with all campaign and benchmark runners.
         """
         t0 = time.time()
@@ -393,8 +479,12 @@ class AlphaCandyTitanAgent:
                 "IMMEDIATE_WIN": 0,
             }
             confidence_trace: List[float] = []
+            endgame_snapshots: List[Tuple[ReverseEngineState, int]] = []
 
             while not state.has_won() and not state.has_lost() and step < moves_limit:
+                if state.moves_left in (7, 5, 3) and len(endgame_snapshots) < 3:
+                    endgame_snapshots.append((state.copy(), step))
+
                 legal = self.engine.get_legal_moves(state)
                 if not legal:
                     if not self.engine.shuffle_board(state):
@@ -413,6 +503,41 @@ class AlphaCandyTitanAgent:
 
                 self.engine.execute_move(state, r, c, d)
                 step += 1
+
+            # Go-Explore Near-Miss Endgame Branching: if attempt ended within <= 6 objectives of winning,
+            # branch from the saved endgame snapshots with alternative seeds & second-best opening moves
+            if not state.has_won() and 0 < state.remaining_objectives_count() <= 6 and endgame_snapshots:
+                for snap_state, snap_step in reversed(endgame_snapshots):
+                    for branch_seed in range(3):
+                        np.random.seed(seed + attempt * 997 + branch_seed * 131)
+                        b_state = snap_state.copy()
+                        b_step = snap_step
+                        first_turn = True
+                        while not b_state.has_won() and not b_state.has_lost() and b_step < moves_limit:
+                            b_legal = self.engine.get_legal_moves(b_state)
+                            if not b_legal:
+                                if not self.engine.shuffle_board(b_state):
+                                    break
+                                continue
+                            if first_turn and branch_seed > 0 and len(b_legal) >= 2:
+                                # Perturb the branching decision at the snapshot root
+                                first_turn = False
+                                br, bc, bd = b_legal[branch_seed % len(b_legal)]
+                            else:
+                                first_turn = False
+                                b_mv = self.select_best_move(b_state)
+                                if b_mv is None:
+                                    break
+                                br, bc, bd, _, _ = b_mv
+                            self.engine.execute_move(b_state, br, bc, bd)
+                            b_step += 1
+                        if b_state.has_won() or b_state.remaining_objectives_count() < state.remaining_objectives_count():
+                            state = b_state
+                            step = b_step
+                            if state.has_won():
+                                break
+                    if state.has_won():
+                        break
 
             won = state.has_won()
             res: Dict[str, Any] = {

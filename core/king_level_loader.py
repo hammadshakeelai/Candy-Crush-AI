@@ -42,6 +42,10 @@ class KingLevelLoader:
             found = self._discover_file("configs_v1.208.json")
             if found:
                 self.config_path = found
+            else:
+                found_bundle = self._discover_file("king_benchmark_500.json") or self._discover_file("sample_levels.json")
+                if found_bundle:
+                    self.config_path = found_bundle
         self._levels_cache: Dict[int, Dict[str, Any]] = {}
         self._loaded = False
 
@@ -129,6 +133,7 @@ class KingLevelLoader:
         ingredients = np.zeros((h, w), dtype=np.int32)
         colors = np.zeros((h, w), dtype=np.int32)
         specials = np.zeros((h, w), dtype=np.int32)
+        cannon_specials = np.zeros((h, w), dtype=np.int32)
 
         color_token_map = {"055": 1, "056": 2, "057": 3, "058": 4, "059": 5, "060": 6}
         ingredient_count = 0
@@ -170,13 +175,24 @@ class KingLevelLoader:
                     specials[r, c] = SpecialCandy.STRIPED_HORIZONTAL
                 elif "046" in tokens:
                     specials[r, c] = SpecialCandy.STRIPED_VERTICAL
-                elif "050" in tokens:
+                elif "047" in tokens or "050" in tokens:
                     specials[r, c] = SpecialCandy.WRAPPED
-                elif "054" in tokens or "049" in tokens:
+                elif "048" in tokens or "049" in tokens or "054" in tokens:
                     specials[r, c] = SpecialCandy.COLOR_BOMB
                 elif "036" in tokens:
                     # King Candy Frog / Jelly Fish token: homing clearance for isolated islands
                     specials[r, c] = SpecialCandy.JELLY_FISH
+
+                # Special Candy Cannons ('071' Striped Cannon, '072' Wrapped Cannon, or preset special dispenser)
+                if "071" in tokens or "072" in tokens:
+                    if specials[r, c] != SpecialCandy.NONE:
+                        cannon_specials[r, c] = specials[r, c]
+                    elif "072" in tokens:
+                        cannon_specials[r, c] = SpecialCandy.WRAPPED
+                    else:
+                        cannon_specials[r, c] = SpecialCandy.STRIPED_HORIZONTAL
+                elif "026" in tokens and specials[r, c] != SpecialCandy.NONE:
+                    cannon_specials[r, c] = specials[r, c]
 
                 # Ingredients: Cherry ('018'), Hazelnut ('020' when drop mode)
                 if "018" in tokens:
@@ -226,6 +242,7 @@ class KingLevelLoader:
             initial_ingredients=ingredients,
             initial_colors=colors,
             initial_specials=specials,
+            cannon_specials=cannon_specials,
             target_ingredients=target_ing,
             portals=portals,
             cannons=cannons,
