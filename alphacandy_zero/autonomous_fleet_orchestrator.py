@@ -92,7 +92,7 @@ KAGGLE_CPU_FLEET = [
     ("CPU-2 (Arena & PLR)", "hammadshakeelai/alphacandy-zero-cpu-arena-and-plr-trainer", "kaggle_deploy/zero_cpu_arena_and_plr"),
     ("CPU-3 (Oracle 1001-1500)", "hammadshakeelai/alphacandy-zero-oracle-shard-1001-to-1500", "kaggle_deploy/zero_oracle_1001_1500"),
     ("CPU-4 (Oracle 1501-2000)", "hammadshakeelai/alphacandy-zero-oracle-shard-1501-to-2000", "kaggle_deploy/zero_oracle_1501_2000"),
-    ("CPU-5 (Oracle 651-1000)", "hammadshakeelai/alphacandy-zero-oracle-shard-651-to-1000", "kaggle_deploy/zero_oracle_651_1000"),
+    ("CPU-5 (Frontier 5k-7.5k)", "hammadshakeelai/alphacandy-frontier-5000-to-7500", "kaggle_deploy/frontier_5000_kernel"),
 ]
 
 
