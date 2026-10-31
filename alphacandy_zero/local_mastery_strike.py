@@ -24,10 +24,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core.king_level_loader import KingLevelLoader
 from alphacandy_zero.oracle import solve_with_oracle
 
-TARGET_LEVELS = [953, 975, 1349, 1351, 656, 1205, 1794, 1958, 2245, 606]
-BEAM_WIDTH = 22
+TARGET_LEVELS = [953, 975, 1349, 2242, 1351, 656, 1794, 1958, 1205, 2245]
+BEAM_WIDTH = 24
 BRANCH_PER_NODE = 8
-MAX_SEEDS = 36
+MAX_SEEDS = 48
 OUT_PATH = Path("runs/local_mastery_strike_results.json")
 
 

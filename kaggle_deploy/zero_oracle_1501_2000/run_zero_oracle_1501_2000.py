@@ -27,9 +27,9 @@ os.environ["OPENBLAS_NUM_THREADS"] = "1"
 
 SHARD_LABEL = "1501-2000"
 TARGET_LEVELS = [1794, 1958]
-BEAM_WIDTH = 20
+BEAM_WIDTH = 24
 MAX_BRANCH = 8
-NUM_SEEDS = 24
+NUM_SEEDS = 36
 MAX_WALLTIME_SEC = 1080.0  # 18 minutes strict safety cutoff
 
 KAGGLE_INPUT = Path("/kaggle/input")

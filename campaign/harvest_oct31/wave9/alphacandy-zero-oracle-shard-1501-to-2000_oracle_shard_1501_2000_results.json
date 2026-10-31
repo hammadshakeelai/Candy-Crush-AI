@@ -1,0 +1,49 @@
+{
+  "shard": "1501-2000",
+  "target_count": 2,
+  "evaluated_count": 2,
+  "newly_won_count": 0,
+  "newly_won_levels": [],
+  "near_miss_le2_count": 0,
+  "still_unsolved_levels": [
+    1794,
+    1958
+  ],
+  "win_rate_on_shard": 0.0,
+  "elapsed_sec": 668.9,
+  "finished": true,
+  "results": [
+    {
+      "level_id": 1958,
+      "level_type": "JELLY",
+      "moves_limit": 35,
+      "initial_objectives": 108,
+      "isolated_islands": 9,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 24,
+      "moves_used": 34,
+      "moves_remaining": 1,
+      "final_score": 192359,
+      "best_remaining_objectives": 8,
+      "elapsed_sec": 533.44,
+      "error": null
+    },
+    {
+      "level_id": 1794,
+      "level_type": "JELLY",
+      "moves_limit": 21,
+      "initial_objectives": 30,
+      "isolated_islands": 4,
+      "won": false,
+      "winning_seed": null,
+      "attempts_used": 24,
+      "moves_used": 20,
+      "moves_remaining": 1,
+      "final_score": 58750,
+      "best_remaining_objectives": 8,
+      "elapsed_sec": 660.06,
+      "error": null
+    }
+  ]
+}
