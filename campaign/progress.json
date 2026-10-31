@@ -39167,18 +39167,1618 @@
       "score": 124500,
       "level_type": "JELLY",
       "time_sec": 0.6
+    },
+    "4348": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 35,
+      "winning_seed": 510349,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4344": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 35,
+      "winning_seed": 470321,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4347": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 26,
+      "winning_seed": 500342,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4349": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 27,
+      "winning_seed": 520356,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4346": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 30,
+      "winning_seed": 490335,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4351": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 540370,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4353": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 23,
+      "winning_seed": 560384,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4350": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 24,
+      "winning_seed": 530363,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4352": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 15,
+      "winning_seed": 550377,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4355": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 26,
+      "winning_seed": 580398,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4356": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 19,
+      "winning_seed": 590405,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4360": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 630433,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4361": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 28,
+      "winning_seed": 640440,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4362": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 26,
+      "winning_seed": 650447,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4363": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 20,
+      "winning_seed": 660454,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4365": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 680468,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4359": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 30,
+      "winning_seed": 620426,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4368": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 18,
+      "winning_seed": 710489,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4369": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 34,
+      "winning_seed": 720496,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4354": {
+      "won": true,
+      "moves": 9,
+      "moves_limit": 15,
+      "winning_seed": 570391,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4371": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 26,
+      "winning_seed": 740510,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4372": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 23,
+      "winning_seed": 750517,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4373": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 23,
+      "winning_seed": 760524,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4374": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 26,
+      "winning_seed": 770531,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4375": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 26,
+      "winning_seed": 780538,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4370": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 25,
+      "winning_seed": 730503,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4357": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 28,
+      "winning_seed": 600412,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4364": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 33,
+      "winning_seed": 670461,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4378": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 32,
+      "winning_seed": 810559,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4379": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 37,
+      "winning_seed": 820566,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4376": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 27,
+      "winning_seed": 790545,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4380": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 830573,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4345": {
+      "won": true,
+      "moves": 9,
+      "moves_limit": 28,
+      "winning_seed": 480328,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4381": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 16,
+      "winning_seed": 840580,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4382": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 850587,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4377": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 27,
+      "winning_seed": 800552,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4366": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 23,
+      "winning_seed": 690475,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4358": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 28,
+      "winning_seed": 610419,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4385": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 880608,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4386": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 890615,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4387": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 30,
+      "winning_seed": 900622,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4388": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 18,
+      "winning_seed": 910629,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4392": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 20,
+      "winning_seed": 950657,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4391": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 35,
+      "winning_seed": 940650,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4394": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 970671,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4395": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 22,
+      "winning_seed": 980678,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4397": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 19,
+      "winning_seed": 689,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4396": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 18,
+      "winning_seed": 990685,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4400": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 24,
+      "winning_seed": 30710,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4384": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 23,
+      "winning_seed": 870601,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4367": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 25,
+      "winning_seed": 700482,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4401": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 40717,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4389": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 29,
+      "winning_seed": 920636,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4403": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 28,
+      "winning_seed": 60731,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4393": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 23,
+      "winning_seed": 960664,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4406": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 28,
+      "winning_seed": 90752,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4408": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 18,
+      "winning_seed": 110766,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4407": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 21,
+      "winning_seed": 100759,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4410": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 23,
+      "winning_seed": 130780,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4411": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 140787,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4383": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 26,
+      "winning_seed": 860594,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4413": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 31,
+      "winning_seed": 160801,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4412": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 150794,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4416": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 18,
+      "winning_seed": 190822,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4415": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 20,
+      "winning_seed": 180815,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4404": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 19,
+      "winning_seed": 70738,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4417": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 18,
+      "winning_seed": 200829,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4419": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 24,
+      "winning_seed": 220843,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4418": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 17,
+      "winning_seed": 210836,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4390": {
+      "won": true,
+      "moves": 11,
+      "moves_limit": 25,
+      "winning_seed": 930643,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4420": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 24,
+      "winning_seed": 230850,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4421": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 19,
+      "winning_seed": 240857,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4423": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 23,
+      "winning_seed": 260871,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4422": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 19,
+      "winning_seed": 250864,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4409": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 24,
+      "winning_seed": 120773,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4414": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 17,
+      "winning_seed": 170808,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4426": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 290892,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4399": {
+      "won": true,
+      "moves": 11,
+      "moves_limit": 29,
+      "winning_seed": 20703,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4427": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 18,
+      "winning_seed": 300899,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4402": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 31,
+      "winning_seed": 50724,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4429": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 35,
+      "winning_seed": 320913,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4405": {
+      "won": true,
+      "moves": 8,
+      "moves_limit": 35,
+      "winning_seed": 80745,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4433": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 360941,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4430": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 25,
+      "winning_seed": 330920,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4425": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 26,
+      "winning_seed": 280885,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4432": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 34,
+      "winning_seed": 350934,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4434": {
+      "won": true,
+      "moves": 2,
+      "moves_limit": 27,
+      "winning_seed": 370948,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4436": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 22,
+      "winning_seed": 390962,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4439": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 25,
+      "winning_seed": 420983,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4437": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 23,
+      "winning_seed": 400969,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4440": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 24,
+      "winning_seed": 430990,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4398": {
+      "won": true,
+      "moves": 12,
+      "moves_limit": 34,
+      "winning_seed": 10696,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4442": {
+      "won": true,
+      "moves": 1,
+      "moves_limit": 20,
+      "winning_seed": 451004,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4424": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 29,
+      "winning_seed": 270878,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4443": {
+      "won": true,
+      "moves": 3,
+      "moves_limit": 25,
+      "winning_seed": 461011,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4431": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 26,
+      "winning_seed": 340927,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4435": {
+      "won": true,
+      "moves": 5,
+      "moves_limit": 26,
+      "winning_seed": 380955,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4428": {
+      "won": true,
+      "moves": 7,
+      "moves_limit": 27,
+      "winning_seed": 310906,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4438": {
+      "won": true,
+      "moves": 4,
+      "moves_limit": 25,
+      "winning_seed": 410976,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4441": {
+      "won": true,
+      "moves": 6,
+      "moves_limit": 26,
+      "winning_seed": 440997,
+      "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "4448": {
+      "level": 4448,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 1.35,
+      "winning_seed": 511046,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4453": {
+      "level": 4453,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "elapsed_sec": 1.35,
+      "winning_seed": 561081,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4449": {
+      "level": 4449,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "elapsed_sec": 1.42,
+      "winning_seed": 521053,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4451": {
+      "level": 4451,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 20,
+      "elapsed_sec": 1.44,
+      "winning_seed": 541067,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4444": {
+      "level": 4444,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 1.48,
+      "winning_seed": 471018,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4445": {
+      "level": 4445,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 29,
+      "elapsed_sec": 1.51,
+      "winning_seed": 481025,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4447": {
+      "level": 4447,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "elapsed_sec": 1.5,
+      "winning_seed": 501039,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4455": {
+      "level": 4455,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "elapsed_sec": 1.07,
+      "winning_seed": 581095,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4459": {
+      "level": 4459,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "elapsed_sec": 1.22,
+      "winning_seed": 621123,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4452": {
+      "level": 4452,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "elapsed_sec": 2.97,
+      "winning_seed": 551074,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4457": {
+      "level": 4457,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 29,
+      "elapsed_sec": 1.32,
+      "winning_seed": 601109,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4460": {
+      "level": 4460,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "elapsed_sec": 1.22,
+      "winning_seed": 631130,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4461": {
+      "level": 4461,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 30,
+      "elapsed_sec": 0.99,
+      "winning_seed": 641137,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4464": {
+      "level": 4464,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 35,
+      "elapsed_sec": 1.07,
+      "winning_seed": 671158,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4465": {
+      "level": 4465,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "elapsed_sec": 1.07,
+      "winning_seed": 681165,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4463": {
+      "level": 4463,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 35,
+      "elapsed_sec": 2.05,
+      "winning_seed": 661151,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4446": {
+      "level": 4446,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 30,
+      "elapsed_sec": 5.35,
+      "winning_seed": 491032,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4467": {
+      "level": 4467,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "elapsed_sec": 1.3,
+      "winning_seed": 701179,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4450": {
+      "level": 4450,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 22,
+      "elapsed_sec": 6.1,
+      "winning_seed": 531060,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4456": {
+      "level": 4456,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 23,
+      "elapsed_sec": 4.49,
+      "winning_seed": 591102,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4469": {
+      "level": 4469,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 33,
+      "elapsed_sec": 0.96,
+      "winning_seed": 721193,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4470": {
+      "level": 4470,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 24,
+      "elapsed_sec": 1.05,
+      "winning_seed": 731200,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4462": {
+      "level": 4462,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "elapsed_sec": 3.52,
+      "winning_seed": 651144,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4471": {
+      "level": 4471,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "elapsed_sec": 0.84,
+      "winning_seed": 741207,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4458": {
+      "level": 4458,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 23,
+      "elapsed_sec": 5.48,
+      "winning_seed": 611116,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4472": {
+      "level": 4472,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 30,
+      "elapsed_sec": 1.23,
+      "winning_seed": 751214,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4474": {
+      "level": 4474,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "elapsed_sec": 0.99,
+      "winning_seed": 771228,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4475": {
+      "level": 4475,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 21,
+      "elapsed_sec": 1.01,
+      "winning_seed": 781235,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4476": {
+      "level": 4476,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 25,
+      "elapsed_sec": 1.06,
+      "winning_seed": 791242,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4478": {
+      "level": 4478,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "elapsed_sec": 0.95,
+      "winning_seed": 811256,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4477": {
+      "level": 4477,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 26,
+      "elapsed_sec": 1.37,
+      "winning_seed": 801249,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4481": {
+      "level": 4481,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 29,
+      "elapsed_sec": 1.0,
+      "winning_seed": 841277,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4473": {
+      "level": 4473,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 24,
+      "elapsed_sec": 2.76,
+      "winning_seed": 761221,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4482": {
+      "level": 4482,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "elapsed_sec": 1.03,
+      "winning_seed": 851284,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4468": {
+      "level": 4468,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 18,
+      "elapsed_sec": 4.91,
+      "winning_seed": 711186,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4483": {
+      "level": 4483,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "elapsed_sec": 1.03,
+      "winning_seed": 861291,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4479": {
+      "level": 4479,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "elapsed_sec": 2.34,
+      "winning_seed": 821263,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4486": {
+      "level": 4486,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 23,
+      "elapsed_sec": 0.9,
+      "winning_seed": 891312,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4487": {
+      "level": 4487,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 0.93,
+      "winning_seed": 901319,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4454": {
+      "level": 4454,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 34,
+      "elapsed_sec": 9.1,
+      "winning_seed": 571088,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4488": {
+      "level": 4488,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "elapsed_sec": 1.01,
+      "winning_seed": 911326,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4490": {
+      "level": 4490,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "elapsed_sec": 0.97,
+      "winning_seed": 931340,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4491": {
+      "level": 4491,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "elapsed_sec": 0.98,
+      "winning_seed": 941347,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4494": {
+      "level": 4494,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 18,
+      "elapsed_sec": 0.92,
+      "winning_seed": 971368,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4492": {
+      "level": 4492,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 1.2,
+      "winning_seed": 951354,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4484": {
+      "level": 4484,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 27,
+      "elapsed_sec": 3.68,
+      "winning_seed": 871298,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4496": {
+      "level": 4496,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 19,
+      "elapsed_sec": 0.95,
+      "winning_seed": 991382,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4495": {
+      "level": 4495,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 25,
+      "elapsed_sec": 1.35,
+      "winning_seed": 981375,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4497": {
+      "level": 4497,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 28,
+      "elapsed_sec": 0.95,
+      "winning_seed": 1386,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4498": {
+      "level": 4498,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "elapsed_sec": 1.08,
+      "winning_seed": 11393,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4466": {
+      "level": 4466,
+      "won": true,
+      "moves_used": 9,
+      "moves_limit": 30,
+      "elapsed_sec": 9.33,
+      "winning_seed": 691172,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4502": {
+      "level": 4502,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "elapsed_sec": 0.99,
+      "winning_seed": 51421,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4485": {
+      "level": 4485,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 23,
+      "elapsed_sec": 5.05,
+      "winning_seed": 881305,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4503": {
+      "level": 4503,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 22,
+      "elapsed_sec": 1.09,
+      "winning_seed": 61428,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4506": {
+      "level": 4506,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 22,
+      "elapsed_sec": 1.01,
+      "winning_seed": 91449,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4507": {
+      "level": 4507,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 0.9,
+      "winning_seed": 101456,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4493": {
+      "level": 4493,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 27,
+      "elapsed_sec": 4.86,
+      "winning_seed": 961361,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4480": {
+      "level": 4480,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 25,
+      "elapsed_sec": 8.18,
+      "winning_seed": 831270,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4508": {
+      "level": 4508,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "elapsed_sec": 0.99,
+      "winning_seed": 111463,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4511": {
+      "level": 4511,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 18,
+      "elapsed_sec": 0.87,
+      "winning_seed": 141484,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4489": {
+      "level": 4489,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 25,
+      "elapsed_sec": 7.63,
+      "winning_seed": 921333,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4501": {
+      "level": 4501,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 33,
+      "elapsed_sec": 4.56,
+      "winning_seed": 41414,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4500": {
+      "level": 4500,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 25,
+      "elapsed_sec": 5.07,
+      "winning_seed": 31407,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4509": {
+      "level": 4509,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 19,
+      "elapsed_sec": 2.71,
+      "winning_seed": 121470,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4514": {
+      "level": 4514,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 27,
+      "elapsed_sec": 1.0,
+      "winning_seed": 171505,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4517": {
+      "level": 4517,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 28,
+      "elapsed_sec": 0.98,
+      "winning_seed": 201526,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4515": {
+      "level": 4515,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 29,
+      "elapsed_sec": 1.87,
+      "winning_seed": 181512,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4518": {
+      "level": 4518,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "elapsed_sec": 0.88,
+      "winning_seed": 211533,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4519": {
+      "level": 4519,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 26,
+      "elapsed_sec": 0.99,
+      "winning_seed": 221540,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4512": {
+      "level": 4512,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 24,
+      "elapsed_sec": 4.85,
+      "winning_seed": 151491,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4522": {
+      "level": 4522,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 21,
+      "elapsed_sec": 0.81,
+      "winning_seed": 251561,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4499": {
+      "level": 4499,
+      "won": true,
+      "moves_used": 6,
+      "moves_limit": 31,
+      "elapsed_sec": 9.2,
+      "winning_seed": 21400,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4505": {
+      "level": 4505,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 33,
+      "elapsed_sec": 7.84,
+      "winning_seed": 81442,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4523": {
+      "level": 4523,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "elapsed_sec": 0.9,
+      "winning_seed": 261568,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4520": {
+      "level": 4520,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 23,
+      "elapsed_sec": 3.42,
+      "winning_seed": 231547,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4527": {
+      "level": 4527,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 22,
+      "elapsed_sec": 0.91,
+      "winning_seed": 301596,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4525": {
+      "level": 4525,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 28,
+      "elapsed_sec": 1.92,
+      "winning_seed": 281582,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4528": {
+      "level": 4528,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 21,
+      "elapsed_sec": 0.86,
+      "winning_seed": 311603,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4513": {
+      "level": 4513,
+      "won": true,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "elapsed_sec": 7.84,
+      "winning_seed": 161498,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4530": {
+      "level": 4530,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 23,
+      "elapsed_sec": 0.87,
+      "winning_seed": 331617,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4531": {
+      "level": 4531,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 20,
+      "elapsed_sec": 1.23,
+      "winning_seed": 341624,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4524": {
+      "level": 4524,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 24,
+      "elapsed_sec": 4.2,
+      "winning_seed": 271575,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4532": {
+      "level": 4532,
+      "won": true,
+      "moves_used": 2,
+      "moves_limit": 21,
+      "elapsed_sec": 1.0,
+      "winning_seed": 351631,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4526": {
+      "level": 4526,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 25,
+      "elapsed_sec": 4.05,
+      "winning_seed": 291589,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4510": {
+      "level": 4510,
+      "won": true,
+      "moves_used": 6,
+      "moves_limit": 28,
+      "elapsed_sec": 10.5,
+      "winning_seed": 131477,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4537": {
+      "level": 4537,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "elapsed_sec": 0.84,
+      "winning_seed": 401666,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4538": {
+      "level": 4538,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 23,
+      "elapsed_sec": 0.9,
+      "winning_seed": 411673,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4504": {
+      "level": 4504,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 20,
+      "elapsed_sec": 13.74,
+      "winning_seed": 71435,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4536": {
+      "level": 4536,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 21,
+      "elapsed_sec": 2.07,
+      "winning_seed": 391659,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4540": {
+      "level": 4540,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 28,
+      "elapsed_sec": 1.0,
+      "winning_seed": 431687,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4542": {
+      "level": 4542,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 23,
+      "elapsed_sec": 0.94,
+      "winning_seed": 451701,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4543": {
+      "level": 4543,
+      "won": true,
+      "moves_used": 1,
+      "moves_limit": 25,
+      "elapsed_sec": 0.86,
+      "winning_seed": 461708,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4539": {
+      "level": 4539,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 20,
+      "elapsed_sec": 2.36,
+      "winning_seed": 421680,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4521": {
+      "level": 4521,
+      "won": true,
+      "moves_used": 5,
+      "moves_limit": 19,
+      "elapsed_sec": 10.19,
+      "winning_seed": 241554,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4516": {
+      "level": 4516,
+      "won": true,
+      "moves_used": 6,
+      "moves_limit": 26,
+      "elapsed_sec": 12.36,
+      "winning_seed": 191519,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4541": {
+      "level": 4541,
+      "won": true,
+      "moves_used": 3,
+      "moves_limit": 23,
+      "elapsed_sec": 2.9,
+      "winning_seed": 441694,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4529": {
+      "level": 4529,
+      "won": true,
+      "moves_used": 8,
+      "moves_limit": 19,
+      "elapsed_sec": 7.06,
+      "winning_seed": 321610,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4533": {
+      "level": 4533,
+      "won": true,
+      "moves_used": 4,
+      "moves_limit": 23,
+      "elapsed_sec": 6.25,
+      "winning_seed": 361638,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4535": {
+      "level": 4535,
+      "won": true,
+      "moves_used": 6,
+      "moves_limit": 22,
+      "elapsed_sec": 6.26,
+      "winning_seed": 381652,
+      "timestamp": "2026-10-31T18:05:00Z"
+    },
+    "4534": {
+      "level": 4534,
+      "won": true,
+      "moves_used": 7,
+      "moves_limit": 20,
+      "elapsed_sec": 25.72,
+      "winning_seed": 379564,
+      "timestamp": "2026-10-31T18:05:00Z"
     }
   },
   "stats": {
-    "total_won": 4342,
-    "total_tested": 4342,
+    "total_won": 4543,
+    "total_tested": 4543,
     "win_rate": 100.0
   },
   "levels_1_2500_won": 2500,
   "levels_1_2500_unsolved": 0,
   "levels_1_2500_win_rate_pct": 100.0,
-  "global_levels_won": 4343,
-  "total_solved": 4343,
+  "global_levels_won": 4543,
+  "total_solved": 4543,
   "total_levels": 3550,
   "win_rate_percent": 100.0,
   "solved_levels": [
