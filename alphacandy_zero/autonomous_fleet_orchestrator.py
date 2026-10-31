@@ -86,12 +86,20 @@ def check_local_strike():
 
 
 def check_kaggle_gpu():
-    """Check Kaggle GPU flagship trainer status."""
+    """Check Kaggle GPU flagship trainer status and auto-harvest/re-dispatch."""
     py = str(REPO_ROOT / "venv" / "bin" / "kaggle")
     code, out, _ = get_cmd_output([py, "kernels", "status", "hammadshakeelai/alphacandy-titan-50m-gpu-mastery"], timeout=45)
     if "RUNNING" in out:
         return "RUNNING", "GPU sprint active"
     elif "COMPLETE" in out:
+        harvester = REPO_ROOT / "campaign" / "autonomous_titan_gpu_harvest.py"
+        py_bin = str(REPO_ROOT / "venv" / "bin" / "python3")
+        if not Path(py_bin).exists():
+            py_bin = sys.executable
+        if harvester.exists():
+            r_code, r_out, _ = get_cmd_output([py_bin, str(harvester)], timeout=900)
+            if r_code == 0:
+                return "RELAUNCHED", "GPU sprint completed, harvested, and next sprint dispatched on Tesla T4"
         gpu_dir = REPO_ROOT / "kaggle_deploy" / "alphacandy_titan_gpu_trainer"
         if gpu_dir.exists():
             r_code, r_out, _ = get_cmd_output([py, "kernels", "push", "-p", str(gpu_dir)], timeout=60)
