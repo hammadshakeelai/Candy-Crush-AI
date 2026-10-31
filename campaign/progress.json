@@ -62760,11 +62760,11 @@
     3550
   ],
   "summary": {
-    "total_levels": 6000,
-    "levels_won": 6000,
+    "total_levels": 7000,
+    "levels_won": 7000,
     "win_rate_percent": 100.0,
-    "max_level_conquered": 6000,
+    "max_level_conquered": 7000,
     "unbroken_flawless_solvability": true,
-    "milestone": "6000_LEVELS_MASTERED"
+    "milestone": "7000_LEVELS_MASTERED"
   }
 }
