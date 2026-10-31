@@ -1,0 +1,99 @@
+name: Cloud Notebook Runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      notebook_path:
+        description: 'Path to the .ipynb notebook to execute (e.g. notebooks/smoke_test.ipynb)'
+        required: true
+        default: 'notebooks/smoke_test.ipynb'
+        type: string
+      parameters:
+        description: 'Optional JSON parameters string for Papermill (e.g. {"epochs": 10})'
+        required: false
+        default: '{}'
+        type: string
+      output_dir:
+        description: 'Output directory for exported artifacts'
+        required: false
+        default: 'output_results'
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  run-notebook:
+    name: Headless Notebook Execution
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Papermill & Core Runner Tools
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --prefer-binary papermill ipykernel matplotlib pandas tabulate
+          python -m ipykernel install --user --name python3 --display-name "Python 3"
+
+      - name: Install Project Dependencies (if needed)
+        run: |
+          if [ -f requirements.txt ]; then
+            echo "Installing dependencies from requirements.txt..."
+            python -m pip install --prefer-binary -r requirements.txt || echo "Warning: Some dependencies failed to install, proceeding with installed packages."
+          fi
+
+      - name: Prepare Output Directory
+        run: |
+          mkdir -p "${{ inputs.output_dir }}"
+
+      - name: Execute Notebook Headlessly via Papermill
+        run: |
+          set -e
+          NOTEBOOK="${{ inputs.notebook_path }}"
+          PARAMS='${{ inputs.parameters }}'
+          OUTDIR="${{ inputs.output_dir }}"
+          NB_NAME=$(basename "$NOTEBOOK")
+          OUT_NB="$OUTDIR/executed_$NB_NAME"
+
+          echo "=========================================================="
+          echo "🚀 EXECUTING NOTEBOOK: $NOTEBOOK"
+          echo "📁 DESTINATION:       $OUT_NB"
+          echo "⚙️ INJECTED PARAMS:   $PARAMS"
+          echo "=========================================================="
+
+          export OUTPUT_DIR="$OUTDIR"
+
+          if [ -n "$PARAMS" ] && [ "$PARAMS" != "{}" ]; then
+            echo "$PARAMS" > /tmp/papermill_params.json
+            python -m papermill "$NOTEBOOK" "$OUT_NB" -f /tmp/papermill_params.json -k python3 --log-output --cwd .
+          else
+            python -m papermill "$NOTEBOOK" "$OUT_NB" -k python3 --log-output --cwd .
+          fi
+
+      - name: Inspect Generated Files
+        if: always()
+        run: |
+          OUTDIR="${{ inputs.output_dir }}"
+          echo "Listing generated files in $OUTDIR:"
+          ls -lh "$OUTDIR" || true
+
+      - name: Upload Results Artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: notebook-results
+          path: ${{ inputs.output_dir }}/
+          if-no-files-found: warn
+          retention-days: 14
