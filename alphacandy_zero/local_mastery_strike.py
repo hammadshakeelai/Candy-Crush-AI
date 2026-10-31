@@ -98,9 +98,9 @@ def main():
             if unrecorded_1_2500:
                 target_levels = unrecorded_1_2500
             else:
-                # Advance into Horizon 2501..5000 (next 50 levels)
+                # Advance into Horizon 2501..5000 in continuous blocks of 100 levels
                 solved_above_2500 = {int(k) for k, v in cl.items() if int(k) > 2500 and v.get("won")}
-                target_levels = [lvl for lvl in range(2501, 5001) if lvl not in solved_above_2500][:50]
+                target_levels = [lvl for lvl in range(2501, 5001) if lvl not in solved_above_2500][:100]
         except Exception:
             pass
 
