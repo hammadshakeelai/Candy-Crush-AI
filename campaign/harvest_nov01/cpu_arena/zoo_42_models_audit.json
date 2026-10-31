@@ -1,0 +1,612 @@
+{
+  "total_zoo_models": 42,
+  "passed_models": 42,
+  "cumulative_zoo_parameters": 252418664,
+  "elapsed_sec": 2.64,
+  "models": [
+    {
+      "model_name": "MultiStepActionPlannerNet",
+      "parameters": 2465619,
+      "latency_ms": 29.18,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "multi_step_logits",
+        "planned_sequence",
+        "step_values",
+        "spatial_attention_maps"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "EpistemicUncertaintyCandyNet",
+      "parameters": 11030306,
+      "latency_ms": 68.45,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "aleatoric_uncertainty",
+        "epistemic_uncertainty",
+        "global_aleatoric_entropy",
+        "global_epistemic_uncertainty",
+        "epistemic_vacuity",
+        "dirichlet_alpha",
+        "ensemble_policy_logits",
+        "ensemble_values",
+        "value_epistemic_std"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "DPPDiverseBeamCandyNet",
+      "parameters": 6701073,
+      "latency_ms": 29.28,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "dpp_features"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "DifferentiableBipartiteMatcherNet",
+      "parameters": 873219,
+      "latency_ms": 6.96,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "assignment_matrix",
+        "subgoal_urgency"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "SimCLRCandyContrastiveNet",
+      "parameters": 4456137,
+      "latency_ms": 26.93,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "z_proj",
+        "encoder_latent"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "DirectPreferenceCandyNet",
+      "parameters": 1597729,
+      "latency_ms": 8.34,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "implicit_reward"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "CMAESNeuroEvolutionAgent",
+      "parameters": 8685625,
+      "latency_ms": 53.13,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "population_logits",
+        "population_fitness_weights",
+        "population_disagreement",
+        "active_genomes",
+        "step_size_sigma"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "CandyDecisionTransformer",
+      "parameters": 6728498,
+      "latency_ms": 36.11,
+      "output_keys": [
+        "tensor"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "CandyDiffusionPolicyNet",
+      "parameters": 12588129,
+      "latency_ms": 78.68,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "prior_logits",
+        "denoising_trajectory"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "QuantileMCTSHybridNet",
+      "parameters": 6871921,
+      "latency_ms": 30.96,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "q_quantiles",
+        "aleatoric_variance",
+        "variance_puct_score"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "EnergyBasedCandyNet",
+      "parameters": 8796563,
+      "latency_ms": 47.65,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "energies",
+        "local_dipole_energy",
+        "global_coupling_energy",
+        "boltzmann_probs",
+        "helmholtz_free_energy"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "GravityEquivariantCandyNet",
+      "parameters": 9380611,
+      "latency_ms": 107.37,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "spatial_features"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "Star1ExpectimaxPrunerNet",
+      "parameters": 7683656,
+      "latency_ms": 44.9,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "v_min",
+        "v_max",
+        "q_min",
+        "q_exp",
+        "q_max",
+        "star1_q_values",
+        "star1_active_mask",
+        "branch_evaluated_mask",
+        "pruning_efficiency",
+        "refill_volatility"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "HardNegativeFocalDistillerNet",
+      "parameters": 3701763,
+      "latency_ms": 24.46,
+      "output_keys": [
+        "policy_logits",
+        "raw_policy_logits",
+        "tabu_repulsion_penalty",
+        "active_failure_memory",
+        "value",
+        "win_prob",
+        "hardness_score",
+        "state_embedding"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "CandyGFlowNet",
+      "parameters": 14412658,
+      "latency_ms": 59.89,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "log_F_sa",
+        "log_Z_s",
+        "log_P_F",
+        "log_P_B",
+        "action_embeddings"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "WormholeGraphNeuralNet",
+      "parameters": 5783732,
+      "latency_ms": 58.73,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "node_embeddings",
+        "edge_adj",
+        "relation_attention"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "GumbelMuZeroCandyNet",
+      "parameters": 14409778,
+      "latency_ms": 79.77,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "latent_z",
+        "predicted_reward",
+        "next_latent_z",
+        "next_win_prob"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "CascadePotentialFieldNet",
+      "parameters": 3117274,
+      "latency_ms": 26.84,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "potential_energy_field",
+        "kinetic_cascade_release",
+        "total_board_potential",
+        "hamiltonian_drift_loss"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "HierarchicalSubgoalCandyNet",
+      "parameters": 13232927,
+      "latency_ms": 60.52,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "option_probs",
+        "option_logits",
+        "option_q_values",
+        "option_terminations",
+        "subgoal_heatmap",
+        "per_option_heatmaps",
+        "per_option_policy_logits"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "LevelConditionedHyperNet",
+      "parameters": 7124489,
+      "latency_ms": 34.61,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "level_signature",
+        "regime_embedding",
+        "generated_filter_norms"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "KolmogorovArnoldCandyNet",
+      "parameters": 10222630,
+      "latency_ms": 109.51,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "cascade_synergy_map",
+        "spline_reg_loss",
+        "latent_z"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "LiquidNeuralCandyNet",
+      "parameters": 7885267,
+      "latency_ms": 45.42,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "liquid_hidden_state",
+        "liquid_time_constants",
+        "volatility_dt",
+        "urgency_index"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "GrandmasterMoERouter",
+      "parameters": 2540335,
+      "latency_ms": 14.51,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "expert_weights",
+        "dense_expert_weights",
+        "top_k_indices",
+        "top_k_weights",
+        "topological_features",
+        "load_balancing_loss"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "TranspositionMCGSSolver",
+      "parameters": 7572641,
+      "latency_ms": 37.08,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "q_quantiles",
+        "cvar_tilted_q",
+        "desperation_index",
+        "zobrist_hashes"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "NeuralCACascadePredictorNet",
+      "parameters": 1397977,
+      "latency_ms": 37.29,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "settled_board_logits",
+        "cascade_activity_trajectory",
+        "cascade_ignition_heatmap",
+        "final_ca_state"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "NeuroSymbolicTacticalDSLNet",
+      "parameters": 1637588,
+      "latency_ms": 17.54,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "predicate_truth_matrix",
+        "synthesized_rule_scores",
+        "symbolic_policy_logits",
+        "neural_residual_logits"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "NgPotentialRewardShapingNet",
+      "parameters": 2870869,
+      "latency_ms": 11.1,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "state_potential",
+        "potential_components"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "RetNetCandy2D",
+      "parameters": 6715233,
+      "latency_ms": 44.42,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "gravity_decay_matrix",
+        "recurrent_state",
+        "latent_z"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "ReverseCurriculumGeneratorNet",
+      "parameters": 4230345,
+      "latency_ms": 16.41,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "expected_moves_to_go",
+        "moves_to_go_logits",
+        "reverse_scramble_logits"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "OptimalTransportCandyNet",
+      "parameters": 6888795,
+      "latency_ms": 36.66,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "value",
+        "transport_plan",
+        "cost_matrix",
+        "source_marginal",
+        "target_marginal",
+        "wasserstein_distance"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "SwitchMoECandyTransformer",
+      "parameters": 6377078,
+      "latency_ms": 47.36,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "moe_aux_loss",
+        "expert_utilization",
+        "routing_map"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "BlockerContainmentSpecialistNet",
+      "parameters": 5995384,
+      "latency_ms": 40.46,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "contagion_forecast_3step",
+        "adjacent_blocker_strike_map",
+        "wrapped_frosting_blast_yield",
+        "blocker_containment_urgency"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "SpecialComboAlchemistNet",
+      "parameters": 5202148,
+      "latency_ms": 74.36,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "color_bomb_recipe_map",
+        "wrapped_recipe_map",
+        "striped_recipe_map",
+        "two_hop_special_proximity_map",
+        "combo_synergy_probs"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "EndgameClutchMiracleNet",
+      "parameters": 5337381,
+      "latency_ms": 36.04,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "lethal_1move_action_probs",
+        "lethal_2move_prob",
+        "cascade_volatility_scores",
+        "chain_reaction_entropy_map"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "IngredientDropSpecialistNet",
+      "parameters": 6069653,
+      "latency_ms": 43.59,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "column_obstruction_density",
+        "below_ingredient_hazard_map",
+        "lane_shift_logits",
+        "vertical_sink_logits",
+        "exit_chute_clearance_prob",
+        "column_vertical_attention"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "JellyCornerSniperNet",
+      "parameters": 5162261,
+      "latency_ms": 77.22,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "dof_friction_mask",
+        "jelly_sniper_priority_map",
+        "crosshair_laser_map",
+        "corner_isolation_severity"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "OpeningBoardArchitectNet",
+      "parameters": 1177425,
+      "latency_ms": 11.36,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "board_openness_score",
+        "dispenser_uncap_bonus"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "SpectralGraphWaveletCandyNet",
+      "parameters": 2708990,
+      "latency_ms": 24.07,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "normalized_laplacian",
+        "chokepoint_map",
+        "algebraic_connectivity_proxy",
+        "spectral_wavelet_energy",
+        "chebyshev_band_energy"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "MatrixProductStateCandyNet",
+      "parameters": 1912757,
+      "latency_ms": 32.96,
+      "output_keys": [
+        "policy_logits",
+        "value",
+        "win_prob",
+        "row_mps_states",
+        "col_mps_states",
+        "collinear_5match_prob",
+        "entanglement_spectrum_norm"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "BayesianBanditRootSolverNet",
+      "parameters": 1597730,
+      "latency_ms": 7.96,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "alpha",
+        "beta",
+        "epistemic_uncertainty"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "EpisodicMemoryTransformerCandyNet",
+      "parameters": 731412,
+      "latency_ms": 8.2,
+      "output_keys": [
+        "policy_logits",
+        "win_prob",
+        "new_memory_vector"
+      ],
+      "status": "PASS"
+    },
+    {
+      "model_name": "CandyMamba2DNet",
+      "parameters": 8543058,
+      "latency_ms": 97.7,
+      "output_keys": [
+        "tensor"
+      ],
+      "status": "PASS"
+    }
+  ]
+}

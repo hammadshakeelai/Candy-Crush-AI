@@ -1,0 +1,775 @@
+{
+  "levels_evaluated": [
+    1,
+    5,
+    10,
+    15,
+    20,
+    25
+  ],
+  "total_duration_sec": 39.277,
+  "leaderboard": [
+    {
+      "name": "KingPlaytestCNN2018",
+      "creator": "Gudmundsson et al. (King, 2018)",
+      "family": "External Academic/Industry",
+      "paradigm": "7-Layer 3x3 ELU ConvNet (Supervised Playtester)",
+      "parameters": 1846529,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 4.0,
+      "avg_score": 53591,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 0.0731
+    },
+    {
+      "name": "BottomRowGreedyBot",
+      "creator": "daviddoran/bejeweled-bot Baseline",
+      "family": "External GitHub Creator",
+      "paradigm": "Bottom-Row Gravity Cascade Heuristic",
+      "parameters": 0,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 5.5,
+      "avg_score": 50889,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 0.0627
+    },
+    {
+      "name": "KarimiCandyRL2020",
+      "creator": "Karimi et al. (KTH & King, 2020)",
+      "family": "External Academic/Industry",
+      "paradigm": "4-Skill Hybrid Intrinsic RL (HSH + Avg Bagging)",
+      "parameters": 1561396,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 2.17,
+      "avg_score": 45537,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 0.2596
+    },
+    {
+      "name": "AlphaCandy Grandmaster Unified",
+      "creator": "Our AlphaCandy Suite",
+      "family": "AlphaCandy (Ours)",
+      "paradigm": "Spatial Transformer + DQN + Macro-Combo Expectimax",
+      "parameters": 14412821,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 3.67,
+      "avg_score": 45496,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 3.6992
+    },
+    {
+      "name": "UCTCreatorAgent",
+      "creator": "Poromaa (2017) / Shin et al.",
+      "family": "External Academic Search",
+      "paradigm": "Classic UCT MCTS (28 Rollouts, No Afterstates)",
+      "parameters": 0,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 4.17,
+      "avg_score": 41968,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 1.307
+    },
+    {
+      "name": "VanillaPPOMatch3Net",
+      "creator": "kamildar/gym-match3 / CleanRL",
+      "family": "External GitHub Creator",
+      "paradigm": "Shared 4-Layer CNN Actor-Critic PPO",
+      "parameters": 804977,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 3.83,
+      "avg_score": 36145,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 0.0421
+    },
+    {
+      "name": "GeneticHeuristicCreatorBot",
+      "creator": "Open-Source GA/NEAT Match-3 Bots",
+      "family": "External GitHub Creator",
+      "paradigm": "8-Gene Evolved Chromosome + NEAT MLP",
+      "parameters": 169,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 2.17,
+      "avg_score": 34414,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 0.2376
+    },
+    {
+      "name": "GreedyImmediateScoreBot",
+      "creator": "AlexEne/CCrush-Bot & OpenCV Bots",
+      "family": "External GitHub Creator",
+      "paradigm": "1-Step Immediate Point & Cascade Maximizer",
+      "parameters": 0,
+      "wins": 5,
+      "total_levels": 6,
+      "win_rate_pct": 83.3,
+      "avg_moves": 4.83,
+      "avg_score": 91674,
+      "avg_obj_remaining": 0.17,
+      "avg_time_sec": 0.6481
+    },
+    {
+      "name": "MulliganaceousPolicyNet",
+      "creator": "mulliganaceous / Community RL",
+      "family": "External GitHub Creator",
+      "paradigm": "4-Block ResNet + Pairwise Swap Policy Head",
+      "parameters": 344642,
+      "wins": 5,
+      "total_levels": 6,
+      "win_rate_pct": 83.3,
+      "avg_moves": 7.0,
+      "avg_score": 77348,
+      "avg_obj_remaining": 0.17,
+      "avg_time_sec": 0.092
+    },
+    {
+      "name": "AlphaCandy Dueling DQN Master",
+      "creator": "Our AlphaCandy Suite",
+      "family": "AlphaCandy (Ours)",
+      "paradigm": "Double Dueling DQN + PER + Action Masking",
+      "parameters": 2027697,
+      "wins": 5,
+      "total_levels": 6,
+      "win_rate_pct": 83.3,
+      "avg_moves": 8.67,
+      "avg_score": 58661,
+      "avg_obj_remaining": 0.17,
+      "avg_time_sec": 0.1238
+    }
+  ],
+  "per_model_details": {
+    "KingPlaytestCNN2018": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 1150,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0531
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 7,
+        "final_score": 2490,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0839
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 176992,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0865
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 18384,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0247
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 18489,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0579
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 7,
+        "final_score": 104042,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1323
+      }
+    ],
+    "MulliganaceousPolicyNet": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 1222,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0239
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 2340,
+        "objectives_remaining": 0,
+        "duration_sec": 0.014
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 212319,
+        "objectives_remaining": 0,
+        "duration_sec": 0.089
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 8397,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0757
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 7,
+        "final_score": 22926,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0856
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": false,
+        "moves_used": 22,
+        "final_score": 216887,
+        "objectives_remaining": 1,
+        "duration_sec": 0.2636
+      }
+    ],
+    "KarimiCandyRL2020": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 899,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0318
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 2772,
+        "objectives_remaining": 0,
+        "duration_sec": 0.083
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 4,
+        "final_score": 171171,
+        "objectives_remaining": 0,
+        "duration_sec": 0.4445
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 17988,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1328
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 6144,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1729
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 74247,
+        "objectives_remaining": 0,
+        "duration_sec": 0.6928
+      }
+    ],
+    "VanillaPPOMatch3Net": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 575,
+        "objectives_remaining": 0,
+        "duration_sec": 0.008
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 2240,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0422
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 137656,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0668
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 19354,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0379
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 18911,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0312
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 6,
+        "final_score": 38132,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0665
+      }
+    ],
+    "UCTCreatorAgent": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 502,
+        "objectives_remaining": 0,
+        "duration_sec": 0.144
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 4,
+        "final_score": 2326,
+        "objectives_remaining": 0,
+        "duration_sec": 0.7298
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 4,
+        "final_score": 144512,
+        "objectives_remaining": 0,
+        "duration_sec": 1.3174
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 7,
+        "final_score": 7338,
+        "objectives_remaining": 0,
+        "duration_sec": 2.3223
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 18826,
+        "objectives_remaining": 0,
+        "duration_sec": 1.2655
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 78307,
+        "objectives_remaining": 0,
+        "duration_sec": 2.0629
+      }
+    ],
+    "GeneticHeuristicCreatorBot": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 899,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0318
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 2772,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0807
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 166966,
+        "objectives_remaining": 0,
+        "duration_sec": 0.5518
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 9214,
+        "objectives_remaining": 0,
+        "duration_sec": 0.3518
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 6144,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1705
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 20487,
+        "objectives_remaining": 0,
+        "duration_sec": 0.2387
+      }
+    ],
+    "GreedyImmediateScoreBot": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 899,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0259
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 2772,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0751
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 172819,
+        "objectives_remaining": 0,
+        "duration_sec": 0.3389
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 17988,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1236
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 6144,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1627
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": false,
+        "moves_used": 22,
+        "final_score": 349425,
+        "objectives_remaining": 1,
+        "duration_sec": 3.1622
+      }
+    ],
+    "BottomRowGreedyBot": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 826,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0112
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 3394,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0249
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 6,
+        "final_score": 155084,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0699
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 4,
+        "final_score": 12596,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0662
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 8037,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0427
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 15,
+        "final_score": 125397,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1611
+      }
+    ],
+    "AlphaCandy Dueling DQN Master": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 502,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0256
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 2146,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0418
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 10,
+        "final_score": 156619,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1726
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 6,
+        "final_score": 7424,
+        "objectives_remaining": 0,
+        "duration_sec": 0.1009
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 9,
+        "final_score": 7865,
+        "objectives_remaining": 0,
+        "duration_sec": 0.134
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": false,
+        "moves_used": 22,
+        "final_score": 177409,
+        "objectives_remaining": 1,
+        "duration_sec": 0.2677
+      }
+    ],
+    "AlphaCandy Grandmaster Unified": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 575,
+        "objectives_remaining": 0,
+        "duration_sec": 0.2907
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 2099,
+        "objectives_remaining": 0,
+        "duration_sec": 0.6471
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 185075,
+        "objectives_remaining": 0,
+        "duration_sec": 4.6801
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 4,
+        "final_score": 6201,
+        "objectives_remaining": 0,
+        "duration_sec": 4.3221
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 7844,
+        "objectives_remaining": 0,
+        "duration_sec": 6.2006
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 5,
+        "final_score": 71183,
+        "objectives_remaining": 0,
+        "duration_sec": 6.0544
+      }
+    ]
+  }
+}

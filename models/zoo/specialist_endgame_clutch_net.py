@@ -176,7 +176,7 @@ class ClutchCascadeTransformerBlock(nn.Module):
         scores = torch.matmul(q, k.transpose(-2, -1)) * self.scale
 
         # Bias keys by [chain_reaction_entropy, remaining_target_priority]
-        key_feats = torch.stack([entropy_map.view(B, N), target_map.view(B, N)], dim=-1)  # (B, 81, 2)
+        key_feats = torch.stack([entropy_map.reshape(B, N), target_map.reshape(B, N)], dim=-1)  # (B, 81, 2)
         key_bias = self.key_gate_proj(key_feats).permute(0, 2, 1).unsqueeze(2)  # (B, H, 1, 81)
 
         attn = F.softmax(scores + key_bias, dim=-1)
@@ -372,7 +372,7 @@ class EndgameClutchMiracleNet(nn.Module):
             tokens = layer(tokens, chain_reaction_entropy_map, remaining_target_map)
 
         tokens = self.final_norm(tokens)
-        z_2d = tokens.transpose(1, 2).view(B, self.d_model, H, W)
+        z_2d = tokens.transpose(1, 2).contiguous().view(B, self.d_model, H, W)
         global_ctx = tokens.mean(dim=1)  # (B, d_model)
 
         # Step 3: Run 1-to-2 Move Lethal Win Detector & Cascade Volatility Scorer

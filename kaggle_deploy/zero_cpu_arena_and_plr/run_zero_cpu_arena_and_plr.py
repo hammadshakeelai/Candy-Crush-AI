@@ -72,14 +72,15 @@ def run_zoo_audit(out_dir: Path) -> dict:
     print("\n--- [Stage 1/3] Auditing 42-Model Zoo & Flagship Architectures ---", flush=True)
     t0 = time.time()
     import torch
-    from models.zoo import MODEL_ZOO_REGISTRY
+    from models.zoo import MODEL_ZOO_REGISTRY, load_zoo_model_class
 
     x = torch.randn(2, 20, 9, 9)
     zoo_stats = []
     total_params = 0
-    for name, cls in MODEL_ZOO_REGISTRY.items():
+    for name in MODEL_ZOO_REGISTRY:
         try:
             m_t0 = time.time()
+            cls = load_zoo_model_class(name)
             model = cls()
             model.eval()
             params = sum(p.numel() for p in model.parameters())

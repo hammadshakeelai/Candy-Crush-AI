@@ -44,3 +44,22 @@ MODEL_ZOO_REGISTRY = {
     "EpisodicMemoryTransformerCandyNet": "models.zoo.transformer_xl_episodic_memory.EpisodicMemoryTransformerCandyNet",
     "CandyMamba2DNet": "models.zoo.vision_mamba_2d_net.CandyMamba2DNet",
 }
+
+import importlib
+
+def load_zoo_model_class(name: str):
+    """Dynamically load and return the model class for a zoo model."""
+    if name not in MODEL_ZOO_REGISTRY:
+        raise KeyError(f"Model {name} not found in MODEL_ZOO_REGISTRY")
+    val = MODEL_ZOO_REGISTRY[name]
+    if isinstance(val, str):
+        module_path, class_name = val.rsplit(".", 1)
+        mod = importlib.import_module(module_path)
+        return getattr(mod, class_name)
+    return val
+
+def create_zoo_model(name: str, *args, **kwargs):
+    """Instantiate a model from the zoo registry."""
+    cls = load_zoo_model_class(name)
+    return cls(*args, **kwargs)
+
