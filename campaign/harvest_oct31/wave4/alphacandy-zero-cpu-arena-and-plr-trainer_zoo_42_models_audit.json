@@ -1,0 +1,302 @@
+{
+  "total_zoo_models": 42,
+  "passed_models": 0,
+  "cumulative_zoo_parameters": 0,
+  "elapsed_sec": 6.63,
+  "models": [
+    {
+      "model_name": "MultiStepActionPlannerNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "EpistemicUncertaintyCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "DPPDiverseBeamCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "DifferentiableBipartiteMatcherNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "SimCLRCandyContrastiveNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "DirectPreferenceCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "CMAESNeuroEvolutionAgent",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "CandyDecisionTransformer",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "CandyDiffusionPolicyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "QuantileMCTSHybridNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "EnergyBasedCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "GravityEquivariantCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "Star1ExpectimaxPrunerNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "HardNegativeFocalDistillerNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "CandyGFlowNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "WormholeGraphNeuralNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "GumbelMuZeroCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "CascadePotentialFieldNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "HierarchicalSubgoalCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "LevelConditionedHyperNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "KolmogorovArnoldCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "LiquidNeuralCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "GrandmasterMoERouter",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "TranspositionMCGSSolver",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "NeuralCACascadePredictorNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "NeuroSymbolicTacticalDSLNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "NgPotentialRewardShapingNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "RetNetCandy2D",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "ReverseCurriculumGeneratorNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "OptimalTransportCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "SwitchMoECandyTransformer",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "BlockerContainmentSpecialistNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "SpecialComboAlchemistNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "EndgameClutchMiracleNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "IngredientDropSpecialistNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "JellyCornerSniperNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "OpeningBoardArchitectNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "SpectralGraphWaveletCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "MatrixProductStateCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "BayesianBanditRootSolverNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "EpisodicMemoryTransformerCandyNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    },
+    {
+      "model_name": "CandyMamba2DNet",
+      "parameters": 0,
+      "latency_ms": 0.0,
+      "output_keys": [],
+      "status": "WARN: 'str' object is not callable"
+    }
+  ]
+}
