@@ -46,7 +46,19 @@ def get_cmd_output(cmd, timeout=35):
 
 
 def check_local_strike():
-    """Ensure local multi-core fortress assault is active."""
+    """Ensure local multi-core fortress assault is active, or report complete if 100% mastered."""
+    progress_file = REPO_ROOT / "campaign" / "progress.json"
+    if progress_file.exists():
+        try:
+            with open(progress_file) as f:
+                data = json.load(f)
+            cl = data.get("completed_levels", {})
+            won_count = sum(1 for v in cl.values() if v.get("won"))
+            if won_count >= 10295:
+                return "COMPLETE", f"10,295/10,295 levels (100.00%) fully conquered"
+        except Exception:
+            pass
+
     code, out, _ = get_cmd_output(["pgrep", "-f", "local_mastery_strike.py"])
     if code == 0 and out:
         pids = out.split()
