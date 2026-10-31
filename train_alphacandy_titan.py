@@ -807,7 +807,7 @@ def transfer_compatible_weights(model: nn.Module, ckpt_paths: List[str]) -> int:
                 clean_k = k[7:] if k.startswith("module.") else k
                 if clean_k in target_state and target_state[clean_k].shape == v.shape:
                     if torch.isfinite(v).all():
-                        target_state[clean_k].copy_(v)
+                        target_state[clean_k].copy_(v.to(target_state[clean_k].dtype))
                         transferred += 1
 
             if transferred > 0:
@@ -835,6 +835,8 @@ def train_titan_epoch(
     epoch: int,
     max_grad_norm: float = 1.0,
     enable_augmentation: bool = True,
+    max_batches: int = 0,
+    deadline_ts: float = 0.0,
 ) -> Dict[str, float]:
     """
     Executes one full training epoch of AlphaCandyTitanNet with:
@@ -976,6 +978,11 @@ def train_titan_epoch(
         win_loss_sum += float(loss_win.item())
         p_t_sum += focal_stats["mean_p_t"]
         hard15_p_t_sum += focal_stats["hard15_p_t"]
+        if max_batches > 0 and valid_steps >= max_batches:
+            break
+        if deadline_ts > 0 and time.time() >= deadline_ts and valid_steps >= 1:
+            print(f"[WALLTIME GUARD] Reached deadline inside epoch {epoch} after {valid_steps} steps; breaking cleanly.")
+            break
 
     denom = max(1, valid_steps)
     return {
@@ -1034,14 +1041,48 @@ def main() -> None:
         default="checkpoints/alphacandy_titan_master.pt",
         help="Master checkpoint output path (EMA shadow weights saved as primary inference state)",
     )
+    parser.add_argument(
+        "--save-dir",
+        type=str,
+        default=None,
+        help="Optional directory to save alphacandy_titan_master.pt (overrides --output-ckpt dir)",
+    )
+    parser.add_argument(
+        "--max-batches",
+        type=int,
+        default=0,
+        help="Optional cap on batches per epoch (0 = full epoch)",
+    )
+    parser.add_argument(
+        "--max-walltime-sec",
+        type=float,
+        default=0.0,
+        help="Optional wall-clock timeout in seconds for the training loop (0 = unlimited)",
+    )
+    parser.add_argument(
+        "--metrics-out",
+        type=str,
+        default="checkpoints/titan_training_metrics.json",
+        help="Path to write incremental per-epoch JSON training telemetry",
+    )
+    parser.add_argument(
+        "--use-dataparallel",
+        action="store_true",
+        help="Enable nn.DataParallel across multiple GPUs (disabled by default for dict-output safety)",
+    )
     args = parser.parse_args()
+    if args.save_dir:
+        os.makedirs(args.save_dir, exist_ok=True)
+        args.output_ckpt = os.path.join(args.save_dir, "alphacandy_titan_master.pt")
 
+    t_train_start = time.time()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     gpu_count = torch.cuda.device_count() if device == "cuda" else 0
+    gpu_name = torch.cuda.get_device_name(0) if device == "cuda" and gpu_count > 0 else "CPU"
 
     print("=" * 78)
     print("   ALPHACANDY-TITAN 50M SUPER MODEL ULTRA-ROBUST TRAINING PIPELINE")
-    print(f"   Device: {device} (GPUs: {gpu_count}) | Epochs: {args.epochs} | Batch Size: {args.batch_size}")
+    print(f"   Device: {device} ({gpu_name}, GPUs: {gpu_count}) | Epochs: {args.epochs} | Batch Size: {args.batch_size}")
     print(f"   EMA Decay: {args.ema_decay} | Curriculum: {int(args.natural_ratio*100)}/{int((1-args.natural_ratio)*100)} Natural/Tactical + Z_2 x S_6")
     print("=" * 78)
 
@@ -1052,6 +1093,7 @@ def main() -> None:
         model,
         [
             args.warmup_ckpt,
+            args.output_ckpt,
             "checkpoints/alphacandy_titan_master.pt",
             "checkpoints/alphacandy_omega_master.pt",
             "checkpoints/alphacandy_large_net_master.pt",
@@ -1061,8 +1103,8 @@ def main() -> None:
     # Initialize Polyak Exponential Moving Average (EMA) Shadow Model (decay=0.999)
     ema = ModelEMA(model, decay=args.ema_decay, device=device)
 
-    # Wrap in DataParallel if Dual T4 GPUs are available
-    if device == "cuda" and gpu_count > 1:
+    # Wrap in DataParallel only if explicitly requested
+    if device == "cuda" and gpu_count > 1 and args.use_dataparallel:
         print(f"[MULTI-GPU] Activating nn.DataParallel across {gpu_count} CUDA GPUs...")
         model = nn.DataParallel(model)
 
@@ -1077,16 +1119,25 @@ def main() -> None:
     )
     scaler = torch.amp.GradScaler("cuda", enabled=(device == "cuda"))
 
-    loader, _ = build_80_20_curriculum_dataloader(
+    loader, dataset = build_80_20_curriculum_dataloader(
         batch_size=args.batch_size,
         natural_ratio=args.natural_ratio,
     )
 
     best_loss = float("inf")
     raw_model = model.module if isinstance(model, nn.DataParallel) else model
+    history_logs: List[Dict[str, Any]] = []
 
     for epoch in range(1, args.epochs + 1):
+        if args.max_walltime_sec > 0 and (time.time() - t_train_start) >= args.max_walltime_sec:
+            print(
+                f"[WALLTIME GUARD] Reached training budget ({time.time() - t_train_start:.1f}s >= "
+                f"{args.max_walltime_sec:.1f}s) before epoch {epoch}; exiting cleanly."
+            )
+            break
+
         current_lr = optimizer.param_groups[0]["lr"]
+        deadline_ts = (t_train_start + args.max_walltime_sec) if args.max_walltime_sec > 0 else 0.0
         metrics = train_titan_epoch(
             model=model,
             ema=ema,
@@ -1097,8 +1148,24 @@ def main() -> None:
             epoch=epoch,
             max_grad_norm=args.max_grad_norm,
             enable_augmentation=True,
+            max_batches=args.max_batches,
+            deadline_ts=deadline_ts,
         )
         scheduler.step()
+
+        gpu_mem_mb = (
+            float(torch.cuda.max_memory_allocated(0) / (1024 * 1024))
+            if device == "cuda"
+            else 0.0
+        )
+        epoch_record = {
+            "epoch": epoch,
+            "lr": float(current_lr),
+            "gpu_mem_mb": round(gpu_mem_mb, 2),
+            "elapsed_sec": round(time.time() - t_train_start, 2),
+            **metrics,
+        }
+        history_logs.append(epoch_record)
 
         print(
             f"[Epoch {epoch:02d}/{args.epochs:02d}] "
@@ -1107,20 +1174,22 @@ def main() -> None:
             f"Quantile: {metrics['loss_quantile']:.4f} (Mono: {metrics['loss_monotonic']:.5f}) | "
             f"DPO: {metrics['loss_dpo']:.4f} | Repel: {metrics['loss_repulsion']:.4f} | "
             f"Win: {metrics['loss_win']:.4f} | LR: {current_lr:.2e} | "
-            f"Time: {metrics['duration']:.1f}s"
+            f"VRAM: {gpu_mem_mb:.0f}MB | Time: {metrics['duration']:.1f}s",
+            flush=True,
         )
 
-        # Save atomic checkpoint when loss improves (storing both EMA shadow weights and online weights)
-        if metrics["valid_steps"] > 0 and metrics["loss"] < best_loss:
-            best_loss = metrics["loss"]
+        # Save atomic checkpoint when loss improves or on first valid epoch (compact FP16 EMA weights ~151 MB)
+        if metrics["valid_steps"] > 0 and (metrics["loss"] < best_loss or not os.path.exists(args.output_ckpt)):
+            best_loss = min(best_loss, metrics["loss"])
+            ema_fp16_state = {
+                k: (v.detach().cpu().half() if hasattr(v, "is_floating_point") and v.is_floating_point() else v.detach().cpu())
+                for k, v in ema.state_dict().items()
+            }
             ckpt_payload = {
                 "epoch": epoch,
-                "model_state": ema.state_dict(),         # Primary inference weights = stabilized EMA shadow model
-                "online_model_state": raw_model.state_dict(),
-                "ema_model_state": ema.state_dict(),
+                "model_state": ema_fp16_state,         # Primary inference weights = stabilized EMA shadow model (FP16 compact)
                 "ema_decay": args.ema_decay,
                 "ema_updates": ema.num_updates,
-                "optimizer_state": optimizer.state_dict(),
                 "best_loss": best_loss,
                 "metrics": metrics,
                 "model_arch": arch_name,
@@ -1129,12 +1198,37 @@ def main() -> None:
             if atomic_save_checkpoint(ckpt_payload, args.output_ckpt):
                 print(
                     f"  --> [ATOMIC SAVE] Master EMA checkpoint updated: {args.output_ckpt} "
-                    f"(Best Loss: {best_loss:.4f}, EMA updates: {ema.num_updates:,})"
+                    f"(Best Loss: {best_loss:.4f}, EMA updates: {ema.num_updates:,})",
+                    flush=True,
                 )
+
+        if args.metrics_out:
+            try:
+                os.makedirs(os.path.dirname(os.path.abspath(args.metrics_out)), exist_ok=True)
+                with open(args.metrics_out, "w", encoding="utf-8") as mf:
+                    json.dump(
+                        {
+                            "model_arch": arch_name,
+                            "param_count": param_count,
+                            "device": device,
+                            "gpu_name": gpu_name,
+                            "gpu_count": gpu_count,
+                            "num_natural_samples": dataset.num_natural,
+                            "num_tactical_samples": dataset.num_tactical,
+                            "best_loss": best_loss if math.isfinite(best_loss) else None,
+                            "ema_updates": ema.num_updates,
+                            "epochs_completed": len(history_logs),
+                            "history": history_logs,
+                        },
+                        mf,
+                        indent=2,
+                    )
+            except Exception as e:
+                print(f"[WARN] Could not write metrics JSON to {args.metrics_out}: {e}")
 
     print("\n" + "=" * 78)
     print(f"   ALPHACANDY-TITAN 50M TRAINING COMPLETE -> {args.output_ckpt}")
-    print("=" * 78 + "\n")
+    print("=" * 78 + "\n", flush=True)
 
 
 if __name__ == "__main__":

@@ -50,6 +50,7 @@ class AlphaCandyTitanAgent:
         engine: Optional[ReverseCandyEngine] = None,
         device: Optional[Union[torch.device, str]] = None,
         micro_physics_weight: float = 2.5,
+        model: Optional[AlphaCandyTitanNet] = None,
     ):
         if device is not None:
             self.device = torch.device(device)
@@ -58,10 +59,10 @@ class AlphaCandyTitanAgent:
 
         self.engine = engine or ReverseCandyEngine()
         self.micro_physics_weight = float(micro_physics_weight)
-        self.net: AlphaCandyTitanNet = create_alphacandy_titan(self.device)
+        self.net: AlphaCandyTitanNet = model.to(self.device) if model is not None else create_alphacandy_titan(self.device)
 
         resolved_ckpt = checkpoint_path
-        if resolved_ckpt is None:
+        if resolved_ckpt is None and model is None:
             candidates = [
                 "checkpoints/alphacandy_titan_master.pt",
                 "checkpoints/alphacandy_titan.pt",
@@ -73,14 +74,16 @@ class AlphaCandyTitanAgent:
 
         if resolved_ckpt and os.path.exists(resolved_ckpt):
             try:
-                state_dict = torch.load(resolved_ckpt, map_location=self.device)
-                if isinstance(state_dict, dict) and "model_state_dict" in state_dict:
-                    state_dict = state_dict["model_state_dict"]
-                if self.device.type == "cpu":
-                    state_dict = {
-                        k: v.float() if hasattr(v, "is_floating_point") and v.is_floating_point() else v
-                        for k, v in state_dict.items()
-                    }
+                state_dict = torch.load(resolved_ckpt, map_location=self.device, weights_only=False)
+                if isinstance(state_dict, dict):
+                    for k in ("model_state", "ema_model_state", "model_state_dict", "state_dict", "model"):
+                        if k in state_dict and isinstance(state_dict[k], dict):
+                            state_dict = state_dict[k]
+                            break
+                state_dict = {
+                    k: v.float() if hasattr(v, "is_floating_point") and v.is_floating_point() else v
+                    for k, v in state_dict.items()
+                }
                 self.net.load_state_dict(state_dict, strict=False)
                 print(f"[AlphaCandyTitanAgent] Loaded weights from {resolved_ckpt}")
             except Exception as e:
