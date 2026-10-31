@@ -34,3 +34,4 @@ output/
 output_results/
 
 data/expert_demonstrations_omega.pt
+runs/fortress_golden_trajectories.pt

@@ -132,41 +132,6 @@ def main():
                     new_golden_samples.extend(samples)
                 if titan_samples:
                     new_titan_samples.extend(titan_samples)
-                # Update unsolved registry and master progress.json immediately
-                if UNSOLVED_PATH.exists():
-                    try:
-                        curr = json.loads(UNSOLVED_PATH.read_text()).get("unsolved_levels", [])
-                        updated = [x for x in curr if x != lid]
-                        UNSOLVED_PATH.write_text(
-                            json.dumps({"count": len(updated), "unsolved_levels": updated}, indent=2) + "\n"
-                        )
-                    except Exception:
-                        pass
-                if PROGRESS_PATH.exists():
-                    try:
-                        prog = json.loads(PROGRESS_PATH.read_text())
-                        cl = prog.setdefault("completed_levels", {})
-                        cl[str(lid)] = {
-                            "won": True,
-                            "moves": r["moves_used"],
-                            "moves_limit": r["moves_limit"],
-                            "winning_seed": r["winning_seed"],
-                            "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan",
-                        }
-                        won_1_2500 = sum(1 for k, v in cl.items() if int(k) <= 2500 and v.get("won"))
-                        prog["levels_1_2500_won"] = max(prog.get("levels_1_2500_won", 0), won_1_2500)
-                        prog["levels_1_2500_unsolved"] = 2500 - prog["levels_1_2500_won"]
-                        prog["levels_1_2500_win_rate_pct"] = round(100.0 * prog["levels_1_2500_won"] / 2500.0, 2)
-                        prog["stats"] = {
-                            "total_won": sum(1 for v in cl.values() if v.get("won")),
-                            "total_tested": len(cl),
-                            "win_rate": round(100.0 * sum(1 for v in cl.values() if v.get("won")) / max(1, len(cl)), 2),
-                        }
-                        tmp_prog = PROGRESS_PATH.with_suffix(".json.tmp")
-                        tmp_prog.write_text(json.dumps(prog, indent=2))
-                        tmp_prog.replace(PROGRESS_PATH)
-                    except Exception:
-                        pass
                 print(
                     f"🎉 [WON] Level {lid} in {r['elapsed_sec']}s! Moves: {r['moves_used']}/{r['moves_limit']} (Remaining fortresses: {len(target_levels) - len(won_levels)})",
                     flush=True,
@@ -180,10 +145,11 @@ def main():
     # Save harvested golden trajectories and titan demonstration tensors atomically at batch conclusion
     if new_golden_samples:
         try:
+            GOLDEN_PATH.parent.mkdir(parents=True, exist_ok=True)
             existing = list(torch.load(GOLDEN_PATH, weights_only=False)) if GOLDEN_PATH.exists() else []
             existing.extend(new_golden_samples)
             tmp_g = GOLDEN_PATH.with_suffix(".tmp")
-            torch.save(existing, tmp_g)
+            torch.save(existing, str(tmp_g))
             tmp_g.replace(GOLDEN_PATH)
         except Exception as e:
             print(f"[Warning] Failed to save golden trajectories: {e}")
@@ -226,6 +192,38 @@ def main():
             indent=2,
         )
     tmp_out.replace(OUT_PATH)
+
+    # Atomically update master campaign/progress.json
+    if PROGRESS_PATH.exists() and won_levels:
+        try:
+            with open(PROGRESS_PATH, "r") as f:
+                decoder = json.JSONDecoder()
+                prog, _ = decoder.raw_decode(f.read())
+            cl = prog.setdefault("completed_levels", {})
+            for r in results:
+                if r.get("won"):
+                    cl[str(r["level_id"])] = {
+                        "won": True,
+                        "moves_used": r.get("moves_used"),
+                        "moves_limit": r.get("moves_limit"),
+                        "winning_seed": r.get("winning_seed"),
+                        "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan",
+                    }
+            won_ids = {int(k) for k, v in cl.items() if v.get("won")}
+            max_lvl = max(won_ids) if won_ids else 0
+            missing = [i for i in range(1, max_lvl + 1) if i not in won_ids]
+            prog["stats"] = {
+                "total_won": len(won_ids),
+                "total_tested": max_lvl,
+                "win_rate": 100.0 if not missing else round(len(won_ids) / max_lvl * 100, 2),
+            }
+            prog["total_solved"] = len(won_ids)
+            tmp_prog = PROGRESS_PATH.with_suffix(".json.tmp")
+            with open(tmp_prog, "w") as f:
+                json.dump(prog, f, indent=2)
+            tmp_prog.replace(PROGRESS_PATH)
+        except Exception as e:
+            print(f"[Warning] Failed to update progress.json: {e}")
 
     print(
         f"\n[MasteryStrike] Assault complete! Conquered {len(won_levels)}/{len(target_levels)} fortresses: {sorted(won_levels)}",
