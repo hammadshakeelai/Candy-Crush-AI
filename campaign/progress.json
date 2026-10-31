@@ -49183,6 +49183,16 @@
       "moves_limit": 28,
       "winning_seed": 39074,
       "solver": "AlphaCandy-Zero Clairvoyant Zobrist Beam + Titan"
+    },
+    "5562": {
+      "level_id": 5562,
+      "won": true,
+      "attempts": 1,
+      "moves_used": 2,
+      "moves_limit": 27,
+      "score": 82532,
+      "level_type": "2",
+      "time_sec": 0.07
     }
   },
   "stats": {
