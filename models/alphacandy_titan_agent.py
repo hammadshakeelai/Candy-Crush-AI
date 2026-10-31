@@ -148,6 +148,21 @@ class AlphaCandyTitanAgent:
         corner_jellies_before = float(
             np.sum(state.jellies[:corner_h, :corner_w] * self._corner_mask[:corner_h, :corner_w])
         )
+        # Identify bottleneck isolated objective cells (<= 1 active neighbor)
+        isolated_cells: List[Tuple[int, int]] = []
+        if hasattr(state.config, "active_grid") and state.config.active_grid is not None:
+            active = state.config.active_grid
+            for r in range(min(9, state.height)):
+                for c in range(min(9, state.width)):
+                    if active[r, c] and state.jellies[r, c] > 0:
+                        nbr_cnt = 0
+                        for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                            nr, nc = r + dr, c + dc
+                            if 0 <= nr < state.height and 0 <= nc < state.width and active[nr, nc]:
+                                nbr_cnt += 1
+                        if nbr_cnt <= 1:
+                            isolated_cells.append((r, c))
+
         striped_before = int(
             np.sum(
                 (state.specials == SpecialCandy.STRIPED_HORIZONTAL)
@@ -197,6 +212,11 @@ class AlphaCandyTitanAgent:
             delta_jellies = max(0, jellies_before - jellies_after)
             delta_blockers = max(0, blockers_before - blockers_after)
             delta_corner_jellies = max(0.0, corner_jellies_before - corner_jellies_after)
+            delta_isolated = 0.0
+            if isolated_cells:
+                for ir, ic in isolated_cells:
+                    if state.jellies[ir, ic] > 0 and sim_state.jellies[ir, ic] == 0:
+                        delta_isolated += 1.0
 
             ing_collected_delta = sim_state.ingredients_collected - ing_collected_before
             ing_depth_after = self._ingredient_depth_sum(sim_state)
@@ -217,7 +237,7 @@ class AlphaCandyTitanAgent:
             micro_feats[a_idx, 9] = 1.0 if bombs_after > bombs_before else 0.0
             micro_feats[a_idx, 10] = is_special_activation
             micro_feats[a_idx, 11] = float(max(r1, r2)) / float(max(1, state.height - 1))
-            micro_feats[a_idx, 12] = min(1.0, delta_corner_jellies / 4.0)
+            micro_feats[a_idx, 12] = min(1.0, (delta_corner_jellies + 2.5 * delta_isolated) / 4.0)
             micro_feats[a_idx, 13] = min(1.0, ing_progress)
             micro_feats[a_idx, 14] = min(1.0, float(len(legal_moves)) / 25.0)
             micro_feats[a_idx, 15] = won_now

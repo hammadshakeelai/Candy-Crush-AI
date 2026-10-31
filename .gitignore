@@ -23,3 +23,4 @@ campaign/kaggle_harvest_5000/requirements.txt
 data/apks/
 *.apk
 runs/alphacandy_zero_local/*.pt
+checkpoints/alphacandy_titan_master.pt

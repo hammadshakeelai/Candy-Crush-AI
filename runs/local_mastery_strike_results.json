@@ -1,6 +1,6 @@
 {
   "total_targets": 10,
-  "evaluated_count": 9,
+  "evaluated_count": 10,
   "won_count": 1,
   "won_levels": [
     2242
@@ -103,6 +103,17 @@
       "initial_objectives": 82,
       "winning_seed": null,
       "elapsed_sec": 433.99,
+      "error": null
+    },
+    {
+      "level_id": 1205,
+      "won": false,
+      "moves_used": 20,
+      "moves_limit": 27,
+      "remaining_objectives": 3,
+      "initial_objectives": 38,
+      "winning_seed": null,
+      "elapsed_sec": 1125.68,
       "error": null
     }
   ]

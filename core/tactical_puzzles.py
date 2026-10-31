@@ -11,11 +11,18 @@ Archetypes:
   5. WRAPPED_DUAL_BLAST: Dense 5x5 explosion clearing multi-layer frosting fortresses.
 """
 
+import os
+import sys
+from pathlib import Path
 import random
 from typing import Dict, Any, Tuple, List, Optional
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core.king_level_loader import LevelConfig, LevelType
+from core.reverse_engine import ReverseEngineState, Direction
+from models.spatial_transformer_net import encode_spatial_board_tensor, encode_action_index
+import torch
 
 
 class TacticalPuzzleGenerator:
@@ -259,10 +266,45 @@ class TacticalPuzzleGenerator:
         return puzzles
 
 
-if __name__ == "__main__":
+def generate_and_save_tactical_dataset(
+    output_path: str = "data/synthetic_tactics_dataset.pt",
+    count_per_type: int = 500,
+) -> None:
     generator = TacticalPuzzleGenerator(seed=42)
-    batch = generator.generate_batch(count_per_type=2)
-    print(f"Generated {len(batch)} sample tactical puzzles.")
-    for p in batch:
-        c = p["config"]
-        print(f"Puzzle {c.level_id}: Trick={p['trick_name']} Moves={c.moves_limit} OptimalAction={p['optimal_action']}")
+    batch = generator.generate_batch(count_per_type=count_per_type)
+    total = len(batch)
+    states = np.empty((total, 20, 9, 9), dtype=np.float32)
+    actions = np.empty((total,), dtype=np.int64)
+    win_targets = np.ones((total, 1), dtype=np.float32)
+    move_ratios = np.ones((total, 1), dtype=np.float32)
+
+    for idx, p in enumerate(batch):
+        cfg = p["config"]
+        r, c, d_str = p["optimal_action"]
+        state = ReverseEngineState(cfg)
+        states[idx] = encode_spatial_board_tensor(state)
+        direction = Direction.RIGHT if d_str == "H" else Direction.DOWN
+        actions[idx] = encode_action_index(r, c, direction)
+
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
+    payload = {
+        "states": torch.from_numpy(states),
+        "actions": torch.from_numpy(actions),
+        "win_targets": torch.from_numpy(win_targets),
+        "move_ratios": torch.from_numpy(move_ratios),
+    }
+    torch.save(payload, output_path)
+    print(f"[SUCCESS] Saved {total:,} puzzles ({count_per_type}/type) -> {output_path}")
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate 4-Archetype Tactical Dataset")
+    parser.add_argument("--count-per-type", type=int, default=500, help="Puzzles per archetype")
+    parser.add_argument("--output", type=str, default="data/synthetic_tactics_dataset.pt", help="Output path")
+    args = parser.parse_args()
+
+    generate_and_save_tactical_dataset(
+        output_path=args.output,
+        count_per_type=args.count_per_type,
+    )

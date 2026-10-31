@@ -615,7 +615,13 @@ def generate_all_12_archetypes_dataset(
 
 
 if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate 12-Archetype Tactical Dataset")
+    parser.add_argument("--count-per-type", type=int, default=250, help="Puzzles per archetype")
+    parser.add_argument("--output", type=str, default="data/synthetic_tactics_12archetypes.pt", help="Output path")
+    args = parser.parse_args()
+
     generate_all_12_archetypes_dataset(
-        output_path="data/synthetic_tactics_12archetypes.pt",
-        count_per_type=250
+        output_path=args.output,
+        count_per_type=args.count_per_type,
     )

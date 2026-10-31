@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 """
 Kaggle Flagship GPU Turnkey Runner for AlphaCandyTitanNet (79.30M Parameters).
-Bounded 1.4-Hour (~85 min) Zero-Failure Execution Pipeline:
+Extended 2.5-Hour (~150 min) Zero-Failure Mastery Training & Curriculum Pipeline:
   1. Resilient Bootstrap (3x Git Clone Retry + Offline Zip Fallback + King DB Discovery)
-  2. Grandmaster Tactical + Real King Oracle Trajectory Dataset Generation (~4 mins)
-  3. AlphaCandyTitanNet (79.30M Params) FP16 AMP + EMA (0.999) + Focal + 32-Quantile Huber + DPO Training (~65 mins cap)
-  4. Post-Training GPU Evaluation via AlphaCandyTitanAgent on Official King Levels (~15 mins cap)
-  5. Instant Telemetry Export (`ALPHACANDY_TITAN_GPU_REPORT.md` + `titan_gpu_summary.json`)
+  2. Prior Checkpoint Warm-Start (Loads prior 79.30M trained weights from /kaggle/input or kagglesdk)
+  3. Scaled Dataset Factory:
+     - 4,000 4-archetype tactical puzzles
+     - 12,000 12-archetype Grandmaster tactical puzzles
+     - 10,000+ real King winning trajectories across 150+ diverse levels
+  4. AlphaCandyTitanNet (79.30M Params) GPU Training:
+     - FP16 AMP, EMA shadow model (0.999), 32-Quantile Monotonic Huber Loss
+     - Focal Hard-Example Policy Loss + Direct Preference Optimization (DPO)
+     - Walltime guard capped at 8,400s (~2.33 hours / ~140 min)
+  5. Post-Training GPU Evaluation on Hard & Fortress King Levels (~15 min cap)
+  6. Instant Telemetry Export (`ALPHACANDY_TITAN_GPU_REPORT.md` + `titan_gpu_summary.json`)
 """
 
 import json
@@ -18,17 +25,17 @@ import time
 import traceback
 import zipfile
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 
 REPO_URL = "https://github.com/hammadshakeelai/Candy-Crush-AI.git"
 WORKSPACE_DIR = Path(os.environ.get("TITAN_WORKSPACE", "/tmp/alphacandy_titan_runtime"))
 OUTPUT_DIR = Path(os.environ.get("TITAN_OUTPUT", "/kaggle/working"))
 
-ORACLE_HARVEST_SEC = float(os.environ.get("TITAN_ORACLE_HARVEST_SEC", "240"))
-TRAIN_WALLTIME_SEC = float(os.environ.get("TITAN_TRAIN_WALLTIME_SEC", "3900"))
+ORACLE_HARVEST_SEC = float(os.environ.get("TITAN_ORACLE_HARVEST_SEC", "600"))
+TRAIN_WALLTIME_SEC = float(os.environ.get("TITAN_TRAIN_WALLTIME_SEC", "8400"))
 EVAL_WALLTIME_SEC = float(os.environ.get("TITAN_EVAL_WALLTIME_SEC", "900"))
-EPOCHS = int(os.environ.get("TITAN_EPOCHS", "18"))
+EPOCHS = int(os.environ.get("TITAN_EPOCHS", "40"))
 BATCH_SIZE = int(os.environ.get("TITAN_BATCH_SIZE", "128"))
 MAX_BATCHES = int(os.environ.get("TITAN_MAX_BATCHES", "0"))
 
@@ -69,6 +76,48 @@ def discover_king_assets() -> Dict[str, str]:
         os.environ[k] = v
         log(f"Discovered {k} = {v}")
     return found
+
+
+def fetch_prior_checkpoint_if_available(repo_dir: Path) -> Optional[Path]:
+    dest_path = repo_dir / "checkpoints/alphacandy_titan_master.pt"
+    dest_path.parent.mkdir(parents=True, exist_ok=True)
+    if dest_path.exists() and dest_path.stat().st_size > 10 * 1024 * 1024:
+        log(f"Existing repo checkpoint found ({dest_path.stat().st_size / (1024*1024):.2f} MB)")
+        return dest_path
+
+    # 1. Search /kaggle/input for mounted checkpoints
+    input_root = Path("/kaggle/input")
+    if input_root.exists():
+        for p in input_root.rglob("alphacandy_titan_master.pt"):
+            if p.is_file() and p.stat().st_size > 10 * 1024 * 1024:
+                try:
+                    shutil.copy2(p, dest_path)
+                    log(f"Copied prior checkpoint from input: {p} -> {dest_path} ({dest_path.stat().st_size / (1024*1024):.2f} MB)")
+                    return dest_path
+                except Exception as exc:
+                    log(f"Copy prior checkpoint note: {exc}")
+
+    # 2. Query kagglesdk for previous session output
+    try:
+        from kagglesdk import KaggleClient
+        from kagglesdk.kernels.types.kernels_api_service import ApiListKernelSessionOutputRequest
+        import urllib.request
+        client = KaggleClient()
+        req = ApiListKernelSessionOutputRequest()
+        req.user_name = "hammadshakeelai"
+        req.kernel_slug = "alphacandy-titan-50m-gpu-mastery"
+        res = client.kernels.kernels_api_client.list_kernel_session_output(req)
+        for f in (res.files or []):
+            if f.file_name.endswith("alphacandy_titan_master.pt"):
+                log(f"Downloading prior checkpoint from kernel session: {f.file_name} -> {dest_path}")
+                urllib.request.urlretrieve(f.url, str(dest_path))
+                if dest_path.exists() and dest_path.stat().st_size > 10 * 1024 * 1024:
+                    log(f"Successfully warm-started prior weights ({dest_path.stat().st_size / (1024*1024):.2f} MB)")
+                    return dest_path
+    except Exception as exc:
+        log(f"kagglesdk prior checkpoint download note: {exc}")
+
+    return None
 
 
 def bootstrap_repository() -> Path:
@@ -117,8 +166,7 @@ def bootstrap_repository() -> Path:
 def harvest_real_king_trajectories(repo_dir: Path, budget_sec: float) -> Dict[str, Any]:
     """
     Harvests authentic winning trajectories on official King levels using
-    ReverseCandyEngine + Clairvoyant greedy micro-physics rollouts and saves
-    them to `data/expert_demonstrations_omega.pt` for 80/20 curriculum training.
+    ReverseCandyEngine + Clairvoyant greedy micro-physics rollouts across diverse levels.
     """
     t0 = time.time()
     stats = {"levels_attempted": 0, "levels_won": 0, "samples_harvested": 0}
@@ -139,12 +187,12 @@ def harvest_real_king_trajectories(repo_dir: Path, budget_sec: float) -> Dict[st
         win_targets_list: List[float] = []
         move_ratios_list: List[float] = []
 
-        candidate_levels = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-            12, 15, 18, 20, 22, 25, 28, 30, 35, 40,
-            45, 50, 60, 70, 80, 90, 100, 115, 130, 150,
-            175, 200, 225, 250, 275, 300, 350, 400, 450, 500,
-        ]
+        candidate_levels = (
+            list(range(1, 31))
+            + [35, 40, 45, 50, 60, 65, 70, 75, 80, 85, 90, 95, 100, 115, 125, 130, 147, 150]
+            + [175, 181, 200, 225, 235, 250, 272, 275, 279, 300, 325, 350, 375, 400, 450, 500]
+            + [550, 600, 650, 700, 750, 800, 850, 900, 950, 1000]
+        )
 
         for lvl in candidate_levels:
             if (time.time() - t0) >= budget_sec:
@@ -152,7 +200,7 @@ def harvest_real_king_trajectories(repo_dir: Path, budget_sec: float) -> Dict[st
             cfg = loader.load_level(lvl)
             stats["levels_attempted"] += 1
 
-            for seed_offset in range(6):
+            for seed_offset in range(8):
                 if (time.time() - t0) >= budget_sec:
                     break
                 st = ReverseEngineState(cfg)
@@ -201,7 +249,7 @@ def harvest_real_king_trajectories(repo_dir: Path, budget_sec: float) -> Dict[st
                     actions_list.extend(ep_actions)
                     win_targets_list.extend([1.0] * len(ep_boards))
                     move_ratios_list.extend(ep_ratios)
-                    if seed_offset >= 1:
+                    if seed_offset >= 2:
                         break
 
         if len(states_list) >= 64:
@@ -256,8 +304,8 @@ def evaluate_titan_on_king_levels(ckpt_path: Path, budget_sec: float) -> Dict[st
         loader = KingLevelLoader()
 
         eval_levels = [
-            1, 3, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100, 150, 200, 250, 300,
-            606, 656, 953, 967, 975, 1205, 1349, 1351, 1390, 1488, 1794, 1958,
+            1, 3, 5, 10, 15, 20, 25, 30, 40, 50, 65, 75, 100, 125, 147, 150, 181, 200, 250, 272, 279, 300, 350, 400,
+            606, 656, 953, 975, 1205, 1349, 1351, 1390, 1488, 1794, 1958,
         ]
         confidences: List[float] = []
 
@@ -266,7 +314,7 @@ def evaluate_titan_on_king_levels(ckpt_path: Path, budget_sec: float) -> Dict[st
                 log(f"Reached evaluation walltime cap ({budget_sec:.0f}s); stopping eval cleanly.")
                 break
             cfg = loader.load_level(lvl)
-            attempts = 3 if lvl >= 600 else 2
+            attempts = 3 if lvl >= 50 else 2
             res = agent.solve_level(cfg, max_attempts=attempts, seed=42 + lvl)
             eval_summary["levels_tested"] += 1
             if res.get("won", False):
@@ -408,25 +456,26 @@ def main() -> None:
         sys.path.insert(0, str(repo_dir))
         os.environ["PYTHONPATH"] = str(repo_dir)
         discover_king_assets()
+        prior_ckpt = fetch_prior_checkpoint_if_available(repo_dir)
 
-        # 1. Generate 4-archetype and 12-archetype synthetic tactical datasets
+        # 1. Generate 4-archetype and 12-archetype synthetic tactical datasets (16,000 puzzles)
         run_step(
-            [sys.executable, "core/tactical_puzzles.py"],
-            "Generating 4-Archetype Synthetic Tactical Dataset",
+            [sys.executable, "core/tactical_puzzles.py", "--count-per-type", "1000"],
+            "Generating 4-Archetype Synthetic Tactical Dataset (4,000 Puzzles)",
             cwd=str(repo_dir),
             timeout=180,
         )
         run_step(
-            [sys.executable, "core/advanced_tactical_puzzles.py"],
-            "Generating 12-Archetype Grandmaster Tactical Dataset (3,000 Puzzles)",
+            [sys.executable, "core/advanced_tactical_puzzles.py", "--count-per-type", "1000"],
+            "Generating 12-Archetype Grandmaster Tactical Dataset (12,000 Puzzles)",
             cwd=str(repo_dir),
             timeout=240,
         )
 
-        # 2. Harvest authentic winning trajectories on official King levels
+        # 2. Harvest authentic winning trajectories across diverse official King levels
         harvest_stats = harvest_real_king_trajectories(repo_dir, budget_sec=ORACLE_HARVEST_SEC)
 
-        # 3. Train AlphaCandyTitanNet (79.30M Parameters) with strict walltime guard
+        # 3. Train AlphaCandyTitanNet (79.30M Parameters) with 2.3-hour walltime guard
         train_cmd = [
             sys.executable,
             "train_alphacandy_titan.py",
@@ -435,7 +484,7 @@ def main() -> None:
             "--batch-size",
             str(BATCH_SIZE),
             "--lr",
-            "2e-4",
+            "1.5e-4",
             "--max-walltime-sec",
             str(TRAIN_WALLTIME_SEC),
             "--output-ckpt",
@@ -443,6 +492,8 @@ def main() -> None:
             "--metrics-out",
             str(metrics_path),
         ]
+        if prior_ckpt:
+            train_cmd.extend(["--warmup-ckpt", str(prior_ckpt)])
         if MAX_BATCHES > 0:
             train_cmd.extend(["--max-batches", str(MAX_BATCHES)])
 

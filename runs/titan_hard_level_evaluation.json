@@ -1,0 +1,316 @@
+{
+  "model": "AlphaCandyTitanNet (79.30M)",
+  "checkpoint": "checkpoints/alphacandy_titan_master.pt",
+  "total_levels": 17,
+  "won_count": 7,
+  "win_rate_pct": 41.1764705882353,
+  "elapsed_sec": 429.2,
+  "results": [
+    {
+      "level_id": 65,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 6,
+      "moves_limit": 17,
+      "objectives_remaining": 0,
+      "final_score": 18572,
+      "mean_epistemic_confidence": 0.9653695921103159,
+      "duration_sec": 0.9507973194122314,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 2,
+        "IMMEDIATE_WIN": 4
+      }
+    },
+    {
+      "level_id": 125,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "objectives_remaining": 0,
+      "final_score": 33492,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.04129981994628906,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 147,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 24,
+      "objectives_remaining": 0,
+      "final_score": 11727,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.012764692306518555,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 181,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 13,
+      "moves_limit": 30,
+      "objectives_remaining": 0,
+      "final_score": 296938,
+      "mean_epistemic_confidence": 0.9181892826006963,
+      "duration_sec": 3.1467514038085938,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 11,
+        "IMMEDIATE_WIN": 2
+      }
+    },
+    {
+      "level_id": 235,
+      "category": "HARD_BENCHMARK",
+      "won": false,
+      "attempt": 2,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "objectives_remaining": 7,
+      "final_score": 397821,
+      "mean_epistemic_confidence": 0.9010251872241497,
+      "duration_sec": 19.382707834243774,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 8,
+        "MIRACLE_UPPER_CVAR85": 24,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 272,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 3,
+      "moves_used": 19,
+      "moves_limit": 27,
+      "objectives_remaining": 0,
+      "final_score": 82997,
+      "mean_epistemic_confidence": 0.9057436710909793,
+      "duration_sec": 22.187257051467896,
+      "regime_counts": {
+        "SAFE_CVAR20": 18,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 279,
+      "category": "HARD_BENCHMARK",
+      "won": false,
+      "attempt": 3,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "objectives_remaining": 1,
+      "final_score": 58296,
+      "mean_epistemic_confidence": 0.9027985811233521,
+      "duration_sec": 23.899118661880493,
+      "regime_counts": {
+        "SAFE_CVAR20": 25,
+        "NORMAL_EV": 5,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 300,
+      "category": "HARD_BENCHMARK",
+      "won": false,
+      "attempt": 2,
+      "moves_used": 22,
+      "moves_limit": 22,
+      "objectives_remaining": 4,
+      "final_score": 316229,
+      "mean_epistemic_confidence": 0.900310299613259,
+      "duration_sec": 12.696510076522827,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 14,
+        "MIRACLE_UPPER_CVAR85": 8,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 350,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 20,
+      "objectives_remaining": 0,
+      "final_score": 106099,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.3129699230194092,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 400,
+      "category": "HARD_BENCHMARK",
+      "won": true,
+      "attempt": 1,
+      "moves_used": 1,
+      "moves_limit": 31,
+      "objectives_remaining": 0,
+      "final_score": 7256,
+      "mean_epistemic_confidence": 1.0,
+      "duration_sec": 0.06605029106140137,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 0,
+        "MIRACLE_UPPER_CVAR85": 0,
+        "IMMEDIATE_WIN": 1
+      }
+    },
+    {
+      "level_id": 606,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 3,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "objectives_remaining": 5,
+      "final_score": 35109,
+      "mean_epistemic_confidence": 0.9007142007350921,
+      "duration_sec": 16.13300609588623,
+      "regime_counts": {
+        "SAFE_CVAR20": 8,
+        "NORMAL_EV": 8,
+        "MIRACLE_UPPER_CVAR85": 4,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 656,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 2,
+      "moves_used": 35,
+      "moves_limit": 35,
+      "objectives_remaining": 11,
+      "final_score": 225192,
+      "mean_epistemic_confidence": 0.904761392729623,
+      "duration_sec": 19.580087661743164,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 1,
+        "MIRACLE_UPPER_CVAR85": 34,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 953,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 5,
+      "moves_used": 30,
+      "moves_limit": 30,
+      "objectives_remaining": 2,
+      "final_score": 166666,
+      "mean_epistemic_confidence": 0.904927400747935,
+      "duration_sec": 40.01674699783325,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 15,
+        "MIRACLE_UPPER_CVAR85": 15,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 975,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 3,
+      "moves_used": 43,
+      "moves_limit": 43,
+      "objectives_remaining": 2,
+      "final_score": 228049,
+      "mean_epistemic_confidence": 0.9038043507309848,
+      "duration_sec": 35.42120170593262,
+      "regime_counts": {
+        "SAFE_CVAR20": 11,
+        "NORMAL_EV": 14,
+        "MIRACLE_UPPER_CVAR85": 18,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 1205,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 2,
+      "moves_used": 27,
+      "moves_limit": 27,
+      "objectives_remaining": 2,
+      "final_score": 145957,
+      "mean_epistemic_confidence": 0.9019264181454977,
+      "duration_sec": 15.56272840499878,
+      "regime_counts": {
+        "SAFE_CVAR20": 18,
+        "NORMAL_EV": 7,
+        "MIRACLE_UPPER_CVAR85": 2,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 1349,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 4,
+      "moves_used": 20,
+      "moves_limit": 20,
+      "objectives_remaining": 2,
+      "final_score": 113027,
+      "mean_epistemic_confidence": 0.9034582048654556,
+      "duration_sec": 20.937026262283325,
+      "regime_counts": {
+        "SAFE_CVAR20": 0,
+        "NORMAL_EV": 14,
+        "MIRACLE_UPPER_CVAR85": 6,
+        "IMMEDIATE_WIN": 0
+      }
+    },
+    {
+      "level_id": 1351,
+      "category": "FORTRESS",
+      "won": false,
+      "attempt": 5,
+      "moves_used": 32,
+      "moves_limit": 32,
+      "objectives_remaining": 3,
+      "final_score": 57227,
+      "mean_epistemic_confidence": 0.9055749699473381,
+      "duration_sec": 44.10726809501648,
+      "regime_counts": {
+        "SAFE_CVAR20": 25,
+        "NORMAL_EV": 5,
+        "MIRACLE_UPPER_CVAR85": 2,
+        "IMMEDIATE_WIN": 0
+      }
+    }
+  ]
+}
