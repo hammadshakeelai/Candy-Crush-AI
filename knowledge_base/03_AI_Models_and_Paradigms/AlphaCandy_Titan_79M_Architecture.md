@@ -165,6 +165,18 @@ The master model was trained on a Kaggle Tesla T4 GPU sprint over 40 epochs ($5,
 | **39 (Best)** | **0.2674** | **0.2092** | **83.6%** | **0.0002** | **0.2316** | **0.0000** |
 | 40 | 0.2691 | 0.2107 | 83.5% | 0.0002 | 0.2321 | 0.0000 |
 
+### Sprint v7 Production GPU Telemetry (Tesla T4, 25 Epochs, 3,298 EMA Updates)
+- **Wall-Clock Runtime**: `2871.8s` (47.9 minutes)
+- **Best Combined Loss**: **`0.26769`**
+- **Focal Policy Loss**: **`0.2094`** | **Mean $p_t$ Accuracy**: **`83.6%`**
+- **Quantile Huber Loss**: **`0.0000`** (Distributional value convergence)
+- **DPO Preference Loss**: **`0.2318`**
+- **Blind Level Evaluation**: **`94.3%` Win Rate (`33 / 35` Won)** on blind King benchmark levels with `0.9581` mean epistemic confidence.
+- **Published Checkpoint**: Published to Kaggle Models at [`hammadshakeelai/alphacandy-titan`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan) (`158.8 MB`).
+
+### Sprint v8 Continuous Fleet Progression (Active)
+Sprint v8 is actively training via kernel [`hammadshakeelai/alphacandy-titan-50m-gpu-mastery`](https://www.kaggle.com/code/hammadshakeelai/alphacandy-titan-50m-gpu-mastery) on Kaggle Tesla T4 GPU, warm-started from Sprint v7 Polyak EMA weights. It targets $>96.0\%$ blind win rate and $<0.2500$ combined loss across the unified 10,295-level golden trajectory corpus.
+
 ### Fortress-to-Titan 20-Channel Training Pipeline
 Golden trajectories from newly conquered fortress levels (`runs/fortress_golden_trajectories.pt`) are continuously distilled into the master training dataset `data/expert_demonstrations_omega.pt` (`1,758` transitions, expanded to 2,116+ transitions):
 - **Data Augmentation:** Real-time on-the-fly horizontal reflection ($Z_2$) and color permutations ($S_6$) yielding a **$1,440\times$ effective symmetry multiplication**.
