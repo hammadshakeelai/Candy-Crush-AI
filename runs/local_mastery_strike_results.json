@@ -3,18 +3,18 @@
   "evaluated_count": 10,
   "won_count": 1,
   "won_levels": [
-    1745
+    1800
   ],
   "results": [
     {
       "level_id": 1349,
       "won": false,
-      "moves_used": 19,
+      "moves_used": 18,
       "moves_limit": 20,
-      "remaining_objectives": 2,
+      "remaining_objectives": 3,
       "initial_objectives": 50,
       "winning_seed": null,
-      "elapsed_sec": 285.09,
+      "elapsed_sec": 370.71,
       "error": null
     },
     {
@@ -25,73 +25,18 @@
       "remaining_objectives": 5,
       "initial_objectives": 82,
       "winning_seed": null,
-      "elapsed_sec": 679.31,
-      "error": null
-    },
-    {
-      "level_id": 1205,
-      "won": false,
-      "moves_used": 20,
-      "moves_limit": 27,
-      "remaining_objectives": 3,
-      "initial_objectives": 38,
-      "winning_seed": null,
-      "elapsed_sec": 1036.98,
-      "error": null
-    },
-    {
-      "level_id": 1745,
-      "won": true,
-      "moves_used": 27,
-      "moves_limit": 29,
-      "remaining_objectives": 0,
-      "initial_objectives": 73,
-      "winning_seed": 705069,
-      "elapsed_sec": 482.17,
-      "error": null
-    },
-    {
-      "level_id": 975,
-      "won": false,
-      "moves_used": 42,
-      "moves_limit": 43,
-      "remaining_objectives": 1,
-      "initial_objectives": 124,
-      "winning_seed": null,
-      "elapsed_sec": 1168.93,
+      "elapsed_sec": 899.32,
       "error": null
     },
     {
       "level_id": 1800,
-      "won": false,
-      "moves_used": 28,
+      "won": true,
+      "moves_used": 27,
       "moves_limit": 29,
-      "remaining_objectives": 4,
+      "remaining_objectives": 0,
       "initial_objectives": 98,
-      "winning_seed": null,
-      "elapsed_sec": 1039.46,
-      "error": null
-    },
-    {
-      "level_id": 2245,
-      "won": false,
-      "moves_used": 17,
-      "moves_limit": 18,
-      "remaining_objectives": 6,
-      "initial_objectives": 82,
-      "winning_seed": null,
-      "elapsed_sec": 384.63,
-      "error": null
-    },
-    {
-      "level_id": 606,
-      "won": false,
-      "moves_used": 19,
-      "moves_limit": 20,
-      "remaining_objectives": 5,
-      "initial_objectives": 5,
-      "winning_seed": null,
-      "elapsed_sec": 506.94,
+      "winning_seed": 18046,
+      "elapsed_sec": 23.96,
       "error": null
     },
     {
@@ -102,7 +47,7 @@
       "remaining_objectives": 4,
       "initial_objectives": 122,
       "winning_seed": null,
-      "elapsed_sec": 712.77,
+      "elapsed_sec": 1020.76,
       "error": null
     },
     {
@@ -110,10 +55,65 @@
       "won": false,
       "moves_used": 30,
       "moves_limit": 32,
-      "remaining_objectives": 2,
+      "remaining_objectives": 4,
       "initial_objectives": 4,
       "winning_seed": null,
-      "elapsed_sec": 884.45,
+      "elapsed_sec": 1391.66,
+      "error": null
+    },
+    {
+      "level_id": 975,
+      "won": false,
+      "moves_used": 41,
+      "moves_limit": 43,
+      "remaining_objectives": 4,
+      "initial_objectives": 124,
+      "winning_seed": null,
+      "elapsed_sec": 1500.3,
+      "error": null
+    },
+    {
+      "level_id": 2245,
+      "won": false,
+      "moves_used": 17,
+      "moves_limit": 18,
+      "remaining_objectives": 6,
+      "initial_objectives": 82,
+      "winning_seed": null,
+      "elapsed_sec": 498.4,
+      "error": null
+    },
+    {
+      "level_id": 606,
+      "won": false,
+      "moves_used": 19,
+      "moves_limit": 20,
+      "remaining_objectives": 5,
+      "initial_objectives": 5,
+      "winning_seed": null,
+      "elapsed_sec": 660.71,
+      "error": null
+    },
+    {
+      "level_id": 1794,
+      "won": false,
+      "moves_used": 20,
+      "moves_limit": 21,
+      "remaining_objectives": 6,
+      "initial_objectives": 30,
+      "winning_seed": null,
+      "elapsed_sec": 782.69,
+      "error": null
+    },
+    {
+      "level_id": 1205,
+      "won": false,
+      "moves_used": 20,
+      "moves_limit": 27,
+      "remaining_objectives": 3,
+      "initial_objectives": 38,
+      "winning_seed": null,
+      "elapsed_sec": 1299.35,
       "error": null
     }
   ]
