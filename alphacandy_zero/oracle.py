@@ -240,6 +240,19 @@ def _is_special_combo_swap(
         s2 == SpecialCandy.COLOR_BOMB and s1 != SpecialCandy.NONE
     ):
         return 520.0
+    # Wrapped + Striped Cross-Cannon Combination
+    is_wrapped_striped = (
+        (s1 == SpecialCandy.WRAPPED and s2 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL))
+        or (s2 == SpecialCandy.WRAPPED and s1 in (SpecialCandy.STRIPED_HORIZONTAL, SpecialCandy.STRIPED_VERTICAL))
+    )
+    if is_wrapped_striped:
+        if isolated_cells:
+            # 3-row horizontal and 3-column vertical blast
+            for ir, ic in isolated_cells:
+                if state.jellies[ir, ic] > 0 and (abs(r - ir) <= 1 or abs(c - ic) <= 1):
+                    return 950.0
+        return 520.0
+
     if s1 != SpecialCandy.NONE and s2 != SpecialCandy.NONE:
         return 280.0
     if s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
@@ -254,14 +267,18 @@ def _is_special_combo_swap(
             return -150.0  # preserve Color Bomb until it can snipe an isolated island or pair with a special!
         return 90.0
 
-    # Direct Striped Laser Snipe on isolated objective cells
+    # Direct Striped Laser Snipe on isolated objective cells (bidirectional swap check)
     if isolated_cells:
         for ir, ic in isolated_cells:
             if state.jellies[ir, ic] > 0:
-                if (s1 == SpecialCandy.STRIPED_HORIZONTAL and r == ir) or (s2 == SpecialCandy.STRIPED_HORIZONTAL and r2 == ir):
-                    return 550.0
-                if (s1 == SpecialCandy.STRIPED_VERTICAL and c == ic) or (s2 == SpecialCandy.STRIPED_VERTICAL and c2 == ic):
-                    return 550.0
+                if (s1 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)) or (
+                    s2 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)
+                ):
+                    return 650.0
+                if (s1 == SpecialCandy.STRIPED_VERTICAL and (c == ic or c2 == ic)) or (
+                    s2 == SpecialCandy.STRIPED_VERTICAL and (c == ic or c2 == ic)
+                ):
+                    return 650.0
 
     return 0.0
 
