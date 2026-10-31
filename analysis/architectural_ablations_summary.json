@@ -1,7 +1,7 @@
 {
   "suite": "AlphaCandy-Omega Architectural Ablations & Head-to-Head Micro-Experiments",
   "seed": 42,
-  "total_runtime_sec": 17.706,
+  "total_runtime_sec": 10.255,
   "ablations": {
     "ablation_1_edge_swap_head": {
       "ablation_id": 1,
@@ -19,7 +19,7 @@
       "convergence_speedup_x": 1.0,
       "final_val_accuracy_bilinear_pct": 88.51,
       "final_val_accuracy_flat_pct": 50.71,
-      "elapsed_sec": 7.424
+      "elapsed_sec": 3.882
     },
     "ablation_2_s6_color_invariance": {
       "ablation_id": 2,
@@ -30,7 +30,7 @@
       "standard_conv2d_top1_action_consistency_pct": 26.88,
       "s6_symmetric_stem_logit_variation_pct": 0.0,
       "s6_symmetric_stem_top1_action_consistency_pct": 100.0,
-      "elapsed_sec": 0.831
+      "elapsed_sec": 0.331
     },
     "ablation_3_pace_quantile_tilting": {
       "ablation_id": 3,
@@ -78,7 +78,7 @@
           "desperate_behind_move_b_selection_pct": 100.0
         }
       },
-      "elapsed_sec": 0.082
+      "elapsed_sec": 0.077
     },
     "ablation_4_zobrist_dag_deduplication": {
       "ablation_id": 4,
@@ -100,10 +100,10 @@
         },
         "level_25": {
           "level_id": 25,
-          "total_states_generated": 582,
-          "unique_zobrist_states": 543,
-          "duplicate_transpositions": 39,
-          "deduplication_rate_pct": 6.7
+          "total_states_generated": 583,
+          "unique_zobrist_states": 548,
+          "duplicate_transpositions": 35,
+          "deduplication_rate_pct": 6.0
         },
         "level_50": {
           "level_id": 50,
@@ -113,12 +113,12 @@
           "deduplication_rate_pct": 21.58
         }
       },
-      "total_nodes_evaluated": 1633,
-      "total_unique_states": 1293,
-      "total_commuting_duplicates": 340,
-      "overall_deduplication_rate_pct": 20.82,
+      "total_nodes_evaluated": 1634,
+      "total_unique_states": 1298,
+      "total_commuting_duplicates": 336,
+      "overall_deduplication_rate_pct": 20.56,
       "effective_search_compression_ratio": 1.26,
-      "elapsed_sec": 5.997
+      "elapsed_sec": 3.997
     },
     "ablation_5_gumbel_sequential_halving": {
       "ablation_id": 5,
@@ -145,7 +145,7 @@
         }
       },
       "regret_reduction_vs_greedy_topk_pct": 37.94,
-      "elapsed_sec": 0.071
+      "elapsed_sec": 0.038
     },
     "ablation_6_human_persona_gravity_bias": {
       "ablation_id": 6,
@@ -153,21 +153,21 @@
       "num_boards_evaluated": 50,
       "top_down_persona_rows_0_2": {
         "num_swaps_evaluated": 460,
-        "avg_cascade_depth": 1.663,
-        "avg_cascade_multiplier": 1.665,
-        "avg_score_per_swap": 634.9,
-        "multi_cascade_rate_pct": 37.39
+        "avg_cascade_depth": 1.665,
+        "avg_cascade_multiplier": 1.666,
+        "avg_score_per_swap": 638.0,
+        "multi_cascade_rate_pct": 37.61
       },
       "bottom_up_persona_rows_6_8": {
         "num_swaps_evaluated": 352,
-        "avg_cascade_depth": 2.216,
-        "avg_cascade_multiplier": 1.886,
-        "avg_score_per_swap": 1041.1,
+        "avg_cascade_depth": 2.219,
+        "avg_cascade_multiplier": 1.888,
+        "avg_score_per_swap": 1060.7,
         "multi_cascade_rate_pct": 63.35
       },
       "bottom_vs_top_cascade_depth_gain_pct": 33.24,
-      "bottom_vs_top_score_gain_pct": 63.99,
-      "elapsed_sec": 3.21
+      "bottom_vs_top_score_gain_pct": 66.25,
+      "elapsed_sec": 1.854
     }
   }
 }

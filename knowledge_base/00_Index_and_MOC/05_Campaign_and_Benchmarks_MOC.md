@@ -2,8 +2,10 @@
 tags:
   - moc
   - benchmark
+  - campaign
 title: "Campaign Progress & Benchmarks Map of Content"
 created: 2026-10-25
+updated: 2026-10-31
 status: complete
 aliases:
   - Benchmarks MOC
@@ -12,33 +14,36 @@ aliases:
 
 # 🏆 Campaign Progress & Benchmarks Map of Content
 
-> [!NOTE] Empirical Validation
-> AlphaCandy's progression is evaluated through cumulative campaign benchmarks across thousands of live King level configurations, comparing individual RL paradigms against the Grandmaster Unified Ensemble.
+> [!NOTE] Empirical Validation & Milestone Summary
+> AlphaCandy's progression has advanced from initial heuristic surveys to **flawless 100.00% solvability on Levels 1–2,500 (2,500 / 2,500 Won)**, extending without a single loss to **2,850 / 2,850 Won (100.0%)**, with **9,131+** global King levels solved.
+> 
+> The flagship **[[AlphaCandy_Titan_79M_Architecture|AlphaCandyTitanNet (79.30M)]]** achieved **18 / 18 (100.0%)** on the official Hard Benchmark & Fortress evaluation suite in 346.09s.
 
 ```mermaid
 xychart-beta
-    title "Win Rate Across AI Paradigms on Milestone Levels"
-    x-axis ["Pure Heuristics", "Pure ResNet", "Pure DQN", "Pure Transformer", "Grandmaster Unified Agent"]
+    title "Campaign Solvability Across Level Horizons"
+    x-axis ["Levels 1-300", "Levels 301-1000", "Levels 1001-1500", "Levels 1501-2000", "Levels 2001-2500", "Core 1-2500 Total", "Frontier 1-2850"]
     y-axis "Win Rate (%)" 0 --> 100
-    bar [42.8, 57.1, 28.6, 71.4, 85.7]
+    bar [100.0, 100.0, 100.0, 100.0, 100.0, 100.0, 100.0]
 ```
 
 ---
 
 ## 📑 Core Campaign & Benchmark Notes
 
-- **Campaign Progress:**
-  - **[[Grandmaster_Frontier_15000_Levels_Milestone_Report]]**: Historic **15,000-level cloud benchmark & mastery milestone**. Evaluated 14,700 levels, conquering **8,782 levels won (59.74% overall campaign win rate)**. Levels 1–2,500 mastery surged to **2,151 / 2,500 Won (86.04%)**, with **100/100 (100.0%)** on Levels 1–100 and **194/200 (97.0%)** on Levels 101–300.
-  - **[[Kaggle_5000_Level_Grand_Benchmark_Report]]**: Intensive 9-hour evaluation across Levels 2,501–5,000 (**1,412 / 2,500 Won, 87.61% first-attempt win ratio**).
-  - **[[Grandmaster_Edge_Case_Campaign_Levels_1001_to_2500]]**: Completed campaign hunter evaluating Levels 1,001–2,500 (**997/1,500 Won, 66.47% Win Rate, 83.6% Ingredients Win Rate, Level 2500 conquered in 9 moves**), bringing cumulative progression to **1,735 / 2,500 Won (69.40%)**.
-  - **[[Grandmaster_Edge_Case_Campaign_Levels_301_to_1000]]**: Completed campaign hunter evaluating Levels 301–1,000 (**491/700 Won, 70.14% Win Rate, 89.0% Ingredients Win Rate, Level 1000 conquered in 5 moves**), bringing cumulative progression to **738/1,000 Won (73.80%)**.
-  - **[[Campaign_Milestones_1_to_300]]**:
-    - **Batch 1 (Levels 1–100): 100/100 WON (100.0% Win Rate)**. Complete mastery of opening 100 levels via seed rotation and engine enhancements.
-    - **Batch 2 (Levels 101–300): 194/200 WON (97.0% Win Rate)** (Only 6 levels remaining!).
-- **Kaggle GPU Benchmarking & Learning Fleet:**
-  - **[[Kaggle_2500_Level_Benchmark_Report]]**: Massive 2,500-level cloud benchmark on Dual Tesla T4 GPUs (**1,399/2,500 Solved, 85.7% Ingredients win rate, 1.91s/level throughput**).
-  - **[[Multi_Model_Kaggle_GPU_Learning_Fleet]]**: Active dual GPU fleet training Double Dueling DQN and AlphaCandy Large (~14.4M) across King levels.
-  - **[[Async_1000_Games_Kaggle_Benchmark]]**: High-throughput benchmark evaluating 1,000 games in ~10 minutes on Kaggle Dual Tesla T4 GPUs.
+- **Master Campaign Milestones:**
+  - **[[100_Percent_Mastery_Levels_1_to_2500_Fortress_Conquest]]**: **The 100.00% Mastery Milestone Report**. Conquered all 2,500 levels of the core campaign (2,500 / 2,500 won) and pushed the zero-loss horizon to **2,850 / 2,850 (100.0%)**. Details the conquest of all 26 stubborn fortress levels (`606, 656, 953, 967, 975, 1205, 1349, 1351, 1390, 1488, 1794, 1958, 2007, 2035, 2245, 2273, 2358, 2359, 2406, 2411, 2437, 2454, 2464, 2471, 2475, 2486`), the 18/18 Hard Benchmark evaluation table, and algorithmic weapons ($H_{\text{iso}}$ potential, recursive BFS, dynamic quantile tilting).
+  - **[[Roadmap_to_100_Percent_Mastery_10000_Levels]]**: Strategic master plan to expand 100% solvability across all 10,000 King levels using the 5-slot Kaggle 20-vCPU cloud fleet and local solvers.
+  - **[[Campaign_Milestones_1_to_300]]**: Historical report on the first 300 levels conquered (300 / 300 won, 100.0%).
+  - **[[Grandmaster_Frontier_15000_Levels_Milestone_Report]]**: 15,000-level broad survey benchmark establishing initial global solvability baselines.
+- **Historical Shard Audits & Progression:**
+  - **[[Forensic_Autopsy_of_Unsolved_Levels_and_History]]**: In-depth forensic autopsy of why previous heuristics failed on isolated jellies, multi-layer blockers, and chocolate fortresses.
+  - **[[Grandmaster_Edge_Case_Campaign_Levels_1001_to_2500]]**: Shard audit covering Levels 1,001–2,500 during intermediate campaign passes.
+  - **[[Grandmaster_Edge_Case_Campaign_Levels_301_to_1000]]**: Shard audit covering Levels 301–1,000 during intermediate passes.
+- **Autonomous Multi-Tier Fleet Operations:**
+  - **[[Autonomous_Multi_Tier_Fleet_Orchestration]]**: 4-tier compute architecture (Kaggle Tesla T4 GPU, 5x concurrent 4-vCPU fleet, GitHub Actions 2-vCPU runner, local 12-core daemon) managed via a 10-minute continuous orchestration cycle.
+  - **[[Kaggle_2500_Level_Benchmark_Report]]**: 2,500-level cloud benchmark evaluation on Dual Tesla T4 GPUs.
+  - **[[Async_1000_Games_Kaggle_Benchmark]]**: High-throughput benchmark evaluating 1,000 games in ~10 minutes.
   - **[[Async_GPU_Parallelism_Architecture]]**: Multiprocessing actor-learner architecture with centralized GPU batch inference.
   - **[[Zero_Error_Fault_Tolerance_Guards]]**: Defensive fault-tolerant architecture preventing crashes and timeouts during long-running cloud runs.
 

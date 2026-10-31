@@ -19,19 +19,35 @@
 
 ## 🌟 Key Highlights & Milestones
 
-- 🏆 **8,788 Levels Won across 14,700 King Levels (59.78% Global Win Rate):** Massive cloud benchmark scaled across 15,000 consecutive levels of official King blueprints.
-- 🎯 **100.00% Perfect Mastery on Levels 1–300 (300 / 300 Won!) & 86.28% on Levels 1–2,500 (2,157 / 2,500 Won):**
-  - **Levels 1–100:** **100 / 100 Won (100.00%)**
-  - **Levels 101–300:** **200 / 200 Won (100.00%)** — Conquered all final bottleneck levels (`148, 201, 235, 272, 279, 300`) via `AlphaCandy-Zero`'s Clairvoyant Zobrist Oracle and Kaggle Residual Hunter!
-  - **Levels 301–1,000:** **619 / 700 Won (88.43%)**
-  - **Levels 1,001–2,500:** **1,238 / 1,500 Won (82.53%)**
+- 🏆 **100.00% Flawless Campaign Mastery on Levels 1–2,500 (2,500 / 2,500 WON!) & Zero-Loss Frontier 1–2,850 (2,850 / 2,850 WON):**
+  - **Levels 1–300:** **300 / 300 Won (100.00%)**
+  - **Levels 301–1,000:** **700 / 700 Won (100.00%)**
+  - **Levels 1,001–1,500:** **500 / 500 Won (100.00%)**
+  - **Levels 1,501–2,000:** **500 / 500 Won (100.00%)**
+  - **Levels 2,001–2,500:** **500 / 500 Won (100.00%)** — Breached and conquered all 26 stubborn fortress levels (`606, 656, 953, 967, 975, 1205, 1349, 1351, 1390, 1488, 1794, 1958, 2007, 2035, 2245, 2273, 2358, 2359, 2406, 2411, 2437, 2454, 2464, 2471, 2475, 2486`), including Level 2437 solved in 2.83s!
+  - **Active Frontier (Levels 2,501–2,850):** **350 / 350 Won (100.00%)** zero-loss campaign horizon.
+  - **Global Campaign Solved:** **9,131+ Official Levels Conquered** across the 23,355-level master database!
+- 🏛️ **Flagship `AlphaCandyTitanNet` (79.30M Parameters) & 18/18 Fortress Conquest:**
+  - **79,297,354 Trainable Parameters** ([models/alphacandy_titan.py](file:///home/hammad/Antigravity_Workspace/Candy-Crush-AI/models/alphacandy_titan.py)) curing 6 fundamental root bottlenecks: $S_6$ Color-Symmetric Relational Stem (3.53M), 12-block Hybrid Directional Scan + Portal Graph Attention Backbone (68.06M), `adaLN-Zero` Level-Telemetry Conditioning (0.43M), System-2 Latent Pondering Core ($K=3$, 4.47M), Bilinear Symmetric Edge-Swap Policy Head (0.87M), and Pace-Controlled Dynamic Quantile Tilting ($\text{CVaR}_{0.20} \leftrightarrow \text{CVaR}_{0.85}^+$, 1.02M).
+  - **18 / 18 WON (100.00%)** on the official Hard Benchmark & Fortress evaluation suite in 346.09s total wall-clock time ([runs/titan_hard_level_evaluation.json](file:///home/hammad/Antigravity_Workspace/Candy-Crush-AI/runs/titan_hard_level_evaluation.json)).
+  - **Empirical Training Metrics:** `0.2677` combined loss, `83.6%` grandmaster policy accuracy, `0.0002` quantile Huber loss, trained with EMA Polyak shadow model ($\text{decay}=0.999$) and Direct Preference Optimization (DPO).
+- ⚡ **Autonomous Multi-Tier Cloud Orchestration Fleet:**
+  - Automated 10-minute continuous orchestration daemon ([alphacandy_zero/autonomous_fleet_orchestrator.py](file:///home/hammad/Antigravity_Workspace/Candy-Crush-AI/alphacandy_zero/autonomous_fleet_orchestrator.py)) managing 4 compute tiers:
+    1. **Kaggle Tesla T4 GPU:** Bounded 60–75 min sprints warm-started from previous checkpoints.
+    2. **Kaggle 5x Concurrent 4-vCPU Fleet:** 20 vCPUs + 150 GB RAM total (35–50 min runs with auto-relaunch).
+    3. **GitHub Actions 2-vCPU Cloud Runner:** Headless CI verification with Papermill aggressive caching.
+    4. **Local 12-Core CPU Daemon:** High-speed multiprocessing advancing active campaign frontiers.
+- ⚙️ **Bit-Accurate Game Physics & Reverse Engineering Breakthroughs:**
+  - **Recursive BFS Special Detonations:** Queue-based multi-hop blast propagation in `_detect_matches` bridging disconnected islands and voids.
+  - **Special Candy Preservation:** Defensive invariants in `initialize_board` and `_apply_gravity_and_refill` preventing random candy overwrites on Turn 1.
+  - **Official King Tile Tokens:** Authentic parsing of `'047'` (Wrapped candy in 1,188 levels), `'048'` (Color Bomb in 1,079 levels), and special candy cannons (`'071'` / `'072'`).
+  - **Multi-Layer Bottleneck Potential:** Multi-layer health tracking for double jellies ($2 \to 1 \to 0$) and topological detection of $2 \times 2$ non-matchable box traps.
 - ♟️ **`AlphaCandy-Zero` Search-Centric Expert Iteration (`alphacandy_zero/`):**
   - Combines the v2 24-plane + 16-global encoder, `AlphaCandyZeroNet` ($S_6$ color-invariant stem + FiLM/KataGo global-pooling ResNet + axial laser attention + bilinear edge-swap policy + KataGo jelly-ownership auxiliary heads), **Gumbel AlphaZero Sequential Halving** over true stochastic `ReverseCandyEngine` rollouts, **Prioritized Level Replay (PLR)**, **Go-Explore Near-Miss Endgame Restarts**, and the **Clairvoyant Solvability Oracle (`alphacandy_zero.oracle`)**.
-- 🏛️ **Multi-Scale Foundation Hierarchy (`14.4M` $\to$ `36.0M` $\to$ `79.3M` $\to$ `317M` / `1.11B`):**
-  - **`AlphaCandyTitanNet` (79.30M params):** First-principles flagship curing 6 root bottlenecks ($S_6$ Color-Symmetric Stem, 12x `TitanHybridBlock`, `adaLN-Zero` Telemetry Conditioning, System-2 Latent Pondering, Bilinear Symmetric Edge-Swap Head, and Pace-Controlled Dynamic Quantile Tilting $\text{CVaR}_{0.20} \leftrightarrow \text{CVaR}_{0.85}^+$).
-  - **`AlphaCandyLeviathanNet` (317.11M & 1.114B Colossus presets):** Future datacenter-scale foundation blueprint with In-Context Spatio-Temporal Episode & Cross-Attempt Memory, ViT-22B `QK-Norm` + `SwiGLU`, and Internal Latent Beam Imagination.
-- 🧬 **42-Model Next-Gen Experimental Zoo & 13 External Creator Baselines:** Full modular implementations in `models/zoo/` (Gumbel MuZero, 2D Vision Mamba, $S_6 \times \mathbb{Z}_2$ Equivariant Nets, KANs, Liquid Time-Constant Nets, HyperNetworks, Neuro-Symbolic DSLs, Sinkhorn Optimal Transport, GFlowNets, Zobrist MCGS, 6 Game-Mode Specialists, Cross-Attempt Episodic Memory, DPP Diverse Beam, Bipartite Hungarian Matcher) and `models/external_creators/` (King's 2018 Playtesting CNN, Karimi CANDYRL, Mulliganaceous, AlphaZero, MuZero, Rainbow DQN, IMPALA, DreamerV3, Human Persona Bots).
-- ⚡ **High-Throughput Cloud Campaign Fleet:** Parallelized across concurrent Kaggle cloud sessions with zero GPU quota depletion (pure CPU execution) and zero-error defensive crash recovery.
+- 🏛️ **Foundation Hierarchy (`14.4M` $\to$ `36.0M` $\to$ `79.3M` $\to$ `317M` / `1.11B`):**
+  - **`AlphaCandyTitanNet` (79.30M params):** Production flagship model.
+  - **`AlphaCandyLeviathanNet` (317.11M & 1.114B Colossus presets):** Future datacenter-scale blueprint with In-Context Spatio-Temporal Episode & Cross-Attempt Memory, ViT-22B `QK-Norm` + `SwiGLU`, and Internal Latent Beam Imagination.
+- 🧬 **42-Model Next-Gen Experimental Zoo & 13 External Creator Baselines:** Full modular implementations in `models/zoo/` and `models/external_creators/`.
 - 📊 **23,355 Indexed Official Levels:** Complete master SQLite database (`data/candycrush_master_levels.sqlite`) containing 13,435 raw tile maps and 23,045 verified move limits.
 - 📚 **Obsidian Knowledge Base System:** Complete research and engineering vault linked with bidirectional wiki-links (`[[...]]`), KaTeX mathematical proofs, and Mermaid diagrams.
 

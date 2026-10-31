@@ -1,0 +1,166 @@
+{
+  "total_duration_s": 69.22,
+  "exp1_zobrist_transposition": {
+    "total_nodes_visited": 396,
+    "total_cache_hits": 49,
+    "overall_hit_rate_pct": 12.37,
+    "effective_compute_speedup": 1.14,
+    "per_level": {
+      "10": {
+        "nodes_evaluated": 90,
+        "unique_states": 74,
+        "cache_hits": 16,
+        "hit_rate_pct": 17.78
+      },
+      "23": {
+        "nodes_evaluated": 12,
+        "unique_states": 9,
+        "cache_hits": 3,
+        "hit_rate_pct": 25.0
+      },
+      "25": {
+        "nodes_evaluated": 90,
+        "unique_states": 77,
+        "cache_hits": 13,
+        "hit_rate_pct": 14.44
+      },
+      "50": {
+        "nodes_evaluated": 90,
+        "unique_states": 86,
+        "cache_hits": 4,
+        "hit_rate_pct": 4.44
+      },
+      "100": {
+        "nodes_evaluated": 42,
+        "unique_states": 40,
+        "cache_hits": 2,
+        "hit_rate_pct": 4.76
+      },
+      "148": {
+        "nodes_evaluated": 72,
+        "unique_states": 61,
+        "cache_hits": 11,
+        "hit_rate_pct": 15.28
+      }
+    },
+    "duration_s": 2.095
+  },
+  "exp2_gumbel_sequential_halving": {
+    "levels_tested": [
+      10,
+      23,
+      25,
+      50,
+      100,
+      148,
+      201,
+      235
+    ],
+    "gumbel_mean_return": 4201.11,
+    "beam_mean_return": 4440.08,
+    "relative_improvement_pct": -5.38,
+    "gumbel_fast_wins": 6,
+    "beam_fast_wins": 6,
+    "duration_s": 38.667
+  },
+  "exp3_desperation_quantile_tilting": {
+    "desperate_trials": 200,
+    "static_cvar_025_win_rate_pct": 0.0,
+    "risk_neutral_win_rate_pct": 1.5,
+    "dynamic_tilted_cvar_085_win_rate_pct": 13.5,
+    "endgame_recovery_delta_pct": 13.5,
+    "real_king_endgame_lower_tail_utility": 42097.4,
+    "real_king_endgame_upper_tail_utility": 65093.79,
+    "duration_s": 3.325
+  },
+  "exp4_wormhole_portal_attention": {
+    "portal_manhattan_distance": 14,
+    "portal_edge_detected": true,
+    "cnn_2layer_cross_portal_jacobian": 0.0,
+    "wormhole_gnn_cross_portal_jacobian": 18.335011,
+    "duration_s": 0.008
+  },
+  "exp5_tactical_archetypes": {
+    "archetypes_tested": 4,
+    "recognized_count": 2,
+    "recognition_accuracy_pct": 50.0,
+    "details": {
+      "COLOR_BOMB_STRIPED_ALIGNMENT": {
+        "ground_truth_move": [
+          3,
+          3,
+          "H"
+        ],
+        "top_predicted_move": [
+          2,
+          6,
+          "DOWN"
+        ],
+        "recognized_in_top3": true,
+        "legal_moves_count": 20
+      },
+      "CHOCOLATE_CONTAINMENT": {
+        "ground_truth_move": [
+          5,
+          3,
+          "H"
+        ],
+        "top_predicted_move": [
+          0,
+          0,
+          "RIGHT"
+        ],
+        "recognized_in_top3": false,
+        "legal_moves_count": 51
+      },
+      "CORNER_JELLY_SNIPE": {
+        "ground_truth_move": [
+          7,
+          7,
+          "V"
+        ],
+        "top_predicted_move": [
+          8,
+          6,
+          "RIGHT"
+        ],
+        "recognized_in_top3": true,
+        "legal_moves_count": 56
+      },
+      "WRAPPED_DUAL_BLAST": {
+        "ground_truth_move": [
+          4,
+          4,
+          "H"
+        ],
+        "top_predicted_move": [
+          6,
+          4,
+          "RIGHT"
+        ],
+        "recognized_in_top3": false,
+        "legal_moves_count": 51
+      }
+    },
+    "duration_s": 24.65
+  },
+  "exp6_s6_z2_equivariance": {
+    "symmetry_group_order": 1440,
+    "z2_reflection_policy_max_err": 0.0,
+    "z2_reflection_value_max_err": 0.0,
+    "s6_color_perm_policy_max_err": 7.569789886474609e-06,
+    "s6_color_perm_value_max_err": 2.384185791015625e-07,
+    "exact_equivariance_verified": true,
+    "duration_s": 0.202
+  },
+  "exp7_to_10_zoo_Verification": {
+    "exp7_gflownet_unique_actions_of_8": 8,
+    "exp7_greedy_argmax_unique_actions_of_8": 1,
+    "exp8_vision_mamba_latency_ms": 51.99,
+    "exp8_vision_mamba_params": 8543058,
+    "exp9_diffusion_initial_entropy_nats": 4.97,
+    "exp9_diffusion_denoised_entropy_nats": 4.955,
+    "exp10_moe_router_topology_l1_divergence": 0.2074,
+    "duration_s": 0.269
+  }
+}
