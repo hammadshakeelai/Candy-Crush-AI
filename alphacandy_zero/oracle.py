@@ -79,13 +79,14 @@ def diagnose_level(cfg: LevelConfig) -> LevelDiagnosis:
     isolated: List[Tuple[int, int]] = []
     for r in range(cfg.height):
         for c in range(cfg.width):
-            if not active[r, c]:
+            if not active[r, c] or (jellies[r, c] == 0 and ingr[r, c] == 0):
                 continue
-            has_nbr = any(
-                0 <= r + dr < cfg.height and 0 <= c + dc < cfg.width and active[r + dr, c + dc]
-                for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1))
+            nbr_count = sum(
+                1 for dr, dc in ((-1, 0), (1, 0), (0, -1), (0, 1))
+                if 0 <= r + dr < cfg.height and 0 <= c + dc < cfg.width and active[r + dr, c + dc]
             )
-            if not has_nbr and (jellies[r, c] > 0 or ingr[r, c] > 0):
+            # Both 0-neighbor isolated islands and 1-neighbor cul-de-sac dead-ends
+            if nbr_count <= 1:
                 isolated.append((r, c))
 
     dead_cols = [c for c in range(cfg.width) if not np.any(active[:, c])]
@@ -150,13 +151,14 @@ def oracle_potential(
     rem = float(state.remaining_objectives_count())
     score = (init_obj - rem) * 120.0
 
-    # 1. Extra reward for clearing isolated 1x1 island jellies (e.g. Level 279)
+    # 1. Extra reward for clearing isolated 1x1 island & cul-de-sac jellies (e.g. Level 279, 975, 1205)
     iso_alive_rows = set()
     iso_alive_cols = set()
     for r, c in isolated_cells:
         if state.jellies[r, c] == 0:
-            score += 450.0
+            score += 3500.0  # Decisive reward for breaking the bottleneck cell!
         else:
+            score -= 1200.0  # Heavy penalty for leaving bottleneck cells uncleared!
             iso_alive_rows.add(r)
             iso_alive_cols.add(c)
 
@@ -168,25 +170,25 @@ def oracle_potential(
     wr_coords = np.argwhere(spec == SpecialCandy.WRAPPED)
     jf_coords = np.argwhere(spec == SpecialCandy.JELLY_FISH)
 
-    score += len(cb_coords) * 180.0 + len(jf_coords) * 140.0 + len(wr_coords) * 75.0
-    score += (len(sh_coords) + len(sv_coords)) * 60.0
+    score += len(cb_coords) * 220.0 + len(jf_coords) * 160.0 + len(wr_coords) * 90.0
+    score += (len(sh_coords) + len(sv_coords)) * 75.0
 
     # Reward vertical stripes in isolated columns and horizontal stripes in isolated rows
     for r, c in sv_coords:
         if int(c) in iso_alive_cols:
-            score += 220.0
+            score += 650.0
         elif np.any(state.jellies[:, c] > 0) or np.any(state.ingredients[:, c] > 0):
             score += 45.0
     for r, c in sh_coords:
         if int(r) in iso_alive_rows:
-            score += 220.0
+            score += 650.0
         elif np.any(state.jellies[r, :] > 0):
             score += 35.0
 
     # Reward adjacent special-special pairs ready to detonate next turn
     spec_mask = spec != SpecialCandy.NONE
     adj_pairs = int(np.sum(spec_mask[:, :-1] & spec_mask[:, 1:]) + np.sum(spec_mask[:-1, :] & spec_mask[1:, :]))
-    score += adj_pairs * 260.0
+    score += adj_pairs * 320.0
 
     # Reward Color Bombs adjacent to candies that match isolated objective colors
     if len(cb_coords) > 0 and len(isolated_cells) > 0:
@@ -195,7 +197,7 @@ def oracle_potential(
             for ar, ac in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                 nr, nc = int(cbr + ar), int(cbc + ac)
                 if state.is_valid_cell(nr, nc) and int(state.colors[nr, nc]) in iso_alive_colors:
-                    score += 350.0
+                    score += 850.0
 
     # 3. Ingredient downward gravity progress & unobstructed column lanes (e.g. Level 272)
     if state.config.level_type == LevelType.INGREDIENTS:
@@ -250,20 +252,20 @@ def _is_special_combo_swap(
             # 3-row horizontal and 3-column vertical blast
             for ir, ic in isolated_cells:
                 if state.jellies[ir, ic] > 0 and (abs(r - ir) <= 1 or abs(c - ic) <= 1):
-                    return 950.0
-        return 520.0
+                    return 1450.0
+        return 650.0
 
     if s1 != SpecialCandy.NONE and s2 != SpecialCandy.NONE:
-        return 280.0
+        return 320.0
     if s1 == SpecialCandy.COLOR_BOMB or s2 == SpecialCandy.COLOR_BOMB:
         target_col = int(state.colors[r2, c2] if s1 == SpecialCandy.COLOR_BOMB else state.colors[r, c])
         iso_alive = [(ir, ic) for ir, ic in isolated_cells if state.jellies[ir, ic] > 0]
         if iso_alive:
             hits = sum(1 for ir, ic in iso_alive if int(state.colors[ir, ic]) == target_col)
             if hits > 0:
-                return 650.0 * hits
+                return 1200.0 * hits
             if state.moves_left <= 5:
-                return 180.0  # Endgame desperation: detonate to trigger massive board wipe & cascade
+                return 250.0  # Endgame desperation: detonate to trigger massive board wipe & cascade
             return -150.0  # preserve Color Bomb until it can snipe an isolated island or pair with a special!
         return 90.0
 
@@ -274,11 +276,11 @@ def _is_special_combo_swap(
                 if (s1 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)) or (
                     s2 == SpecialCandy.STRIPED_HORIZONTAL and (r == ir or r2 == ir)
                 ):
-                    return 650.0
+                    return 1100.0
                 if (s1 == SpecialCandy.STRIPED_VERTICAL and (c == ic or c2 == ic)) or (
                     s2 == SpecialCandy.STRIPED_VERTICAL and (c == ic or c2 == ic)
                 ):
-                    return 650.0
+                    return 1100.0
 
     return 0.0
 
