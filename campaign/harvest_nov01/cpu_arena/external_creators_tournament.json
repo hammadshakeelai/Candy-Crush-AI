@@ -7,21 +7,21 @@
     20,
     25
   ],
-  "total_duration_sec": 39.277,
+  "total_duration_sec": 29.337,
   "leaderboard": [
     {
-      "name": "KingPlaytestCNN2018",
-      "creator": "Gudmundsson et al. (King, 2018)",
-      "family": "External Academic/Industry",
-      "paradigm": "7-Layer 3x3 ELU ConvNet (Supervised Playtester)",
-      "parameters": 1846529,
+      "name": "MulliganaceousPolicyNet",
+      "creator": "mulliganaceous / Community RL",
+      "family": "External GitHub Creator",
+      "paradigm": "4-Block ResNet + Pairwise Swap Policy Head",
+      "parameters": 344642,
       "wins": 6,
       "total_levels": 6,
       "win_rate_pct": 100.0,
-      "avg_moves": 4.0,
-      "avg_score": 53591,
+      "avg_moves": 8.67,
+      "avg_score": 69600,
       "avg_obj_remaining": 0.0,
-      "avg_time_sec": 0.0731
+      "avg_time_sec": 0.0839
     },
     {
       "name": "BottomRowGreedyBot",
@@ -35,7 +35,7 @@
       "avg_moves": 5.5,
       "avg_score": 50889,
       "avg_obj_remaining": 0.0,
-      "avg_time_sec": 0.0627
+      "avg_time_sec": 0.0466
     },
     {
       "name": "KarimiCandyRL2020",
@@ -49,7 +49,7 @@
       "avg_moves": 2.17,
       "avg_score": 45537,
       "avg_obj_remaining": 0.0,
-      "avg_time_sec": 0.2596
+      "avg_time_sec": 0.1929
     },
     {
       "name": "AlphaCandy Grandmaster Unified",
@@ -63,7 +63,21 @@
       "avg_moves": 3.67,
       "avg_score": 45496,
       "avg_obj_remaining": 0.0,
-      "avg_time_sec": 3.6992
+      "avg_time_sec": 2.7562
+    },
+    {
+      "name": "KingPlaytestCNN2018",
+      "creator": "Gudmundsson et al. (King, 2018)",
+      "family": "External Academic/Industry",
+      "paradigm": "7-Layer 3x3 ELU ConvNet (Supervised Playtester)",
+      "parameters": 1846529,
+      "wins": 6,
+      "total_levels": 6,
+      "win_rate_pct": 100.0,
+      "avg_moves": 2.83,
+      "avg_score": 43551,
+      "avg_obj_remaining": 0.0,
+      "avg_time_sec": 0.0374
     },
     {
       "name": "UCTCreatorAgent",
@@ -77,21 +91,7 @@
       "avg_moves": 4.17,
       "avg_score": 41968,
       "avg_obj_remaining": 0.0,
-      "avg_time_sec": 1.307
-    },
-    {
-      "name": "VanillaPPOMatch3Net",
-      "creator": "kamildar/gym-match3 / CleanRL",
-      "family": "External GitHub Creator",
-      "paradigm": "Shared 4-Layer CNN Actor-Critic PPO",
-      "parameters": 804977,
-      "wins": 6,
-      "total_levels": 6,
-      "win_rate_pct": 100.0,
-      "avg_moves": 3.83,
-      "avg_score": 36145,
-      "avg_obj_remaining": 0.0,
-      "avg_time_sec": 0.0421
+      "avg_time_sec": 0.9724
     },
     {
       "name": "GeneticHeuristicCreatorBot",
@@ -105,7 +105,7 @@
       "avg_moves": 2.17,
       "avg_score": 34414,
       "avg_obj_remaining": 0.0,
-      "avg_time_sec": 0.2376
+      "avg_time_sec": 0.1763
     },
     {
       "name": "GreedyImmediateScoreBot",
@@ -119,21 +119,7 @@
       "avg_moves": 4.83,
       "avg_score": 91674,
       "avg_obj_remaining": 0.17,
-      "avg_time_sec": 0.6481
-    },
-    {
-      "name": "MulliganaceousPolicyNet",
-      "creator": "mulliganaceous / Community RL",
-      "family": "External GitHub Creator",
-      "paradigm": "4-Block ResNet + Pairwise Swap Policy Head",
-      "parameters": 344642,
-      "wins": 5,
-      "total_levels": 6,
-      "win_rate_pct": 83.3,
-      "avg_moves": 7.0,
-      "avg_score": 77348,
-      "avg_obj_remaining": 0.17,
-      "avg_time_sec": 0.092
+      "avg_time_sec": 0.4849
     },
     {
       "name": "AlphaCandy Dueling DQN Master",
@@ -147,7 +133,21 @@
       "avg_moves": 8.67,
       "avg_score": 58661,
       "avg_obj_remaining": 0.17,
-      "avg_time_sec": 0.1238
+      "avg_time_sec": 0.0847
+    },
+    {
+      "name": "VanillaPPOMatch3Net",
+      "creator": "kamildar/gym-match3 / CleanRL",
+      "family": "External GitHub Creator",
+      "paradigm": "Shared 4-Layer CNN Actor-Critic PPO",
+      "parameters": 804977,
+      "wins": 5,
+      "total_levels": 6,
+      "win_rate_pct": 83.3,
+      "avg_moves": 6.67,
+      "avg_score": 57883,
+      "avg_obj_remaining": 0.17,
+      "avg_time_sec": 0.0534
     }
   ],
   "per_model_details": {
@@ -158,71 +158,9 @@
         "moves_limit": 28,
         "won": true,
         "moves_used": 2,
-        "final_score": 1150,
+        "final_score": 826,
         "objectives_remaining": 0,
-        "duration_sec": 0.0531
-      },
-      {
-        "level_id": 5,
-        "level_type": "SCORE",
-        "moves_limit": 16,
-        "won": true,
-        "moves_used": 7,
-        "final_score": 2490,
-        "objectives_remaining": 0,
-        "duration_sec": 0.0839
-      },
-      {
-        "level_id": 10,
-        "level_type": "JELLY",
-        "moves_limit": 27,
-        "won": true,
-        "moves_used": 5,
-        "final_score": 176992,
-        "objectives_remaining": 0,
-        "duration_sec": 0.0865
-      },
-      {
-        "level_id": 15,
-        "level_type": "SCORE",
-        "moves_limit": 30,
-        "won": true,
-        "moves_used": 1,
-        "final_score": 18384,
-        "objectives_remaining": 0,
-        "duration_sec": 0.0247
-      },
-      {
-        "level_id": 20,
-        "level_type": "SCORE",
-        "moves_limit": 28,
-        "won": true,
-        "moves_used": 2,
-        "final_score": 18489,
-        "objectives_remaining": 0,
-        "duration_sec": 0.0579
-      },
-      {
-        "level_id": 25,
-        "level_type": "INGREDIENTS",
-        "moves_limit": 22,
-        "won": true,
-        "moves_used": 7,
-        "final_score": 104042,
-        "objectives_remaining": 0,
-        "duration_sec": 0.1323
-      }
-    ],
-    "MulliganaceousPolicyNet": [
-      {
-        "level_id": 1,
-        "level_type": "SCORE",
-        "moves_limit": 28,
-        "won": true,
-        "moves_used": 2,
-        "final_score": 1222,
-        "objectives_remaining": 0,
-        "duration_sec": 0.0239
+        "duration_sec": 0.0201
       },
       {
         "level_id": 5,
@@ -232,7 +170,69 @@
         "moves_used": 1,
         "final_score": 2340,
         "objectives_remaining": 0,
-        "duration_sec": 0.014
+        "duration_sec": 0.0124
+      },
+      {
+        "level_id": 10,
+        "level_type": "JELLY",
+        "moves_limit": 27,
+        "won": true,
+        "moves_used": 7,
+        "final_score": 169375,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0949
+      },
+      {
+        "level_id": 15,
+        "level_type": "SCORE",
+        "moves_limit": 30,
+        "won": true,
+        "moves_used": 1,
+        "final_score": 18384,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0185
+      },
+      {
+        "level_id": 20,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 20435,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0346
+      },
+      {
+        "level_id": 25,
+        "level_type": "INGREDIENTS",
+        "moves_limit": 22,
+        "won": true,
+        "moves_used": 3,
+        "final_score": 49948,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0438
+      }
+    ],
+    "MulliganaceousPolicyNet": [
+      {
+        "level_id": 1,
+        "level_type": "SCORE",
+        "moves_limit": 28,
+        "won": true,
+        "moves_used": 2,
+        "final_score": 502,
+        "objectives_remaining": 0,
+        "duration_sec": 0.011
+      },
+      {
+        "level_id": 5,
+        "level_type": "SCORE",
+        "moves_limit": 16,
+        "won": true,
+        "moves_used": 7,
+        "final_score": 4603,
+        "objectives_remaining": 0,
+        "duration_sec": 0.0475
       },
       {
         "level_id": 10,
@@ -240,39 +240,39 @@
         "moves_limit": 27,
         "won": true,
         "moves_used": 5,
-        "final_score": 212319,
+        "final_score": 185936,
         "objectives_remaining": 0,
-        "duration_sec": 0.089
+        "duration_sec": 0.0591
       },
       {
         "level_id": 15,
         "level_type": "SCORE",
         "moves_limit": 30,
         "won": true,
-        "moves_used": 5,
-        "final_score": 8397,
+        "moves_used": 8,
+        "final_score": 8548,
         "objectives_remaining": 0,
-        "duration_sec": 0.0757
+        "duration_sec": 0.0807
       },
       {
         "level_id": 20,
         "level_type": "SCORE",
         "moves_limit": 28,
         "won": true,
-        "moves_used": 7,
-        "final_score": 22926,
+        "moves_used": 8,
+        "final_score": 6197,
         "objectives_remaining": 0,
-        "duration_sec": 0.0856
+        "duration_sec": 0.0792
       },
       {
         "level_id": 25,
         "level_type": "INGREDIENTS",
         "moves_limit": 22,
-        "won": false,
+        "won": true,
         "moves_used": 22,
-        "final_score": 216887,
-        "objectives_remaining": 1,
-        "duration_sec": 0.2636
+        "final_score": 211813,
+        "objectives_remaining": 0,
+        "duration_sec": 0.2262
       }
     ],
     "KarimiCandyRL2020": [
@@ -284,7 +284,7 @@
         "moves_used": 1,
         "final_score": 899,
         "objectives_remaining": 0,
-        "duration_sec": 0.0318
+        "duration_sec": 0.0241
       },
       {
         "level_id": 5,
@@ -294,7 +294,7 @@
         "moves_used": 1,
         "final_score": 2772,
         "objectives_remaining": 0,
-        "duration_sec": 0.083
+        "duration_sec": 0.0614
       },
       {
         "level_id": 10,
@@ -304,7 +304,7 @@
         "moves_used": 4,
         "final_score": 171171,
         "objectives_remaining": 0,
-        "duration_sec": 0.4445
+        "duration_sec": 0.3292
       },
       {
         "level_id": 15,
@@ -314,7 +314,7 @@
         "moves_used": 1,
         "final_score": 17988,
         "objectives_remaining": 0,
-        "duration_sec": 0.1328
+        "duration_sec": 0.0993
       },
       {
         "level_id": 20,
@@ -324,7 +324,7 @@
         "moves_used": 1,
         "final_score": 6144,
         "objectives_remaining": 0,
-        "duration_sec": 0.1729
+        "duration_sec": 0.1281
       },
       {
         "level_id": 25,
@@ -334,7 +334,7 @@
         "moves_used": 5,
         "final_score": 74247,
         "objectives_remaining": 0,
-        "duration_sec": 0.6928
+        "duration_sec": 0.5155
       }
     ],
     "VanillaPPOMatch3Net": [
@@ -343,60 +343,60 @@
         "level_type": "SCORE",
         "moves_limit": 28,
         "won": true,
-        "moves_used": 1,
-        "final_score": 575,
+        "moves_used": 2,
+        "final_score": 502,
         "objectives_remaining": 0,
-        "duration_sec": 0.008
+        "duration_sec": 0.0091
       },
       {
         "level_id": 5,
         "level_type": "SCORE",
         "moves_limit": 16,
         "won": true,
-        "moves_used": 5,
-        "final_score": 2240,
+        "moves_used": 2,
+        "final_score": 2760,
         "objectives_remaining": 0,
-        "duration_sec": 0.0422
+        "duration_sec": 0.015
       },
       {
         "level_id": 10,
         "level_type": "JELLY",
         "moves_limit": 27,
         "won": true,
-        "moves_used": 5,
-        "final_score": 137656,
+        "moves_used": 2,
+        "final_score": 135820,
         "objectives_remaining": 0,
-        "duration_sec": 0.0668
+        "duration_sec": 0.0274
       },
       {
         "level_id": 15,
         "level_type": "SCORE",
         "moves_limit": 30,
         "won": true,
-        "moves_used": 3,
-        "final_score": 19354,
+        "moves_used": 7,
+        "final_score": 16037,
         "objectives_remaining": 0,
-        "duration_sec": 0.0379
+        "duration_sec": 0.0683
       },
       {
         "level_id": 20,
         "level_type": "SCORE",
         "moves_limit": 28,
         "won": true,
-        "moves_used": 3,
-        "final_score": 18911,
+        "moves_used": 5,
+        "final_score": 19976,
         "objectives_remaining": 0,
-        "duration_sec": 0.0312
+        "duration_sec": 0.0392
       },
       {
         "level_id": 25,
         "level_type": "INGREDIENTS",
         "moves_limit": 22,
-        "won": true,
-        "moves_used": 6,
-        "final_score": 38132,
-        "objectives_remaining": 0,
-        "duration_sec": 0.0665
+        "won": false,
+        "moves_used": 22,
+        "final_score": 172204,
+        "objectives_remaining": 1,
+        "duration_sec": 0.1616
       }
     ],
     "UCTCreatorAgent": [
@@ -408,7 +408,7 @@
         "moves_used": 2,
         "final_score": 502,
         "objectives_remaining": 0,
-        "duration_sec": 0.144
+        "duration_sec": 0.1072
       },
       {
         "level_id": 5,
@@ -418,7 +418,7 @@
         "moves_used": 4,
         "final_score": 2326,
         "objectives_remaining": 0,
-        "duration_sec": 0.7298
+        "duration_sec": 0.5445
       },
       {
         "level_id": 10,
@@ -428,7 +428,7 @@
         "moves_used": 4,
         "final_score": 144512,
         "objectives_remaining": 0,
-        "duration_sec": 1.3174
+        "duration_sec": 0.9783
       },
       {
         "level_id": 15,
@@ -438,7 +438,7 @@
         "moves_used": 7,
         "final_score": 7338,
         "objectives_remaining": 0,
-        "duration_sec": 2.3223
+        "duration_sec": 1.7399
       },
       {
         "level_id": 20,
@@ -448,7 +448,7 @@
         "moves_used": 3,
         "final_score": 18826,
         "objectives_remaining": 0,
-        "duration_sec": 1.2655
+        "duration_sec": 0.9352
       },
       {
         "level_id": 25,
@@ -458,7 +458,7 @@
         "moves_used": 5,
         "final_score": 78307,
         "objectives_remaining": 0,
-        "duration_sec": 2.0629
+        "duration_sec": 1.529
       }
     ],
     "GeneticHeuristicCreatorBot": [
@@ -470,7 +470,7 @@
         "moves_used": 1,
         "final_score": 899,
         "objectives_remaining": 0,
-        "duration_sec": 0.0318
+        "duration_sec": 0.0215
       },
       {
         "level_id": 5,
@@ -480,7 +480,7 @@
         "moves_used": 1,
         "final_score": 2772,
         "objectives_remaining": 0,
-        "duration_sec": 0.0807
+        "duration_sec": 0.0597
       },
       {
         "level_id": 10,
@@ -490,7 +490,7 @@
         "moves_used": 5,
         "final_score": 166966,
         "objectives_remaining": 0,
-        "duration_sec": 0.5518
+        "duration_sec": 0.409
       },
       {
         "level_id": 15,
@@ -500,7 +500,7 @@
         "moves_used": 3,
         "final_score": 9214,
         "objectives_remaining": 0,
-        "duration_sec": 0.3518
+        "duration_sec": 0.264
       },
       {
         "level_id": 20,
@@ -510,7 +510,7 @@
         "moves_used": 1,
         "final_score": 6144,
         "objectives_remaining": 0,
-        "duration_sec": 0.1705
+        "duration_sec": 0.1264
       },
       {
         "level_id": 25,
@@ -520,7 +520,7 @@
         "moves_used": 2,
         "final_score": 20487,
         "objectives_remaining": 0,
-        "duration_sec": 0.2387
+        "duration_sec": 0.1772
       }
     ],
     "GreedyImmediateScoreBot": [
@@ -532,7 +532,7 @@
         "moves_used": 1,
         "final_score": 899,
         "objectives_remaining": 0,
-        "duration_sec": 0.0259
+        "duration_sec": 0.0188
       },
       {
         "level_id": 5,
@@ -542,7 +542,7 @@
         "moves_used": 1,
         "final_score": 2772,
         "objectives_remaining": 0,
-        "duration_sec": 0.0751
+        "duration_sec": 0.0561
       },
       {
         "level_id": 10,
@@ -552,7 +552,7 @@
         "moves_used": 3,
         "final_score": 172819,
         "objectives_remaining": 0,
-        "duration_sec": 0.3389
+        "duration_sec": 0.2528
       },
       {
         "level_id": 15,
@@ -562,7 +562,7 @@
         "moves_used": 1,
         "final_score": 17988,
         "objectives_remaining": 0,
-        "duration_sec": 0.1236
+        "duration_sec": 0.0934
       },
       {
         "level_id": 20,
@@ -572,7 +572,7 @@
         "moves_used": 1,
         "final_score": 6144,
         "objectives_remaining": 0,
-        "duration_sec": 0.1627
+        "duration_sec": 0.1226
       },
       {
         "level_id": 25,
@@ -582,7 +582,7 @@
         "moves_used": 22,
         "final_score": 349425,
         "objectives_remaining": 1,
-        "duration_sec": 3.1622
+        "duration_sec": 2.3656
       }
     ],
     "BottomRowGreedyBot": [
@@ -594,7 +594,7 @@
         "moves_used": 2,
         "final_score": 826,
         "objectives_remaining": 0,
-        "duration_sec": 0.0112
+        "duration_sec": 0.0089
       },
       {
         "level_id": 5,
@@ -604,7 +604,7 @@
         "moves_used": 3,
         "final_score": 3394,
         "objectives_remaining": 0,
-        "duration_sec": 0.0249
+        "duration_sec": 0.0184
       },
       {
         "level_id": 10,
@@ -614,7 +614,7 @@
         "moves_used": 6,
         "final_score": 155084,
         "objectives_remaining": 0,
-        "duration_sec": 0.0699
+        "duration_sec": 0.0523
       },
       {
         "level_id": 15,
@@ -624,7 +624,7 @@
         "moves_used": 4,
         "final_score": 12596,
         "objectives_remaining": 0,
-        "duration_sec": 0.0662
+        "duration_sec": 0.0489
       },
       {
         "level_id": 20,
@@ -634,7 +634,7 @@
         "moves_used": 3,
         "final_score": 8037,
         "objectives_remaining": 0,
-        "duration_sec": 0.0427
+        "duration_sec": 0.0316
       },
       {
         "level_id": 25,
@@ -644,7 +644,7 @@
         "moves_used": 15,
         "final_score": 125397,
         "objectives_remaining": 0,
-        "duration_sec": 0.1611
+        "duration_sec": 0.1197
       }
     ],
     "AlphaCandy Dueling DQN Master": [
@@ -656,7 +656,7 @@
         "moves_used": 2,
         "final_score": 502,
         "objectives_remaining": 0,
-        "duration_sec": 0.0256
+        "duration_sec": 0.0127
       },
       {
         "level_id": 5,
@@ -666,7 +666,7 @@
         "moves_used": 3,
         "final_score": 2146,
         "objectives_remaining": 0,
-        "duration_sec": 0.0418
+        "duration_sec": 0.0268
       },
       {
         "level_id": 10,
@@ -676,7 +676,7 @@
         "moves_used": 10,
         "final_score": 156619,
         "objectives_remaining": 0,
-        "duration_sec": 0.1726
+        "duration_sec": 0.1103
       },
       {
         "level_id": 15,
@@ -686,7 +686,7 @@
         "moves_used": 6,
         "final_score": 7424,
         "objectives_remaining": 0,
-        "duration_sec": 0.1009
+        "duration_sec": 0.0669
       },
       {
         "level_id": 20,
@@ -696,7 +696,7 @@
         "moves_used": 9,
         "final_score": 7865,
         "objectives_remaining": 0,
-        "duration_sec": 0.134
+        "duration_sec": 0.0917
       },
       {
         "level_id": 25,
@@ -706,7 +706,7 @@
         "moves_used": 22,
         "final_score": 177409,
         "objectives_remaining": 1,
-        "duration_sec": 0.2677
+        "duration_sec": 0.1998
       }
     ],
     "AlphaCandy Grandmaster Unified": [
@@ -718,7 +718,7 @@
         "moves_used": 1,
         "final_score": 575,
         "objectives_remaining": 0,
-        "duration_sec": 0.2907
+        "duration_sec": 0.2022
       },
       {
         "level_id": 5,
@@ -728,7 +728,7 @@
         "moves_used": 2,
         "final_score": 2099,
         "objectives_remaining": 0,
-        "duration_sec": 0.6471
+        "duration_sec": 0.4735
       },
       {
         "level_id": 10,
@@ -738,7 +738,7 @@
         "moves_used": 5,
         "final_score": 185075,
         "objectives_remaining": 0,
-        "duration_sec": 4.6801
+        "duration_sec": 3.5264
       },
       {
         "level_id": 15,
@@ -748,7 +748,7 @@
         "moves_used": 4,
         "final_score": 6201,
         "objectives_remaining": 0,
-        "duration_sec": 4.3221
+        "duration_sec": 3.1685
       },
       {
         "level_id": 20,
@@ -758,7 +758,7 @@
         "moves_used": 5,
         "final_score": 7844,
         "objectives_remaining": 0,
-        "duration_sec": 6.2006
+        "duration_sec": 4.6462
       },
       {
         "level_id": 25,
@@ -768,7 +768,7 @@
         "moves_used": 5,
         "final_score": 71183,
         "objectives_remaining": 0,
-        "duration_sec": 6.0544
+        "duration_sec": 4.5206
       }
     ]
   }
