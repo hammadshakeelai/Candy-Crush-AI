@@ -208,6 +208,64 @@ The Kaggle deployment package in [`kaggle_deploy/model_zoo_experiments_kernel/`]
 
 ---
 
+## 📊 Complete 42-Model Zoo Empirical Benchmark & Hardware Profile
+
+Every architecture in `models/zoo/` has been verified locally and on Kaggle Cloud 4-vCPU runners, passing full forward and backward passes across all 8 game mechanics.
+
+- **Total Operational Architectures**: **`42 / 42 PASS (100.0%)`**
+- **Total Trainable Parameters**: **`252,418,664`**
+- **Median CPU Inference Latency**: **`6.08 ms`**
+- **Ultra-Fast Sub-2ms Tier**: 8 models (`DirectPreferenceCandyNet` at 0.51 ms, `NgPotentialRewardShapingNet` at 0.63 ms, `BayesianBanditRootSolverNet` at 0.70 ms)
+- **Kaggle Models Framework**: Version 3 published at [`hammadshakeelai/alphacandy-match3-solvers`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-match3-solvers).
+
+| # | Architecture Class | Module File | Trainable Parameters | CPU Latency (ms) | Output Contract | Verification Status |
+| :-: | :--- | :--- | :---: | :---: | :---: | :---: |
+| 01 | `MultiStepActionPlannerNet` | `autoregressive_move_sequence_planner` | 2,465,619 | 5.79 ms | dict | ✅ PASS |
+| 02 | `EpistemicUncertaintyCandyNet` | `bayesian_epistemic_ensemble_net` | 11,030,306 | 8.58 ms | dict | ✅ PASS |
+| 03 | `DPPDiverseBeamCandyNet` | `beam_search_diversity_determinantal` | 6,701,073 | 2.69 ms | dict | ✅ PASS |
+| 04 | `DifferentiableBipartiteMatcherNet` | `bipartite_matching_hungarian_net` | 873,219 | 1.11 ms | (1, 144) | ✅ PASS |
+| 05 | `SimCLRCandyContrastiveNet` | `contrastive_state_representation_net` | 4,456,137 | 5.53 ms | dict | ✅ PASS |
+| 06 | `DirectPreferenceCandyNet` | `contrastive_trajectory_preference_net` | 1,597,729 | 0.51 ms | dict | ✅ PASS |
+| 07 | `CMAESNeuroEvolutionAgent` | `darwin_evolutionary_ensemble` | 8,685,625 | 7.91 ms | dict | ✅ PASS |
+| 08 | `CandyDecisionTransformer` | `decision_transformer_candy` | 6,728,498 | 5.39 ms | dict | ✅ PASS |
+| 09 | `CandyDiffusionPolicyNet` | `discrete_diffusion_policy` | 12,588,129 | 17.52 ms | (1, 144) | ✅ PASS |
+| 10 | `QuantileMCTSHybridNet` | `distributional_qr_mcts_hybrid` | 6,871,921 | 1.91 ms | dict | ✅ PASS |
+| 11 | `EnergyBasedCandyNet` | `energy_based_ebm_policy` | 8,796,563 | 6.86 ms | (1, 144) | ✅ PASS |
+| 12 | `GravityEquivariantCandyNet` | `equivariant_dihedral_net` | 9,380,611 | 25.25 ms | dict | ✅ PASS |
+| 13 | `Star1ExpectimaxPrunerNet` | `expectimax_alpha_beta_pruner` | 7,683,656 | 6.93 ms | dict | ✅ PASS |
+| 14 | `HardNegativeFocalDistillerNet` | `focal_hard_example_distiller` | 3,701,763 | 3.67 ms | dict | ✅ PASS |
+| 15 | `CandyGFlowNet` | `gflownet_combinatorial_sampler` | 14,412,658 | 5.88 ms | dict | ✅ PASS |
+| 16 | `WormholeGraphNeuralNet` | `gnn_wormhole_message_passing` | 5,783,732 | 14.53 ms | dict | ✅ PASS |
+| 17 | `GumbelMuZeroCandyNet` | `gumbel_muzero_net` | 14,409,778 | 15.89 ms | dict | ✅ PASS |
+| 18 | `CascadePotentialFieldNet` | `hamiltonian_cascade_energy_net` | 3,117,274 | 5.24 ms | (1, 144) | ✅ PASS |
+| 19 | `HierarchicalSubgoalCandyNet` | `hierarchical_option_critic` | 13,232,927 | 7.73 ms | dict | ✅ PASS |
+| 20 | `LevelConditionedHyperNet` | `hypernetwork_level_conditioned` | 7,124,489 | 5.88 ms | dict | ✅ PASS |
+| 21 | `KolmogorovArnoldCandyNet` | `kan_kolmogorov_arnold_net` | 10,222,630 | 53.53 ms | dict | ✅ PASS |
+| 22 | `LiquidNeuralCandyNet` | `liquid_time_constant_net` | 7,885,267 | 10.62 ms | dict | ✅ PASS |
+| 23 | `GrandmasterMoERouter` | `meta_adaptive_router` | 2,540,335 | 2.23 ms | dict | ✅ PASS |
+| 24 | `TranspositionMCGSSolver` | `monte_carlo_graph_search` | 7,572,641 | 4.01 ms | dict | ✅ PASS |
+| 25 | `NeuralCACascadePredictorNet` | `neural_cellular_automata_net` | 1,397,977 | 9.70 ms | (1, 20, 9, 9) | ✅ PASS |
+| 26 | `NeuroSymbolicTacticalDSLNet` | `neuro_symbolic_program_synth` | 1,637,588 | 3.70 ms | dict | ✅ PASS |
+| 27 | `NgPotentialRewardShapingNet` | `potential_based_reward_shaping_net` | 2,870,869 | 0.63 ms | dict | ✅ PASS |
+| 28 | `RetNetCandy2D` | `retentive_spatial_net` | 6,715,233 | 10.71 ms | dict | ✅ PASS |
+| 29 | `ReverseCurriculumGeneratorNet` | `reverse_curriculum_backward_solver` | 4,230,345 | 1.08 ms | dict | ✅ PASS |
+| 30 | `OptimalTransportCandyNet` | `sinkhorn_optimal_transport_net` | 6,888,795 | 6.33 ms | dict | ✅ PASS |
+| 31 | `SwitchMoECandyTransformer` | `sparse_moe_switch_candy_net` | 6,377,078 | 10.26 ms | dict | ✅ PASS |
+| 32 | `BlockerContainmentSpecialistNet` | `specialist_blocker_breaker_net` | 5,995,384 | 7.63 ms | dict | ✅ PASS |
+| 33 | `SpecialComboAlchemistNet` | `specialist_combo_alchemist_net` | 5,202,148 | 7.07 ms | dict | ✅ PASS |
+| 34 | `EndgameClutchMiracleNet` | `specialist_endgame_clutch_net` | 5,337,381 | 5.82 ms | dict | ✅ PASS |
+| 35 | `IngredientDropSpecialistNet` | `specialist_ingredient_drop_net` | 6,069,653 | 7.28 ms | dict | ✅ PASS |
+| 36 | `JellyCornerSniperNet` | `specialist_jelly_sniper_net` | 5,162,261 | 7.27 ms | dict | ✅ PASS |
+| 37 | `OpeningBoardArchitectNet` | `specialist_opening_architect_net` | 1,177,425 | 1.44 ms | dict | ✅ PASS |
+| 38 | `SpectralGraphWaveletCandyNet` | `spectral_graph_laplacian_net` | 2,708,990 | 5.54 ms | dict | ✅ PASS |
+| 39 | `MatrixProductStateCandyNet` | `tensor_network_mps_policy` | 1,912,757 | 11.08 ms | (1, 144) | ✅ PASS |
+| 40 | `BayesianBanditRootSolverNet` | `thompson_sampling_bandit_solver` | 1,597,730 | 0.70 ms | dict | ✅ PASS |
+| 41 | `EpisodicMemoryTransformerCandyNet` | `transformer_xl_episodic_memory` | 731,412 | 1.75 ms | dict | ✅ PASS |
+| 42 | `CandyMamba2DNet` | `vision_mamba_2d_net` | 8,543,058 | 35.55 ms | dict | ✅ PASS |
+| **TOTAL** | **42 Unique Architectures** | **`models/zoo/`** | **`252,418,664`** | **`6.08 ms` (med)** | **All 8 Mechanics** | **100.0% PASS** |
+
+---
+
 ## 🔗 Related Notes & Bi-Directional Wiki-Links
 - Return to Master Hub: **[[00_Home_MOC]]**
 - Architecture Index: **[[01_Architecture_MOC]]**
