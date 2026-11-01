@@ -27,7 +27,9 @@ from playwright.async_api import async_playwright, Page, BrowserContext
 from core.reverse_engine import Direction, OFFSETS
 from vision.robust_grid_detector import RobustGridDetector
 from vision.robust_tile_classifier import RobustTileClassifier
+from automation.display_utils import setup_display_environment
 from models.alphacandy_titan_agent import AlphaCandyTitanAgent
+from automation.highlight_recorder import HighlightRecorder
 
 CANDY_EMOJIS = {
     1: "🔴",  # Red
@@ -47,9 +49,11 @@ class AlphaCandyWebBot:
         print("=" * 65)
         print("🍬 ALPHACANDY TITAN — LIVE WEB BROWSER BOT (79.3M PARAMS)")
         print("=" * 65)
+        setup_display_environment()
         self.detector = RobustGridDetector()
         self.classifier = RobustTileClassifier()
         self.agent = AlphaCandyTitanAgent(checkpoint_path=checkpoint_path)
+        self.recorder = HighlightRecorder(buffer_size=12)
         self.user_data_dir = os.path.expanduser("~/.config/alphacandy-browser")
         os.makedirs(self.user_data_dir, exist_ok=True)
         self.cookies_path = cookies_path or str(ROOT_DIR / "config" / "facebook_cookies.json")
@@ -251,6 +255,19 @@ class AlphaCandyWebBot:
 
                     r, c, direction, score, diag = best_move
                     self.render_terminal_hud(engine_state, (r, c, direction, score), diag)
+
+                    # Milestone & Highlight Recording
+                    meta = {
+                        "move_str": f"({r},{c})->{direction.name}",
+                        "score": score,
+                        "regime": diag.get("regime", ""),
+                        "win_prob": diag.get("win_prob", 0.0),
+                        "is_victory": engine_state.has_won(),
+                    }
+                    self.recorder.add_frame(frame_bgr, meta)
+                    trigger, event_name = self.recorder.should_trigger_highlight(meta)
+                    if trigger:
+                        self.recorder.save_highlight(event_name, extra_meta=meta)
 
                     # 4. Calculate cell center pixel coordinates
                     dr, dc = OFFSETS[direction]
