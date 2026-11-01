@@ -1,8 +1,8 @@
 # AlphaCandy-Zero Interactive Web GUI & Playable Demo (Option D Roadmap)
 
-> **Status**: PRESERVED IN MEMORY FOR USER REVIEW / TOMORROW  
-> **Target Release**: AlphaCandy Web Suite v1.0  
-> **Primary Technology**: Streamlit / FastAPI / HTML5 Canvas + WebSockets  
+> **Status**: **IMPLEMENTED & DEPLOYED (AlphaCandy Web Suite v1.0)**  
+> **Entrypoint**: `python3 scripts/launch_web_demo.py` / `web/index.html`  
+> **Primary Technology**: HTML5 Canvas + Tailwind CSS + Vanilla JS Physics Engine + Zero-Dependency Python Server  
 
 ---
 
