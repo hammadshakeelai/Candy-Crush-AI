@@ -177,27 +177,31 @@ class AlphaCandyWebBot:
         await asyncio.sleep(0.06)
         await page.mouse.up()
 
-    async def run(self, max_steps: int = 500, dry_run: bool = False):
+    async def run(self, max_steps: int = 500, dry_run: bool = False, cdp_port: Optional[int] = None):
         async with async_playwright() as p:
-            print("[WebBot] Launching persistent Google Chrome on desktop display...")
-            ctx: BrowserContext = await p.chromium.launch_persistent_context(
-                self.user_data_dir,
-                headless=False,
-                executable_path="/opt/google/chrome/chrome",
-                args=[
-                    "--no-sandbox",
-                    "--window-size=1380,980",
-                    "--disable-blink-features=AutomationControlled",
-                ],
-                viewport={"width": 1380, "height": 980},
-            )
-
-            page = ctx.pages[0] if ctx.pages else await ctx.new_page()
-            await self.inject_cookies(ctx)
-            target_url = "https://www.facebook.com/gaming/play/210831918949520/?source=canvas_to_ig_app_migration"
-            
-            print(f"[WebBot] Navigating to {target_url}...")
-            await page.goto(target_url)
+            if cdp_port:
+                print(f"[WebBot] Connecting directly to your existing Chrome on port {cdp_port}...")
+                browser = await p.chromium.connect_over_cdp(f"http://localhost:{cdp_port}")
+                ctx = browser.contexts[0] if browser.contexts else await browser.new_context(no_viewport=True)
+                page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+            else:
+                print("[WebBot] Launching native maximized Google Chrome (no-viewport mode)...")
+                ctx: BrowserContext = await p.chromium.launch_persistent_context(
+                    self.user_data_dir,
+                    headless=False,
+                    executable_path="/opt/google/chrome/chrome",
+                    no_viewport=True,
+                    args=[
+                        "--start-maximized",
+                        "--disable-blink-features=AutomationControlled",
+                        "--test-type",  # Hides automation warning bar cleanly
+                    ],
+                )
+                page = ctx.pages[0] if ctx.pages else await ctx.new_page()
+                await self.inject_cookies(ctx)
+                target_url = "https://www.facebook.com/gaming/play/210831918949520/?source=canvas_to_ig_app_migration"
+                print(f"[WebBot] Navigating to {target_url}...")
+                await page.goto(target_url)
 
             print("\n" + "=" * 65)
             print("🔑 BROWSER OPEN ON YOUR DESKTOP SCREEN!")
@@ -214,15 +218,9 @@ class AlphaCandyWebBot:
                     frame_target, canvas_el = await self.find_game_frame(page)
                     active_page = frame_target if isinstance(frame_target, Page) else (frame_target.page if frame_target else page)
                     
-                    # Grab frame from canvas if available, else viewport
-                    if canvas_el:
-                        screenshot_bytes = await canvas_el.screenshot()
-                        c_box = await canvas_el.bounding_box()
-                        canvas_offset_x = c_box["x"] if c_box else 0
-                        canvas_offset_y = c_box["y"] if c_box else 0
-                    else:
-                        screenshot_bytes = await active_page.screenshot()
-                        canvas_offset_x, canvas_offset_y = 0, 0
+                    # Capture page viewport screenshot natively without triggering canvas re-layouts
+                    screenshot_bytes = await page.screenshot(animations="disabled")
+                    canvas_offset_x, canvas_offset_y = 0, 0
 
                     img_arr = np.frombuffer(screenshot_bytes, dtype=np.uint8)
                     frame_bgr = cv2.imdecode(img_arr, cv2.IMREAD_COLOR)
@@ -305,10 +303,11 @@ def main():
     parser.add_argument("--steps", type=int, default=500, help="Max steps to play")
     parser.add_argument("--dry-run", action="store_true", help="Predict and show moves without swiping")
     parser.add_argument("--cookies", type=str, default=None, help="Path to cookies file (JSON or raw header string)")
+    parser.add_argument("--cdp", type=int, default=None, help="Connect over Chrome DevTools Protocol port (e.g. 9222)")
     args = parser.parse_args()
 
     bot = AlphaCandyWebBot(cookies_path=args.cookies)
-    asyncio.run(bot.run(max_steps=args.steps, dry_run=args.dry_run))
+    asyncio.run(bot.run(max_steps=args.steps, dry_run=args.dry_run, cdp_port=args.cdp))
 
 
 if __name__ == "__main__":
