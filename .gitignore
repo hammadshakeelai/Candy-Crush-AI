@@ -42,4 +42,6 @@ data/candycrush_offline_rl_buffer.pt
 runs/fortress_golden_trajectories.pt
 campaign/.harvest.lock
 .venv
-.venv
+config/facebook_cookies.*
+recordings/
+runs/recordings/
