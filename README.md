@@ -8,7 +8,7 @@
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-23%2C355%20Levels%20Dataset-20BEFF.svg)](https://www.kaggle.com/datasets/hammadshakeelai/candy-crush-grandmaster-rl)
-[![Kaggle Kernel](https://img.shields.io/badge/Kaggle%20GPU-Async%201000%20Games-20BEFF.svg)](https://www.kaggle.com/code/hammadshakeelai/candy-crush-async-1000-games)
+[![Kaggle Model](https://img.shields.io/badge/Kaggle%20Model-AlphaCandy%20Titan%20(79.3M)-20BEFF.svg)](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan/PyTorch/default/4)
 [![Knowledge Base](https://img.shields.io/badge/Obsidian-Knowledge%20Base-7A3EE8.svg)](knowledge_base/00_Index_and_MOC/00_Home_MOC.md)
 
 **AlphaCandy** is a superhuman artificial intelligence, deep reinforcement learning, and spatial transformer system designed to master all **23,355+ official King levels** of Candy Crush Saga. It synthesizes model-free Deep Q-Learning (Double Dueling DQN), non-Euclidean Graph Self-Attention Transformers (AlphaCandy Spatial Net), Group Relative Policy Optimization (GRPO), and adaptive stochastic Expectimax lookahead.
@@ -253,10 +253,21 @@ python kaggle_deploy/async_1000_kernel/run_async_1000_games.py --start 1 --end 1
 python campaign/campaign_manager.py --start 101 --end 300 --workers 6 --max-attempts 3
 ```
 
-### 5. Run Async 2,500-Level Grandmaster Large GPU Benchmark
+### 6. Live Screen Bot: Play the Real Commercial Candy Crush Game
+AlphaCandy can directly perceive and play the actual commercial King Candy Crush Saga running on your desktop browser (e.g. [Facebook Gaming Candy Crush](https://apps.facebook.com/candycrush/)), emulator, or mirrored phone screen:
+
 ```bash
-# Multi-worker async execution across 2,500 consecutive King levels
-python kaggle_deploy/async_large_kernel/run_async_large_gpu.py --start 1 --end 2500 --workers 4 --attempts 2
+# 1. Calibrate screen board coordinates in 5 seconds (hover over top-left and bottom-right candies):
+python scripts/calibrate_board.py --hover
+
+# 2. Test perception in Dry-Run mode (verifies detected candies and shows Titan's moves without clicking):
+python automation/screen_bot.py --dry-run
+
+# 3. Launch autonomous live play (AlphaCandy Titan drags candies on screen to conquer the level live):
+python automation/screen_bot.py
+
+# 4. Or play via physical Android phone connected via USB (ADB touch injection):
+python automation/bot_runner.py
 ```
 
 ### 6. Solve with Pure AlphaCandy Large Neural Agent (No Search)

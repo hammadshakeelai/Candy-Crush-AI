@@ -15,7 +15,7 @@ def create_package():
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
     out_zip = os.path.join(repo_root, "kaggle_deploy/src/candy_crush_pkg.zip")
 
-    include_dirs = ["core", "models", "checkpoints", "campaign", "analysis"]
+    include_dirs = ["core", "models", "campaign", "analysis", "automation", "vision", "alphacandy_zero", "config"]
     include_files = ["README.md", "requirements.txt"]
 
     print(f"Creating updated package at: {out_zip}...")
@@ -26,7 +26,7 @@ def create_package():
                 continue
             for root, _, files in os.walk(full_d):
                 for f in files:
-                    if f.endswith((".pyc", ".tmp", ".kaggle-partial")) or "__pycache__" in root:
+                    if f.endswith((".pyc", ".tmp", ".kaggle-partial", ".pt", ".pth")) or "__pycache__" in root:
                         continue
                     full_p = os.path.join(root, f)
                     arcname = os.path.relpath(full_p, repo_root)
