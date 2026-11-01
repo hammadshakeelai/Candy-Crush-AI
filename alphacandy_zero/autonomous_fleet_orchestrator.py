@@ -113,11 +113,11 @@ def check_kaggle_gpu():
 
 
 KAGGLE_CPU_FLEET = [
-    ("CPU-1 (Mastery Hunter)", "hammadshakeelai/alphacandy-mastery-hunter-100-percent", "kaggle_deploy/mastery_100_kernel"),
+    ("CPU-1 (Mastery Hunter & Robustness)", "hammadshakeelai/alphacandy-mastery-hunter-100-percent", "kaggle_deploy/mastery_100_kernel"),
     ("CPU-2 (Arena & PLR)", "hammadshakeelai/alphacandy-zero-cpu-arena-and-plr-trainer", "kaggle_deploy/zero_cpu_arena_and_plr"),
-    ("CPU-3 (Oracle 1001-1500)", "hammadshakeelai/alphacandy-zero-oracle-shard-1001-to-1500", "kaggle_deploy/zero_oracle_1001_1500"),
-    ("CPU-4 (Oracle 1501-2000)", "hammadshakeelai/alphacandy-zero-oracle-shard-1501-to-2000", "kaggle_deploy/zero_oracle_1501_2000"),
-    ("CPU-5 (Frontier 5k-7.5k)", "hammadshakeelai/alphacandy-frontier-5000-to-7500", "kaggle_deploy/frontier_5000_kernel"),
+    ("CPU-3 (Frontier 10296-12500)", "hammadshakeelai/alphacandy-zero-oracle-shard-1001-to-1500", "kaggle_deploy/zero_oracle_1001_1500"),
+    ("CPU-4 (Frontier 12501-15000)", "hammadshakeelai/alphacandy-zero-oracle-shard-1501-to-2000", "kaggle_deploy/zero_oracle_1501_2000"),
+    ("CPU-5 (Frontier 15001-17500)", "hammadshakeelai/alphacandy-frontier-5000-to-7500", "kaggle_deploy/frontier_5000_kernel"),
 ]
 
 

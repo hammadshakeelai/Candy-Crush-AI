@@ -200,7 +200,7 @@ def solve_frontier_level_task(args: tuple) -> Dict[str, Any]:
 
 def main():
     work_dir, src_root = setup_environment()
-    start_lvl, end_lvl = 5001, 7500
+    start_lvl, end_lvl = 15001, 17500
     workers = min(4, cpu_count())
     max_attempts = 2
     task_args = [(lvl, max_attempts) for lvl in range(start_lvl, end_lvl + 1)]

@@ -574,11 +574,13 @@ class TitanCurriculumDataset(Dataset):
         nat_a = natural_dict["actions"].long().view(-1)
         nat_w = natural_dict["win_targets"].float().view(-1, 1)
         nat_m = natural_dict["move_ratios"].float().view(-1, 1)
+        nat_f = natural_dict.get("failed_actions", torch.full((nat_s.shape[0],), -1, dtype=torch.long)).long().view(-1)
 
         tac_s = tactical_dict["states"].float()
         tac_a = tactical_dict["actions"].long().view(-1)
         tac_w = tactical_dict["win_targets"].float().view(-1, 1)
         tac_m = tactical_dict["move_ratios"].float().view(-1, 1)
+        tac_f = tactical_dict.get("failed_actions", torch.full((tac_s.shape[0],), -1, dtype=torch.long)).long().view(-1)
 
         self.num_natural = int(nat_s.shape[0])
         self.num_tactical = int(tac_s.shape[0])
@@ -587,6 +589,7 @@ class TitanCurriculumDataset(Dataset):
         self.actions = torch.cat([nat_a, tac_a], dim=0)
         self.win_targets = torch.cat([nat_w, tac_w], dim=0)
         self.move_ratios = torch.cat([nat_m, tac_m], dim=0)
+        self.failed_actions = torch.cat([nat_f, tac_f], dim=0)
 
         # Compute exact per-sample sampling weights for 80% Natural / 20% Tactical curriculum
         tactical_ratio = max(0.01, 1.0 - natural_ratio)
@@ -601,12 +604,13 @@ class TitanCurriculumDataset(Dataset):
     def __len__(self) -> int:
         return int(self.states.shape[0])
 
-    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         return (
             self.states[idx],
             self.actions[idx],
             self.win_targets[idx],
             self.move_ratios[idx],
+            self.failed_actions[idx],
         )
 
 
@@ -616,16 +620,27 @@ def _load_tensor_dict_safely(paths: List[str]) -> Optional[Dict[str, torch.Tenso
         if p and os.path.exists(p):
             try:
                 data = torch.load(p, map_location="cpu", weights_only=False)
-                if isinstance(data, dict) and "states" in data and "actions" in data:
-                    n = data["states"].shape[0]
+                if isinstance(data, dict):
+                    states = data.get("states")
+                    if states is None:
+                        continue
+                    # Squeeze or adapt 24 planes to 20 channels if needed
+                    if states.ndim == 4 and states.shape[1] == 24:
+                        states = states[:, :20, :, :]
+                    n = states.shape[0]
+                    actions = data.get("actions", data.get("preferred_actions"))
+                    if actions is None:
+                        continue
                     w = data.get("win_targets", torch.ones(n, 1, dtype=torch.float32))
                     m = data.get("move_ratios", torch.full((n, 1), 0.5, dtype=torch.float32))
+                    failed = data.get("rejected_actions", data.get("failed_actions", torch.full((n,), -1, dtype=torch.long)))
                     print(f"[DATA] Loaded {n:,} samples from {p}")
                     return {
-                        "states": data["states"].float(),
-                        "actions": data["actions"].long().view(-1),
+                        "states": states.float(),
+                        "actions": actions.long().view(-1),
                         "win_targets": w.float().view(-1, 1),
                         "move_ratios": m.float().view(-1, 1),
+                        "failed_actions": failed.long().view(-1),
                     }
             except Exception as e:
                 print(f"[WARN] Could not load {p}: {e}")
@@ -651,11 +666,26 @@ def build_80_20_curriculum_dataloader(
         search_dirs.extend(extra_search_dirs)
 
     natural_candidates = [os.path.join(d, "expert_demonstrations_omega.pt") for d in search_dirs]
+    dpo_candidates = [os.path.join(d, "candycrush_dpo_preference_pairs.pt") for d in search_dirs]
     tactics_4_candidates = [os.path.join(d, "synthetic_tactics_dataset.pt") for d in search_dirs]
     tactics_12_candidates = [os.path.join(d, "synthetic_tactics_12archetypes.pt") for d in search_dirs]
 
-    # 1. Load or synthesize Natural Won Trajectories (80% stream)
+    # 1. Load Natural Won Trajectories and/or DPO Preference Pairs (80% stream)
     natural_dict = _load_tensor_dict_safely(natural_candidates)
+    dpo_dict = _load_tensor_dict_safely(dpo_candidates)
+
+    if natural_dict is not None and dpo_dict is not None:
+        print(f"[DATA] Merging {natural_dict['states'].shape[0]:,} Omega transitions + {dpo_dict['states'].shape[0]:,} DPO pairs into natural stream...")
+        natural_dict = {
+            "states": torch.cat([natural_dict["states"], dpo_dict["states"]], dim=0),
+            "actions": torch.cat([natural_dict["actions"], dpo_dict["actions"]], dim=0),
+            "win_targets": torch.cat([natural_dict["win_targets"], dpo_dict["win_targets"]], dim=0),
+            "move_ratios": torch.cat([natural_dict["move_ratios"], dpo_dict["move_ratios"]], dim=0),
+            "failed_actions": torch.cat([natural_dict["failed_actions"], dpo_dict["failed_actions"]], dim=0),
+        }
+    elif natural_dict is None and dpo_dict is not None:
+        natural_dict = dpo_dict
+
     if natural_dict is None:
         print("[DATA] Natural trajectory cache not found on disk; generating procedural natural stream...")
         natural_dict = synthesize_12_archetype_tactical_tensors(num_samples=4800, seed=101)
@@ -864,7 +894,14 @@ def train_titan_epoch(
     skipped_nan_steps = 0
     t0 = time.time()
 
-    for states, actions, win_targets, move_ratios in dataloader:
+    for batch in dataloader:
+        if len(batch) == 5:
+            states, actions, win_targets, move_ratios, failed_actions = batch
+            failed_actions = failed_actions.to(device, non_blocking=True)
+        else:
+            states, actions, win_targets, move_ratios = batch
+            failed_actions = None
+
         states = states.to(device, non_blocking=True)
         actions = actions.to(device, non_blocking=True)
         win_targets = win_targets.to(device, non_blocking=True)
@@ -912,6 +949,7 @@ def train_titan_epoch(
                 q_quantiles_all=q_quantiles,
                 expert_actions=actions,
                 win_targets=win_targets,
+                failed_actions=failed_actions,
                 beta_dpo=0.25,
                 ref_margin=1.2,
             )

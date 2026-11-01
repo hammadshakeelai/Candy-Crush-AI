@@ -1,0 +1,107 @@
+{
+  "status": "COMPLETED",
+  "total_levels_evaluated": 3,
+  "total_runs": 9,
+  "total_wins": 9,
+  "overall_stochastic_robustness_pct": 100.0,
+  "harvested_trajectory_steps": 0,
+  "total_elapsed_sec": 5.16,
+  "levels": [
+    {
+      "level_id": 50,
+      "seeds_tested": 3,
+      "seeds_won": 3,
+      "stochastic_win_rate_pct": 100.0,
+      "mean_moves_used": 2.0,
+      "moves_limit": 25,
+      "duration_sec": 0.66,
+      "seed_details": [
+        {
+          "seed": 42,
+          "won": true,
+          "moves_used": 2,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        },
+        {
+          "seed": 101,
+          "won": true,
+          "moves_used": 2,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        },
+        {
+          "seed": 202,
+          "won": true,
+          "moves_used": 2,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        }
+      ]
+    },
+    {
+      "level_id": 75,
+      "seeds_tested": 3,
+      "seeds_won": 3,
+      "stochastic_win_rate_pct": 100.0,
+      "mean_moves_used": 3.33,
+      "moves_limit": 27,
+      "duration_sec": 0.58,
+      "seed_details": [
+        {
+          "seed": 42,
+          "won": true,
+          "moves_used": 3,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        },
+        {
+          "seed": 101,
+          "won": true,
+          "moves_used": 4,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        },
+        {
+          "seed": 202,
+          "won": true,
+          "moves_used": 3,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        }
+      ]
+    },
+    {
+      "level_id": 656,
+      "seeds_tested": 3,
+      "seeds_won": 3,
+      "stochastic_win_rate_pct": 100.0,
+      "mean_moves_used": 6.0,
+      "moves_limit": 35,
+      "duration_sec": 3.92,
+      "seed_details": [
+        {
+          "seed": 42,
+          "won": true,
+          "moves_used": 7,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        },
+        {
+          "seed": 101,
+          "won": true,
+          "moves_used": 7,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        },
+        {
+          "seed": 202,
+          "won": true,
+          "moves_used": 4,
+          "objectives_remaining": 0,
+          "duration_sec": 0.0
+        }
+      ]
+    }
+  ]
+}

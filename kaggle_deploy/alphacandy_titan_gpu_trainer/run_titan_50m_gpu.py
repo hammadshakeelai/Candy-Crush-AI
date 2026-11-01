@@ -68,10 +68,19 @@ def discover_king_assets() -> Dict[str, str]:
         for p in root.rglob("*"):
             if not p.is_file():
                 continue
-            if p.name == "all_levels.db" and "KING_SQLITE_PATH" not in found:
+            if p.name in ("all_levels.db", "candycrush_master_levels.sqlite") and "KING_SQLITE_PATH" not in found:
                 found["KING_SQLITE_PATH"] = str(p)
-            elif p.name == "King_2500_Levels_Config.json" and "KING_CONFIG_PATH" not in found:
+            elif p.name in ("King_2500_Levels_Config.json", "candycrush_master_levels.json") and "KING_CONFIG_PATH" not in found:
                 found["KING_CONFIG_PATH"] = str(p)
+            elif p.name in ("expert_demonstrations_omega.pt", "candycrush_dpo_preference_pairs.pt"):
+                target_data = WORKSPACE_DIR / "Candy-Crush-AI" / "data" / p.name
+                if not target_data.exists():
+                    try:
+                        target_data.parent.mkdir(parents=True, exist_ok=True)
+                        shutil.copy2(p, target_data)
+                        log(f"Linked dataset from input: {p} -> {target_data}")
+                    except Exception as exc:
+                        log(f"Dataset link note: {exc}")
     for k, v in found.items():
         os.environ[k] = v
         log(f"Discovered {k} = {v}")
