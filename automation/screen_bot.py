@@ -81,7 +81,7 @@ class DesktopCandyBot:
         print(f"🧠 Score: {score:.1f} | Win Prob: {win_prob*100:.1f}% | Confidence: {conf:.2f} | Pace ρ: {rho:.2f} | Regime: {regime}")
         print("─" * 45)
 
-    def play_step(self) -> bool:
+    def play_step(self, dry_run: bool = False) -> bool:
         """Executes a single perception -> decision -> drag gesture cycle."""
         frame = self.capture.grab_screen()
         roi = self.detector.detect_board_region(frame)
@@ -121,22 +121,30 @@ class DesktopCandyBot:
         x1, y1 = self.detector.get_cell_center_pixel(r, c, roi=roi)
         x2, y2 = self.detector.get_cell_center_pixel(target_r, target_c, roi=roi)
 
+        if dry_run:
+            print(f"[DesktopBot - DRY RUN] Move predicted: ({x1}, {y1}) ➔ ({x2}, {y2}) (Mouse input bypassed)")
+            return False
+
         # 5. Execute mouse drag
         print(f"[DesktopBot] Executing drag: ({x1}, {y1}) ➔ ({x2}, {y2})...")
         self.input_ctl.drag(x1, y1, x2, y2, duration=0.22)
 
         # Pause to let swipe register and trigger cascades
-        time.sleep(0.6)
+        time.sleep(0.8)
         return True
 
-    def run(self, max_steps: int = 500):
+    def run(self, max_steps: int = 500, dry_run: bool = False, once: bool = False):
         """Continuously plays until max_steps or stopped."""
-        print("\n🚀 BOT RUNNING! [Move mouse to any screen corner or press Ctrl+C to stop]")
+        mode_str = "DRY-RUN MODE (No clicks)" if dry_run else "LIVE AUTONOMOUS PLAY"
+        print(f"\n🚀 BOT RUNNING: {mode_str} [Move mouse to any screen corner or press Ctrl+C to stop]")
         step = 0
         try:
             while step < max_steps:
-                self.play_step()
+                result = self.play_step(dry_run=dry_run)
                 step += 1
+                if once:
+                    print("[DesktopBot] Single-step execution complete.")
+                    break
         except KeyboardInterrupt:
             print("\n[DesktopBot] Stopped by user.")
         finally:
@@ -146,8 +154,10 @@ class DesktopCandyBot:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AlphaCandy Titan Real Game Desktop Bot")
     parser.add_argument("--steps", type=int, default=300, help="Max steps to play")
+    parser.add_argument("--dry-run", action="store_true", help="Analyze and display move without moving mouse")
+    parser.add_argument("--once", action="store_true", help="Execute single move and exit")
     parser.add_argument("--checkpoint", type=str, default=None, help="Custom model checkpoint path")
     args = parser.parse_args()
 
     bot = DesktopCandyBot(checkpoint_path=args.checkpoint)
-    bot.run(max_steps=args.steps)
+    bot.run(max_steps=args.steps, dry_run=args.dry_run, once=args.once)

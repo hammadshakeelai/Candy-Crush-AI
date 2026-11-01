@@ -21,25 +21,63 @@ from automation.display_utils import DesktopScreenCapture, setup_display_environ
 from vision.robust_grid_detector import RobustGridDetector
 
 
-def calibrate(auto: bool = True, x: int = None, y: int = None, w: int = None, h: int = None, rows: int = 9, cols: int = 9):
+def calibrate(auto: bool = True, hover: bool = False, x: int = None, y: int = None, w: int = None, h: int = None, rows: int = 9, cols: int = 9):
     setup_display_environment()
-    cap = DesktopScreenCapture()
-    frame = cap.grab_screen()
-    cap.close()
+    import pyautogui
 
     detector = RobustGridDetector()
 
-    if x is not None and y is not None and w is not None and h is not None:
+    if hover:
+        print("\n" + "=" * 60)
+        print("🎯 INTERACTIVE HOVER CALIBRATION MODE")
+        print("=" * 60)
+        print("Step 1: Move your mouse over the TOP-LEFT candy tile (row 0, col 0).")
+        for remaining in range(4, 0, -1):
+            print(f"  Capturing in {remaining}s...", end="\r", flush=True)
+            time.sleep(1.0)
+        pos1 = pyautogui.position()
+        print(f"\n  ✓ Captured Top-Left Candy Center: ({pos1.x}, {pos1.y})")
+
+        print("\nStep 2: Move your mouse over the BOTTOM-RIGHT candy tile (row 8, col 8).")
+        for remaining in range(4, 0, -1):
+            print(f"  Capturing in {remaining}s...", end="\r", flush=True)
+            time.sleep(1.0)
+        pos2 = pyautogui.position()
+        print(f"\n  ✓ Captured Bottom-Right Candy Center: ({pos2.x}, {pos2.y})")
+
+        # Derive full grid bounding box from cell centers
+        cell_w = abs(pos2.x - pos1.x) / (cols - 1)
+        cell_h = abs(pos2.y - pos1.y) / (rows - 1)
+
+        min_x = min(pos1.x, pos2.x)
+        min_y = min(pos1.y, pos2.y)
+
+        bx = int(min_x - (cell_w / 2.0))
+        by = int(min_y - (cell_h / 2.0))
+        bw = int(cell_w * cols)
+        bh = int(cell_h * rows)
+
+        roi = (bx, by, bw, bh)
+        print(f"\n  Calculated Board Bounding Box: x={bx}, y={by}, w={bw}, h={bh}")
+    elif x is not None and y is not None and w is not None and h is not None:
         roi = (x, y, w, h)
         print(f"[Calibrate] Using explicit coordinates: {roi}")
     else:
         # Auto-detect board
+        cap = DesktopScreenCapture()
+        frame = cap.grab_screen()
+        cap.close()
         detector.cached_roi = None
         roi = detector.detect_board_region(frame)
         print(f"[Calibrate] Auto-detected board region: {roi}")
 
     bx, by, bw, bh = roi
     detector.save_calibration(bx, by, bw, bh, rows=rows, cols=cols)
+
+    # Capture current screen to generate visual verification preview
+    cap = DesktopScreenCapture()
+    frame = cap.grab_screen()
+    cap.close()
 
     # Generate visual verification preview
     preview = frame.copy()
@@ -74,7 +112,8 @@ def calibrate(auto: bool = True, x: int = None, y: int = None, w: int = None, h:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Calibrate Candy Crush Board ROI")
-    parser.add_argument("--auto", action="store_true", default=True, help="Auto-detect board region")
+    parser.add_argument("--hover", action="store_true", help="Interactive 2-point mouse hover calibration")
+    parser.add_argument("--auto", action="store_true", default=False, help="Auto-detect board region via CV")
     parser.add_argument("-x", type=int, default=None, help="Left X coordinate")
     parser.add_argument("-y", type=int, default=None, help="Top Y coordinate")
     parser.add_argument("-w", type=int, default=None, help="Width in pixels")
@@ -83,4 +122,6 @@ if __name__ == "__main__":
     parser.add_argument("--cols", type=int, default=9, help="Grid cols (default: 9)")
     args = parser.parse_args()
 
-    calibrate(auto=args.auto, x=args.x, y=args.y, w=args.w, h=args.h_px, rows=args.rows, cols=args.cols)
+    # Default to hover if neither hover nor explicit coordinates provided
+    use_hover = args.hover or (args.x is None and not args.auto)
+    calibrate(auto=args.auto, hover=use_hover, x=args.x, y=args.y, w=args.w, h=args.h_px, rows=args.rows, cols=args.cols)
