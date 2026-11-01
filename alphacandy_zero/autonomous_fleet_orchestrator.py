@@ -23,6 +23,10 @@ sys.path.insert(0, str(REPO_ROOT))
 
 LOG_FILE = REPO_ROOT / "runs" / "orchestrator_health.jsonl"
 
+# Convergence Flag: As requested, stop all CPU runs & prevent re-launching
+ENABLE_CPU_FLEET = False
+ENABLE_LOCAL_STRIKE = False
+
 
 def log_event(event_type: str, data: dict):
     """Append structured telemetry record."""
@@ -47,6 +51,8 @@ def get_cmd_output(cmd, timeout=35):
 
 def check_local_strike():
     """Ensure local multi-core fortress assault is active, or report complete if 100% mastered."""
+    if not ENABLE_LOCAL_STRIKE:
+        return "STOPPED", "Model converged: local CPU strikes disabled"
     progress_file = REPO_ROOT / "campaign" / "progress.json"
     if progress_file.exists():
         try:
@@ -123,6 +129,8 @@ KAGGLE_CPU_FLEET = [
 
 def check_and_maintain_kaggle_cpu_fleet():
     """Check all 5 Kaggle 4-vCPU instances and auto-relaunch any completed or idle workers."""
+    if not ENABLE_CPU_FLEET:
+        return "STOPPED", "Model converged: Kaggle CPU fleet disabled", {}
     py = str(REPO_ROOT / "venv" / "bin" / "kaggle")
     fleet_statuses = {}
     active_count = 0

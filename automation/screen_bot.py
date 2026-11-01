@@ -103,7 +103,7 @@ class DesktopCandyBot:
             if self.consecutive_stalls % 5 == 0:
                 print(f"[DesktopBot] Waiting for active game board (non-empty tiles={non_empty})...")
             time.sleep(0.5)
-            return True
+            return False
 
         self.consecutive_stalls = 0
 
@@ -123,7 +123,7 @@ class DesktopCandyBot:
 
         if dry_run:
             print(f"[DesktopBot - DRY RUN] Move predicted: ({x1}, {y1}) ➔ ({x2}, {y2}) (Mouse input bypassed)")
-            return False
+            return True
 
         # 5. Execute mouse drag
         print(f"[DesktopBot] Executing drag: ({x1}, {y1}) ➔ ({x2}, {y2})...")
@@ -140,11 +140,12 @@ class DesktopCandyBot:
         step = 0
         try:
             while step < max_steps:
-                result = self.play_step(dry_run=dry_run)
-                step += 1
-                if once:
-                    print("[DesktopBot] Single-step execution complete.")
-                    break
+                played = self.play_step(dry_run=dry_run)
+                if played:
+                    step += 1
+                    if once:
+                        print("[DesktopBot] Single-step execution complete.")
+                        break
         except KeyboardInterrupt:
             print("\n[DesktopBot] Stopped by user.")
         finally:
