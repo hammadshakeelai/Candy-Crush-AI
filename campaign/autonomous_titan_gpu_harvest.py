@@ -50,6 +50,16 @@ def get_next_harvest_dir():
 
 
 def main():
+    lock_file = REPO_ROOT / "campaign" / ".harvest.lock"
+    lock_file.parent.mkdir(parents=True, exist_ok=True)
+    lock_fd = open(lock_file, "w")
+    try:
+        import fcntl
+        fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except (IOError, BlockingIOError):
+        print("[Titan Monitor] Another harvest is currently running. Exiting cleanly.")
+        return 0
+
     print(f"[Titan Monitor] Checking status of {KERNEL_SLUG}...")
     code, out, _ = get_cmd([PY_KAGGLE, "kernels", "status", KERNEL_SLUG])
     print(f"Status Output: {out}")
@@ -116,19 +126,26 @@ def main():
             PY_KAGGLE, "models", "instances", "versions", "create",
             "hammadshakeelai/alphacandy-titan/PyTorch/default",
             "-p", str(MODEL_INSTANCE_DIR),
-            "-m", v_msg
+            "-n", v_msg
         ])
         print(f"Kaggle Model Version Creation: {m_out}")
         if m_err:
             print(f"Kaggle Model Stderr: {m_err}")
 
-    # Dispatch Next Sprint
+    # Dispatch Next Sprint (with retry while previous GPU session terminates on Kaggle)
     next_sprint = sprint_num + 1
     print(f"\n🚀 [Titan Monitor] Auto-Dispatching Sprint v{next_sprint} on Tesla T4 GPU...")
-    p_code, p_out, p_err = get_cmd([PY_KAGGLE, "kernels", "push", "-p", str(GPU_DEPLOY_DIR)])
-    print(f"Push Result: {p_out}")
-    if p_err:
-        print(f"Push Stderr: {p_err}")
+    import time
+    for attempt in range(6):
+        p_code, p_out, p_err = get_cmd([PY_KAGGLE, "kernels", "push", "-p", str(GPU_DEPLOY_DIR)])
+        print(f"Push Result (Attempt {attempt + 1}): {p_out}")
+        if "Maximum batch GPU session count" in p_err or "Maximum batch GPU session count" in p_out:
+            print("Previous GPU worker terminating on Kaggle backend... waiting 25s before retry.")
+            time.sleep(25)
+            continue
+        if p_err:
+            print(f"Push Stderr: {p_err}")
+        break
 
     print("\n✅ [Titan Monitor] Harvest & Re-dispatch cycle complete!")
     return 1
