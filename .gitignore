@@ -40,3 +40,4 @@ data/expert_demonstrations_omega.pt
 data/candycrush_dpo_preference_pairs.pt
 data/candycrush_offline_rl_buffer.pt
 runs/fortress_golden_trajectories.pt
+campaign/.harvest.lock

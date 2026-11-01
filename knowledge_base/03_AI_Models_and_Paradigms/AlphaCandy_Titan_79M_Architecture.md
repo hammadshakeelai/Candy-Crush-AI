@@ -182,10 +182,20 @@ The master model was trained on a Kaggle Tesla T4 GPU sprint over 40 epochs ($5,
 - **DPO Preference Loss**: **`0.2317`**
 - **Blind Level Evaluation**: **`94.3%` Win Rate (`33 / 35` Won)** on blind King benchmark levels with `0.9552` mean epistemic confidence.
 - **King Fortress Suite**: **`100.0%` Won** (Levels 65, 125, 147, 181, 272, 279, 300, 350, 400, 606, 656, 953, 975, 1205, 1351, 1390, 1488, 1958).
-- **Master Checkpoint**: Staged for Kaggle Models v2 release at [`hammadshakeelai/alphacandy-titan`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan) (`151.38 MB`).
+- **Master Checkpoint**: Published as Kaggle Models v2 release at [`hammadshakeelai/alphacandy-titan`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan) (`151.38 MB`).
 
-### Sprint v9 Continuous Fleet Progression (Active Auto-Dispatch)
-Sprint v9 is queued for launch via kernel [`hammadshakeelai/alphacandy-titan-50m-gpu-mastery`](https://www.kaggle.com/code/hammadshakeelai/alphacandy-titan-50m-gpu-mastery) on Kaggle Tesla T4 GPU, warm-started directly from Sprint v8 Polyak EMA weights. It targets $>96.0\%$ blind win rate and $<0.2500$ combined loss across the expanded golden trajectory corpus.
+### Sprint v9 Production GPU Telemetry (Tesla T4, 25 Epochs, 3,298 EMA Updates)
+- **Wall-Clock Runtime**: `2932.8s` (48.9 minutes)
+- **Best Combined Loss**: **`0.26755`** (Lowest recorded)
+- **Focal Policy Loss**: **`0.2094`** | **Mean $p_t$ Accuracy**: **`83.6%`**
+- **Quantile Huber Loss**: **`0.0000`** (Near-zero value quantile distribution error)
+- **DPO Preference Loss**: **`0.2317`**
+- **Blind Level Evaluation**: **`97.1%` Win Rate (`34 / 35` Won)** on blind King benchmark levels with `0.9556` mean epistemic confidence.
+- **Fortress & Hard Suite Mastery**: Flawless wins across Levels 1349, 1351, 1390, 1488, 1794, 1958; single edge-case near miss on Level 656 (only 3 jellies remaining).
+- **Master Checkpoint**: Staged for Kaggle Models v3 release at [`hammadshakeelai/alphacandy-titan`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan) (`151.38 MB`).
+
+### Sprint v10 Continuous Fleet Progression (Active Auto-Dispatch)
+Sprint v10 is scheduled for auto-dispatch via kernel [`hammadshakeelai/alphacandy-titan-50m-gpu-mastery`](https://www.kaggle.com/code/hammadshakeelai/alphacandy-titan-50m-gpu-mastery) on Kaggle Tesla T4 GPU, warm-started directly from Sprint v9 Polyak EMA weights. It targets $>98.0\%$ blind win rate and $<0.2450$ combined loss across the expanded golden trajectory corpus.
 
 ### Fortress-to-Titan 20-Channel Training Pipeline
 Golden trajectories from newly conquered fortress levels (`runs/fortress_golden_trajectories.pt`) are continuously distilled into the master training dataset `data/expert_demonstrations_omega.pt` (`1,758` transitions, expanded to 2,116+ transitions):
