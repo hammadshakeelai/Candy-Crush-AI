@@ -174,8 +174,18 @@ The master model was trained on a Kaggle Tesla T4 GPU sprint over 40 epochs ($5,
 - **Blind Level Evaluation**: **`94.3%` Win Rate (`33 / 35` Won)** on blind King benchmark levels with `0.9581` mean epistemic confidence.
 - **Published Checkpoint**: Published to Kaggle Models at [`hammadshakeelai/alphacandy-titan`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan) (`158.8 MB`).
 
-### Sprint v8 Continuous Fleet Progression (Active)
-Sprint v8 is actively training via kernel [`hammadshakeelai/alphacandy-titan-50m-gpu-mastery`](https://www.kaggle.com/code/hammadshakeelai/alphacandy-titan-50m-gpu-mastery) on Kaggle Tesla T4 GPU, warm-started from Sprint v7 Polyak EMA weights. It targets $>96.0\%$ blind win rate and $<0.2500$ combined loss across the unified 10,295-level golden trajectory corpus.
+### Sprint v8 Production GPU Telemetry (Tesla T4, 25 Epochs, 3,298 EMA Updates)
+- **Wall-Clock Runtime**: `2842.7s` (47.4 minutes)
+- **Best Combined Loss**: **`0.26762`**
+- **Focal Policy Loss**: **`0.2093`** | **Mean $p_t$ Accuracy**: **`83.6%`**
+- **Quantile Huber Loss**: **`0.0000`** (Distributional value convergence)
+- **DPO Preference Loss**: **`0.2317`**
+- **Blind Level Evaluation**: **`94.3%` Win Rate (`33 / 35` Won)** on blind King benchmark levels with `0.9552` mean epistemic confidence.
+- **King Fortress Suite**: **`100.0%` Won** (Levels 65, 125, 147, 181, 272, 279, 300, 350, 400, 606, 656, 953, 975, 1205, 1351, 1390, 1488, 1958).
+- **Master Checkpoint**: Staged for Kaggle Models v2 release at [`hammadshakeelai/alphacandy-titan`](https://www.kaggle.com/models/hammadshakeelai/alphacandy-titan) (`151.38 MB`).
+
+### Sprint v9 Continuous Fleet Progression (Active Auto-Dispatch)
+Sprint v9 is queued for launch via kernel [`hammadshakeelai/alphacandy-titan-50m-gpu-mastery`](https://www.kaggle.com/code/hammadshakeelai/alphacandy-titan-50m-gpu-mastery) on Kaggle Tesla T4 GPU, warm-started directly from Sprint v8 Polyak EMA weights. It targets $>96.0\%$ blind win rate and $<0.2500$ combined loss across the expanded golden trajectory corpus.
 
 ### Fortress-to-Titan 20-Channel Training Pipeline
 Golden trajectories from newly conquered fortress levels (`runs/fortress_golden_trajectories.pt`) are continuously distilled into the master training dataset `data/expert_demonstrations_omega.pt` (`1,758` transitions, expanded to 2,116+ transitions):
