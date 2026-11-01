@@ -72,19 +72,37 @@ def main():
     print(f"\n🎉 [Titan Monitor] Sprint v{sprint_num} COMPLETE! Starting Harvest into {harvest_dir}...")
     harvest_dir.mkdir(parents=True, exist_ok=True)
     
-    code, d_out, d_err = get_cmd([PY_KAGGLE, "kernels", "output", KERNEL_SLUG, "-p", str(harvest_dir)])
+    code, d_out, d_err = get_cmd([PY_KAGGLE, "kernels", "output", KERNEL_SLUG, "-p", str(harvest_dir)], timeout=2400)
     print(f"Download Output:\n{d_out}")
     if d_err:
         print(f"Download Stderr: {d_err}")
 
+    # Verify no partial downloads remain
+    partials = list(harvest_dir.rglob("*.kaggle-partial"))
+    if partials:
+        print(f"[Warning] Incomplete download detected ({len(partials)} partial files present). Aborting checkpoint overwrite.")
+        return 1
+
     # Locate downloaded master weights
     found_ckpt = None
     for p in harvest_dir.rglob("alphacandy_titan_master.pt"):
-        if p.stat().st_size > 100 * 1024 * 1024:
+        if p.stat().st_size > 140 * 1024 * 1024:
             found_ckpt = p
             break
 
+    # Strictly verify PyTorch checkpoint integrity
+    ckpt_valid = False
     if found_ckpt and found_ckpt.exists():
+        try:
+            import torch
+            test_load = torch.load(found_ckpt, map_location="cpu")
+            if "model_state" in test_load or "model_state_dict" in test_load:
+                ckpt_valid = True
+                print(f"✅ PyTorch checkpoint verified successfully ({found_ckpt.stat().st_size / (1024*1024):.1f} MB).")
+        except Exception as e:
+            print(f"❌ Checkpoint validation error: {e}")
+
+    if ckpt_valid and found_ckpt:
         size_mb = found_ckpt.stat().st_size / (1024 * 1024)
         print(f"Updating local master checkpoint: {MASTER_CKPT} ({size_mb:.1f} MB)...")
         shutil.copy2(found_ckpt, MASTER_CKPT)
@@ -94,17 +112,31 @@ def main():
             print(f"Staging to Kaggle Model instance dir: {MODEL_INSTANCE_DIR}...")
             shutil.copy2(found_ckpt, MODEL_INSTANCE_DIR / "alphacandy_titan_master.pt")
     else:
-        print("[Warning] Full alphacandy_titan_master.pt (>100MB) not found in harvest output; preserving existing checkpoint.")
+        print("[Warning] Full valid alphacandy_titan_master.pt (>140MB) not verified; preserving existing checkpoint.")
 
     # Read and print summary metrics
     summary_file = harvest_dir / "titan_gpu_summary.json"
+    report_file = harvest_dir / "ALPHACANDY_TITAN_GPU_REPORT.md"
     win_rate = "94.3"
     best_loss = "0.267"
+
+    if report_file.exists():
+        try:
+            txt = report_file.read_text()
+            m_win = re.search(r"Levels Won\*\*:\s*`\d+`\s*\(\*\*([0-9.]+)%\*\*\)", txt)
+            if m_win:
+                win_rate = m_win.group(1)
+            m_loss = re.search(r"Best Combined Loss\*\*:\s*`([0-9.]+)`", txt)
+            if m_loss:
+                best_loss = f"{float(m_loss.group(1)):.4f}"
+        except Exception as e:
+            print(f"Could not parse report markdown: {e}")
+
     if summary_file.exists():
         try:
             summary = json.loads(summary_file.read_text())
-            win_rate = str(summary.get('holdout_win_rate_pct', '94.3'))
-            best_loss = str(summary.get('best_loss', '0.267'))
+            win_rate = str(summary.get('holdout_win_rate_pct', win_rate))
+            best_loss = str(summary.get('best_loss', best_loss))
             print(f"\n=======================================================")
             print(f"🏆 TITAN GPU SPRINT v{sprint_num} EVALUATION SUMMARY")
             print(f"=======================================================")
@@ -119,7 +151,7 @@ def main():
             print(f"Could not parse summary json: {e}")
 
     # Update Kaggle Models registry with the new checkpoint
-    if MODEL_INSTANCE_DIR.exists() and (MODEL_INSTANCE_DIR / "alphacandy_titan_master.pt").exists():
+    if ckpt_valid and MODEL_INSTANCE_DIR.exists() and (MODEL_INSTANCE_DIR / "alphacandy_titan_master.pt").exists():
         print(f"\n📦 [Titan Monitor] Publishing Version to Kaggle Models (alphacandy-titan)...")
         v_msg = f"Sprint v{sprint_num}: {win_rate}% win rate, {best_loss} combined loss, 79.3M EMA weights"
         m_code, m_out, m_err = get_cmd([
